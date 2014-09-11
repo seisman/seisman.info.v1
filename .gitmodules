@@ -1,0 +1,3 @@
+[submodule "themes/Elegant"]
+	path = themes/Elegant
+	url = git@github.com:seisman/pelican-elegant.git
