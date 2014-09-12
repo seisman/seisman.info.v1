@@ -1,0 +1,7 @@
+__pycache__
+*.swp
+
+output
+cache
+content/pdfs
+
