@@ -181,7 +181,7 @@ class SitemapGenerator(object):
                 lastmod = max(lastmod, article.date.replace(tzinfo=self.timezone))
                 try:
                     modified = self.get_date_modified(article, datetime.min.replace(tzinfo=self.timezone));
-                    lastmod = max(lastmod, modified)
+                    lastmod = max(lastmod, modified.replace(tzinfo=self.timezone))
                 except ValueError:
                     # Supressed: user will be notified.
                     pass
