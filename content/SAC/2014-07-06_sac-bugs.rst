@@ -1,0 +1,98 @@
+SAC的Bug汇总
+############
+
+:author: SeisMan
+:date: 2014-07-09 10:25
+:modified:
+:category: SAC
+:tags: Bug
+:slug: sac-bugs
+
+.. contents::
+
+本文收集了在使用SAC时遇到的一些Bug，望SAC用户在使用时一定要当心。需要注意的是，这不是官方Bug列表，仅是我个人在日常使用中发现的问题。
+
+SAC v101.6
+==========
+
+sort
+----
+
+**Bug描述**
+
+读入一个或若干个SAC文件后，使用\ ``sort``\ 命令对内存中的文件进行排序，经过\ ``sort``\ 后的文件的台站位置信息丢失。
+
+**解决办法**
+
+目前还不清楚产生该Bug的具体原因，解决办法是设置环境变量\ ``SAC_USE_DATABASE``\ 值为0，即::
+
+    export SAC_USE_DATABASE=0
+
+SAC v101.6a
+===========
+
+rtrend
+------
+
+**Bug描述**
+
+在对等间隔时间数据使用\ ``rtrend``\ 命令时，会调用子函数\ ``lifite``\ 计算数据的最小二乘线性拟合。源码位于\ ``sac/src/scm/lifite.c``\ 中，错误的部分如下：
+
+.. code-block:: c
+
+    xi = x1;
+    for( i = 1; i <= n; i++ ){
+        yi = Y[i];
+        xi = x1 + (dx * i-1);
+        sumx = sumx + xi;
+        sumy = sumy + Y[i];
+        sumxy = sumxy + xi*yi;
+        sumx2 = sumx2 + xi*xi;
+        sumy2 = sumy2 + yi*yi;
+    }
+
+**解决办法**
+
+修改代码为：
+
+.. code-block:: c
+
+    xi = x1;
+    for( i = 1; i <= n; i++ ){
+        yi = Y[i];
+        xi = x1 + (dx * (i-1)); // 少了一对括号
+        sumx = sumx + xi;
+        sumy = sumy + Y[i];
+        sumxy = sumxy + xi*yi;
+        sumx2 = sumx2 + xi*xi;
+        sumy2 = sumy2 + yi*yi;
+    }
+
+这个Bug导致，当采样间隔dx不为1的情况下，线性拟合得到的截距出现错误，但不影响斜率。最终在被rtrend调用时，生成的波形数据中线性趋势被正确去除，但其均值不为0，这可能会影响到后续数据处理的正确性。
+
+字符串函数change
+----------------
+
+字符串函数\ ``change``\ 的标准语法为\ ``(cha s1 s2 s3)``\ ，即在字符串\ ``s3``\ 中用\ ``s1``\ 代替\ ``s2``\ 。
+
+正常情况下如下::
+
+    SAC> echo on
+    SAC> setbb tmp (cha short long "This is short")
+     setbb tmp (cha short long "This is short")
+     ==>  setbb tmp This is long
+
+当用于替换的字符串\ ``s2``\ 中包含了要被替换的字符串\ ``s1``\ 时，则出现死循环::
+
+    SAC> echo on
+    SAC> setbb tmp (cha cd abcde abcdefg)
+     setbb tmp (cha cd abcde abcdefg)
+
+解决办法未知。
+
+第1000个文件
+------------
+
+在使用通配符读取某一类SAC文件时，若文件个数超过1000个，则SAC只读取前1000个，并给出警告。但读入内存的1000个文件中，第1000个文件的振幅总是有错误的，这在有些情况下会造成误判。
+
+解决办法未知。

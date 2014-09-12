@@ -1,0 +1,134 @@
+sacdump
+########
+
+:date: 2014-01-09 00:36
+:author: SeisMan
+:category: SAC
+:slug: sacdump
+
+.. contents::
+
+sacdump是一个与SAC相关的小程序。
+
+主页： https://seiscode.iris.washington.edu/projects/sacdump
+
+语法
+====
+
+::
+
+ $ sacdump -h
+ sacdump version: 1.0
+
+ Dump information from SAC formatted files
+
+ Usage: sacdump [options] file1 [file2 file3 ...]
+
+ ## Options ##
+ -V Report program version
+ -h Show this usage message
+ -v Be more verbose, multiple flags can be used
+ -p header Print specified header field, can be specified multiple times
+ -a Print a list of all defined header values
+ -b Print bare output without file name
+ -d Print first 20 sample values
+ -D Print all sample values
+ -tf format Specify time format for data sample output
+ -s Print basic sample value statistics
+ -m metafile Write common metadata output to file
+ -me Write additional fields into the metadata output
+ -f format Specify input SAC file format (default is autodetect):
+ 0=autodetect, 1=alpha, 2=binary (detect byte order),
+ 3=binary (little-endian), 4=binary (big-endian)
+
+ file(s) File(s) of SAC input data
+ If a file is prefixed with an '@' it is assumed to contain
+ a list of data files to be read
+
+
+示例
+====
+
+获取单个文件的单个头段变量值::
+
+ $ sacdump -p stla TA.ELFS..LHZ.SAC
+ TA.ELFS..LHZ.SAC:
+ 40.6183
+
+获取单个文件的多个头段变量值::
+
+ $ sacdump -p stla -p stlo TA.ELFS..LHZ.SAC
+ TA.ELFS..LHZ.SAC:
+ 40.6183 -120.728
+
+加上-b选项，输出对于脚本更友好::
+
+ $ sacdump -p stla -b TA.ELFS..LHZ.SAC
+ 40.6183
+
+输出全部已定义的头段变量::
+
+ $ sacdump -a TA.ELFS..LHZ.SAC
+ TA.ELFS..LHZ.SAC:
+ DELTA = 1
+ SCALE = 6.25202e+08
+ B = 0.000542
+ E = 2399
+ STLA = 40.6183
+ STLO = -120.728
+ STEL = 1553
+ STDP = 0
+ CMPAZ = 0
+ CMPINC = 0
+ KZDATE = MAY 03 (123), 2006
+ KZTIME = 15:35:00.069
+ NVHDR = 6
+ NORID = 0
+ NEVID = 0
+ NPTS = 2400
+ IFTYPE = 1
+ IDEP = 5
+ LEVEN = 1
+ LPSPOL = 0
+ LCALDA = 1
+ KSTNM = ELFS
+ KHOLE =
+ KCMPNM = LHZ
+ KNETWK = TA
+
+获取数据的最值、均值等信息::
+
+ $ sacdump -s TA.ELFS..LHZ.SAC
+ TA.ELFS..LHZ.SAC:
+ Min: -231490, Max: 259058, Mean: -9.24625, SD: 33471.8, RMS: 33471.9
+
+输出数据的前20个点::
+
+ $ sacdump -d TA.ELFS..LHZ.SAC
+ TA.ELFS..LHZ.SAC:
+ Data samples:
+ 2006,123,15:35:00.069541 85
+ 2006,123,15:35:01.069541 -44
+ 2006,123,15:35:02.069541 -106
+ 2006,123,15:35:03.069541 -172
+ 2006,123,15:35:04.069541 -52
+ 2006,123,15:35:05.069541 -45
+ 2006,123,15:35:06.069541 106
+ 2006,123,15:35:07.069541 245
+ 2006,123,15:35:08.069541 -79
+ 2006,123,15:35:09.069541 -312
+ 2006,123,15:35:10.069541 -96
+ 2006,123,15:35:11.069541 135
+ 2006,123,15:35:12.069541 40
+ 2006,123,15:35:13.069541 -90
+ 2006,123,15:35:14.069541 39
+ 2006,123,15:35:15.069541 84
+ 2006,123,15:35:16.069541 -98
+ 2006,123,15:35:17.069541 -128
+ 2006,123,15:35:18.069541 -24
+ 2006,123,15:35:19.069541 40
+
+简评
+====
+
+sacdump可以自动检测数据格式（ASCII或二进制，big endian或little endian），这个比较有意思，不知道具体原理是怎样的。源码中涉及到了SAC文件的读取，作者使用了libmseed库，实在有些大才小用了。程序在打印头段方面与saclst功能类似，对于一个文件，其默认输出为两行：一行是文件名，一行是头段变量值；这种设计在处理多个文件时很不友好。使用-b选项输出只有一行，对于脚本来说相对比较友好，但不适合处理多文件。

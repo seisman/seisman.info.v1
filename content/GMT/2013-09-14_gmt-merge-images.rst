@@ -1,0 +1,97 @@
+GMT技巧之图像合并
+#################
+
+:date: 2013-09-14 19:50
+:author: SeisMan
+:category: GMT
+:tags: GMT技巧, 图像, GMT4
+:slug: gmt-merge-images
+
+为什么需要把多张图合并到一个PS文件中？
+
+这个问题起源于科研和写作对图件的要求不同。
+
+.. figure:: /images/2013091401.jpg
+   :alt: figure
+   :width: 700 px
+
+   图片来源：http://www.nature.com/ngeo/journal/v6/n6/full/ngeo1813.html
+
+以上面这张图为例吧（虽然例子不太恰当）。上图实际上是由三个子图构成的，图a、图b和图c。在科研探索的过程中，一般一个PS文件中只会绘制一张图，为了看起来方便，图的尺寸会尽量大，尽可能填满整个纸张。而在写作的过程中，因为种种出版上的要求，可能需要将原本的多张图合并成一张图，对于上面的例子就是三合一。
+
+合并的方法大致分为两类，其一是借助强大的绘图软件，另一是修改绘图脚本。
+
+常用的矢量绘图软件有商业软件Photoshop和Illustrator，以及免费开源的GIMP和Inkscape。可以利用这些软件打开多个PS文件，然后复制粘贴图像到同一个文件中，最终生成的还是矢量文件。这种方法的优点在于简单且高效。缺点在于如果有大量图需要合并，或者合并完成之后发现图又需要修改，工作量就会很大；实践过程中发现，使用这些软件可能会导致图像的变形（原因未知）。
+
+下面主要说说修改绘图脚本的方法。
+
+====================================华丽的分割线================================
+
+GMT绘图的基本原理是：每个绘图命令产生一堆PS代码，代表图形的一个部分（一个图层？），一大堆PS代码就构成了一张图。
+
+对于上面的例子来说，理论上只要将绘制这三个图的所有GMT命令全部都放在一个脚本中即可，也就是“脚本合并=图像合并”。
+
+合并脚本过程中的一些要点：
+
+-  所有绘图命令的输出要重定向到同一个PS文件中；
+-  注意-K、-O选项的正确使用；
+-  使用-X、-Y调节每个子图的位置；
+
+如果原脚本很复杂，脚本之间存在相同的变量，直接合并脚本可能会存在变量重复定义或者相互影响的问题，继而影响绘图结果。这种情况下多个脚本可以不必合并，另写一个脚本\ **顺序执行**\ 这几个脚本就好，单个脚本遵循上面的要点修改即可。
+
+脚本合并之后一个更重要的问题在于：原来每张图的尺寸都很大，多个子图合并之后，要么子图之间相互重叠，要么子图超过纸张范围。
+
+**解决办法1：**
+
+直接在脚本中修改每张图的尺寸（修改-JX什么的），将每个之图缩小到合适的尺寸。有些命令比如pstext、psscale是需要根据整体图的尺寸进行微调的，因而图尺寸修改之后，这些命令的选项可能都需要重新微调，稍显耗时。
+
+**解决办法2：**
+
+直接修改纸张尺寸，使用\ ``gmtset PAPER_MEDIA Custom_WxH``\ 自定义纸张大小（W和H分别代表纸张的宽度和高度）。
+
+这样做的好处是不需要修改子图大小（前提是子图的“相对”大小比较合适），只需要对每个子图做整体平移（-X和-Y）。
+
+缺点是最后生成的图不是正常纸张大小，不过写文章的时候无论是Word还是LaTeX都可以指定图形大小，所以纸张尺寸或许不是个问题。
+
+**解决办法2升级版：**
+
+如果前一方法中的纸张大小是个问题，可以先按照上一步的方法：
+
+-  gmtset修改纸张尺寸；
+-  -X和-Y调整子图位置；
+
+   ::
+
+       %%BeginPageSetup
+       0.24 0.24 scale
+       %%EndPageSetup
+
+   调整0.24的大小，可以实现在保持纸张大小不变的前提下整体缩放图形的目的。
+
+这个时候应该就大功告成了。
+
+====================================华丽的分割线================================
+
+**Private Notes:**
+
+.. code-block:: c
+
+ GMT 4.5.9 pslib.c:
+ L1696: fprintf (PSL->internal.fp, "%g %g scale\n", xscl, yscl);
+ L1693: xscl *= scl;
+ L1432: // xscl, yscl: Global scaling, usually left to 1,1
+ L1677: scl = PSL->internal.points_pr_unit / PSL->internal.scale;
+ L1554: PSL->internal.points_pr_unit = 72.0; gmtdefaults中指出PostScript内部定义dpi=72;
+ L1553: PSL->internal.scale = (double)dpi; /* Dots pr. unit resolution of output device */
+ L1429: PSL_LONG ps_plotinit_hires (char *plotfile, PSL_LONG overlay, PSL_LONG mode, double xoff, double yoff, double xscl, double yscl, PSL_LONG ncopies, PSL_LONG dpi, PSL_LONG unit, double *page_size, int *rgb, c onst char *encoding, struct EPS *eps)
+
+ GMT 4.5.9 gmt_plot.c:
+ L4348: ps_plotinit_hires (CNULL, GMT_ps.overlay, PS_bit_settings, GMT_ps.x_origin, GMT_ps.y_origin,
+ L4349: GMT_ps.x_scale, GMT_ps.y_scale, GMT_ps.n_copies, GMT_ps.dpi, GMT_INCH,
+ L4350: GMT_ps.paper_width, GMT_ps.page_rgb, GMT_ps.encoding_name, eps);
+
+ GMT 4.5.9 gmt_init.c:
+ L4165: GMT_ps.dpi = gmtdefs.dpi; /* Plotter resolution in dots-per-inch */
+ L2021-L2027: dip由gmtdefaults中的DOTS_PR_INCH(300)决定。 0.24=72/300;
+
+直接修改PS文件中的scale，可以实现图像缩放；而修改DOTS\_PR\_INCH，生成的PS文件中的scale确实会变化，但是实际上却没有达到图像缩放的目的！Why？还有其他参数同时被修改了？

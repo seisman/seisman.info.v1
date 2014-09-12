@@ -1,0 +1,14 @@
+man转pdf的命令行法
+###################
+
+:date: 2013-11-15 00:03
+:author: SeisMan
+:category: Linux
+:tags: 命令, 格式转换, PDF
+:slug: man2pdf
+
+Linux下的man是个好东西，下面的命令实现了从man到pdf的转换::
+
+    man -t tmux | ps2pdf - > tmux.pdf
+
+其中\ ``-t``\ 选项本质上调用了\ ``/usr/bin/groff -Tps -mandoc``\ ，即生成了PS代码，然后利用ps2pdf将其转换为PDF格式。
