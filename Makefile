@@ -16,7 +16,7 @@ ifeq ($(DEBUG), 1)
 endif
 
 help:
-	@echo 'Makefile for SeisMan's Blog Powered by Pelican					   '
+	@echo 'Makefile for SeisMan Blog Powered by Pelican					       '
 	@echo '																	   '
 	@echo 'Usage:															   '
 	@echo '   make html					  (re)generate the web site			   '
@@ -31,6 +31,7 @@ help:
 	@echo '   make import				  import output to blog branch		   '
 	@echo '   make pdf					  convert updated rST to PDF		   '
 	@echo '   make all					  upload web site to GitHub and Gitcafe'
+	@echo '																	   '
 	@echo '																	   '
 
 html:
@@ -67,6 +68,9 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
+pdf:
+	python makepdf.py --update
+
 github:
 	git push github $(BRANCH):master
 
@@ -76,6 +80,6 @@ gitcafe:
 import:
 	ghp-import -b $(BRANCH) $(OUTPUTDIR) -m "`date +'%Y-%m-%d %H:%M:%S'`"
 
-all: publish import gitcafe github
+all: publish pdf import gitcafe github
 
 .PHONY: html help clean regenerate serve devserver publish github gitcafe import all

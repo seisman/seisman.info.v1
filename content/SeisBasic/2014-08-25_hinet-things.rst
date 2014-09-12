@@ -2,7 +2,7 @@ Hi-net系列博文合集
 ##################
 
 :date: 2014-08-25
-:modified:
+:modified: 2014-09-12
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet
@@ -23,6 +23,6 @@ Hi-net是日本境内的一个高质量、高密度的短周期地震台网，�
 #. `win32格式 <{filename}/SeisBasic/2014-09-04_hinet-win32-format.rst>`_
 #. `Hi-net的channel table文件 <{filename}/SeisBasic/2014-09-05_hinet-channel-table.rst>`_
 #. `Hi-net的仪器响应 <{filename}/SeisBasic/2014-09-06_hinet-instrumental-response.rst>`_
-#. win32tools与格式转换
-#. Hi-net格式转换脚本
+#. `Hi-net win32tools <{filename}/SeisBasic/2014-09-07_hinet-win32tools.rst>`_
+#. `Hi-net WIN32转SAC脚本 <{filename}/SeisBasic/2014-09-12_hinet-convert-win32-files-to-sac.rst>`_
 #. 仪器响应脚本
