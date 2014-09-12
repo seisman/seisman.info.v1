@@ -2,6 +2,7 @@ Hi-net连续波形数据下载脚本
 ##########################
 
 :date: 2014-08-31 19:10
+:modified: 2014-09-12
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet, 数据, 下载, Python
@@ -29,6 +30,8 @@ HinetContDownload.py
 ====================
 
 Python版的数据下载脚本位于\ `HinetContDownload.py <https://github.com/seisman/HinetScripts/blob/master/HinetContDownload.py>`_\ 。
+
+使用前需要修改配置文件\ ``Hinet.cfg``\ 。
 
 依赖
 ----

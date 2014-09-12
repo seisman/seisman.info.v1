@@ -2,6 +2,7 @@ Hinet连续波形数据申请脚本
 #########################
 
 :date: 2014-08-30 22:22
+:modified: 2014-09-12
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet, 数据, 申请, Python
@@ -91,7 +92,14 @@ HinetContRequest.py
 注意事项
 --------
 
-- 使用该脚本时首先要修改\ ``user``\ 和\ ``passwd``\
+- 使用该脚本时需要配置文件\ ``Hinet.cfg``\ ，其内容为::
+
+    [Account]
+    User = xxxxxx
+    Password = xxxxxxxxxx
+
+  根据自己的情况修改账号和密码；
+
 - 该脚本仅实现了单次数据申请，多次调用该脚本即实现了多次申请，具体实现需要自己根据实际情况实现。
 
 用法
@@ -138,3 +146,9 @@ HinetContRequest.py
 
 #. \ ``python HinetContRequest.py 2013 01 02 10 20 5``\
 #. \ ``python HinetContRequest.py 2013 01 02 10 20 5 --code=0103 --arc=GZIP``\
+
+修订历史
+========
+
+- 2014-08-30：初稿；
+- 2014-09-12：账号及密码位于配置文件中；
