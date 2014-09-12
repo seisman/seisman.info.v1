@@ -11,19 +11,19 @@ TYPOGRIFY = True
 
 # Date
 LOCALE = ['zh_CN', 'en_US']
-DEFAULT_DATE = 'fs' # 若metadata中未指定日期，则使用File System Timestamp
+DEFAULT_DATE = 'fs'  # 若metadata中未指定日期，则使用File System Timestamp
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 DATE_FORMAT = {
     'zh': ('zh_CN', '%Y-%m-%d'),
 }
 
 # Category
-USE_FOLDER_AS_CATEGORY = False # 不以目录名为默认分类名
+USE_FOLDER_AS_CATEGORY = False  # 不以目录名为默认分类名
 DEFAULT_CATEGORY = '其他'
 DISPLAY_CATEGORIES_ON_MENU = False
 
 # Pages
-DISPLAY_PAGES_ON_MENU = True # 在菜单栏显示pages
+DISPLAY_PAGES_ON_MENU = True  # 在菜单栏显示pages
 PAGE_PATHS = ['pages']
 PAGE_EXCLUDES = []
 
@@ -32,7 +32,7 @@ ARTICLE_PATHS = ['']
 ARTICLE_EXCLUDES = ['images', 'draft', 'pdfs', 'theme']
 
 # Metadata
-SLUGIFY_SOURCE = 'basename' # use basename as slug
+SLUGIFY_SOURCE = 'basename'  # use basename as slug
 DEFAULT_METADATA = ()
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 PATH_METADATA = ''
@@ -40,7 +40,7 @@ EXTRA_PATH_METADATA = {}
 SUMMARY_MAX_LENGTH = 50
 
 # Output
-DELETE_OUTPUT_DIRECTORY = False # Do not delete output directory
+DELETE_OUTPUT_DIRECTORY = False  # Do not delete output directory
 OUTPUT_RETENTION = ()
 OUTPUT_PATH = 'output/'
 OUTPUT_SOURCE = False
@@ -86,7 +86,8 @@ PATH = 'content'
 
 # Templates
 TEMPLATE_PAGES = {}
-DIRECT_TEMPLATES = ('index', 'tags', 'categories','archives', 'search', '404')
+DIRECT_TEMPLATES = ('index', 'tags', 'categories',
+                    'archives', 'search', '404')
 PAGINATED_DIRECT_TEMPLATES = ('index',)
 EXTRA_TEMPLATES_PATHS = []
 
@@ -151,11 +152,11 @@ REVERSE_CATEGORY_ORDER = False
 PLUGIN_PATHS = ['plugins', ]
 PLUGINS = [
     'assets',               # 压缩CSS、JS
-	'extract_toc',          # 将toc从content提取出来，单独处理
+    'extract_toc',          # 将toc从content提取出来，单独处理
     'neighbors',            # 上一篇，下一篇
     'related_posts',        # 相关博文
-	'sitemap',
-	'tipue_search',         # 搜索工具
+    'sitemap',
+    'tipue_search',         # 搜索工具
 ]
 
 # sitemap

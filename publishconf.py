@@ -31,15 +31,15 @@ MAILCHIMP_FORM_ACTION = 'http://seisman.us3.list-manage1.com/subscribe/post?u=03
 RELATED_POSTS_LABEL = 'Related Posts:'
 SHARE_POST_INTRO = 'Share on:'
 
-#GOOGLE_ANALYTICS = ''
-#STAT_COUNTER_PROJECT = '9897792'
-#STAT_COUNTER_SECURITY = '2192df46'
+GOOGLE_ANALYTICS = ''
+STAT_COUNTER_PROJECT = ''
+STAT_COUNTER_SECURITY = ''
 
 SOCIAL_PROFILE_LABEL = 'Contact Me'
 SOCIAL = (
-    ('Email' , 'mailto:seisman.info@gmail.com'),
+    ('Email', 'mailto:seisman.info@gmail.com'),
     ('GitHub', 'http://github.com/seisman'),
-    ('Weibo' , 'http://weibo.com/seisman'),
-    ('RSS'   , FEED_DOMAIN + '/' + FEED_ATOM),
-    ('CNY'   , SITEURL + '/donation.html'),
+    ('Weibo', 'http://weibo.com/seisman'),
+    ('RSS', FEED_DOMAIN + '/' + FEED_ATOM),
+    ('CNY', SITEURL + '/donation.html'),
 )
