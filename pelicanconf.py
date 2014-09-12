@@ -85,7 +85,7 @@ PATH = 'content'
 
 
 # Templates
-TEMPLATE_PAGES = None
+TEMPLATE_PAGES = {}
 DIRECT_TEMPLATES = ('index', 'tags', 'categories','archives', 'search', '404')
 PAGINATED_DIRECT_TEMPLATES = ('index',)
 EXTRA_TEMPLATES_PATHS = []
@@ -108,9 +108,9 @@ PAGE_LANG_SAVE_AS = '{slug}-{lang}.html'
 CATEGORY_URL = '{slug}.html'
 CATEGORY_SAVE_AS = ''
 TAG_URL = '{slug}.html'
-TAG_SAVE_AS = 'tags.html'
-AUTHOR_URL = 'author/{slug}.html'
-AUTHOR_SAVE_AS = 'authors.html'
+TAG_SAVE_AS = ''
+AUTHOR_URL = ''
+AUTHOR_SAVE_AS = ''
 ARCHIVES_SAVE_AS = 'archives.html'
 LUG_SUBSTITUTIONS = ()
 
