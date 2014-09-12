@@ -25,4 +25,4 @@ Hi-net是日本境内的一个高质量、高密度的短周期地震台网，�
 #. `Hi-net的仪器响应 <{filename}/SeisBasic/2014-09-06_hinet-instrumental-response.rst>`_
 #. `Hi-net win32tools <{filename}/SeisBasic/2014-09-07_hinet-win32tools.rst>`_
 #. `Hi-net WIN32转SAC脚本 <{filename}/SeisBasic/2014-09-12_hinet-convert-win32-files-to-sac.rst>`_
-#. 仪器响应脚本
+#. `Hi-net 生成仪器响应SAC PZ文件 <{filename}/SeisBasic/2014-09-13_hinet-convert-channel-table-to-sac-pz-file.rst>`_
