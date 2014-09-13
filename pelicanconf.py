@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 # Basic settings
 AUTHOR = 'SeisMan'
 SITENAME = 'SeisMan'
-SITEURL = ''
+SITEURL = 'http://localhost:8000'
 TIMEZONE = 'Asia/Shanghai'
 TYPOGRIFY = True
 
