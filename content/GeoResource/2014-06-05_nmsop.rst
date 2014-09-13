@@ -5,7 +5,7 @@ New Manual of Seismological Observatory Practice
 :author: SeisMan
 :category: 地球物理相关资源
 :tags: 书籍
-:slug: new-manual-of-seismological-observatory-practice
+:slug: nmsop
 
 虽然我还没有来得及细看，但是我觉得这是一本真正意义上的好书。这本书讲述了地震学中一些非常基础的知识，基础到目前的大多数地震学教材中都不会提的知识。个人认为，了解这些极其基础的知识非常重要。
 
@@ -16,7 +16,7 @@ New Manual of Seismological Observatory Practice
 目录：
 
 #. History, Aim and Scope
-#. Seismic Wave Propagation and Earth Models 
+#. Seismic Wave Propagation and Earth Models
 #. Seismic Sources and Source Parameters
 #. Seismic Signals and Noise
 #. Seismic Sensors and their Calibration
