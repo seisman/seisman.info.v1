@@ -41,7 +41,7 @@ rvm安装后会自动在\ ``.bashrc``\ , \ ``.bash_profile``\ , \ ``.zshrc``\ , 
     rvm list known
 
 安装最新版本ruby::
-    
+
     rvm install 2.1.0
 
 安装的时候下载速度比较慢，查看了一下，发现rvm首先检测出我的系统是CentOS6，然后从\ ``https://rvm.io/binaries/centos/6/x86_64/ruby-2.1.0.tar.bz2``\ 下载软件包到\ ``~/.rvm/archives/bin-ruby-2.1.0.tar.bz2``\ 。手动实现这一步骤，重新用rvm安装，rvm检测到安装包的完整性便直接使用，加速不少。
@@ -82,7 +82,7 @@ gem是ruby的包管理器，类似于perl下的cpan和python下的pip。
 官方强烈不推荐使用系统自带的软件包管理器来安装calibre，其给出的安装方法如下::
 
     sudo python -c "import sys; py3 = sys.version_info[0] > 2; u = __import__('urllib.request' if py3 else 'urllib', fromlist=1); exec(u.urlopen('http://status.calibre-ebook.com/linux_installer').read()); main()"
-    
+
 下载相当慢，所以还是手动下载。从 http://download.calibre-ebook.com/ 下载合适的版本，然后将其保持到\ ``/tmp/calibre-installer-cache``\ ，再次执行上面的命令就安装完成啦。
 
 calibre不仅是一个电子书管理器，也是一个电子书阅读器，更是一个电子书格式转换器。这里仅用到格式转换的功能，其他功能尚待挖掘。其支持的格式可以在\ `这里 <http://manual.calibre-ebook.com/faq.html#what-formats-does-app-support-conversion-to-from>`__\看到。
@@ -100,7 +100,7 @@ CentOS 6的官方源中貌似是没有Pandoc的，不过EPEL源中有Pandoc::
 安装LaTeX
 ==========
 
-安装过程参考《\ `Linux下安装TeXLive 2013 <{filename}/Programming/2013-07-11_install_texlive-under-linux.rst>`_\ 》并配置中文字体。
+安装过程参考《\ `Linux下安装TeXLive 2013 <{filename}/Programming/2013-07-11_install-texlive-under-linux.rst>`_\ 》并配置中文字体。
 
 获取Pro Git源码
 ===============
