@@ -54,6 +54,7 @@ def write_pdf(content, pdf):
          "--listings",
          "--number-sections",
          "--latex-engine=xelatex",
+         "-V", "SITEURL=http://seisman.info",
          ],
         stdin=subprocess.PIPE)
     out = ''.join(content)
