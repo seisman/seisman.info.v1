@@ -4,7 +4,7 @@ Python相关资源
 :date: 2014-07-30
 :author: SeisMan
 :category: 编程
-:tags: Python, 书, 模块
+:tags: Python, 书籍, 模块
 :slug: learning-python
 
 Python入门教程

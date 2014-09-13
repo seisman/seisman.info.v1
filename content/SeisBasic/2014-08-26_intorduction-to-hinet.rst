@@ -4,7 +4,7 @@ Hi-net简介
 :date: 2014-08-26 17:20
 :author: SeisMan
 :category: 地震学基础
-:tags: Hi-net, 数据
+:tags: Hinet, 数据, 台网
 :slug: introduction-to-hinet
 
 Hi-net，全称为High Sensitivity Seismograph Network，是NIED下的一个覆盖日本全境的高密度地震台网。

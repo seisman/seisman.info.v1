@@ -2,9 +2,10 @@
 ############
 
 :date: 2014-08-05 20:00
+:modified: 2014-09-13
 :author: SeisMan
 :category: 胡言乱语
-:tags:
+:tags: Linux, Perl, Python
 :slug: personal-preferences
 
 本文记录我个人目前在使用的一些“工具”，以及一些偏好。
