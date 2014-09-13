@@ -187,6 +187,7 @@ SITESUBTITLE = '学会整理自己的经验是科研的第一步。'
 FEATURED_IMAGE = SITEURL + '/theme/images/apple-touch-icon-152x152.png'
 RECENT_ARTICLES_COUNT = 15
 USE_SHORTCUT_ICONS = True
+RELATED_POSTS_LABEL = 'Related Posts:'
 
 GOOGLE_PLUS_PROFILE_URL = ''
 TWITTER_USERNAME = ''
