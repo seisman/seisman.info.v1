@@ -3,13 +3,13 @@ About
 
 :author: SeisMan
 :date: 2013-06-22
-:modified: 2014-09-12
+:modified: 2014-09-13
 :slug: about
 
 关于我
 ======
 
-男，90年生，据说是典型摩羯座，USTC在读博士，最爱宅实验室，不爱交际
+男，90年生，据说是典型摩羯座，USTC地球物理学在读博士
 
 关于SeisMan
 ===========
