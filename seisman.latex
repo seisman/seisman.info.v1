@@ -78,7 +78,7 @@
     \footrule
 }
 
-\usepackage{amsmath}
+\usepackage{amsmath, bm}
 
 $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
