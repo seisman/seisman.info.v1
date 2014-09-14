@@ -259,7 +259,7 @@ HostTool：https://hosts.huhamhire.com/
 安装TeXLive 2014
 ----------------
 
-参考\ `本文 <{filename}/Programming/2013-07-11_install_texlive-under-linux.rst>`_\ 。
+参考\ `本文 <{filename}/Programming/2013-07-11_install-texlive-under-linux.rst>`_\ 。
 
 地球物理相关
 ============
