@@ -34,17 +34,17 @@ http://www.globalcmt.org/CMTfiles.html
 
 很多时候我们需要根据其他条件对catalog进行筛选，得到符合自定义条件的地震事件，所以ASCII格式的目录文件就很重要了。GCMT提供了1976年到现在的地震目录，其中1976-2004年的地震目录为dek格式，包含在一个文件中。2005年以后的地震目录为ndk格式，每月一个文件。对于2005年以后的地震目录可以将一年的目录合并到一个文件中，方便管理且不会导致文件过大。
 
-- 1976-2004目录下载：http://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/jan76_dec04.dek
-- 2005以后目录下载：http://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/NEW_MONTHLY/
-- ndk格式说明：http://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/allorder.ndk_explained
-- dek格式说明：http://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/allorder.dek_explained
+- 1976-2004目录下载： http://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/jan76_dec04.dek
+- 2005以后目录下载： http://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/NEW_MONTHLY/
+- ndk格式说明： http://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/allorder.ndk_explained
+- dek格式说明： http://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/allorder.dek_explained
 
 关于GCMT的文章
 ==============
 
-- 1981：http://www.agu.org/pubs/crossref/1981/JB086iB04p02825.shtml
-- 1983：http://www.agu.org/pubs/crossref/1983/JB088iB04p03247.shtml
-- 2012：http://www.sciencedirect.com/science/article/pii/S0031920112000696
+- 1981： http://www.agu.org/pubs/crossref/1981/JB086iB04p02825.shtml
+- 1983： http://www.agu.org/pubs/crossref/1983/JB088iB04p03247.shtml
+- 2012： http://www.sciencedirect.com/science/article/pii/S0031920112000696
 
 备注
 ====

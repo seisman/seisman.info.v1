@@ -24,9 +24,9 @@ SAC文件修改事件经纬度后震中距的自动计算
 
 ::
 
-    SAC> fg seis                              
+    SAC> fg seis
     SAC> lh dist gcarc az baz                     #看看原始文件的震中距和方位角
-      
+
       FILE: SEISMOGR - 1
      --------------
 
@@ -36,7 +36,7 @@ SAC文件修改事件经纬度后震中距的自动计算
            baz = 2.718528e+02
 
     SAC> lh evla evlo evdp lcalda                 #看看事件位置信息和LCALDA变量
-      
+
       FILE: SEISMOGR - 1
      --------------
 
@@ -46,7 +46,7 @@ SAC文件修改事件经纬度后震中距的自动计算
          lcalda = TRUE
     SAC> ch evla 55                               #修改事件位置
     SAC> lh dist gcarc az baz                     #震中距方位角马上就变了
-      
+
       FILE: SEISMOGR - 1
      --------------
 
@@ -57,7 +57,7 @@ SAC文件修改事件经纬度后震中距的自动计算
     SAC> ch lcalda false                         #修改lcalda为false
     SAC> ch evla 60
     SAC> lh dist gcarc az baz                    #震中距方位角没有变化
-      
+
       FILE: SEISMOGR - 1
      --------------
 
@@ -67,8 +67,9 @@ SAC文件修改事件经纬度后震中距的自动计算
            baz = 3.379012e+02
     SAC> ch lcalda true                          #再次把lcalda修改为true
     SAC> lh dist gcarc az baz                    #震中距信息马上就修改了。
-                                                 #这意味着在修改lcalda为真时SAC会自动检查某些变量值的正确性。
-      
+                                                 #这意味着在修改lcalda为真时
+                                                 #SAC会自动检查某些变量值
+
       FILE: SEISMOGR - 1
      --------------
 

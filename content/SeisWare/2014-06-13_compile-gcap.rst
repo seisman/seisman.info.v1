@@ -12,12 +12,12 @@ gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目�
 
 #. 下载gCAP源码
 
-   下载地址：http://www.eas.slu.edu/People/LZhu/downloads/gcap1.0.tar
+   下载地址： http://www.eas.slu.edu/People/LZhu/downloads/gcap1.0.tar
 
 #. 解压
 
    ::
-    
+
        tar -xvf gcap1.0.tar
 
 #. 清除垃圾文件
@@ -40,12 +40,12 @@ gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目�
 
    Makefile的修改幅度稍大，几乎算是重写了。下载之后，将其重命名为\ `Makefile`\ ，替换原目录中的同名文件。并根据自身情况修改SACHOME、FC、CC。
 
-   Makefile下载地址：http://pan.baidu.com/s/1pJDJ7nX
+   Makefile下载地址： http://pan.baidu.com/s/1pJDJ7nX
 
 #. 编译
 
    ::
-    
+
        make
 
 #. 其它

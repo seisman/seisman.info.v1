@@ -113,21 +113,22 @@ GTOPO30是USGS公布的全球数字高程模型，其采样间隔为30弧秒。
 ========
 
 .. code-block:: bash
- #!/bin/bash
 
- ID=11
- Range=-180/-140/40/90
- B=a10g10
- Inc=0.5m
- PS=${ID}.ps
- verbose=-V
- #verbose=
+   #!/bin/bash
 
- grdraster $ID -R$Range -I$Inc -Gout.grd $verbose
- makecpt -Ctopo -T1/8000/1000 -Z $verbose &gt; colors.cpt
- grdimage out.grd -B$B -R$Range -Yc -Xc -JQ15c -Ccolors.cpt $verbose > $PS
+   ID=11
+   Range=-180/-140/40/90
+   B=a10g10
+   Inc=0.5m
+   PS=${ID}.ps
+   verbose=-V
+   #verbose=
 
- rm out.grd colors.cpt
+   grdraster $ID -R$Range -I$Inc -Gout.grd $verbose
+   makecpt -Ctopo -T1/8000/1000 -Z $verbose &gt; colors.cpt
+   grdimage out.grd -B$B -R$Range -Yc -Xc -JQ15c -Ccolors.cpt $verbose > $PS
+
+   rm out.grd colors.cpt
 
 这里只绘制一个第一个区块的地形，若需要同时绘制多个区块，需要多次调用grdraster从不同的网格文件中提取网格，然后用grdpaste粘贴成一个网格再绘图。
 

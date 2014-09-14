@@ -23,7 +23,7 @@
 .. figure:: /images/2013070301.jpg
    :alt: 震中距、方位角(az)、反方位角(baz)示意图
    :width: 600 px
-   
+
    图1：震中距、方位角(az)、反方位角(baz)示意图
 
 数学推导
@@ -31,7 +31,7 @@
 
 公式的推导需要简单的球面三角函数的知识。具体的推导可以参考Robert B. Herrmann的作业题。
 
-网址如下：http://www.eas.slu.edu/People/RBHerrmann/Courses/EASA462
+网址如下： http://www.eas.slu.edu/People/RBHerrmann/Courses/EASA462
 
 作业题中的Ass06、Ass07、Ass08给出了计算震中距和方位角的原理。
 
@@ -40,7 +40,7 @@
 
 广为流传的一个程序是\ ``distaz``\ 。在GMT、SAC等的源码里都可以找到。\ ``distaz``\ 代码很短，简单易懂，其采用的地球模型为椭球模型，精度上可以满足需求。
 
-下面的链接给出了distaz的各种版本，包括C、Fortran、Java、Python以及CGI版本：http://www.seis.sc.edu/software/distaz/
+下面的链接给出了distaz的各种版本，包括C、Fortran、Java、Python以及CGI版本： http://www.seis.sc.edu/software/distaz/
 
 
 使用方法

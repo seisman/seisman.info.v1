@@ -10,7 +10,7 @@
 
 ETOPO2与ETOPO5类似，也是高程+海底地形数据，其采样间隔为2弧分。
 
-官方地址：http://www.ngdc.noaa.gov/mgg/global/etopo2.html
+官方地址： http://www.ngdc.noaa.gov/mgg/global/etopo2.html
 
 官方提供了提供了很多版本，\ **ETOPO2v2c**\ 和\ **ETOPO2v2g**\ 分别代码pixel registration和gridline registartion两种不同的网格表示方式。其中\ **ETOPO2v2c**\ 是权威版本，建议选择\ **ETOPO2v2c**\ 。
 
@@ -42,13 +42,13 @@ ETOPO2与ETOPO5类似，也是高程+海底地形数据，其采样间隔为2弧
 
     sudo cp ETOPO2v2c_i2_LSB.bin /usr/local/GMT-4.5.12/share/dbase
 
-#. 修改\ ``grdraster.info``\ 
+#. 修改\ ``grdraster.info``\
 
    ::
 
     8 "ETOPO2 global topography"    "m"     -R-180/180/-90/90       -I2m            PG i 1          0       -32768  ETOPO2v2c_i2_LSB.bin    L
 
-   其中的很多细节参考了\ ``.hdr``\ 文件中关于格式的说明，不细说。 
+   其中的很多细节参考了\ ``.hdr``\ 文件中关于格式的说明，不细说。
 
 #. 画图测试
 

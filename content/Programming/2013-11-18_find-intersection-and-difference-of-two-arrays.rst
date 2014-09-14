@@ -17,7 +17,7 @@ A：使用Hash。
 
     my (@union, @intersection, @difference);
     my %count = ();
-    foreach my $element (@array1, @array2) { 
+    foreach my $element (@array1, @array2) {
         $count{$element}++;
     }
     foreach my $element (keys %count) {
@@ -26,7 +26,7 @@ A：使用Hash。
     }
 
 
-最终得到@union为两个数组的并集，@intersection为两个数组的交集，@difference为所有只在一个数组中出现的元素。
+最终得到\ ``@union``\ 为两个数组的并集，\ ``@intersection``\ 为两个数组的交集，\ ``@difference``\ 为所有只在一个数组中出现的元素。
 
 PS：这个方法要求每个数组内部元素不相同！
 

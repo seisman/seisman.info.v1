@@ -20,9 +20,9 @@
 - TeX Live 2013
 - xeCJK 3.2.1
 
-GitHub主页：https://github.com/seisman/better-programming
+GitHub主页： https://github.com/seisman/better-programming
 
-PDF下载：http://pan.baidu.com/s/1ntK5pYp
+PDF下载： http://pan.baidu.com/s/1ntK5pYp
 
 修订历史
 ========

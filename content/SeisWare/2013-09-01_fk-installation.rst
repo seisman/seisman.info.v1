@@ -14,7 +14,7 @@ fk是Prof. Lupei Zhu写的一个计算水平分层介质中理论地震图的小
 下载
 ====
 
-下载地址：http://www.eas.slu.edu/People/LZhu/downloads/fk3.1.tar
+下载地址： http://www.eas.slu.edu/People/LZhu/downloads/fk3.1.tar
 
 解压
 ====

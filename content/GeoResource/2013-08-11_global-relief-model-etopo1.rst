@@ -12,7 +12,7 @@
 
 ETOPO1包含了全球地形和海洋深度，采样间隔为1弧分，是目前精度最高的global relief数据。
 
-官方主页位于：http://www.ngdc.noaa.gov/mgg/global/
+官方主页位于： http://www.ngdc.noaa.gov/mgg/global/
 
 其分为两个版本，Ice Surface和Bedrock，两个版本基本一致。不同之处在于在处理南极洲和Greenland地形时，前者给出的是加上冰盖层之后的高程，后者给出的是岩床的高程。
 

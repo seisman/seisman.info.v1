@@ -4,6 +4,7 @@
 :date: 2013-09-16 00:07
 :author: SeisMan
 :category: 地震学基础
+:tags: 震源
 :slug: body-force-equivalents
 :depends: mathjax
 
@@ -39,23 +40,31 @@
 
 根据Aki & Richards (1980)中的表示定理：
 
-.. figure:: /images/2013091601.jpg
-   :align: center
-   :alt: aki richards
+.. math::
+
+   u_n(x,t) = \int_{-\infty}^{\infty} d \tau \iiint_V f_p(\bm{\eta}, \bm{\tau}) G_{np}(\bm{x}, t-\tau, \bm{\eta},0) d V(\bm{\eta})\\
+
+.. math::
+
+   + \int_{-\infty}^{\infty} d \tau \iint_{\Sigma} \left[ u_i(\bm{\xi}, \bm{\tau}) \right] c_{ijpq} \nu_j G_{np,q}(\bm{x}, t-\tau; \bm{\xi},0) d \Sigma(\bm{\xi})
+
+.. math::
+
+   - \int_{-\infty}^{\infty} d \tau \iint_{\Sigma} \left[ T_p(\bm{u}(\bm{\xi}, \tau), \bm{\nu}) G_{np}(\bm{x}, t-\tau; \bm{\xi},0) \right] d \Sigma(\bm{\xi})
 
 位移分为三项，第一项为体力引起的位移，这一项在波传播中可忽略；
 
 第二项是位移不连续引起的位移，其等效体力为
 
-.. figure:: /images/2013091602.jpg
-   :align: center
-   :alt: aki richards
+.. math::
+
+   f_p^{[\bm{u}]}(\bm{\eta}, \tau) = - \iint_{\Sigma}[u_i(\bm{\xi}, \tau)]c_{ijpq} \nu_j \frac{\partial}{\partial \eta_q} \delta(\bm{\eta}-\bm{\xi}) d \Sigma
 
 第三项是应力不连续引起的位移，其等效体力为
 
-.. figure:: /images/2013091603.jpg
-   :align: center
-   :alt: aki richards
+.. math::
+
+   \bm{f}^{[\bm{T}]}(\bm{\eta}, \tau) = - \iint_{\Sigma}[\bm{T}(\bm{u}(\bm{\xi},\tau),\bm{\nu})] \delta(\bm{\eta}-\bm{\xi}) d \Sigma(\bm{\xi})
 
 地震学研究中常用的源是位错源，即第二项。
 
