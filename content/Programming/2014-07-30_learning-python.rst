@@ -38,6 +38,7 @@ Python入门教程
 ==============
 
 #. `Matplotlib tutorial <http://www.loria.fr/~rougier/teaching/matplotlib/>`_ ：Matplotlib入门教程
+#. `Matplotlib 教程 <http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/>`_ : Matplotlib tutorial中文翻译
 
 工具
 ====
