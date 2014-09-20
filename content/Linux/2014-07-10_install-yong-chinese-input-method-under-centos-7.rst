@@ -7,6 +7,8 @@ CentOS 7.0下安装小小输入法
 :tags: CentOS, 中文
 :slug: install-yong-chinese-input-method-under-centos-7
 
+另一篇博文： `CentOS 7.0下安装搜狗输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_
+
 小小输入法也叫yong输入法，是一个免费但不开源的中文输入法，其作者为dgod，2008年发布第一个版本，至今六年时间依然在不断的更新。以一人之力默默维护一个项目6年时间，不得不让人佩服。
 
 - 官方网址： http://yong.dgod.net/
@@ -17,8 +19,8 @@ CentOS 7.0下安装小小输入法
 #. 从官方网站下载Linux下的最新版本\ ``yong-lin-2.2.0-1.7z``\ 。
 #. 解压。7z格式的压缩文件需要安装\ ``p7zip``\ 方可解压，在EPEL源中有提供该软件。
 #. 安装
-  
-   .. code-block:: bash 
+
+   .. code-block:: bash
 
       $ cd yong
       $ su
@@ -30,7 +32,7 @@ CentOS 7.0下安装小小输入法
    .. code-block:: bash
 
       # ./yong-tool.sh --uninstall
-   
+
 #. 系统启用中文输入源
 
    在“Application”->“System Tools”->“Region&Language”->“Input Source”中添加中文输入源“Chinese(yong)”。也可以考虑删除\ ``English(US)``\ 输入法，直接使用yong自带的功能切换中英文输入法。
@@ -71,10 +73,10 @@ yong的配置文件位于\ ``~/.yong/yong.ini``\ ，可以根据需要修改，�
 
 
 
-   
-   
 
 
 
-   
+
+
+
 

@@ -2,7 +2,6 @@
 ############
 
 :date: 2014-08-05 20:00
-:modified: 2014-09-13
 :author: SeisMan
 :category: 胡言乱语
 :tags: Linux, Perl, Python
@@ -21,7 +20,8 @@
   - GitCafe用于托管博客；
 
 - 文件备份网盘： `百度云`_
-- 文件同步网盘： Dropbox（经常被墙）、坚果云(CentOS 7下无法安装客户端)、云诺（已收费，不再使用）。目前还没有找到合适的同步网盘。
+- 私密文件备份： Dropbox
+
 - 密码管理：LastPass（Linux版+Chrome插件+iOS客户端）
 - 文件/目录比较工具： `meld`_ > `smartsynchronize`_ > vimdiff > diff
 - 文献管理： `Mendeley`_
@@ -38,6 +38,7 @@
 - Windows下的SSH客户端: `Xshell Home/School`_
 
 .. _Droid Sans Mono: https://www.google.com/fonts/specimen/Droid+Sans+Mono
+.. _Dropbox: https://www.dropbox.com
 .. _feedly: http://feedly.com/
 .. _Git: http://git-scm.com/
 .. _GitCafe: https://gitcafe.com

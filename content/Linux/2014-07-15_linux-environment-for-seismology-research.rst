@@ -222,9 +222,7 @@ Google Chrome浏览器
 中文输入法
 ----------
 
-ibus中文输入使用起来不够理想，而fcitx安装起来又过于复杂，yong输入法算是一个折中，安装相对简单且使用效果还不错，配置起来也很简单。
-
-`安装yong中文输入法 <{filename}/Linux/2014-07-10_install-yong-chinese-input-method-under-centos-7.rst>`_
+系统自带的中文输入法为ibus，使用效果一般，基于fcitx框架的搜狗输入法是更好的选择。参考\ `CentOS7安装搜狗输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_\ 。
 
 其他软件
 --------
@@ -302,3 +300,4 @@ Vim插件
 
 - 2014-07-15：初稿；
 - 2014-09-05：EPEL已经发布正式版；修改了epel-release的下载链接；修订了import步骤的错误；
+- 2014-09-20：将小小输入法改为搜狗输入法；
