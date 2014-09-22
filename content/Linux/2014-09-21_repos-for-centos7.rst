@@ -7,7 +7,9 @@ CentOS7下的第三方源
 :tags: CentOS
 :slug: repos-for-centos
 
-CentOS以稳定著称，其官方源中软件种类相对较少，版本相对较老。想要安装其他软件就要添加第三方源，但同时也要注意多个源可能造成的版本冲突。
+.. contents::
+
+CentOS是RHEL的衍生版本，以稳定著称，其官方源中软件种类相对较少，版本相对较老。想要安装其他软件就要添加第三方源，但同时也要注意多个源可能造成的版本冲突。这里列出我正在使用的第三方源。
 
 EPEL7
 =====
@@ -27,7 +29,7 @@ Google Chrome
 
 Google repo包含了三个软件，即\ ``google-chrome-stable``\ 、\ ``google-chrome-beta``\ 和\ ``google-chrome-unstable``\ 。
 
-在\ ``/etc/yum.repo.d/``\ 目录下新建repo文件\ ``google-chrome.repo``\ ，向其中添加Google Chrome源，内容如下::
+在\ ``/etc/yum.repo.d/``\ 目录下新建repo文件\ ``google-chrome.repo``\ ，向其中添加如下内容即可::
 
     [google-chrome]
     name=google-chrome
