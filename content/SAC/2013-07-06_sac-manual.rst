@@ -2,7 +2,7 @@ SAC参考手册中文版
 #################
 
 :date: 2013-07-06 18:21
-:modified: 
+:modified: 2014-09-22
 :author: SeisMan
 :category: SAC
 :tags: 书籍, PDF
@@ -16,9 +16,11 @@ SAC参考手册中文版
 此文档使用Git进行版本控制，我会不定期更新或修正文档内容，读者可以下载已定稿的3.0版或正在修订中的3.1-dev版。待更新积累到一定程度的时候，我会正式发布3.1版。
 
 - 重新整理了大部分命令的语法说明；
-- 对“SAC图像”一章进行了修订；  
+- 对“SAC图像”一章进行了修订；
+- 加入了“信号迭加子程序”一章；
+- Bug修订；
 
-下载地址：`3.1-dev版 <https://github.com/seisman/SAC_Docs_zh/blob/master/SAC_Docs.pdf?raw=true>`_
+下载地址： `3.1-dev版 <https://github.com/seisman/SAC_Docs_zh/blob/master/SAC_Docs.pdf?raw=true>`_
 
 2014-04-18   3.0版
 ==================
@@ -52,7 +54,7 @@ SAC参考手册中文版
 
 重新细致整理了手册的第一章，基本达到了我认为可以打印的地步。命令部分还没有整，200多个，需要很长一段时间才能出来。
 
-下载地址： `SAC帮助文档中文版v2.1.pdf <http://pan.baidu.com/share/link?shareid=707884920&uk=19892171>`_   
+下载地址： `SAC帮助文档中文版v2.1.pdf <http://pan.baidu.com/share/link?shareid=707884920&uk=19892171>`_  
 
 2013-03-29   2.0版
 ==================

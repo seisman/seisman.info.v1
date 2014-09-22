@@ -21,8 +21,10 @@
 
 - 文件备份网盘： `百度云`_
 - 私密文件备份： Dropbox
+- 输入法： 搜狗（Linux版）
 
 - 密码管理：LastPass（Linux版+Chrome插件+iOS客户端）
+- 稍后阅读： `Pocket`_
 - 文件/目录比较工具： `meld`_ > `smartsynchronize`_ > vimdiff > diff
 - 文献管理： `Mendeley`_
 - PDF阅读器： `zathura`_ > evince
@@ -47,6 +49,7 @@
 .. _LastPass: https://lastpass.com
 .. _meld: http://meldmerge.org/
 .. _Mendeley: http://www.mendeley.com/
+.. _Pocket: http://getpocket.com/
 .. _PyCharm Communitu Edition: http://www.jetbrains.com/pycharm/
 .. _smartsynchronize: http://www.syntevo.com/smartsynchronize
 .. _Solarized: http://ethanschoonover.com/solarized
