@@ -40,5 +40,5 @@ SOCIAL = (
     ('GitHub', 'http://github.com/seisman'),
     ('Weibo', 'http://weibo.com/seisman'),
     ('RSS', FEED_DOMAIN + '/' + FEED_ATOM),
-    ('CNY', SITEURL + '/donation.html'),
+    ('CNY', SITEURL + '/donations.html'),
 )
