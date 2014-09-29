@@ -27,14 +27,41 @@ Donations
 
 #. 支付宝捐赠
 
-   精神鼓励很重要，物质上的支持算是额外的bonus。可以通过“支付宝钱包”扫下面的二维码来捐赠。对于无独立经济来源的学生而言，不推荐进行大额捐赠。最低限额为￥1 RMB。
+   精神鼓励很重要，物质上的支持算是额外的bonus。可以通过“支付宝“进行捐赠。对于无独立经济来源的学生而言，不推荐进行大额捐赠。最低限额为￥1 RMB。
 
-   .. image:: /theme/images/alipay.png
-      :width: 1546px
-      :height: 1546px
-      :scale: 10%
-      :align: center
-      :alt: donation to seisman's blog
+   .. raw:: html
+
+      <center>
+      <form action="https://shenghuo.alipay.com/send/payment/fill.htm" id="juanzeng" method="post" name="juanzeng" target="_blank" style="display:inline">
+      <input type="image" src="theme/images/alipay.png" style="width: 154px;" border="0" name="submit" alt="支付宝捐赠"/>
+      <input name="optEmail" type="hidden" value="seisman.info@gmail.com" />
+      <input name="memo" type="hidden" value="" />
+      <input id="payAmount" name="payAmount" type="hidden" value="" />
+      <input id="title" name="title" type="hidden" value="" />
+      </form>
+      </center>
+
+   - 手机端：打开“支付宝钱包”客户端，扫二维码；
+   - 电脑端：点击二维码图片，进入“支付宝转账”页面，收款人已自动填写；（PS：支付宝电脑端转账需收取0.1%的手续费）
+
+#. PayPal捐赠
+
+   由于PayPal在中国的政策问题，本站使用的PayPal捐赠实质上是PayPal购买。点击捐赠按钮，手动输入“物品价格”，并“更新”，即可捐赠。
+
+   对于每一笔捐赠，PayPal会收取“卖家”（即我）“4.4%+0.3$”的手续费，因而捐赠最低限额为$ 5 USD。
+
+   .. raw:: html
+
+      <center>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="seisman.info@gmail.com">
+      <input type="hidden" name="item_name" value="Support SeisMan Blog">
+      <input type="hidden" name="amount" value="">
+      <input type="hidden" name="currency_code" value="USD">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/x-click-butcc-donate.gif" border="0"  style="border:0px;background:none;" name="submit" alt="PayPal - The safer, easier way to pay online">
+      </form>
+      </center>
 
 #. 银行卡捐赠
 
@@ -52,6 +79,9 @@ Donations
    * - 日期
      - 姓名
      - 金额
+   * - 2014-09-28
+     - 张金玉
+     - ￥3 RMB
    * - 2014-09-11
      - 刘**
      - ￥200 RMB
