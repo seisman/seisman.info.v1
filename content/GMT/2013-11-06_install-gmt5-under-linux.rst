@@ -37,7 +37,7 @@ GMT编译过程需要C编译器，以及一些系统级别的库文件。
 
 对于Ubuntu/Debian::
 
-    sudo apt-get install g++ libxt-dev libxaw-dev libxmu-dev libSM-dev
+    sudo apt-get install g++ libxt-dev libxaw7-dev libxmu-dev libSM-dev
 
 对于CentOS/RHEL/Fedora::
 
@@ -189,6 +189,7 @@ PS：在某些系统下\ ``cmake``\ 的版本是2.6，此时命令需要改成\ 
 - 2014-02-22：cmake版本需要2.8以上；
 - 2014-03-02：更新至GMT 5.1.1；
 - 2014-09-14：更新GSHHG至2.3.2；
+- 2014-09-26：Ubuntu下\ ``libxaw-dev``\ 应为\ ``libxaw7-dev``\ ；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/

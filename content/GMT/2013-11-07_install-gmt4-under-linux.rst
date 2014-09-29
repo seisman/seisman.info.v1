@@ -40,7 +40,7 @@ GMT编译过程需要C编译器，以及一些系统级别的库文件。
 
 对于Ubuntu/Debian::
 
-    sudo apt-get install g++ libxt-dev libxaw-dev libxmu-dev libSM-dev
+    sudo apt-get install g++ libxt-dev libxaw7-dev libxmu-dev libSM-dev
 
 对于CentOS/RHEL/Fedora::
 
@@ -104,3 +104,4 @@ netCDF4的包依赖关系相对比较复杂，因而非常不建议自己编译n
 - 2014-03-08：``make install``->``make install-all``；
 - 2014-07-10：更新gshhg为2.3.1版；GMT4不依赖\ ``gdal``\ ；
 - 2014-09-14：更新gshhg为2.3.2版；
+- 2014-09-26：Ubuntu下\ ``libxaw-dev``\ 应为\ ``libxaw7-dev``\ ；
