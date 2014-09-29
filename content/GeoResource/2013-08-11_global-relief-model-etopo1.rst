@@ -10,7 +10,7 @@
 
 .. contents::
 
-ETOPO1包含了全球地形和海洋深度，采样间隔为1弧分，是目前精度最高的global relief数据。
+ETOPO1是精度为1弧分的全球地形起伏模型，其包含了陆地地形和海洋水深的数据，是目前已知的精度最高的地形起伏数据。
 
 官方主页位于： http://www.ngdc.noaa.gov/mgg/global/
 
@@ -18,13 +18,14 @@ ETOPO1包含了全球地形和海洋深度，采样间隔为1弧分，是目前�
 
 对于每个版本又细分为grid-registered和cell-registered，其中grid-registered是权威版本，cell-registered是衍生版本，因而\ **推荐下载使用grid-registered版本**\ 。
 
-在每个子版本下又有多种数据格式， netCDF，binary， xyz，tiff。
-
+在每个子版本下又有多种数据格式，netCDF，binary，xyz，tiff。
 
 下载
 ====
 
-我选择的是\ **grid-registered版本**\ 的\ **binary格式**\ 的数据文件：\ `etopo1_ice_g_i2.zip <http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/ice_surface/grid_registered/binary/etopo1_ice_g_i2.zip>`_
+本文使用的是\ **grid-registered版本**\ 的\ **binary格式**\ 的数据文件：\ `etopo1_ice_g_i2.zip <http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/ice_surface/grid_registered/binary/etopo1_ice_g_i2.zip>`_ 。
+
+下面的说明也只针对binary格式有效。
 
 解压
 ====
