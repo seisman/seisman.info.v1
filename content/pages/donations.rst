@@ -2,7 +2,7 @@ Donations
 #########
 
 :date: 2014-02-05
-:modified: 2014-09-13
+:modified: 2014-09-29
 :slug: donations
 
 如果您觉得本博客的原创博文或《\ `SAC参考手册 <{filename}/SAC/2013-07-06_sac-manual.rst>`_\ 》对您有用，您可以考虑通过捐赠来支持本博客。
