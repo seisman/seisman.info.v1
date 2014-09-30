@@ -20,8 +20,8 @@ EPEL全称Extra Packages for Enterprise Linux，是一个由Fedora特别兴趣�
 
 添加方法::
 
-    wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-1.noarch.rpm
-    sudo rpm -ivh epel-release-7-1.noarch.rpm
+    wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+    sudo rpm -ivh epel-release-7-2.noarch.rpm
     sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 
 Google Chrome

@@ -3,6 +3,7 @@ CentOS 7安装fcitx中文输入法
 
 :author: SeisMan
 :date: 2014-09-20
+:modified: 2014-09-29
 :category: Linux
 :tags: CentOS, 中文
 :slug:  fcitx-for-centos-7
@@ -64,8 +65,22 @@ mosquito-myrepo是一个私人制作的第三方源，其中包含了fcitx输入
     $ yum install fcitx-libpinyin fcitx-cloudpinyin # libpinyin输入法
     $ yum install fcitx-sunpinyin sunpinyin-data fcitx-cloudpinyin # sunpinyin输入法
 
+清理工作
+========
+
+mosquito-myrepo在不断地支持更多的软件，这也进一步造成该repo中的软件与base、EPEL中的软件存在版本冲突，在该repo的项目主页中建议安装yum的优先级插件\ ``yum-plugin-priorities``\ ，这在一定程度上会缓解版本冲突问题，但无法从根本上避免。
+
+鉴于多个repo的版本冲突会造成一些麻烦，最好的办法还是在安装完需要的软件之后就禁用该repo，需要的时候再启用。
+
+编辑\ ``/etc/yum.repos.d/mosquito-myrepo-epel-7.repo``\ ，将其中的\ ``enable=1``\ 改成\ ``enable=0``\ 即可。
 
 参考
 ====
 
 - https://copr.fedoraproject.org/coprs/mosquito/myrepo/
+
+修订历史
+========
+
+- 2014-09-20：初稿；
+- 2014-09-29：安装完成之后建议禁用该repo以避免任何可能的版本冲突；

@@ -97,8 +97,8 @@ EPEL即Extra Packages for Enterprise Linux 。CentOS为了保证系统的稳定�
 
 .. code-block:: bash
 
-   wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-1.noarch.rpm
-   sudo rpm -ivh epel-release-7-1.noarch.rpm
+   wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+   sudo rpm -ivh epel-release-7-2.noarch.rpm
    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 
 除了EPEL之外，还有很多第三方软件源，如rpmforge等，具体可以参考CentOS的\ `wiki页面 <http://wiki.centos.org/zh/AdditionalResources/Repositories>`_\ ，但由于不同软件源之间可能存在相同名称不同版本的软件，因而同时使用多个软件源时可能会造成冲突。因而只建议使用EPEL软件源。
