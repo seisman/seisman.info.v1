@@ -203,6 +203,15 @@ Linux默认使用的开源显卡驱动与官方的闭源驱动之间还是有一
 日常软件安装
 ============
 
+办公软件
+--------
+
+办公软件可以选择大多数Linux发行版都有的LibreOffice::
+
+    sudo yum install libreoffice
+
+或者，也可以尝试一些目前还处于测试版的WPS Office for Linux，安装过程参考\ `CentOS下安装WPS Office <{filename}/Linux/2014-10-01_wps-office-for-centos7.rst>`_\ 一文。
+
 Google Chrome浏览器
 -------------------
 
