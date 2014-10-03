@@ -41,3 +41,4 @@ Others
 ======
 
 - `IRIS Data Request Status <http://www.iris.edu/ds/nodes/dmc/data/request-status/>`_
+- `IASPEI standard phase list <http://www.isc.ac.uk/standards/phases/>`_

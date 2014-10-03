@@ -28,7 +28,7 @@ SAC参考手册中文版
 - 新增“在Python中调用SAC”一节；
 - Bug修订；
 
-下载地址: `SAC参考手册v3.1.pdf <http://seisman.qiniudn.com/sac_manual_v3.1.pdf>`_
+下载地址: `SAC参考手册v3.1.pdf <http://pan.baidu.com/s/1hq5mUlY>`_
 
 
 2014-04-18 3.0版
