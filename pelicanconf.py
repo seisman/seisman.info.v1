@@ -79,7 +79,6 @@ STATIC_PATHS = [
     'images',
     'theme/images',
     'CNAME',
-    'pdfs',
 ]
 PATH = 'content'
 
@@ -193,3 +192,5 @@ GOOGLE_PLUS_PROFILE_URL = ''
 TWITTER_USERNAME = ''
 LANDING_PAGE_ABOUT = {}
 PROJECTS = []
+
+QINIU = "http://seisman.qiniudn.com"
