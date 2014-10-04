@@ -28,7 +28,7 @@ SAC参考手册中文版
 - 新增“在Python中调用SAC”一节；
 - Bug修订；
 
-下载地址: `SAC参考手册v3.1.pdf <http://pan.baidu.com/s/1hq5mUlY>`_
+下载地址: `SAC参考手册v3.1.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v3.1.pdf>`_
 
 
 2014-04-18 3.0版
@@ -39,7 +39,7 @@ SAC参考手册中文版
 - 教程部分根据SAC v101.6a进行修正
 - Bug修订
 
-下载地址: `SAC参考手册v3.0.pdf <http://pan.baidu.com/s/1kTiGTb5>`_
+下载地址: `SAC参考手册v3.0.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v3.0.pdf>`_
 
 2014-02-22 2.3版
 ================
@@ -49,21 +49,21 @@ SAC参考手册中文版
 - 新的小节: ”SAC IO升级版“、”暂存块变量的读写“、”SAC保存图像“
 - Bug修订
 
-下载地址: `SAC帮助文档中文版v2.3.pdf <http://pan.baidu.com/s/1o6kBdnO>`_
+下载地址: `SAC帮助文档中文版v2.3.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v2.3.pdf>`_
 
 2013-04-12 2.2版
 ================
 
 命令已经整理完毕，排版上基本已经没有问题了，重新设计了封面，在接下来很长一段时间应该都不会有大的改动了。如果有时间，会加一些SAC其他方面的东西。如果有读者反馈，命令方面也可能会有更新。
 
-下载地址： `SAC帮助文档中文版v2.2.pdf <http://pan.baidu.com/share/link?shareid=718423145&uk=19892171>`_  
+下载地址： `SAC帮助文档中文版v2.2.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v2.2.pdf>`_  
 
 2013-04-06 2.1版
 ================
 
 重新细致整理了手册的第一章，基本达到了我认为可以打印的地步。命令部分还没有整，200多个，需要很长一段时间才能出来。
 
-下载地址： `SAC帮助文档中文版v2.1.pdf <http://pan.baidu.com/share/link?shareid=707884920&uk=19892171>`_  
+下载地址： `SAC帮助文档中文版v2.1.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v2.1.pdf>`_  
 
 2013-03-29 2.0版
 ================
@@ -78,14 +78,14 @@ SAC参考手册中文版
 -  英文主字体：Liberation Sans
 -  代码字体：Courier 10 Pitch
 
-下载地址：\ `SAC帮助文档中文版v2.0.pdf <http://pan.baidu.com/share/link?shareid=692702403&uk=19892171>`_
+下载地址：\ `SAC帮助文档中文版v2.0.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v2.0.pdf>`_
 
 2012-09-18 1.2版
 ================
 
 -  增加了封面配图。
 
-下载地址：\ `SAC帮助文档中文版v1.2.pdf <http://pan.baidu.com/share/link?shareid=678805242&uk=19892171>`_
+下载地址：\ `SAC帮助文档中文版v1.2.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v1.2.pdf>`_
 
 2012-09-03 1.1版
 ================
@@ -97,7 +97,7 @@ SAC参考手册中文版
 -  新增了transfer、traveltime、saveimg、datagen命令（依赖于SAC v101.5c）；
 -  公式用公式编辑器编辑
 
-下载地址：\ `SAC帮助文档中文版v1.1.pdf <http://pan.baidu.com/share/link?shareid=665878684&uk=19892171>`_
+下载地址：\ `SAC帮助文档中文版v1.1.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v1.1.pdf>`_
 
 2012-01-08 1.0版
 ================
@@ -118,4 +118,4 @@ SAC参考手册中文版
 -  关于命令的简写还有一些细节没有做；
 -  在某些linux版本下，pdf打开后看到的是完全颠倒的字（比如悲摧的CentOS...）希望这些可以在以后的版本中得到改善和加强。
 
-下载地址：\ `SAC帮助文档中文版v1.0.pdf <http://pan.baidu.com/share/link?shareid=663854091&uk=19892171>`_
+下载地址：\ `SAC帮助文档中文版v1.0.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v1.0.pdf>`_
