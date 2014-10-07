@@ -66,3 +66,16 @@ rdseed提供了源代码，也提供了在不同平台下编译好的二进制�
 #. 此时生成了可执行文件\ ``rdseed``\ ，将其复制到PATH中即可::
 
       mv rdseed ~/bin/
+
+Jrdseed
+=======
+
+rdseed还有一个Java版本，即\ `Jrdseed <http://www.iris.edu/forms/jrdseed_request.htm>`_ 。
+
+由于是Java写的，所以具有很好的跨平台特性，直接下载解压即可使用。
+
+执行方法为::
+
+    java -jar JrdseedVer0.10.1.jar
+
+用法与rdseed类似。
