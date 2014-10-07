@@ -39,6 +39,7 @@ rdseed
 - 版本: 5.3.1
 - 网址: http://www.iris.edu/ds/nodes/dmc/forms/rdseed/
 - 说明: SEED格式转换为SAC格式
+- 博文: `rdseed的安装 <{filename}/SeisWare/2014-10-07_install-rdseed.rst>`_
 
 win32tools
 ----------

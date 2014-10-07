@@ -43,7 +43,7 @@ Channel Table文件描述了每个channel的仪器信息。
 #. Recording flag：若为1则表示该channel正常记录数据，值一般为1（？）
 #. Delay time on a circuit：电路中的时间延迟，值一般为0
 #. Station code：台站代码，Hi-net的台站代码格式为\ ``N.xxxH``\ ；
-#. Motion component code：分量名，可以取值包括U、N、E、X、Y；
+#. Motion component code：分量名，可以取值包括U、N、E、X、Y，除此之外，还有wU、wE、wN等奇怪的分量；
 #. Reduction ratio of monitor waveform amplitude：显示器上的显示振幅与实际振幅之间的比例，其值为2的指数（？）
 #. Quantization bit rate in A/D conversion：模数转换器的量化分辨率，一般值为27，个别值为20或24；
 #. Sensor sensitivity：每单位输入所产生的输出为多少V；

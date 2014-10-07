@@ -2,6 +2,7 @@ Hi-net WIN32转SAC脚本
 #####################
 
 :date: 2014-09-12
+:modified: 2014-10-05
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet, Python, 数据
@@ -25,8 +26,9 @@ Hi-net WIN32转SAC脚本
 
     Options:
         -h          Show this help.
-        -C <comps>  Selection of components to extract.
-                    Avaiable components are U, N, E, X, Y. [default: UNE]
+        -C <comps>  Components to extract, delimited using commas.
+                    Avaiable components are U, N, E, X, Y et. al.
+                    Default to extract all components.
         -D <outdir> Output directory for SAC files.
         -S <suffix> Suffix of output SAC files.
         -P <procs>  Parallel using multiple processes. Set number of cpus to <procs>
@@ -36,7 +38,7 @@ Hi-net WIN32转SAC脚本
 ========
 
 #. ``DIRNAME``\ 为必须参数，即要处理的文件夹。文件夹中包含了从Hi-net下载得到的ZIP格式的连续波形数据；
-#. ``-C <comps>``\ 为可选参数，表示要提取哪些分量的波形，可选的值为U、E、N、X、Y，默认为\ ``UNE``\ ；
+#. ``-C <comps>``\ 为可选参数，表示要提取哪些分量的波形，可选的值为U、E、N、X、Y等，各分量间用逗号分隔，默认值为空，即提取全部分量；
 #. ``-D <outdir>``\ 为可选参数，表示SAC文件的输出目录。可以是绝对路径，也可以是相对于\ ``DIRNAME``\ 的相对路径。默认值为\ ``.``\ ，即解压到文件夹\ ``DIRNAME``\ 下；
 #. ``-S <suffix>``\ ，输出SAC文件的扩展名，默认无扩展名
 #. ``-P <procs>``\ 为可选参数，表示用多个进程并行提取数据；默认值为0，即设置进程数与CPU数目相同；
@@ -61,9 +63,9 @@ Hi-net WIN32转SAC脚本
 
     python rdhinet.py 201201010101
 
-仅提取\ ``U``\ 分量::
+仅提取水平分量::
 
-    python rdhinet.py 201201010101 -C U
+    python rdhinet.py 201201010101 -C E,N
 
 输出SAC文件到的\ ``DIRNAME``\ 下的\ ``RAW``\ 目录中::
 
@@ -72,3 +74,9 @@ Hi-net WIN32转SAC脚本
 输出到\ ``RAW``\ 目录下，并指定文件扩展名为\ ``SAC``\ ::
 
     python rdhinet.py 201201010101 -D RAW -S SAC
+
+修订历史
+========
+
+- 2014-09-12：初稿；
+- 2014-10-05：实际使用中发现，分量名不只是UNEXY，因为修改代码，默认提取全部分量；
