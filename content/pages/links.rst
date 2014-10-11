@@ -16,6 +16,7 @@ Waveform Data
 =============
 
 - `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
+- `NEID Hi-net <http://www.hinet.bosai.go.jp/>`_
 
 Catalog
 =======

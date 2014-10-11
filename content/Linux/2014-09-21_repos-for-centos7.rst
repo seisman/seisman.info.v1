@@ -39,15 +39,15 @@ Google repo包含了三个软件，即\ ``google-chrome-stable``\ 、\ ``google-
     gpgcheck=1
     gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 
-RepoForge
-=========
+Nux Desktop
+===========
 
-原名为rpmforge，包含了一些EPEL中没有的软件包，当然也有部分软件包与EPEL存在冲突::
+包含了Mplayer以及VLC视频播放工具。
 
-    wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
-    sudo rpm -ivh rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+::
 
-在安装该源中的软件包时应格外注意软件包的依赖包，以尽可能避免版本冲突。另外，平常建议禁用该源。
+    rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
+
 
 mosquito-myrepo-epel-7
 ======================
