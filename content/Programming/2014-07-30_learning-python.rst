@@ -33,6 +33,7 @@ Python入门教程
 #. `docopt <http://docopt.org/>`_ ：利用docstring生成命令行接口
 #. `OpenOpt <http://openopt.org/>`_ ：数值优化方法
 #. `matplotlib <http://matplotlib.org/>`_ ：二维绘图库
+#. `python-xlrd <https://github.com/python-excel/xlrd>`_ ：读取Excel文档
 
 模块非官方教程
 ==============
