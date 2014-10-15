@@ -151,7 +151,7 @@ Intel的大部分软件都是非开源且收费的，但同时部分软件也提
 Clang系列
 ---------
 
-Clang是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端，其采样了LLVM作为其后端。它的目标是提供一个GCC的替代品。包括Clang前端和Clang静态分析器两个部分。
+Clang是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端，其采用了LLVM作为其后端。它的目标是提供一个GCC的替代品。包括Clang前端和Clang静态分析器两个部分。
 
 ::
 
@@ -198,7 +198,9 @@ CentOS 7.0自带Python 2.7.5，基本可以满足需求。与Perl类似，需要
 安装显卡驱动
 ------------
 
-Linux默认使用的开源显卡驱动与官方的闭源驱动之间还是有一定差距的。驱动的安装过程参考”\ `安装NVIDIA显卡驱动 <{filename}/Linux/2014-07-13_install-nvidia-drivers-under-linux.rst>`_\ “ 一文。
+Linux默认只使用开源的显卡驱动，就目前的情况来看，开源驱动的效果还是不错的，但跟官方的闭源驱动相比还是有一定差距的。最明显的区别是，在使用SAC的ppk功能放大波形时，使用开源驱动会出现延迟，而使用官方闭源则整个过程非常顺畅。
+
+驱动的安装过程参考”\ `安装NVIDIA显卡驱动 <{filename}/Linux/2014-07-13_install-nvidia-drivers-under-linux.rst>`_\ “ 一文。需要注意的是，在安装显卡驱动之后，若更新了kernel，会出现无法进入kernel的情况，即每次更新kernel之后都需要重新安装显卡驱动，这点需要注意。
 
 日常软件安装
 ============
@@ -210,7 +212,9 @@ Linux默认使用的开源显卡驱动与官方的闭源驱动之间还是有一
 
     sudo yum install libreoffice
 
-或者，也可以尝试一些目前还处于测试版的WPS Office for Linux，安装过程参考\ `CentOS下安装WPS Office <{filename}/Linux/2014-10-01_wps-office-for-centos7.rst>`_\ 一文。
+LibreOffice与Microsoft Office的兼容性不太好，操作界面与MS Office也有较大差异，让人不太习惯。
+
+如果在Linux对于文档处理有更高一些的要求，可以尝试目前还处于测试版的WPS Office for Linux，安装过程参考\ `CentOS下安装WPS Office <{filename}/Linux/2014-10-01_wps-office-for-centos7.rst>`_\ 一文。WPS Office的兼容性以及界面都比LibreOffice要好很多，值得期待，当然还是不能做到完全兼容MS Office。
 
 Google Chrome浏览器
 -------------------
@@ -242,7 +246,6 @@ Google Chrome浏览器
     yum install p7zip           # 7z格式压缩和解压
     yum install git             # 源码版本控制
     yum install xclip           # 终端的文本复制工具
-    yum install libreoffice     # LibreOffice办公软件
     yum install ImageMagick     # 其中的import和convert命令很有用
     yum install ntfs-3g         # 用于挂载NTFS格式的硬盘
 
@@ -274,7 +277,7 @@ HostTool：https://hosts.huhamhire.com/
 #. 安装SAC，参考《\ `SAC参考手册 <{filename}/SAC/2013-07-06_sac-manual.rst>`_\ 》中的相关章节。
 #. \ `安装GMT4 <{filename}/GMT/2013-11-07_install-gmt4-under-linux.rst>`_
 #. \ `安装GMT5 <{filename}/GMT/2013-11-06_install-gmt5-under-linux.rst>`_
-#. 安装TauP
+#. \ `安装TauP <{filename}/SeisWare/2014-10-08_install-taup.rst>`_
 #. 安装rdseed（seed格式转SAC格式）
 #. 安装win32tools（Hinet自定义的win32格式转SAC格式）
 #. 安装pssac
