@@ -2,7 +2,6 @@ GMT使用-K和-O的技巧
 ###################
 
 :date: 2013-07-07 11:30
-:modified:       
 :author: SeisMan
 :category: GMT
 :tags: GMT4, GMT5, GMT选项, GMT技巧

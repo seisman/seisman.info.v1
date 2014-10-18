@@ -25,32 +25,30 @@ Linux下的GMT中文支持
 安装gs
 ------
 
-对于大多数发行版而言，gs都是默认安装的。相关的文件位于\ ``/usr/share/ghostscript``\ 目录下。
+对于大多数发行版而言，gs都是默认安装的。相关的文件位于\ ``/usr/share/ghostscript``\ 目录下。除此之外，还需要安装简体中文配置文件。
 
-除此之外，还需要安装简体中文配置文件，不同的发行版该中文配置文件的名字也不同。下文仅以CentOS 7为例，读者需要注意与自己的发行版的区别。
+不同的发行版中，中文配置文件所在的包是不同的：
 
-CentOS 7 ::
+CentOS 7::
 
     $ sudo yum install ghostscript-chinese-zh_CN
 
-CentOS 6 ::
+CentOS 6::
 
     $ sudo yum install cjkuni-fonts-ghostscript
 
 Ubuntu 14.04::
 
-    $ sudo apt-get install gs-cjk-resource poppler-data
+    $ sudo apt-get install poppler-data
 
-Ubuntu 12.04 ::
+Ubuntu 12.04::
 
     $ sudo apt-get install gs-cjk-resource
 
-安装完中文配置文件之后，不同的发行版配置文件的位置也不同：
+安装完相应的包之后，中文配置文件所在的目录也不同，下面统称为\ ``conf.d`` \ 目录：
 
-- CentOS 7：``/usr/share/ghostscript/conf.d``
-- CentOS 6：``/usr/share/ghostscript/conf.d``
-- Ubuntu 14.04： ``/etc/ghostscript/cidfmap.d/90gs-cjk-resource-gb1.conf``
-- Ubuntu 12.04： ``/etc/ghostscript/cidfmap.d/90gs-cjk-resource-gb1.conf``
+- CentOS 6、7：``/usr/share/ghostscript/conf.d``
+- Ubuntu 12.04、14.04： ``/etc/ghostscript/cidfmap.d/90gs-cjk-resource-gb1.conf``
 
 安装GMT
 -------
@@ -59,6 +57,8 @@ Ubuntu 12.04 ::
 
 使gs支持中文
 ============
+
+下文的说明中，所有路径以CentOS发行版为准。
 
 cidfmap
 -------
