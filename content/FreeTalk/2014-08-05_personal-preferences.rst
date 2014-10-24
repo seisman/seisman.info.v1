@@ -19,7 +19,8 @@
   - USTC GitLab用于托管私有项目；
   - GitCafe用于托管博客；
 
-- 文件备份网盘： `百度云`_
+- 文件同步： Dropbox
+- 文件备份：移动硬盘 > `百度云`_
 - 私密文件备份： Dropbox
 - 输入法： 搜狗（Linux版）
 
@@ -32,7 +33,7 @@
 - Shell：zsh > bash
 - 高级编程语言： C > Fortran
 - 脚本语言： Perl > Python > Bash
-- 文本编辑器：Vim > Gedit > Sublime Text 2
+- 文本编辑器：Vim > Gedit > Sublime Text 3 > Sublime Text 2
 - 配色方案： `Solarized`_ （vim, terminal, PyCharm, Gedit）
 - RSS阅读器： `feedly`_
 - Python IDE：Vim > `PyCharm Communitu Edition`_
