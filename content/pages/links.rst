@@ -10,6 +10,7 @@ Institution
 - `Incorporated Research Institutions for Seismology <http://www.iris.edu/hq/>`_
 - `NEID Hi-net <http://www.hinet.bosai.go.jp/>`_
 - `American Geophysical Union <http://sites.agu.org/>`_
+- `International Seismological Centre <http://www.isc.ac.uk/>`_
 
 
 Waveform Data
@@ -36,6 +37,13 @@ Software
 
 - `Generic Mapping Tools <http://gmt.soest.hawaii.edu/>`_
 - `Seismic Analysis Code <http://www.iris.edu/ds/nodes/dmc/software/downloads/sac/>`_
+- `The TauP Toolkit <http://www.seis.sc.edu/taup/index.html>`_
+
+Software Library
+================
+
+- `IRIS seiscode <https://seiscode.iris.washington.edu/>`_
+- `ORFEUS Seismological Software Library <http://www.orfeus-eu.org/software.html>`_
 
 
 Others

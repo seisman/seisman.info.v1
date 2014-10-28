@@ -2,9 +2,10 @@
 ##############################
 
 :date: 2013-07-03 01:00
+:modified: 2014-10-28 10:55
 :author: SeisMan
 :category: 地震学软件
-:tags: C, Fortran, Java, Python, 名词解释
+:tags: C, Fortran, Java, Python, Matlab, 名词解释
 :slug: calculate-dist-az-baz
 
 .. contents::
@@ -40,7 +41,9 @@
 
 广为流传的一个程序是\ ``distaz``\ 。在GMT、SAC等的源码里都可以找到。\ ``distaz``\ 代码很短，简单易懂，其采用的地球模型为椭球模型，精度上可以满足需求。
 
-下面的链接给出了distaz的各种版本，包括C、Fortran、Java、Python以及CGI版本： http://www.seis.sc.edu/software/distaz/
+- C、Fortran、Java、Python以及CGI版本： `由The lithospheric seismology program at USC整理 <http://www.seis.sc.edu/software/distaz/>`_
+
+Matlab版本： `由specfem3d_globe提供 <https://github.com/geodynamics/specfem3d_globe/blob/master/utils/Visualization/VTK_ParaView/matlab/distaz.m>`_
 
 
 使用方法
@@ -62,3 +65,4 @@
 
 - 2013-07-03：初稿；
 - 2014-07-06：加入了对\ ``distaz``\ 的用法的说明；删除了CPS330的部分；
+- 2014-10-28：新增matlab版本；
