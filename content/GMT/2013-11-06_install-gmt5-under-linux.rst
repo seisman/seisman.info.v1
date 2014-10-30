@@ -60,7 +60,7 @@ GMT5的依赖包，相对来说要复杂很多。
 
 对于Ubuntu/Debian::
 
-    sudo aptitude install ghostscript build-essential cmake libnetcdf-dev libgdal1-dev
+    sudo apt-get install ghostscript build-essential cmake libnetcdf-dev libgdal1-dev
 
 对于RHEL/CentOS/Fedora::
 

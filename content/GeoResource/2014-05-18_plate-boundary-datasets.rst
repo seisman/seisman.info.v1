@@ -16,10 +16,10 @@ NUVEL板块边界数据
 
 该数据集包含了15个主要的板块边界数据。其中：
 
-- nuvel_1_plates.orig：最原始的数据，来自于NUVEL-1A包；
-- nuvel_1_plates：在原始数据的基础上修正了一些小的错误；
-- <plate-name>_plate：给出了板块plate-name与其它板块的分界线，即多段数据。
-- <plate-name>.txt：给出了板块plate-name的轮廓，即相当于将<plate-name>_plate的数据进行整理使其成为一个封闭的曲线。
+- ``nuvel_1_plates.orig``\ ：最原始的数据，来自于NUVEL-1A包；
+- ``nuvel_1_plates``\ ：在原始数据的基础上修正了一些小的错误；
+- ``<plate-name>_plate``\ ：给出了板块plate-name与其它板块的分界线，即多段数据。
+- ``<plate-name>.txt``\ ：给出了板块plate-name的轮廓，即相当于将<plate-name>_plate的数据进行整理使其成为一个封闭的曲线。
 
 因而\ ``<plate-name>_plate``\ 文件中包含了最丰富的信息。
 
@@ -35,7 +35,7 @@ PS：数据文件中似乎是多段数据，以\ ``:``\ 作为每段分割标识
     J=W20c
     B=60/30
     PS=plate.ps
-    
+
     psxy -R$R -J$J -T -K > $PS
     pscoast -R$R -J$J -B$B -Glightblue -K -O >> $PS
     psxy nuvel_1_plates -R$R -J$J -W1p,red -m: -K -O >> $PS
@@ -58,7 +58,7 @@ PS：数据文件中似乎是多段数据，以\ ``:``\ 作为每段分割标识
 PB2003板块数据集
 ================
 
-该数据集在NUVEL数据的基础上假如了38个更小的板块。
+该数据集在NUVEL数据的基础上加入了38个更小的板块。
 
 主页：http://peterbird.name/publications/2003_PB2002/2003_PB2002.htm
 
@@ -88,7 +88,7 @@ PS：前三个数据都是多段数据，而且其数据格式相对来说也很
 .. figure:: /images/2014051804.jpg
    :width: 700 px
    :alt: PB2002_orogens
-         
+
 
 板块边界与洋壳年龄
 ==================
@@ -104,7 +104,7 @@ PS：前三个数据都是多段数据，而且其数据格式相对来说也很
     PS=age.ps
     psxy -R$R -J$J -T -K > $PS
     grdimage -R$R -J$J -B$B -Cage.cpt age.3.6.nc2 -K -O >> $PS
-    pscoast -R$R -J$J -B$B -Glightblue -K -O >> $PS 
+    pscoast -R$R -J$J -B$B -Glightblue -K -O >> $PS
     psxy PB2002_boundaries.dig.txt -R$R -J$J -W1p,black -K -O >> $PS
     psscale -Ba20 -Cage.cpt -D10.5c/-1c/15c/.35ch -K -O >> $PS
     psxy -R$R -J$J -T -O >> $PS

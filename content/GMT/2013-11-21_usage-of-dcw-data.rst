@@ -114,18 +114,19 @@ GMT5的语法相对于GMT4有了不少变化，这里只说与DCW有关的-F选�
 这个例子算是一个相对比较完整的中国地图，包含了必要的省界信息。距离出版可能还需要九段线数据，具体不讨论。
 
 .. code-block:: bash
- #!/bin/bash
- R=70/150/15/55
- J=M20c
- B=10
- PS=china.ps
- gmt psxy -J$J -R$R -T -K -U > $PS
 
- for code in 11 12 13 14 15 21 22 23 31 32 33 34 35 36 37 41 42 43 44 45 46 50 51 52 53 54 61 62 63 64 65 71 91 92;
- do
-     gmt pscoast -B10 -R$R -J$J -FCN.$code -K -O >> $PS
- done
- gmt psxy -R$R -J$J -T -O >> $PS
+   #!/bin/bash
+   R=70/150/15/55
+   J=M20c
+   B=10
+   PS=china.ps
+   gmt psxy -J$J -R$R -T -K -U > $PS
+
+   for code in 11 12 13 14 15 21 22 23 31 32 33 34 35 36 37 41 42 43 44 45 46 50 51 52 53 54 61 62 63 64 65 71 91 92;
+   do
+       gmt pscoast -B10 -R$R -J$J -FCN.$code -K -O >> $PS
+   done
+   gmt psxy -R$R -J$J -T -O >> $PS
 
 .. figure:: /images/2013112106.jpg
    :align: center
