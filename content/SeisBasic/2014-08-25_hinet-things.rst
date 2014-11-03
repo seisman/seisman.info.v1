@@ -2,7 +2,7 @@ Hi-net系列博文合集
 ##################
 
 :date: 2014-08-25
-:modified: 2014-09-12
+:modified: 2014-11-03
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet
@@ -16,7 +16,6 @@ Hi-net是日本境内的一个高质量、高密度的短周期地震台网，�
 #. `Hi-net连续波形数据 <{filename}/SeisBasic/2014-08-27_hinet-continuous-waveform-data.rst>`_
 #. `Hi-net连续波形数据申请的源码分析 <{filename}/SeisBasic/2014-08-29_hinet-continuous-waveform-data-source-code.rst>`_
 #. `Hi-net连续波形数据申请脚本 <{filename}/SeisBasic/2014-08-30_hinet-continuous-waveform-data-request-script.rst>`_
-#. `Hi-net连续波形数据下载脚本 <{filename}/SeisBasic/2014-08-31_hinet-continuous-waveform-data-download-script.rst>`_
 #. `JMA统一地震目录 <{filename}/SeisBasic/2014-09-01_jma-unified-hypocenter-catalog.rst>`_
 #. `Hi-net走时与震源机制数据 <{filename}/SeisBasic/2014-09-02_hinet-arrival-time-and-focal-mechanism-catalog.rst>`_
 #. `Hi-net事件波形数据 <{filename}/SeisBasic/2014-09-03_hinet-event-waveform-data.rst>`_
