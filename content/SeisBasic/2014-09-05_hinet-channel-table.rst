@@ -17,7 +17,7 @@ Channel Table文件描述了每个channel的仪器信息。
 规律分析
 ========
 
-看一看Channelt Table文件的内容，很容易总结出如下规律：
+看一看Channel Table文件的内容，很容易总结出如下规律：
 
 - 每个台站的信息需要四行；
 - 第一行以“#”开头，描述了台站名称及其他信息，可以认为是注释行；
@@ -70,11 +70,16 @@ Channel ID
 Motion component code
 ---------------------
 
-Channel Table中仅给出了分量代码，可以取值为U、N、E、X、Y。其中U表示分量为垂直方向。N、E表示分量指向北向和东向。X、Y的含义未知。
+Channel Table中仅给出了分量代码，可以取值为U、N、E、X、Y以及其他。其中U表示分量为垂直方向。N、E表示分量指向北向和东向。X、Y以及其他分量代码的含义未知。
 
 由于传感器安装在borehole的底部，所以很难精确知道传感器的真实方位。以分量代码为N的传感器为例，该传感器并不一定严格指向正北方向。一般而言，其与正北方向的夹角在5度以内，个别传感器的方向甚至与北向相差几十度。每个传感器的方位信息位于该\ `页面 <http://www.hinet.bosai.go.jp/REGS/direc/?subject=kekka>`_\ 。
 
-在Channel Table中，只给出了分量代码而没有给出具体的方位信息。因而只能根据分量代码做一些可靠的假设。对于U向分量\ ``cmpaz=0``\ 、\ ``cmpinc=0``\ ；对于N向分量\ ``cmpaz=0``\ 、\ ``cmpinc=90``\ ；对于E向分量\ ``cmpaz=90``\ 、\ ``cmpinc=90``\ 。
+在Channel Table中，只给出了分量代码而没有给出具体的方位信息。因而只能根据分量代码做一些可靠的假设。
+
+- U向分量：\ ``cmpaz=0``\ 、\ ``cmpinc=0``\ ；
+- N向分量：\ ``cmpaz=0``\ 、\ ``cmpinc=90``\ ；
+- E向分量：\ ``cmpaz=90``\ 、\ ``cmpinc=90``\ ；
+- 其他分量：未知；
 
 Units of input
 --------------
@@ -86,7 +91,7 @@ Hi-net使用的是短周期速度地震仪，输入为速度场，单位为\ ``m
 Natural period of the seismometer
 ---------------------------------
 
-截至2014年09月08日，对于这一列的含义有两种说法：
+截至2014年09月08日，对于这一列的含义有两种互相矛盾的说法：
 
 - ``readme.txt``\ 中对该列解释为\ **Eigen frequency of the sensor**
 - `Hi-net FAQ 08 <http://www.hinet.bosai.go.jp/faq/?LANG=en#Q08>`_\ 中该列解释为\ **Natural period of the seismometer**
