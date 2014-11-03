@@ -2,6 +2,7 @@ Hi-net连续数据申请的源码分析
 ############################
 
 :date: 2014-08-29 21:00
+:modified: 2014-11-03
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet, 数据, 申请
@@ -34,6 +35,8 @@ Hi-net连续数据申请的源码分析
 源码分析
 ========
 
+接下来，会按照数据申请的步骤尽量细致地分析每一步所涉及到的网页源码。到最后会发现，前面的很多分析是没有用的，但因为其也是分析的一部分，这里也保留了下来。
+
 Select
 -------
 
@@ -43,84 +46,49 @@ Select
 
 .. code-block:: html
 
-    <tr>
-        <td>&#9608; Organization</td>
-        <td colspan="2">
-            <select name="org" onChange="netInit('')">
-                <option value="NIED" selected>NIED</option>
-                <option value="JMA">JMA</option>
-                <option value="UNIV">Universities</option>
-                <option value="LOCAL">Local governments</option>
-                <option value="OTHER">Other Organizations</option>
-           </select>
-        </td>
-    </tr>
+   <tr>
+   <td>&#9608; Organization</td>
+   <td colspan="2">
+   <select name="org" onChange="netInit('');volcInit('');changeVolc()">
+   <option value="NIED" selected>NIED</option>
+   <option value="JMA">JMA</option>
+   <option value="UNIV">Universities</option>
+   <option value="LOCAL">Local governments</option>
+   <option value="JAMSTEC">JAMSTEC</option>
+   <option value="OTHER">Other Organizations</option>
+   </select>
+   </td></tr>
 
-    <tr>
-        <td>&#9608; Network</td>
-        <td colspan="2">
-            <select name="net">
-            </select>
-        </td>
-    </tr>
+   <tr>
+   <td>&#9608; Network</td>
+   <td colspan="2">
+   <select name="net" onChange="volcInit(''); changeVolc()">
+   </select>
+   </td></tr>
 
-在Organization的select标签的onChange属性中调用了\ ``netInit()``\ 函数。该函数的定义位于\ ``./js/cont.js?130408``\ 中，当选定org之后，该函数会根据org的值对net进行初始化，其代码如下
+   <tr id="volc_hide">
+   <td>&#9608; Volcano</td>
+   <td colspan="2">
+   <select name="volc"></select>
+   </td></tr>
 
-.. code-block:: javascript
+在Organization的select标签的onChange属性中调用了\ ``netInit()``\ 和\ ``volcInit``\ 函数。这两个函数的定义位于\ `cont.js <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?140825>`_\ 中，当选定org之后，该函数会根据org的值对net和volc进行初始化，具体代码不再列出。
 
-	function netInit(net){
-       // 对org[]作循环，找到被选中的值保存到变量org中
-	   for(var i=0; i<document.cont.org.length; i++){
-	      if(document.cont.org[i].selected == true){
-	         var org = document.cont.org[i].value;
-	         break;
-	      }
-	   }
-
-       // 对networks进行循环，len为当前org所包含的台网数目
-	   var len = 0;
-	   for(key in networks){
-	      if(networks[key].match(org + ':')) len++;
-	   }
-
-	   document.cont.net.length = len;
-	   var i = 0;
-       // 根据org初始化台网net[]
-	   for(key in networks){
-	      if(networks[key].match(org + ':')){
-	         document.cont.net[i].value = key;
-	         arr = networks[key].split(":");
-	         document.cont.net[i].text = arr[1];
-	         if(key == net) document.cont.net[i].selected = true;
-	         i++;
-	      }
-	   }
-	}
-
-其中networks的定义如下，每一个台网均对应一个唯一的key：
+其中涉及到两个数组/词典：networks和volcanos。每一个台网均对应一个唯一的key：
 
 .. code-block:: javascript
 
 	networks['0101'] = 'NIED:NIED Hi-net';
 	networks['0103'] = 'NIED:NIED F-net (broadband)';
 	networks['0103A'] = 'NIED:NIED F-net (strong motion)';
-	networks['0201'] = 'UNIV:Hokkaido University';
-	networks['0202'] = 'UNIV:Tohoku University';
-	networks['0203'] = 'UNIV:Tokyo University';
-	networks['0204'] = 'UNIV:Kyoto University';
-	networks['0205'] = 'UNIV:Kyushu University';
-	networks['0206'] = 'UNIV:Hirosaki University';
-	networks['0207'] = 'UNIV:Nagoya University';
-	networks['0208'] = 'UNIV:Kochi University';
-	networks['0209'] = 'UNIV:Kagoshima University';
-	networks['0301'] = 'JMA:JMA';
-	networks['0401'] = 'OTHER:JAMSTEC';
-	networks['0501'] = 'OTHER:AIST';
-	networks['0601'] = 'OTHER:GSI';
-	networks['0701'] = 'LOCAL:Tokyo Metropolitan Government';
-	networks['0702'] = 'LOCAL:Hot Spring Research Institute of Kanagawa Prefecture';
-	networks['0703'] = 'LOCAL:Aomori Prefectural Government';
-	networks['0705'] = 'LOCAL:Shizuoka Prefectural Government';
+    ...
+    volcanos['010503'] = '0105:Usuzan';
+    volcanos['010505'] = '0105:Iwatesan';
+    volcanos['010507'] = '0105:Asamayama';
+    volcanos['010509'] = '0105:Fujisan';
+    ...
+
+比如\ ``0101``\ 对应Hi-net，\ ``010503``\ 对应Usuzan火山台网。
 
 Submit
 ------
@@ -139,7 +107,7 @@ Submit
 openRequest
 ------------
 
-返回的代码中包含了一分钟文件的下载链接以及打包下载的链接。一分钟文件的链接代码如下：
+点击“Search”之后，页面中会出现一分钟文件的下载链接以及打包下载的链接。一分钟文件的链接代码如下：
 
 .. code-block:: html
 
@@ -151,25 +119,29 @@ openRequest
 
     <a href="#" onClick="javascript:openRequest('01','01','2014','08','30','00','00','5','93680','en');return false;" onmouseover="changeImg('1')" onmouseout="changeImg('0')"><img src="./image/fulldl1_e.png" name="fulldl" class="img_border0" alt="" title="" /></a>
 
-可以看到，两种下载链接本质上没有区别，都是调用了\ ``openRequest``\ 函数，该函数的定义位于\ `js/cont.js?130408 <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?130408>`_\ 中，如下：
+可以看到，两种下载方式本质上没有区别，都是调用了\ ``openRequest``\ 函数。该函数的定义位于\ `js/cont.js?140825 <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?150825>`_\ 中，如下：
 
 .. code-block:: javascript
 
-	function openRequest(org1,org2,year,month,day,hour,min,span,size,lang){
-	   for(var i=0;i<document.cont.arc.length;i++){
-	      if(document.cont.arc[i].checked == true){
-	         var arc = document.cont.arc[i].value;
-	         break;
-	      }
-	   }
 
-	   var rand = Math.round((new Date()) .getTime());
-	   var url = './cont_request.php?org1=' + org1 + '&org2=' + org2 + '&year=' + year + '&month=' + month
-	             + '&day=' + day + '&hour=' + hour + '&min=' + min + '&span=' + span + '&arc=' + arc + '&size=' + size+ '&LANG=' + lang + '&rn=' + rand;
+   function openRequest(org1,org2,year,month,day,hour,min,span,size,lang,volc) {
+      for (var i=0;i<document.cont.arc.length;i++) {
+         if (document.cont.arc[i].checked == true) {
+            var arc = document.cont.arc[i].value;
+            break;
+         }
+      }
 
-	   contDLWin = window.open(url,"contStatus");
-	   contDLWin.window.focus();
-	}
+      var rand = Math.round((new Date()) .getTime());
+      var url = './cont_request.php?org1=' + org1 + '&org2=' + org2
+              + '&year=' + year + '&month=' + month + '&day=' + day
+              + '&hour=' + hour + '&min=' + min + '&span=' + span
+              + '&arc=' + arc + '&size=' + size+ '&LANG=' + lang
+              + '&volc=' + volc + '&rn=' + rand;
+
+      contDLWin = window.open(url,"contStatus");
+      contDLWin.window.focus();
+   }
 
 该函数需要10个参数：
 
@@ -177,8 +149,9 @@ openRequest
 -  ``org2``\ 为台网代码（Hi-net取值为01）
 -  ``year``\ 、\ ``month``\ 、\ ``day``\ 、\ ``hour``\ 、\ ``min``\ 为数据开始时间
 -  ``span``\ 为数据长度（取值为5）
--  ``size``\ 为文件大小，单位为KB（打包下载的文件其size为93680，不过该大小仅为估计值，不那么重要）
+-  ``size``\ 为文件大小，单位为KB（Hi-net所有台站5分钟数据的size大概为93680，该值为估计值不那么重要）
 -  ``lang``\ 为语言（默认取为en）
+-  ``volc``\ 为火山代码，比如Usuzan火山台网的代码为\ ``010503``\
 
 除此之外，函数中还遍历了\ ``arc[]``\ 数组，找到了数据文件的压缩格式arc；根据当前时间生成“随机数”\ ``rand``\ 。最后将这些key/value对构成了\ ``cont_request.php``\ 的query string，然后打开了该url。
 
@@ -216,3 +189,9 @@ openRequest
 在写完Perl脚本的一年间，因为写博客的缘故，对于网页以及脚本都有了更多的了解。一次偶然的机会，再次看了Hi-net源代码，找到了\ ``openRequest``\ 的定义，了解了数据申请的本质，也就是这篇博文的全部。
 
 根据本文的分析结果，用Python重新实现了新的数据申请方法，更加简单、聪明、快速。Python脚本留在下文再说。
+
+修订历史
+========
+
+- 2014-08-29：初稿；
+- 2014-11-03：更新了火山台网；
