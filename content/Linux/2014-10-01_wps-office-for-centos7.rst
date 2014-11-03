@@ -2,7 +2,7 @@ CentOS 7下安装WPS Office
 ########################
 
 :date: 2014-10-01
-:modified: 2014-10-23
+:modified: 2014-11-03
 :author: SeisMan
 :category: Linux
 :tags: CentOS
@@ -15,9 +15,9 @@ CentOS 7下安装WPS Office
 - 中文官网： http://linux.wps.cn/
 - 英文官网： http://www.wps.com/linux/
 
-目前WPS Office for Linux尚处在测试阶段。根据惯例，alpha版为内测版本，beta版为公测版本。这里选择alpha版，版本为20141021发布的Alpha 16。
+目前WPS Office for Linux尚处在测试阶段。根据惯例，alpha版为内测版本，beta版为公测版本。这里选择Alpha 16。
 
-- 安装包： `wps-office-9.1.0.4885-1.a16.i686.rpm <http://kdl.cc.ksosoft.com/wps-community/download/a16/wps-office-9.1.0.4885-1.a16.i686.rpm>`_
+- 安装包： `wps-office-9.1.0.4909-1.a16p1.i686.rpm <http://kdl.cc.ksosoft.com/wps-community/download/a16/wps-office-9.1.0.4909-1.a16p1.i686.rpm>`_
 - 字体包： `wps-office-fonts-1.0-1.noarch.rpm <http://kdl.cc.ksosoft.com/wps-community/download/a15/wps-office-fonts-1.0-1.noarch.rpm>`_
 
 WPS Office提供的rpm包为32位版本，对于64位系统需要安装相应的32位依赖包方可使用，幸好\ ``yum``\ 可以自动判断并解决包的依赖关系，所以安装很简单。
@@ -26,7 +26,7 @@ WPS Office提供的rpm包为32位版本，对于64位系统需要安装相应的
 
 .. code-block:: bash
 
-   $ sudo yum install wps-office-9.1.0.4885-1.a16.i686.rpm
+   $ sudo yum install wps-office-9.1.0.4909-1.a16p1.i686.rpm
    $ sudo yum install wps-office-fonts-1.0-1.noarch.rpm
 
 安装完成后，即可在“Application”中找到相关项。
@@ -43,4 +43,5 @@ WPS Office提供的rpm包为32位版本，对于64位系统需要安装相应的
 ========
 
 - 2014-10-01：初稿；
-- 2014-10-23：更新至Alpha 16；此版本中不再有\ ``mui``\ 语言包；
+- 2014-10-23：更新至Alpha16；此版本中不再有\ ``mui``\ 语言包；
+- 2014-11-03：更新至Alpha16 Patch1；
