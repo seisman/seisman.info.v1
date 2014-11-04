@@ -170,7 +170,16 @@ PS: 如果系统中存在多个GMT的版本，按照上面的做法会存在多�
 
    $ echo 'export GMT5HOME=/opt/GMT-5.1.1' >> ~/.bashrc
    $ echo 'export PATH=${GMT5HOME}/bin:$PATH' >> ~/.bashrc
+   $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64' >> ~/.bashrc
    $ exec $SHELL -l
+
+说明
+
+- 第一个命令向\ ``~/.bashrc``\ 中添加环境变量\ ``GMT4HOME``\ ；
+- 第二个命令修改\ ``~/.bashrc``\ ，将GMT4的bin目录加入到\ ``PATH``\ 中；
+- 第三个命令将GMT4的lib目录加入到动态链接库路径中，若为32位系统，则为\ ``lib``\ ；64位系统则为\ ``lib64``\ ；
+- 第四个命令是重新载入bash，相当于\ ``source ~/.bashrc``\ 。
+
 
 参考来源
 ========
@@ -186,6 +195,7 @@ PS: 如果系统中存在多个GMT的版本，按照上面的做法会存在多�
 - 2014-03-02：更新至GMT 5.1.1；
 - 2014-09-14：更新GSHHG至2.3.2；
 - 2014-09-26：Ubuntu下\ ``libxaw-dev``\ 应为\ ``libxaw7-dev``\ ；
+- 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/

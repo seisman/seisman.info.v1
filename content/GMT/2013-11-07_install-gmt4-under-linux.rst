@@ -94,9 +94,15 @@ GMT4主要依赖于netCDF，可以直接使用官方源中自带的netCDF包\ [*
 
    $ echo 'export GMT4HOME=/opt/GMT-4.5.12' >> ~/.bashrc
    $ echo 'export PATH=${GMT4HOME}/bin:$PATH' >> ~/.bashrc
+   $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64' >> ~/.bashrc
    $ exec $SHELL -l
 
-PS：前两个命令是在向\ ``~/.bashrc``\ 中添加环境变量，最后一个命令是重新载入bash，相当于\ ``source ~/.bashrc``\ 。
+说明：
+
+- 第一个命令向\ ``~/.bashrc``\ 中添加环境变量\ ``GMT4HOME``\ ；
+- 第二个命令修改\ ``~/.bashrc``\ ，将GMT4的bin目录加入到\ ``PATH``\ 中；
+- 第三个命令将GMT4的lib目录加入到动态链接库路径中，若为32位系统，则为\ ``lib``\ ；64位系统则为\ ``lib64``\ ；
+- 第四个命令是重新载入bash，相当于\ ``source ~/.bashrc``\ 。
 
 修订历史
 ========
@@ -108,3 +114,4 @@ PS：前两个命令是在向\ ``~/.bashrc``\ 中添加环境变量，最后一�
 - 2014-09-14：更新gshhg为2.3.2版；
 - 2014-09-26：Ubuntu下\ ``libxaw-dev``\ 应为\ ``libxaw7-dev``\ ；
 - 2014-10-14：修正了若干细节；
+- 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
