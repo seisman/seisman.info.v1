@@ -23,7 +23,7 @@ Hi-net生成仪器响应SAC PZ文件
 
     Options:
         -C <comps>      Channel Components to convert. Choose from U,N,E,X,Y.
-                        [default: UNE]
+                        Default to convert all components.
         -D <outdir>     Output directory of SAC PZ files. Use the directory of
                         Channel Table file as default.
         -S <suffix>     Suffix for SAC PZ files. [default: SAC_PZ]
