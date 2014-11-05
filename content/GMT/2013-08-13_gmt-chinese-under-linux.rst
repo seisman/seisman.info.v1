@@ -204,7 +204,7 @@ GMT4测试脚本：
 
 GMT5测试脚本：
 
-.. code-block: bash
+.. code-block:: bash
 
    #!/bin/bash
    gmt gmtset FONT_TITLE 40p,35,black
