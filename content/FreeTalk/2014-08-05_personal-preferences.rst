@@ -19,20 +19,20 @@
   - USTC GitLab用于托管私有项目；
   - GitCafe用于托管博客；
 
-- 文件同步： Dropbox
-- 文件备份：移动硬盘 > `百度云`_
-- 私密文件备份： Dropbox
+- 文件同步： `坚果云`_ > `Dropbox`_ （需翻墙）
+- 文件备份： 移动硬盘 > `百度云`_
 - 输入法： 搜狗（Linux版）
 
 - 密码管理：LastPass（Linux版+Chrome插件+iOS客户端）
 - 稍后阅读： `Pocket`_
+- 笔记类工具： `印象笔记`_ + `Raysnote`_
 - 文件/目录比较工具： `meld`_ > `smartsynchronize`_ > vimdiff > diff
 - 文献管理： `Mendeley`_
 - PDF阅读器： `zathura`_ > evince
 - PS阅读器： `zathura`_ > gs > gv > evince
 - Shell：zsh > bash
 - 高级编程语言： C > Fortran
-- 脚本语言： Perl > Python > Bash
+- 脚本语言： Python > Perl > Bash
 - 文本编辑器：Vim > Gedit > Sublime Text 3 > Sublime Text 2
 - 配色方案： `Solarized`_ （vim, terminal, PyCharm, Gedit）
 - RSS阅读器： `feedly`_
@@ -52,6 +52,7 @@
 .. _Mendeley: http://www.mendeley.com/
 .. _Pocket: http://getpocket.com/
 .. _PyCharm Communitu Edition: http://www.jetbrains.com/pycharm/
+.. _Raysnote: https://raysnote.com/
 .. _smartsynchronize: http://www.syntevo.com/smartsynchronize
 .. _Solarized: http://ethanschoonover.com/solarized
 .. _USTC LUG OpenVPN: https://vpn.lug.ustc.edu.cn/
@@ -59,3 +60,5 @@
 .. _Xshell Home/School: http://www.netsarang.com/products/xsh_overview.html
 .. _zathura: http://pwmt.org/projects/zathura
 .. _百度云: http://yun.baidu.com
+.. _坚果云: https://jianguoyun.com
+.. _印象笔记: https://www.yinxiang.com/

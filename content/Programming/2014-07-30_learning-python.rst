@@ -58,3 +58,8 @@ Python入门教程
 ========
 
 #. `Pyzh <http://pyzh.readthedocs.org/en/latest/>`_ :
+
+IDE
+===
+
+#. `PyCharm <https://www.jetbrains.com/pycharm/>`_
