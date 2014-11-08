@@ -1,0 +1,7 @@
+pelican==3.5.0
+typogrify==2.0.7
+webassets==0.10.1
+beautifulsoup4==4.3.2
+cssmin==0.2.0
+docopt
+ghp-import
