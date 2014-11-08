@@ -10,9 +10,12 @@ Python多版本共存之pyenv
 
 .. contents::
 
-需要使用新版本Python的相关功能，但是又不想要影响到系统自带的Python，这个时候就需要实现Python的多版本共存。
+经常遇到这样的情况：
 
-`pyenv`_\ 可以很好的实现Python的多版本共存。
+- 系统自带的Python是2.6，自己需要Python 2.7中的某些特性；
+- 系统自带的Python是2.x，自己需要Python 3.x；
+
+此时需要在系统中安装多个Python，但又不能影响系统自带的Python，即需要实现Python的多版本共存。\ `pyenv`_\ 就是这样一个Python版本管理器。
 
 安装pyenv
 =========
@@ -44,7 +47,6 @@ Python多版本共存之pyenv
 
 其中形如\ ``x.x.x``\ 这样的只有版本号的为Python官方版本，其他的形如\ ``xxxxx-x.x.x``\ 这种既有名称又有版本后的属于“衍生版”或发行版。
 
-
 安装Python的依赖包
 ------------------
 
@@ -60,14 +62,15 @@ Python多版本共存之pyenv
 安装指定版本
 ------------
 
-使用如下命令即可安装python 3.4.1.
+使用如下命令即可安装python 3.4.1：
 
 .. code-block:: bash
 
     $ pyenv install 3.4.1
 
-该命令会从github上下载python的源代码，并解压到/tmp目录下，然后在/tmp中执行编译工作。编译过程依赖一些其他的库文件，若库文件不能满足，则编译错误，需要重新下载、编译。。。(为什么每次都要重新下呢？)
+该命令会从github上下载python的源代码，并解压到/tmp目录下，然后在/tmp中执行编译工作。若依赖包没有安装，则会出现编译错误，需要在安装依赖包后重新执行该命令。
 
+对于科研环境，更推荐安装专为科学计算准备的Anaconda发行版，\ ``pyenv install anaconda-2.1.0``\ 安装2.x版本，\ ``pyenv install anaconda3-2.1.0``\ 安装3.x版本；
 
 更新数据库
 ----------
@@ -116,8 +119,14 @@ Python多版本共存之pyenv
 ==========
 
 -  输入\ ``python``\ 即可使用新版本的python；
--  系统命令会以/usr/bin/python的方式直接调用老版本的python；
--  使用pip安装第三方模块时会安装到\ ``~/.pyenv/versions/3.3.2``\ 下，不会和系统模块发生冲突。
+-  系统自带的脚本会以\ ``/usr/bin/python``\ 的方式直接调用老版本的python，因而不会对系统脚本产生影响；
+-  使用\ ``pip``\ 安装第三方模块时会安装到\ ``~/.pyenv/versions/3.4.1``\ 下，不会和系统模块发生冲突。
+-  使用\ ``pip``\ 安装模块后，可能需要执行\ ``pyenv rehash``\ 更新数据库；
+
+参考
+====
+
+#. https://github.com/yyuu/pyenv
 
 修订历史
 ========

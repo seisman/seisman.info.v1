@@ -17,13 +17,16 @@ Python入门教程
    - `docspy3zh中文译本 <http://docspy3zh.readthedocs.org/en/latest/tutorial/index.html>`_
    - `pythondoc中文译本 <http://www.pythondoc.com/pythontutorial3/index.html>`_
 
-#. `Python Scientific Lecture Notes <http://scipy-lectures.github.io/>`_
-#. `The Hitchhiker’s Guide to Python! <http://docs.python-guide.org/en/latest/>`_
-#. `用Python做科学计算-基础篇 <http://hyry.dip.jp/tech/book/page/scipy/index.html>`_
-#. `Python科学计算 第二版 <http://hyry.dip.jp/tech/book/page/scipynew/index.html>`_
-#. `Think Python <http://www.greenteapress.com/thinkpython/thinkpython.html>`_
 #. `廖雪峰的Python教程 <http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000>`_
 #. `Python学习笔记第二版 <https://github.com/qyuhen/book>`_ ：作者qyuhen@GitHub
+#. `Think Python <http://www.greenteapress.com/thinkpython/thinkpython.html>`_
+
+Python进阶教程
+==============
+
+#. `Python Scientific Lecture Notes <http://scipy-lectures.github.io/>`_
+#. `用Python做科学计算-基础篇 <http://hyry.dip.jp/tech/book/page/scipy/index.html>`_
+#. `Python科学计算 第二版 <http://hyry.dip.jp/tech/book/page/scipynew/index.html>`_
 
 模块
 ====
@@ -53,6 +56,7 @@ Python入门教程
 
 #. `PEP 8 <http://legacy.python.org/dev/peps/pep-0008/>`_ : Style Guide for Python Code
 #. `Awesome Python <https://github.com/vinta/awesome-python>`_ ：Python优秀模块列表
+#. `The Hitchhiker’s Guide to Python! <http://docs.python-guide.org/en/latest/>`_
 
 技术博客
 ========
