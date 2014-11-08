@@ -8,17 +8,18 @@ SITENAME = 'SeisMan'
 SITEURL = 'http://localhost:8000'
 TIMEZONE = 'Asia/Shanghai'
 TYPOGRIFY = True
+TYPOGRIFY_IGNORE_TAGS = []
 
 # Date
 LOCALE = ['zh_CN', 'en_US']
-DEFAULT_DATE = 'fs'  # 若metadata中未指定日期，则使用File System Timestamp
+DEFAULT_DATE = 'fs'
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
-DATE_FORMAT = {
+DATE_FORMATE = {
     'zh': ('zh_CN', '%Y-%m-%d'),
 }
 
 # Category
-USE_FOLDER_AS_CATEGORY = False  # 不以目录名为默认分类名
+USE_FOLDER_AS_CATEGORY = False   # 不以目录名为默认分类名
 DEFAULT_CATEGORY = '其他'
 DISPLAY_CATEGORIES_ON_MENU = False
 
@@ -66,13 +67,16 @@ MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']
 # Pygments
 PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 
+# Math
+DOCUTILS_SETTINGS = {'math_output': 'mathjax'}
+
 # Others
 LOG_FILTER = []
 READERS = {}
 IGNORE_FILES = ['.#*']
-WITH_FUTURE_DATES = False
+WITH_FUTURE_DATES = True
 RELATIVE_URLS = False
-INTRASITE_LINK_REGEX = '[{|](?P<what>.*?)[|}]'
+INTRASITE_LINK_REGEX = '[{|](?P<what>.*?)[|}]}]'
 
 # Paths
 STATIC_PATHS = [
@@ -82,12 +86,11 @@ STATIC_PATHS = [
 ]
 PATH = 'content'
 
-
 # Templates
 TEMPLATE_PAGES = {}
 DIRECT_TEMPLATES = ('index', 'tags', 'categories',
                     'archives', 'search', '404')
-PAGINATED_DIRECT_TEMPLATES = ('index',)
+PAGINATED_DIRECT_TEMPLdATES = ('index',)
 EXTRA_TEMPLATES_PATHS = []
 
 # URL settings
@@ -150,12 +153,12 @@ REVERSE_CATEGORY_ORDER = False
 # Plugins
 PLUGIN_PATHS = ['plugins', ]
 PLUGINS = [
-    'assets',               # 压缩CSS、JS
-    'extract_toc',          # 将toc从content提取出来，单独处理
-    'neighbors',            # 上一篇，下一篇
-    'related_posts',        # 相关博文
-    'sitemap',
-    'tipue_search',         # 搜索工具
+#     'assets',               # 压缩CSS、JS
+     'extract_toc',          # 将toc从content提取出来，单独处理
+     'neighbors',            # 上一篇，下一篇
+     'related_posts',        # 相关博文
+     'sitemap',
+     'tipue_search',         # 搜索工具
 ]
 
 # sitemap
@@ -173,7 +176,8 @@ SITEMAP = {
     }
 }
 
-# Theme
+
+# # Theme
 THEME = "themes/Elegant"
 THEME_STATIC_DIR = 'theme'
 THEME_STATIC_PATHS = ['static']
