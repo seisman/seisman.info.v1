@@ -51,8 +51,8 @@ http://igppweb.ucsd.edu/~gabi/crust1.html
 -  删除了官方包中的若干垃圾文件；
 -  加入了Makefile文件实现快速编译；
 
-- `crust1.0.tar.gz <http://pan.baidu.com/s/1sYQ8j>`_
-- `crust1.0-addon.tar.gz <http://pan.baidu.com/s/1oVgDX>`_
+- `crust1.0.tar.gz <http://seisman.qiniudn.com/downloads/crust1.0.tar.gz>`_
+- `crust1.0-addon.tar.gz <http://seisman.qiniudn.com/downloads/crust1.0-addon.tar.gz>`_
 
 内容
 ====
@@ -82,12 +82,12 @@ getCN1point
 
 ::
 
-    $ ./getCN1point 
-      .... reading all maps ... 
+    $ ./getCN1point
+      .... reading all maps ...
      enter center lat, long of desired tile (q to quit)
     50 100
     ilat,ilon,crustal type:   41 281
-     topography:    1.6400000    
+     topography:    1.6400000
       layers: vp,vs,rho,bottom
        1.50   0.00   1.02   1.64
        3.81   1.94   0.92   1.64

@@ -251,10 +251,10 @@ PS2：中国的国界在有些地方是有争议的，因而使用该国界数�
 
 数据打包下载地址，根据需求选择不同的压缩格式：
 
-- `China_Adm.7z <http://pan.baidu.com/s/1mZh7e>`_ 20.5M
-- `China_Adm.tar.bz2 <http://pan.baidu.com/s/18DRxj>`_ 33.2M
-- `China_Adm.zip <http://pan.baidu.com/s/1y40TA>`_ 37.4M
-- `China_Adm.tar.gz <http://pan.baidu.com/s/1vMAmX>`_ 43M
+- `China_Adm.7z <http://seisman.qiniudn.com/downloads/China_Adm.7z>`_ 20.5M
+- `China_Adm.tar.bz2 <http://seisman.qiniudn.com/downloads/China_Adm.tar.bz2>`_ 33.2M
+- `China_Adm.zip <http://seisman.qiniudn.com/downloads/China_Adm.zip>`_ 37.4M
+- `China_Adm.tar.gz <http://seisman.qiniudn.com/downloads/China_Adm.tar.gz>`_ 43M
 
 修订历史
 ========
