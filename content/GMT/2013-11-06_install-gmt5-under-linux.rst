@@ -2,7 +2,7 @@ GMT 5.1.1在Linux下的安装
 ########################
 
 :date: 2013-11-06 00:53
-:modified: 2014-09-14
+:modified: 2014-11-04
 :author: SeisMan
 :category: GMT
 :tags: 编译, GMT5, 安装
@@ -22,7 +22,6 @@ GMT 5.1.1 需要下载三个文件：
 #. GMT源码： http://gmtrac.soest.hawaii.edu/files/download?name=gmt-5.1.1-src.tar.gz
 #. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gshhg/gshhg-gmt-2.3.2.tar.gz
 #. 全球数字图表DCW： ftp://ftp.soest.hawaii.edu/dcw/dcw-gmt-1.1.1.tar.gz
-
 
 解决依赖关系
 ============
@@ -78,10 +77,12 @@ GMT5的依赖包，相对来说要复杂很多。
 安装GMT
 =======
 
-解决了依赖关系之后，就可以安装了。
+解决了依赖关系之后，就可以安装了。这里假定刚才下载的三个压缩文件都位于目录\ ``/home/seisman/Desktop/gmt``\ 中：
 
 .. code-block:: bash
 
+ $ pwd
+ /home/seisman/Desktop/gmt
  $ ls
  dcw-gmt-1.1.1.tar.gz gmt-5.1.1-src.tar.gz gshhg-gmt-2.3.2.tar.gz
  $ tar -zxvf gmt-5.1.1-src.tar.gz
@@ -91,21 +92,21 @@ GMT5的依赖包，相对来说要复杂很多。
  $ cp cmake/ConfigUserTemplate.cmake cmake/ConfigUser.cmake
  $ vi cmake/ConfigUser.cmake # 修改Config文件
 
-修改\ ``ConfigUser.cmake``\ 以满足用户自定义的需求，将需要修改的行最前面的“#”去掉，并根据实际情况修改，一个基本的示例如下::
+修改\ ``ConfigUser.cmake``\ 以对安装的细节进行自定义。一个基本的示例如下，找到相关行，并去掉该行最前面的”#“，再根据自身情况修改::
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.1.1")
     set (GMT_INSTALL_MODULE_LINKS FALSE)
-    set (GSHHG_ROOT "/home/seisman/Datas/gshhg-gmt-2.3.2")
+    set (GSHHG_ROOT "/home/seisman/Desktop/gmt/gshhg-gmt-.3.2")
     set (COPY_GSHHG TRUE)
-    set (DCW_ROOT "/home/seisman/Datas/dcw-gmt-1.1.1")
+    set (DCW_ROOT "/home/seisman/Desktop/gmt/dcw-gmt-1.1.1")
     set (COPY_DCW TRUE)
 
 - ``CMAKE_INSTALL_PREFIX``\ 设置GMT的安装路径；
-- ``GSHHG_ROOT``\ 为GSHHG数据的位置，需要对下载下来的压缩文件进行解压，并给出文件夹的绝对路径；\ ``COPY_GSHHG``\ 为TRUE会将GSHHG数据复制到\ ``GMT/share/coast``\ 下；
+- 设置\ ``GMT_INSTALL_MODULE_LINKS``\ 为FALSE，这样调用GMT模块时必须使用\ ``gmt modulename options``\ 的形式，也是GMT5推荐的使用方法；若该值为TRUE，则会在GMT的bin目录下建立多个指向\ ``gmt``\ 的形如\ ``pscoast``\ 的软链接；
+- ``GSHHG_ROOT``\ 为GSHHG数据的位置，需要对下载下来的压缩文件进行解压，并给出文件夹的\ **绝对路径**\ ；\ ``COPY_GSHHG``\ 为TRUE会将GSHHG数据复制到\ ``GMT/share/coast``\ 下；
 - ``DCW_ROOT``\ 设置DCW数据的位置，需给出DCW数据所在文件夹的绝对路径，\ ``COPY_DCW``\ 将数据复制到\ ``GMT/share/dcw``\ 下；
-- 设置GMT_INSTALL_MODULE_LINKS为FALSE，这样做的原因可以参考\ `GMT多版本共存 <{filename}/GMT/2013-11-09_multiple-versions-of-gmt.rst>`_
 
-PS: 如果系统中存在多个GMT的版本，按照上面的做法会存在多个GSHHG和DCW数据的副本。可以将这些数据放置在系统中固定的位置（比如我把这些数据都放在\ ``/home/seisman/Datas``\ 目录下），然后有两种处理方式：其一，设置COPY_GSHHG为FALSE，此时GMT在编译时会到GSHHG_ROOT指定的目录中寻找数据；其二，使用默认的GSHHG_ROOT以及COPY_GSHHG，在安装完成之后，到GMT/share目录下设置一个target为\ ``/home/seisman/Datas/gshhg-gmt-2.3.2``\ ，link name为coast的软链接即可。对于DCW数据，同理。
+PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个GSHHG和DCW数据的副本。可以将这些数据放置在系统中固定的位置（比如我把这些数据都放在\ ``/home/seisman/Datas``\ 目录下），然后有两种处理方式：其一，设置COPY_GSHHG为FALSE，则安装时不会将GSHHG数据复制到GMT目录下，而GMT命令运行时会到GSHHG_ROOT指定的目录中寻找数据；其二，使用默认的GSHHG_ROOT以及COPY_GSHHG，在安装完成之后，到GMT/share目录下设置一个target为\ ``/home/seisman/Datas/gshhg-gmt-2.3.2``\ ，link name为coast的软链接即可。对于DCW数据，同理。
 
 修改完毕后，进行编译::
 
@@ -116,8 +117,8 @@ PS: 如果系统中存在多个GMT的版本，按照上面的做法会存在多�
 ``cmake ..``\ 会检查GMT对软件的依赖关系，我的检查结果如下::
 
     *  Options:
-    *  Found GSHHG database       : /home/seisman/Datas/gshhg-gmt-2.3.2 (2.3.2)
-    *  Found DCW-GMT database     : /home/seisman/Datas/dcw-gmt-1.1.1
+    *  Found GSHHG database       : /home/seisman/Desktop/gmt/gshhg-gmt-2.3.2 (2.3.2)
+    *  Found DCW-GMT database     : /home/seisman/Desktop/gmt/dcw-gmt-1.1.1
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
     *  GDAL library               : /usr/lib64/libgdal.so
@@ -142,7 +143,6 @@ PS: 如果系统中存在多个GMT的版本，按照上面的做法会存在多�
     *  GMT_MANDIR                 : /opt/GMT-5.1.1/share/man
     -- Configuring done
     -- Generating done
-    -- Build files have been written to: /home/seisman/backup/seisware/GMT/5.1.1/gmt-5.1.1/build
 
 检查完毕，开始编译和安装::
 
@@ -152,9 +152,7 @@ PS: 如果系统中存在多个GMT的版本，按照上面的做法会存在多�
 自行编译文档
 ============
 
-如果系统中安装了sphinx和LaTeX，则可以自行编译文档。（其实直接用官方已经编译好的文档即可）
-
-::
+如果系统中安装了sphinx和LaTeX，则可以自行编译文档。一般情况下，不建议自行编译文档，官方提供的文档已经足够::
 
  $ make docs_man
  $ make docs_html
@@ -179,6 +177,35 @@ PS: 如果系统中存在多个GMT的版本，按照上面的做法会存在多�
 - 第二个命令修改\ ``~/.bashrc``\ ，将GMT4的bin目录加入到\ ``PATH``\ 中；
 - 第三个命令将GMT4的lib目录加入到动态链接库路径中，若为32位系统，则为\ ``lib``\ ；64位系统则为\ ``lib64``\ ；
 - 第四个命令是重新载入bash，相当于\ ``source ~/.bashrc``\ 。
+
+安装测试
+========
+
+在终端键入\ ``gmt``\ ，若出现如下输出，则安装成功::
+
+	$ gmt
+
+		GMT - The Generic Mapping Tools, Version 5.1.1 (r12968) [64-bit]
+	(c) 1991-2014 Paul Wessel, Walter H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe
+
+	Supported in part by the US National Science Foundation (www.nsf.gov)
+	and volunteers from around the world.
+
+	This program comes with NO WARRANTY, to the extent permitted by law.
+	You may redistribute copies of this program under the terms of the
+	GNU Lesser General Public License (http://www.gnu.org/licenses/lgpl.html).
+	For more information about these matters, see the file named LICENSE.TXT.
+
+	usage: gmt [options]
+	       gmt <module name> [<module options>]
+
+	options:
+	  --help            List and description of GMT modules.
+	  --version         Print version and exit.
+	  --show-datadir    Show data directory and exit.
+	  --show-bindir     Show directory of executables and exit.
+
+	if <module options> is '=' we call exit (0) if module exist and non-zero otherwise.
 
 
 参考来源
