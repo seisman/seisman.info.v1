@@ -11,6 +11,7 @@
 
 - 操作系统：Linux > iOS > Android > Windows
 - Linux发行版：CentOS 7.0
+- 浏览器： Google Chrome
 - 科学上网： `huhamhire-hosts`_ > `USTC LUG OpenVPN`_
 - 版本控制: Git
 - Git托管服务： `GitHub`_ > `USTC GitLab`_ > `GitCafe`_
@@ -32,11 +33,11 @@
 - PS阅读器： `zathura`_ > gs > gv > evince
 - Shell：zsh > bash
 - 高级编程语言： C > Fortran
-- 脚本语言： Python > Perl > Bash
+- 脚本语言： Python3 > Perl > Bash
 - 文本编辑器：Vim > Gedit > Sublime Text 3 > Sublime Text 2
 - 配色方案： `Solarized`_ （vim, terminal, PyCharm, Gedit）
 - RSS阅读器： `feedly`_
-- Python IDE：Vim > `PyCharm Communitu Edition`_
+- Python IDE： `PyCharm Communitu Edition`_ > Vim
 - 编程字体： `Droid Sans Mono`_
 - Windows下的SSH客户端: `Xshell Home/School`_
 

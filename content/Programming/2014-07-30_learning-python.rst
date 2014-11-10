@@ -18,7 +18,7 @@ Python入门教程
    - `pythondoc中文译本 <http://www.pythondoc.com/pythontutorial3/index.html>`_
 
 #. `廖雪峰的Python教程 <http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000>`_
-#. `Python学习笔记第二版 <https://github.com/qyuhen/book>`_ ：作者qyuhen@GitHub
+#. `Python学习笔记第二版 <https://github.com/qyuhen/book>`_ ：作者qyuhen@GitHub （PS：本书基于Python 2.7）
 #. `Think Python <http://www.greenteapress.com/thinkpython/thinkpython.html>`_
 
 Python进阶教程
