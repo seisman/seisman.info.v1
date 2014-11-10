@@ -76,7 +76,7 @@ READERS = {}
 IGNORE_FILES = ['.#*']
 WITH_FUTURE_DATES = True
 RELATIVE_URLS = False
-INTRASITE_LINK_REGEX = '[{|](?P<what>.*?)[|}]}]'
+INTRASITE_LINK_REGEX = '[{|](?P<what>.*?)[|}]'
 
 # Paths
 STATIC_PATHS = [
