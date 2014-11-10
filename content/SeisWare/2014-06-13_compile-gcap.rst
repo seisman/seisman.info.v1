@@ -34,13 +34,13 @@ gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目�
 
    网络上可以下载到NR的完整代码，这里仅给出gCAP所需的代码。下载该压缩包，解压，并将解压后的源代码放到gCAP的目录中。
 
-   gCAP_util下载：http://pan.baidu.com/s/1pJ2onaF
+   gCAP_util下载：http://seisman.qiniudn.com/downloads/gcap_utils.tar.gz
 
 #. 新的Makefile
 
    Makefile的修改幅度稍大，几乎算是重写了。下载之后，将其重命名为\ `Makefile`\ ，替换原目录中的同名文件。并根据自身情况修改SACHOME、FC、CC。
 
-   Makefile下载地址： http://pan.baidu.com/s/1pJDJ7nX
+   Makefile下载地址： http://seisman.qiniudn.com/downloads/Makefile.gCAP
 
 #. 编译
 

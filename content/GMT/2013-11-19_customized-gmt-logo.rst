@@ -52,18 +52,18 @@ gmt_timestamp
      	*   |------------------|
      	*   1         2        3
      	*/
-	 
+
     	time_t right_now;
     	char label[GMT_LEN256] = {""}, text[GMT_LEN256] = {""};
     	double dim[3] = {0.365, 0.15, 0.032};   /* Predefined dimensions in inches */
     	double unset_rgb[4] = {-1.0, -1.0, -1.0, 0.0};
-	 
+
     	/* Plot time string in format defined by format_time_stamp */
-	 
+
     	right_now = time ((time_t *)0);
     	strftime (text, sizeof(text), GMT->current.setting.format_time_stamp, localtime (&right_now));
     	sprintf (label, "  %s  ", text);
-	 
+
     	PSL_command (PSL, "%% Begin GMT time-stamp\nV\n");
     	PSL_setorigin (PSL, x, y, 0.0, PSL_FWD);
     	PSL_setlinewidth (PSL, 0.25);
@@ -71,10 +71,10 @@ gmt_timestamp
     	PSL_defunits (PSL, "PSL_g_w", dim[0]);  /* Size of the black [GMT] box */
     	PSL_defunits (PSL, "PSL_g_h", dim[1]);
     	PSL_deftextdim (PSL, "PSL_b", 8.0, label);  /* Size of the white [timestamp] box (use only length) */
-	 
+
     	/* When justification is not BL (justify == 1), add some PostScript code to move to the
        	location where the lower left corner of the time stamp box is to be drawn */
-	 
+
     	switch ((justify + 3) % 4) {
         	case 1: /* Center */
             	PSL_command (PSL, "PSL_g_w PSL_b_w add 2 div neg 0 T\n"); break;
@@ -87,25 +87,25 @@ gmt_timestamp
         	case 2: /* Top justify */
             	PSL_command (PSL, "0 PSL_g_h neg T\n"); break;
     	}
-	 
+
     	/* Now draw black box with GMT logo, and white box with time stamp */
-	 
+
     	PSL_setfill (PSL, GMT->current.setting.map_default_pen.rgb, true);
     	PSL_plotsymbol (PSL, 0.5*dim[0], 0.5*dim[1], dim, PSL_RECT);
     	PSL_plotcolorimage (PSL, 0.0, 0.0, dim[0], dim[1], PSL_BL, GMT_glyph, 220, 90, 1);
     	PSL_setfill (PSL, GMT->PSL->init.page_rgb, true);
     	PSL_command (PSL, "PSL_g_h PSL_b_w PSL_g_w 0 Sb\n");
     	PSL_plottext (PSL, dim[0], dim[2], 8.0, label, 0.0, 1, 0);
-	 
+
     	/* Optionally, add additional label to the right of the box */
-	 
+
     	if (U_label && U_label[0]) {
         	sprintf (label, "   %s", U_label);
         	PSL_plottext (PSL, 0.0, 0.0, -7.0, label, 0.0, 1, 0);
     	}
-	 
+
     	PSL_command (PSL, "U\n%% End GMT time-stamp\n");
-	 
+
     	/* Reset fill style to empty and no outline and reset linewidth */
     	PSL_setfill (PSL, unset_rgb, false);
     	PSL->current.linewidth = -1.0;
@@ -207,7 +207,7 @@ PSL_plotcolorimage的函数声明如下，取自GMT5.1.0/src/pslib.c：
 
 xbm格式类似于C语言的格式，也就是GMT\_glyph数组所需要的。
 
-#. 执行\ ``raster2xbm``\ ，(代码在这里\ `下载`_)，将输出保存到gmt\_plot.c中的char数组GMT_glyph中。
+#. 执行\ ``raster2xbm``\ ，(代码在这里\ `下载 <http://seisman.qiniudn.com/downloads/raster2xbm.tar.gz>`_\ )，将输出保存到gmt\_plot.c中的char数组GMT_glyph中。
 #. 将\ ``unsigned char GMT_glyph[2520]``\ 改成\ ``unsigned char GMT_glyph[46800]``\ ，其中46800=520\*90；
 #. gmt_timestamp中\ ``double dim[3] = {0.365, 0.15, 0.032};``\ 改成\ ``double dim[3] = {0.867, 0.15, 0.032};``
 #. gmt_timestamp中\ ``PSL_plotcolorimage (PSL, 0.0, 0.0, dim[0], dim[1], PSL_BL, GMT_glyph, 220, 90, 1);``\ 改成\ ``PSL_plotcolorimage (PSL, 0.0, 0.0, dim[0], dim[1], PSL_BL, GMT_glyph, 520, 90, 8);``
@@ -221,5 +221,3 @@ xbm格式类似于C语言的格式，也就是GMT\_glyph数组所需要的。
 -  这里改变的Logo的宽度而没有改变Logo的高度，主要是因为Logo与后面的时间戳共用一个高度，修改高度之后可能很多东西都要改，这样比较麻烦；
 -  GMT原始的Logo为黑白1-bit图，精度稍显不够，因而这里使用8-bit灰度图；当然也可以使用彩色图；
 -  GIMP可以直接保存为xbm格式的1-bit图，之所以不使用，一方面是因为1-bit精度不够，另一方面是GIMP保存的xbm格式的数据的字节序与本机的字节序不同，导致Logo相邻两列或四列的数据相互交换位置。
-
-.. _下载: http://pan.baidu.com/s/15Ud4K

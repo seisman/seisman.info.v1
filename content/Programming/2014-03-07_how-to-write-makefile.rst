@@ -21,8 +21,8 @@
 - 使用\ `Sphinx`_\ 制作文档
 - 项目主页：https://github.com/seisman/how-to-write-makefile
 - 网页在线版：http://htwm.readthedocs.org/zh_CN/latest/
-- PDF下载：http://pan.baidu.com/s/1o6DHFbO
-- epub下载：http://pan.baidu.com/s/1i3E7Qcd
+- PDF下载：http://seisman.qiniudn.com/downloads/Makefile.pdf
+- epub下载：http://seisman.qiniudn.com/downloads/Makefile.epub
 
 sphinx中文支持
 --------------
@@ -34,7 +34,7 @@ sphinx在利用LaTeX生成PDF时，对中文支持不够，因而修改sphinx如
 
    .. code-block:: python
 
-    if builder.config.language == 'zh_CN':    
+    if builder.config.language == 'zh_CN':
         self.elements['babel'] = ''
         self.elements['inputenc'] = ''
         self.elements['utf8extra'] = ''

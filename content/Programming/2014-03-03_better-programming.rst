@@ -22,7 +22,7 @@
 
 GitHub主页： https://github.com/seisman/better-programming
 
-PDF下载： http://pan.baidu.com/s/1ntK5pYp
+PDF下载： http://seisman.qiniudn.com/downloads/better-programming.pdf
 
 修订历史
 ========
