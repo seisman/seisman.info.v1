@@ -53,4 +53,3 @@ About
 学术讨论请通过邮件联系。
 
 - 电子邮箱: `seisman.info@gmail.com <mailto:seisman.info@gmail.com>`_
-- 新浪微博: `@SeisManInfo <http://weibo.com/seisman>`_
