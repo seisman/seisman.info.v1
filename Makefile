@@ -70,7 +70,7 @@ publish:
 
 pdf:
 	python makepdf.py --update
-	qrsync qiniu.conf
+	qrsync ~/.qiniu.conf
 
 github:
 	git push github $(BRANCH):master
