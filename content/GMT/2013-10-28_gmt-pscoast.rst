@@ -175,7 +175,7 @@ river可以分为如下几类：
 
 ::
 
-    -T[f|m][x]lon0/lat0/size[/info][:w,e,s,n:][+gint[/mint]] 
+    -T[f|m][x]lon0/lat0/size[/info][:w,e,s,n:][+gint[/mint]]
 
 -  lon0/lat0指定了比例尺中心的经纬度位置。如果使用-Tx，则lon0/lat0被解释为相对原点的x、y距离。
 -  size为指向标的直径；
@@ -248,6 +248,7 @@ pscoast可是使用-Gc剪切出陆地区域，接下来的绘图命令中只有�
 --------
 
 ::
+
  pscoast -JM12c -R250/300/30/60 -B5/5 -W1/1p -I1 -A0 -Gyellow -Slightblue -Cblue -Lf-70/33/33/1000+u > a.ps
 
 左右两图分别的位于区别是-A0和-A1000，右图显得更干净一些。图中顺便展示了比例尺的写法。
