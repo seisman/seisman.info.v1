@@ -21,6 +21,6 @@ Double Couple由四个参数描述：Strike、Dip、Rake、Moment；Moment Tenso
 
 原文链接： http://www.fcaglp.unlp.edu.ar/~esuarez/gmt/1998/0102.html
 
-代码下载： http://pan.baidu.com/share/link?shareid=511728517&uk=19892171
+代码下载： http://seisman.qiniudn.com/downloads/ten2dc.tar.gz
 
 PS：没看过代码，不确定原理，不确定正确性。

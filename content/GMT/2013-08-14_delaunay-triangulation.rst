@@ -144,4 +144,4 @@ v.list的内容大概如下：
 
 .. _博文: http://www.cnblogs.com/soroman/archive/2007/05/17/750430.html
 .. _维基百科: http://en.wikipedia.org/wiki/Delaunay_triangulation
-.. _station: http://pan.baidu.com/share/link?shareid=1489669713&uk=19892171
+.. _station: http://seisman.qiniudn.com/downloads/station.txt

@@ -13,7 +13,7 @@
 
 《\ `仪器响应的物理细节 <{filename}/SeisBasic/2013-06-26_physical-details-of-instrumental-response.rst>`_\ 》一文中说过，理论上仪器响应是由三个阶段构成的。常用的仪器响应格式包括SEED的RESP文件以及SAC的PZ文件。这里通过阅读一个RESP类型的仪器响应文件，来更进一步的理解仪器响应，顺便熟悉一下SEED格式。
 
-由于RESP的内容太长，就不在博文中贴出，本文所使用的RESP文件可以在\ `这里 <http://pan.baidu.com/share/link?shareid=2175477867&uk=19892171>`_\ 下载。
+由于RESP的内容太长，就不在博文中贴出，本文所使用的RESP文件可以在\ `这里 <http://seisman.qiniudn.com/downloads/RESP.IU.COLA.00.BHZ>`_\ 下载。
 
 RESP文件是从SEED文件中解压得到的，因而保留了SEED格式的很多传统。响应文件中Stage sequence number表示阶段号，这个例子中从1到3再到0；在每个stage中，根据SEED格式的要求又分为多个block，每个block分别代表该stage的部分信息。
 

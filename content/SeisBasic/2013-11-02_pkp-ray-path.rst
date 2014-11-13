@@ -18,7 +18,7 @@ PKP射线路径
 
 修改GMT脚本
 
-注：脚本太长，故删除部分数据贴在这里，完整脚本在\ `这里`_\ 下载。
+注：脚本太长，故删除部分数据贴在这里：
 
 .. code-block:: bash
 
@@ -69,5 +69,3 @@ PKP射线路径
  psxy -P -R -O -JP -m -A >> taup_path.ps <<END
  END
  rm .gmt*
-
-.. _这里: http://pan.baidu.com/s/1y1pvm

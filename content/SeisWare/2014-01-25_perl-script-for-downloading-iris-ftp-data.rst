@@ -26,7 +26,7 @@ IRIS FTP数据下载脚本
 -  检测本地数据的大小与ftp中数据的大小是否相等，保证了数据的完整性；若不相等，则不将文件名写入local.filelist。
 -  当脚本或网络由于外部因素出现中断导致数据不完整时，借助于wget断点续传功能，可以直接重新运行该脚本，而不做任何特殊处理。
 
-网盘下载：\ `irisFetch.pl`_
+`irisFetch.pl <https://gist.github.com/seisman/2ccefac15c4cd3239382>`
 
 代码预览：
 
@@ -55,41 +55,41 @@ IRIS FTP数据下载脚本
 	#   05/16/2013  SeisMan    Initial Coding
 	#   01/16/2014  SeisMan    Modify to a serial script
 	#
-	 
+
 	use strict;
 	use warnings;
 	use Net::FTP;
-	 
+
 	############# Personal Infomation #############
 	my $user = "XXXXXXXX";
 	my $passwd = 'xxxx@xxxxxxxxxx';
-	 
+
 	#############################################################
 	## DO NOT MODIFY BELOW UNLESS YOU KNOW WHAT YOU ARE DOING! ##
 	#############################################################
 	my $server = "ftp.iris.washington.edu";
 	my $login = "anonymous";
 	my $dir = "pub/userdata";
-	 
+
 	# download tools
 	my $cmd = "wget";
 	my $option = "-c";
-	 
+
 	# get filelist of ftp
 	print STDERR "Fetching filelist from $server...\n";
 	&ftp_list($server, $login, $passwd, $dir, $user);
-	 
+
 	# lists
 	my @ftp_list    = ();   # all the files in ftp
 	my @local_list  = ();   # files already downloaded
-	my @finish_list = ();   # files already downloaded 
+	my @finish_list = ();   # files already downloaded
 	　　　　　　　　　　　　　#  + files downloaded successfully in this run.
-	 
+
 	# read ftp filelist
 	open FTP, "< ftp.filelist" or die "Can't open ftp.filelist! \n";
 	@ftp_list = <FTP>;
 	close FTP;
-	 
+
 	# read local filefilst
 	if (-e "local.filelist") {
     	open LOCAL, "< local.filelist" or die "Can't open local.filelist\n";
@@ -97,12 +97,12 @@ IRIS FTP数据下载脚本
         	chomp @local_list;
     	close LOCAL;
 	}
-	 
+
 	############################ start downloading ##############################
 	foreach (@ftp_list) {
     	my ($ftp_file, $ftp_size) = split /\s+/, $_;
-	     
-    	# determine $ftp_file downloaded or not 
+
+    	# determine $ftp_file downloaded or not
     	my $in = 0;
     	foreach (@local_list) {
         	chomp;
@@ -111,40 +111,40 @@ IRIS FTP数据下载脚本
             	last;
         	}
     	}
-	 
+
     	if ( $in==1 ) {  # already downloaded
         	push @finish_list, $ftp_file;
     	} else { # need to be downloaded
         	my $err = system "$cmd $option $server/$dir/$user/$ftp_file";
         	# err = 0 means succeed in downloading
         	# err = 1 means downloading error
-        	# err = 2 means interrupt by user     
+        	# err = 2 means interrupt by user
         	push @finish_list, $ftp_file if $err==0 && -s $ftp_file == $ftp_size;
     	}
 	}
 	########################## end downloading ##################################
-	 
+
 	# update local.filelist
 	open OUT, "> local.filelist" or die "Can't open local.filelist\n";
 	foreach (@finish_list) {
     	print OUT "$_\n" if /seed/;
 	}
 	close OUT;
-	 
+
 	sub ftp_list() {
     	my ($server, $login, $passwd, $dir, $user) = @_;
-	 
+
     	my $ftp = Net::FTP->new(
         	Host    =>   $server,
         	Debug   =>   0,
     	) or die "Can't connect to $server\n";
-	 
+
     	$ftp->login($login,$passwd);
     	$ftp->cwd("$dir/$user");
     	my @files = $ftp->dir();
     	$ftp->quit();
-	 
-    	open OUT, "> ftp.filelist"; 
+
+    	open OUT, "> ftp.filelist";
     	foreach (@files) {
         	if (/seed$/){
             	my @line = split;
@@ -162,4 +162,3 @@ IRIS FTP数据下载脚本
 -  该脚本经过测试，但不对其任何特性做任何保证；由于使用该脚本造成的任何损失或损害，由用户自己负责；
 -  任何疑问、评论、Bug报告，可以在当前页面留言，或邮件联系seisman.info@gmail.com；
 
-.. _irisFetch.pl: http://pan.baidu.com/s/1jGDiSx4

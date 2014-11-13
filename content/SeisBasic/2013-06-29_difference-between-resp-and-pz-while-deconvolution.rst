@@ -13,11 +13,11 @@
 
 前面介绍了\ `仪器响应文件RESP <{filename}/SeisBasic/2013-06-27_simple-analysis-of-resp.rst>`_\ 和\ `仪器响应文件SAC_PZ <{filename}/SeisBasic/2013-06-28_simple-analysis-of-sac-pz.rst>`_\ ，下面分别用两种响应文件进行去仪器响应，比较二者的区别。
 
-样例下载地址： 
+样例下载地址：
 
-- `SAC数据 <http://pan.baidu.com/share/link?shareid=3171267740&uk=19892171>`_
-- `RESP文件 <http://pan.baidu.com/share/link?shareid=2175477867&uk=19892171>`_
-- `PZ文件 <http://pan.baidu.com/share/link?shareid=3164978357&uk=19892171>`_
+- `SAC数据 <http://seisman.qiniudn.com/downloads/2013.144.05.40.09.0195.IU.COLA.00.BHZ.M.SAC>`_
+- `RESP文件 <http://seisman.qiniudn.com/downloads/RESP.IU.COLA.00.BHZ>`_
+- `PZ文件 <http://seisman.qiniudn.com/downloads/SAC_PZs_IU_COLA_BHZ_00>`_
 
 RESP去除仪器响应
 ================

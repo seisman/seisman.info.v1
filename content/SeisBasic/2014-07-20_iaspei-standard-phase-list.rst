@@ -13,11 +13,11 @@
 
 本文暂时不打算介绍震相的命名规则，仅给出相关文章，其中已经说的很清楚。
 
-Storchak et al.(2003)：\ `PDF下载 <http://pan.baidu.com/s/1hqkSvdy>`_\ 
+Storchak et al.(2003)：\ `PDF下载 <ftp://isc-mirror.iris.washington.edu/pub/docs/srl_sspl.pdf>`_\
 
 网页版：
 
 #. 英文版：http://www.isc.ac.uk/standards/phases/
-#. 中文版：http://www.csndmc.ac.cn/newweb/doc/IASPEI_phase.htm   
+#. 中文版：http://www.csndmc.ac.cn/newweb/doc/IASPEI_phase.htm
 
 推荐顺序为：PDF版本>英文网页版>中文网页版。
