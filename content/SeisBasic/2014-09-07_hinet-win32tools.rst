@@ -87,6 +87,20 @@ win2sac_32
 
 输出文件名格式为\ ``XXXX.Y.ZZZ``\ ，其中\ ``XXXX``\ 为台站代码，\ ``Y``\ 为分量代码，\ ``ZZZ``\ 为BIN或ASC或sacfile所指定的值。
 
+输出文件的SAC的头段信息
+~~~~~~~~~~~~~~~~~~~~~~~
+
+该命令在生成SAC文件的同时会将相关信息写入SAC头段中，具体如下：
+
+- npts, b
+- leven
+- ievtyp, idep
+- nzyear, nzjday, nzhour, nzmin, nzsec, nzmsec
+- kstnm, kcmpnm, knetwk, cmpaz, cmpinc, stla, stlo, stel
+- kevnm
+
+PS：生成的SAC文件中头段e为未定义值。
+
 参数文件prmfile格式
 ~~~~~~~~~~~~~~~~~~~
 
@@ -186,3 +200,4 @@ dewin_32
 
 - 2014-09-07：初稿；
 - 2014-11-03：``catwin32``\ 命令要使用\ ``-s``\ 选项；
+- 2014-11-14：加入了“生成的SAC文件的头段信息”一节；
