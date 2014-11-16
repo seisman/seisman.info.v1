@@ -38,7 +38,6 @@ SOCIAL_PROFILE_LABEL = 'Contact Me'
 SOCIAL = (
     ('Email', 'mailto:seisman.info@gmail.com'),
     ('GitHub', 'http://github.com/seisman'),
-    ('Weibo', 'http://weibo.com/seisman'),
     ('RSS', FEED_DOMAIN + '/' + FEED_ATOM),
     ('CNY', SITEURL + '/donations.html'),
 )
