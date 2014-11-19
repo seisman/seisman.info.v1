@@ -3,7 +3,6 @@ SAC的Bug汇总
 
 :author: SeisMan
 :date: 2014-07-09 10:25
-:modified:
 :category: SAC
 :tags: Bug
 :slug: sac-bugs
