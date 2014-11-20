@@ -153,12 +153,21 @@ REVERSE_CATEGORY_ORDER = False
 # Plugins
 PLUGIN_PATHS = ['plugins', ]
 PLUGINS = [
-#     'assets',               # 压缩CSS、JS
+     'assets',               # 压缩CSS、JS
      'extract_toc',          # 将toc从content提取出来，单独处理
      'neighbors',            # 上一篇，下一篇
      'related_posts',        # 相关博文
      'sitemap',
      'tipue_search',         # 搜索工具
+]
+
+# asset
+ASSET_SOURCE_PATHS = ['static']
+ASSET_CONFIG = [
+    ('cache', False),
+    ('manifest', False),
+    ('url_expire', False),
+    ('versions', False),
 ]
 
 # sitemap
