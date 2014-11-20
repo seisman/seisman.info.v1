@@ -207,3 +207,4 @@ LANDING_PAGE_ABOUT = {}
 PROJECTS = []
 
 QINIU = "http://seisman.qiniudn.com"
+GITHUB = "http://github.com/seisman/seisman.info"
