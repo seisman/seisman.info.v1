@@ -3,7 +3,7 @@ Collections
 
 :slug: collections
 :date: 2013-06-21
-:modified: 2014-02-20
+:modified: 2014-11-20
 
 本页面收集了本博客中常更新的博文或系列性博文。
 
@@ -15,3 +15,4 @@ Collections
 #. `Python相关资源 <{filename}/Programming/2014-07-30_learning-python.rst>`_
 #. `个人偏好列表 <{filename}/FreeTalk/2014-08-05_personal-preferences.rst>`_
 #. `Hi-net系列博文 <{filename}/SeisBasic/2014-08-25_hinet-things.rst>`_
+#. `用CentOS 7打造合适的科研环境 <{filename}/Linux/2014-07-15_linux-environment-for-seismology-research.rst>`_
