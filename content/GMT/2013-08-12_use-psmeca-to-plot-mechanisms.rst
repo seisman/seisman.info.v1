@@ -68,7 +68,7 @@ Harvard CMT格式（现在的Global CMT）
 
     X Y depth strike1 dip1 rake1 strike2 dip2 rake2 mantissa exponent newX newY title
 
-这里给出了两个strike、dip、rake，分别代表两个不同的节面。mantissa和exponent分别代表地震矩的尾数和指数部分（这里地震矩的单位为dyne-cm）。同样scale指定的是震级为5的震源球大小（相当于地震矩为\ :math:`4.0e^{23} dyne \cdot cm`\ ，此处mantissa=4.0，exponent=23）。（exponent这里可能有bug，因为当其值为0或者其他比较小的整数时，其震源球反而很大）
+这里给出了两个strike、dip、rake，分别代表两个不同的节面。mantissa和exponent分别代表地震矩的尾数和指数部分（这里地震矩的单位为dyne-cm）。同样scale指定的是震级为5的震源球大小（相当于地震矩为\ :math:`4.0\times 10^{23} dyne \cdot cm`\ ，此处mantissa=4.0，exponent=23）。（exponent这里可能有bug，因为当其值为0或者其他比较小的整数时，其震源球反而很大）
 
 −Sa
 ---
@@ -104,7 +104,7 @@ Harvard CMT解，矩阵迹为0
 
     X Y depth mrr mtt mff mrt mrf mtf exp newX newY title
 
-mrr等为地震矩的六个分量，exp代表地震矩的指数部分，例如mtt=2.0，exp=26，则代表实际的\ :math:`mtt=2.0e^{26}dyne \cdot cm`\ 。还不清楚r、t、f分别代表哪个方向，可能是东西南北，也可能是大圆路径。
+mrr等为地震矩的六个分量，exp代表地震矩的指数部分，例如mtt=2.0，exp=26，则代表实际的\ :math:`mtt=2.0 \times 10^{26}dyne \cdot cm`\ 。GCMT所使用的rtf坐标，实际上是USE坐标系。
 
 -Sx|y|t
 ---------
@@ -169,8 +169,8 @@ mrr等为地震矩的六个分量，exp代表地震矩的指数部分，例如mt
  #!/bin/bash
  PS=meca1.ps
 
- pscoast -Rg -JQ10i -B60/30 -A10000 -Wthin -G200 -K > ${PS}
- psmeca -R -J -Sc1 -W1p -O << EOF >> ${PS}
+ pscoast -Rg -JQ10i -B60/30 -A10000 -Wthin -G200 -K > $PS
+ psmeca -R -J -Sc1 -W1p -O << EOF >> $PS
  -176.96 -29.25 47.8 202 30 93 18 60 88 9.56 26 0 0 010176A
  EOF
 
@@ -188,9 +188,9 @@ mrr等为地震矩的六个分量，exp代表地震矩的指数部分，例如mt
  #!/bin/bash
  PS=meca2.ps
 
- pscoast -Rg -JQ10i -B60/30 -A10000 -Wthin -G200 -K > ${PS}
+ pscoast -Rg -JQ10i -B60/30 -A10000 -Wthin -G200 -K > $PS
  #plot mechanism
- psmeca -R -J -Sc1/12/0.2 -C0.5pP2p -Egrey -Gred -L1p -W1p -O << EOF >> ${PS}
+ psmeca -R -J -Sc1/12/0.2 -C0.5pP2p -Egrey -Gred -L1p -W1p -O << EOF >> $PS
  -176.96 -29.25 47.8 202 30 93 18 60 88 9.56 26 -160 -10 010176A
  EOF
 
@@ -210,8 +210,8 @@ Jost M L, Herrmann R B. A student’s guide to and review of moment tensors[J]. 
 修订历史
 =========
 
--  2013-05-10：初稿；
--  2013-05-14：在例子中简单解释了GCMT的默认GMT输入格式。
--  2013-06-05：若要将震源球移动到新位置，需要设定newX和newY为新的经纬度，且给出-C选项。
--  2013-06-20：去除了第一个例子中的-T0选项。
--  2014-06-09：修正了示例中-K和-O的错误；
+- 2013-05-10：初稿；
+- 2013-05-14：在例子中简单解释了GCMT的默认GMT输入格式。
+- 2013-06-05：若要将震源球移动到新位置，需要设定newX和newY为新的经纬度，且给出-C选项。
+- 2013-06-20：去除了第一个例子中的-T0选项。
+- 2014-06-09：修正了示例中-K和-O的错误；
