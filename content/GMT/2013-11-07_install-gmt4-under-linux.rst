@@ -61,7 +61,7 @@ GMT4主要依赖于netCDF，可以直接使用官方源中自带的netCDF包\ [*
 
 .. [*] GMT4可以使用netCDF3或netCDF4，但新版本的GMT正在逐渐放弃对netCDF3的支持，因而建议\ **使用netCDF4**\ ，且建议\ **不要自行编译netCDF4**\ 。
 
-.. [*] CentOS的官方源中没有netCDF，需要首先添加EPEL源再安装netCDF。
+.. [*] CentOS和RHEL的官方源中没有netCDF，需要首先添加EPEL源再安装netCDF。
 
 安装GMT
 =======
