@@ -3,17 +3,24 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2014-11-20
+:modified: 2014-11-23
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
 
-这篇博文记录了我用CentOS 7搭建\ **地震学科研环境**\ 的过程，仅供未来重新装机时参考。
+这篇博文记录了我用CentOS 7搭建\ **地震学科研环境**\ 的过程，供我个人在未来重装系统时参考。对于其他地震学科研人员，也许有借鉴意义。
+
+需要注意：本文所有操作均在CentOS 7下完成，其他发行版或多或少与CentOS 7不同，因而仅供参考。
 
 .. contents::
 
+安装CentOS
+==========
+
+CentOS 7的安装与其他Linux发行版的安装差不多，个别地方稍有不同。
+
 准备工作
-========
+--------
 
 - U盘一个，用于制作CentOS启动盘，U盘容量700M以上；
 - 下载CentOS 7的\ `LiveCD ISO镜像文件 <http://mirrors.ustc.edu.cn/centos/7/isos/x86_64/CentOS-7.0-1406-x86_64-livecd.iso>`_
@@ -25,11 +32,6 @@
 
 #. Linux下可以通过\ ``dd``\ 命令制作启动盘，但由于对原理不够了解，偶尔会导致制作失败，或制作成功后U盘容量有问题，还是用Windows下的Universal USB installer比较靠谱。
 
-安装过程
-========
-
-CentOS 7的安装过程与其他Linux发行版的安装过程差不多，基本就是鼠标点点点，唯一比较麻烦的是分区。
-
 分区
 ----
 
@@ -40,47 +42,38 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 - 默认的文件系统为XFS；
 - 分区细节
 
-  - \ ``/boot``\ ：CentOS自动分配了100M；
-  - \ ``/``\ ：30G
-  - \ ``swap``\ ：64G，与物理内存大小一致
-  - \ ``/opt``\ ：70G，用于安装第三方程序
-  - \ ``/home``\ ：余下的全部空间
-
-一些原则
---------
-
-为了尽可能地避免因为瞎折腾而导致不得不重装系统，设定如下系统使用原则：
-
-#. 仅使用CentOS官方源以及EPEL源，以避免一个软件包同时存在于多个源可能引起的版本冲突；
-#. 个别源只包含一个或几个软件包，可以确保不会与官方源和EPEL源冲突，则允许使用该源；
-#. 对于系统级别或较底层的软件包，只使用\ ``yum``\ 安装，绝不自己编译源代码；
-#. 对于源中没有的软件包，一律编译并安装至\ ``/opt``\ 目录下；
-#. 对于不需要编译，解压即可使用的软件包，一律编译并安装至\ ``/opt/``\ 目录下；
-#. 对于编译后只生成一两个二进制文件的小型代码，一律将二进制文件复制到\ ``${HOME}/bin``\ 下；
-
+  - ``/boot``\ ：CentOS自动分配了100M；
+  - ``/``\ ：30G
+  - ``swap``\ ：64G，与物理内存大小一致
+  - ``/opt``\ ：70G。个人习惯是将第三方软件都安装在\ ``/opt``\ 下，所以留了很大空间
+  - ``/home``\ ：余下的全部空间
 
 对系统的一些修改
 ================
 
+一些原则
+--------
+
+为了搭建一个稳定的系统，尽量避免因为各种瞎折腾而导致的系统问题，订立了一些软件安装的原则。具体参见《\ `CentOS 7下的软件安装方法与策略 <{filename}/Linux/2014-10-23_how-to-install-softwares-under-centos-7.rst>`_\ 》。
+
 给当前用户root权限
 ------------------
 
-CentOS默认没有给一般用户root权限，所以安装软件的时候经常需要\ ``su``\ 切换到root用户再进行操作。相对来说很麻烦。因而需要给当前用户root权限。
+默认情况下，一般用户是没有root权限的，在安装软件时需要\ ``su``\ 。对于习惯了使用\ ``sudo``\ 的人来说，还是有些麻烦。所以，要先给当前用户root权限
 
-``su``\ 切换至root用户，用如下命令编辑\ ``sudo``\ 的配置文件::
+假设用户名为seisman，要授予他root权限，则要修改配置文件\ ``/etc/sudoers``\ ::
 
-    sudoedit /etc/sudoers
-
-在其中找到语句\ ``root ALL=(ALL) ALL``\ ，在其下添加如下语句::
-
-    seisman ALL=(ALL)       ALL
+    $ su
+    # echo 'seisman ALL=(ALL) ALL' >> /etc/sudoers # 向配置文件中加入语句
+    # tail -1 /etc/sudoers  # 检查一下是否正确
+    seisman ALL=(ALL) ALL
 
 其中seisman为当前用户名。
 
 修改主机名
 ----------
 
-#. 修改\ ``/etc/hostname``\ ,将其中的\ ``localhost.localdomain``\ 改成\ ``saturn.geolab``\ 。（装机过程中若填入了主机名，则可能该文件不需要修改）
+#. 修改\ ``/etc/hostname``\ ,将其中的\ ``localhost.localdomain``\ 改成\ ``saturn.geolab``
 #. 修改\ ``/etc/hosts``\ 将其中的::
 
     127.0.0.1               localhost.localdomain localhost
@@ -93,36 +86,34 @@ CentOS默认没有给一般用户root权限，所以安装软件的时候经常�
 
     sudo service network restart
 
-添加EPEL源
-----------
+添加第三方源
+------------
 
-EPEL即Extra Packages for Enterprise Linux 。CentOS为了保证系统的稳定性，只提供了少量的软件包，无法满足更多的需求。EPEL为CentOS提供了额外10000多个软件包，而且在不替换系统组件方面下了很多功夫，因而可以放心使用。
+CentOS有很多第三方源，比如EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge等。根据上面提到的软件安装原则，为了尽可能保证系统的稳定性，此处大型第三方源只添加EPEL源。
+
+EPEL即Extra Packages for Enterprise Linux，为CentOS提供了额外的10000多个软件包，而且在不替换系统组件方面下了很多功夫，因而可以放心使用。
 
 .. code-block:: bash
 
-   wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
-   sudo rpm -ivh epel-release-7-2.noarch.rpm
-   sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+   sudo yum install epel-release
 
-除了EPEL之外，还有很多第三方软件源，如repoforge等，具体可以参考CentOS的\ `wiki页面 <http://wiki.centos.org/zh/AdditionalResources/Repositories>`_\ ，但由于不同软件源之间可能存在相同名称不同版本的软件，因而同时使用多个软件源时可能会造成冲突。根据上面所说原则，应只使用EPEL源。
+执行完该命令后，在\ ``/etc/yum.repo.d``\ 目录下会多一个\ ``epel.repo``\ 文件。
 
 安装yum-axelget
 ---------------
 
-`yum-axelget`_\ 是EPEL提供的一个yum插件。使用该插件后用yum安装软件时可以并行下载，大大提高了软件的下载速度。
+`yum-axelget`_\ 是EPEL提供的一个yum插件。使用该插件后用yum安装软件时可以并行下载，大大提高了软件的下载速度，减少了下载的等待时间::
 
-::
-
-  sudo yum install yum-axelget
+    sudo yum install yum-axelget
 
 第一次全面升级
 --------------
 
-::
+在进一步操作之前，先把已经安装的软件包都升级到最新版::
 
-  sudo yum update
+    sudo yum update
 
-这个升级估计需要一段时间。。
+要更新的软件包有些多，可能需要一段时间。不过有了yum-axelget插件，速度已经快了很多啦。
 
 开发环境的安装
 ==============
@@ -132,14 +123,33 @@ GCC系列
 
 ::
 
-    yum install gcc                         # C编译器
-    yum install gcc-c++                 　  # C++编译器
-    yum install gcc-gfortran                # Fortran编译器
-    yum install compat-gcc-44               # 兼容gcc 4.4
-    yum install compat-gcc-44-c++           # 兼容gcc-c++ 4.4
-    yum install compat-gcc-44-gfortran      # 兼容gcc-fortran 4.4
-    yum install compat-libf2c-34            # g77 3.4.x兼容库
-    yum install gdb                         # 代码调试器
+    sudo yum install gcc                     # C编译器
+    sudo yum install gcc-c++                 # C++编译器
+    sudo yum install gcc-gfortran            # Fortran编译器
+    sudo yum install compat-gcc-44           # 兼容gcc 4.4
+    sudo yum install compat-gcc-44-c++       # 兼容gcc-c++ 4.4
+    sudo yum install compat-gcc-44-gfortran  # 兼容gcc-fortran 4.4
+    sudo yum install compat-libf2c-34        # g77 3.4.x兼容库
+    sudo yum install gdb                     # 代码调试器
+
+软件开发辅助工具
+----------------
+
+::
+
+    sudo yum install make    # make
+    sudo yum install cmake   # Cmake
+    sudo yum install git
+
+Clang系列
+---------
+
+Clang可以认为是GCC的替代品，可以用于编译C、C++、Objective-C和Objective-C++。其提供了更友好的报错信息，在有些方面比GCC更友好，同时其提供了一个代码静态分析器，可以用于分析代码中可能出现的bug和内存溢出问题。
+
+::
+
+    sudo yum install clang             # clang编译器
+    sudo yum install clang-analyzer    # clang静态分析器
 
 Intel系列
 ---------
@@ -148,67 +158,79 @@ Intel的大部分软件都是非开源且收费的，但同时部分软件也提
 
 Intel软件的申请以及安装参考《\ `Intel非商业免费开发工具 <{filename}/Programming/2013-09-10_intel-non-commercial-software.rst>`_\ 》。
 
-Clang系列
----------
-
-Clang是一个C、C++、Objective-C和Objective-C++编程语言的编译器前端，其采用了LLVM作为其后端。它的目标是提供一个GCC的替代品。包括Clang前端和Clang静态分析器两个部分。
-
-::
-
-    yum install clang               # clang编译器
-    yum install clang-analyzer      # clang静态分析器
-
-其中clang静态分析器可以用于分析代码中可能出现的bug。
-
 Java环境
 --------
 
-::
+Java的一大特色在于跨平台，只有安装了Java运行环境，即可运行Java程序::
 
     yum install java                        # java运行环境
 
 Perl环境
 --------
 
-CentOS 7.0自带了perl 5.16.3，大概是两年前发布的版本，基本可以满足日常需求。
+CentOS 7.0自带了Perl 5.16.3（2013年03月11日发布），目前的最新版本为5.20.1（2014年09月14日发布）。
 
-perl提供了cpan命令，用于安装模块。当需要安装某模块时应先用yum搜索源中是否有已打包好的模块，若有则直接安装，若无则再考虑用cpan安装模块。
+系统自带Perl
+~~~~~~~~~~~~
 
-::
+系统自带Perl，就目前来看，版本不算老，基本够用。官方源和EPEL源中提供了1000多个模块，可以直接用yum安装::
 
     sudo yum install perl-Parallel-ForkManager  # 并行模块
 
-若想要使用最新版本的perl，可以使用\ `plenv <{filename}/Programming/2013-11-03_perl-plenv.rst>`_\ 安装新版本的perl，并使用其提供的cpanm安装模块::
+若源中没有已打包好的模块，也可以使用perl自带的cpan来安装模块。
+
+优先级：yum > cpan。
+
+plenv管理新版本
+~~~~~~~~~~~~~~~
+
+若需要使用最新版本的perl，可以使用\ `plenv <{filename}/Programming/2013-11-03_perl-plenv.rst>`_\ 安装新版本的perl，并使用plenv提供的cpanm命令安装模块::
 
     cpanm install Parallel::ForkManager # 并行模块
 
 Python环境
 ----------
 
-CentOS 7.0自带Python 2.7.5，基本可以满足需求。与Perl类似，需要相关模块时优先使用yum源中提供的包，尽量避免使用pip安装模块。
+CentOS 7.0自带Python 2.7.5，目前Python 2的最新版本为2.7.8，Python 3的最新版本为3.4.2。
 
-由于Python2和Python3的不完全兼容，因而很多时候还需要安装一个Python3，这就需要管理多个Python版本。
+系统自带Python
+~~~~~~~~~~~~~~
 
-- 安装\ `pyenv <{filename}/Programming/2013-10-04_python-pyenv.rst>`_\ 来管理多个Python版本
-- 利用pyenv安装anaconda3（即Python 3.4）。
-- 申请anaconda的学术版License，并更新anaconda。
+系统自带的Python 2.7.5，基本已经够用，Python 2常用的模块在官方源或EPEL源中也有有编译好的包，因而直接通过yum安装即可::
 
-其他软件
---------
+    sudo yum install python-matplotlib  # 2D绘图库
+    sudo yum install PyQt4  # Qt4的Python绑定
+    sudo yum install numpy  # 数组操作库
+    sudo yum install scipy  # 科学计算库
+    sudo yum install python-requests  # 网页请求
+    sudo yum install python-docopt  # 命令行参数分析器
 
-::
+pyenv管理Python3
+~~~~~~~~~~~~~~~~
 
-    yum install cmake
+Python2与Python3之间是不完全兼容的，而我以Python3为主，所以需要安装一个Python3。
+
+首先，安装\ `pyenv <{filename}/Programming/2013-10-04_python-pyenv.rst>`_\ 来管理多个Python版本，然后利用pyenv安装anaconda3（即Python 3.4）。anaconda自带了众多科学计算所需的包，免去了安装的麻烦，对于其他包，则可以利用Python自带的pip进行安装::
+
+    pip install requests
+    pip install docopt
 
 驱动安装
 ========
 
-安装显卡驱动
-------------
+显卡驱动
+--------
 
-Linux默认只使用开源的显卡驱动，就目前的情况来看，开源驱动的效果还是不错的，但跟官方的闭源驱动相比还是有一定差距的。最明显的区别是，在使用SAC的ppk功能放大波形时，使用开源驱动会出现延迟，而使用官方闭源则整个过程非常顺畅。
+Linux默认只使用开源的显卡驱动，就目前的情况来看，开源驱动的效果还是不错的，但跟官方的闭源驱动相比还是有一定差距。最明显的区别是，在使用SAC的ppk功能放大波形时，使用开源驱动会出现延迟，而使用官方闭源则整个过程非常顺畅。
 
 驱动的安装过程参考“\ `安装NVIDIA显卡驱动 <{filename}/Linux/2014-07-13_install-nvidia-drivers-under-linux.rst>`_\ ” 一文。需要注意的是，在安装显卡驱动之后，若更新了kernel，会出现无法进入kernel的情况，即每次更新kernel之后都需要重新安装显卡驱动，这点需要注意。
+
+NTFS驱动
+--------
+
+CentOS下默认无法挂载NTFS格式的硬盘。需安装nfts-3g即可实现即插即用::
+
+    sudo yum install ntfs-3g
 
 日常软件安装
 ============
@@ -242,10 +264,19 @@ Google Chrome浏览器
 
     sudo yum install google-chrome-stable
 
+Flash插件
+---------
+
+::
+
+    sudo rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
+    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+    sudo yum install flash-plugin
+
 中文输入法
 ----------
 
-刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是ibus，使用效果一般。fcitex是更好的选择，基于fcitx框架的搜狗输入法或许是更更好的选择。
+刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是ibus，使用效果一般。fcitx是更好的选择，基于fcitx框架的搜狗输入法或许是更更好的选择。
 
 参考\ `CentOS7安装搜狗输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_\ 。
 
@@ -256,15 +287,13 @@ Google Chrome浏览器
 
     yum install nfs-utils       # 挂载NFS文件系统所必须
     yum install p7zip           # 7z格式压缩和解压
-    yum install git             # 源码版本控制
     yum install xclip           # 终端的文本复制工具
     yum install ImageMagick     # 其中的import和convert命令很有用
-    yum install ntfs-3g         # 用于挂载NTFS格式的硬盘
 
 使用zsh
 --------
 
-CentOS以及大多数Linux发行版的默认shell都是bash。zsh基本完全兼容于zsh，并提供了命令补全等方便的特性，且具有很高的可配置性。\ `oh my zsh <https://github.com/robbyrussell/oh-my-zsh>`_\ 是一群人一起维护的一套zsh配置文件。
+CentOS以及大多数Linux发行版的默认shell都是bash。zsh基本完全兼容于bash，并提供了命令补全等方便的特性，且具有很高的可配置性。当然，对于一般用户而言，为了配置zsh而去学一堆东西有些过了。\ `oh my zsh <https://github.com/robbyrussell/oh-my-zsh>`_\ 是一群人一起维护的一套zsh配置文件。
 
 安装zsh::
 
