@@ -63,7 +63,7 @@ GMT5的依赖包，相对来说要复杂很多。
 
 对于RHEL/CentOS/Fedora::
 
-    sudo yum install ghostscript cmake netcdf-devel gdal-devel
+    sudo yum install ghostscript cmake netcdf netcdf-devel gdal gdal-devel
 
 一些需要注意的地方:
 

@@ -57,7 +57,7 @@ GMT4主要依赖于netCDF，可以直接使用官方源中自带的netCDF包\ [*
 
 对于RHEL/CentOS/Fedora\ [*]_\ ::
 
-    sudo yum install netcdf-devel gdal-devel
+    sudo yum install netcdf netcdf-devel gdal gdal-devel
 
 .. [*] GMT4可以使用netCDF3或netCDF4，但新版本的GMT正在逐渐放弃对netCDF3的支持，因而建议\ **使用netCDF4**\ ，且建议\ **不要自行编译netCDF4**\ 。
 
