@@ -66,11 +66,13 @@ Python多版本共存之pyenv
 
 .. code-block:: bash
 
-    $ pyenv install 3.4.1
+    $ pyenv install 3.4.1 -v
 
 该命令会从github上下载python的源代码，并解压到/tmp目录下，然后在/tmp中执行编译工作。若依赖包没有安装，则会出现编译错误，需要在安装依赖包后重新执行该命令。
 
 对于科研环境，更推荐安装专为科学计算准备的Anaconda发行版，\ ``pyenv install anaconda-2.1.0``\ 安装2.x版本，\ ``pyenv install anaconda3-2.1.0``\ 安装3.x版本；
+
+Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站下载，并将下载得到的文件放在\ ``~/.pyenv/cache``\ 目录下，则pyenv不会重复下载。
 
 更新数据库
 ----------
