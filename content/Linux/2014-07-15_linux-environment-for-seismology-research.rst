@@ -357,18 +357,27 @@ HostTool：https://hosts.huhamhire.com/
 安装TeXLive 2014
 ----------------
 
-参考\ `本文 <{filename}/Programming/2013-07-11_install-texlive-under-linux.rst>`_\ 。
+根据\ `Linux下安装TeXLive <{filename}/Programming/2013-07-11_install-texlive-under-linux.rst>`_\ 一文，从ISO文件中安装TeXLive，安装完成后，更新模块::
+
+    tlmgr update --all
 
 地球物理相关
 ============
 
-#. 安装SAC，参考《\ `SAC参考手册 <{filename}/SAC/2013-07-06_sac-manual.rst>`_\ 》中的相关章节。
-#. \ `安装GMT4 <{filename}/GMT/2013-11-07_install-gmt4-under-linux.rst>`_
-#. \ `安装GMT5 <{filename}/GMT/2013-11-06_install-gmt5-under-linux.rst>`_
-#. \ `安装TauP <{filename}/SeisWare/2014-10-08_install-taup.rst>`_
-#. 安装rdseed（seed格式转SAC格式）
-#. 安装win32tools（Hinet自定义的win32格式转SAC格式）
-#. 安装pssac
+#. SAC
+
+   参考《\ `SAC参考手册 <{filename}/SAC/2013-07-06_sac-manual.rst>`_\ 》中的相关章节。
+
+#. GMT
+
+   - `安装GMT4 <{filename}/GMT/2013-11-07_install-gmt4-under-linux.rst>`_
+   - `安装GMT5 <{filename}/GMT/2013-11-06_install-gmt5-under-linux.rst>`_
+
+#. `TauP <{filename}/SeisWare/2014-10-08_install-taup.rst>`_\ ：走时计算工具
+#. `rdseed <{filename}/SeisWare/2014-10-07_install-rdseed.rst>`_\ ：SEED转SAC的工具
+#. win32tools：Hinet自定义的win32格式转SAC格式
+#. `pssac <{filename}/SeisWare/2013-08-04_install-pssac.rst>`_\ ：用GMT绘制SAC文件
+#. `distaz <{filename}/SeisWare/2013-07-03_calculate-dist-az-baz.rst>`_\ ：根据两点经纬度计算震中距和方位角
 
 模块、插件等等
 ==============
