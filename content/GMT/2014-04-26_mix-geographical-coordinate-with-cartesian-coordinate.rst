@@ -3,9 +3,9 @@ GMT技巧之地理坐标与笛卡尔坐标混合体
 
 :author: SeisMan
 :date: 2014-04-26 09:00
-:modified: 2014-07-09 17:00
+:modified: 2014-11-24
 :category: GMT
-:tags: GMT技巧
+:tags: GMT技巧, GMT4
 :slug: mix-geographical-coordinate-with-cartesian-coordinate
 
 .. contents::
@@ -32,12 +32,12 @@ GMT技巧之地理坐标与笛卡尔坐标混合体
 
 很显然，这样的绘图结果无法满足要求，主要在于X轴坐标的“度”符号以及后缀上。解决办法如下::
 
-    psbasemap -R40/50/0/600 -JX15cd/10c -B2/100 --PLOT_DEGREE_FORMAT=+F > mix.ps
+    psbasemap -R40/50/0/600 -JX15cd/10c -B2/100 --PLOT_DEGREE_FORMAT=+ddd:mmF > mix.ps
 
 需要注意两点：
 
-- \ ``-JX15cd/10c``\ ：X轴多了一个\ ``d``\ ，表示X轴为地理坐标；Y轴没有\ ``d``\ ，为正常的笛卡尔坐标；
-- \ ``--PLOT_DEGREE_FORMAT=+F``\ ：已经设定了X轴为地理坐标，通过\ ``--PLOT_DEGREE_FORMAT=+F``\ 进一步修改地理坐标在绘图时的显示方式。
+- ``-JX15cd/10c``\ ：X轴多了一个\ ``d``\ ，表示X轴为地理坐标；Y轴没有\ ``d``\ ，为正常的笛卡尔坐标；
+- ``--PLOT_DEGREE_FORMAT=+ddd:mmF``\ ：已经设定了X轴为地理坐标，通过\ ``--PLOT_DEGREE_FORMAT=+F``\ 进一步修改地理坐标在绘图时的显示方式。
 
 其它解决方法
 ============
@@ -71,14 +71,14 @@ GMT技巧之地理坐标与笛卡尔坐标混合体
    B=2/100     # 间隔
    J=X15c/10c
    PS=map.ps
-   
+
    psxy -R$R -J$J -T -K > $PS   # 写入PS文件头
-   
+
    psbasemap -R$R -J$J -B${B}SN -K -O --D_FORMAT='%g\260E' >> $PS    # 绘制X轴
    psbasemap -R$R -J$J -B${B}EW -K -O >> $PS     # 绘制Y轴
-   
+
    # 这里放置其它绘图命令，不再使用B选项
-   
+
    psxy -R$R -J$J -T -O >> $PS  # 写入PS文件尾
    rm .gmt*
 
@@ -99,14 +99,14 @@ GMT技巧之地理坐标与笛卡尔坐标混合体
    B=2/100     # 间隔
    J=X20c/15c
    PS=map.ps
-   
+
    psxy -R$R -J$J -T -K > $PS   # 写入PS文件头
-   
+
    psbasemap -Rg$Rx/$Rfake -J$J -B${B}SN -K -O --BASEMAP_TYPE=plain >> $PS    # 绘制X轴
    psbasemap -R$R -J$J -B${B}EW -K -O >> $PS     # 绘制Y轴
-   
+
    # 这里放置其它绘图命令，不再使用B选项
-   
+
    psxy -R$R -J$J -T -O >> $PS  # 写入PS文件尾
    rm .gmt*
 
@@ -129,4 +129,5 @@ GMT技巧之地理坐标与笛卡尔坐标混合体
 #. 2014-04-26：初稿；
 #. 2014-04-26：修改脚本，解决了对Y轴范围的限制；Thanks to Chen Zhaohui；
 #. 2014-06-09：通过修改\ ``D_FORMAT``\ 以解决地理坐标的度符号；该方法由刘珠妹提供；
-#. 2014-07-09：找到了一种非常简单的方法来解决该问题；   
+#. 2014-07-09：找到了一种非常简单的方法来解决该问题；
+#. 2014-11-24：修正了\ ``-PLOT_DEGREE_FORMAT``\ 中的小问题；
