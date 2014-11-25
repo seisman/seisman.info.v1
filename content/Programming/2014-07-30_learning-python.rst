@@ -49,6 +49,11 @@ Matplotlib
 #. `Matplotlib tutorial <http://www.loria.fr/~rougier/teaching/matplotlib/>`_ ：Matplotlib入门教程
 #. `Matplotlib 教程 <http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/>`_ : Matplotlib tutorial中文翻译
 
+re
+--
+
+#. `Regular Expression HOWTO <https://docs.python.org/3.4/howto/regex.html>`_
+
 Python Packages
 ===============
 
