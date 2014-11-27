@@ -8,36 +8,38 @@ Python相关资源
 :tags: Python, 书籍, 模块
 :slug: learning-python
 
-本文主要收集Python 3相关的资源，个别基于Python 2的资源会专门指出。
+.. contents::
+
+本文主要收集Python的学习资源，以Python3为主。
 
 Python入门教程
 ==============
 
-#. Learn Python The Hard Way, 3rd Edition
-
-   基于Python 2。
+#. Learn Python The Hard Way, 3rd Edition （基于Python 2）
 
    - `官方英文在线版 <http://learnpythonthehardway.org/book/>`_
    - `中文PDF版 <http://liam0205.me/attachment/Python/PyHardWay/Learn_Python_The_Hard_Way_zh-cn.pdf>`_
    - `中文在线版 <http://sebug.net/paper/books/LearnPythonTheHardWay/index.html>`_
 
-#. The Python Tutorial
-
-   Python 3官方教程。
+#. The Python Tutorial （Python 3官方教程）
 
    - `官方英文版 <https://docs.python.org/3/tutorial/index.html>`_
    - `docspy3zh中文译本 <http://docspy3zh.readthedocs.org/en/latest/tutorial/index.html>`_
    - `pythondoc中文译本 <http://www.pythondoc.com/pythontutorial3/index.html>`_
 
-#. `廖雪峰的Python教程 <http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000>`_
-#. `Python学习笔记第二版 <https://github.com/qyuhen/book>`_ ：作者qyuhen@GitHub （PS：本书基于Python 2.7）
-#. `Think Python <http://www.greenteapress.com/thinkpython/thinkpython.html>`_
+#. `廖雪峰的Python教程 <http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000>`_ （Python2）
+#. `Python学习笔记第二版 <https://github.com/qyuhen/book>`_ ：作者qyuhen@GitHub （本书基于Python2）
+#. Think Python
 
-Python进阶教程
+   - `官方网站 <http://www.greenteapress.com/thinkpython/thinkpython.html>`_
+   - `PDF for Python2 <http://www.greenteapress.com/thinkpython/thinkpython.pdf>`_
+   - `PDF for Python3 <http://faculty.stedwards.edu/mikek/python/thinkpython.pdf>`_
+
+Python模块教程
 ==============
 
-SciPy
------
+SciPy, Numpy & Matplotlib
+-------------------------
 
 #. `Python Scientific Lecture Notes <http://scipy-lectures.github.io/>`_
 #. `用Python做科学计算-基础篇 <http://hyry.dip.jp/tech/book/page/scipy/index.html>`_
@@ -49,13 +51,13 @@ Matplotlib
 #. `Matplotlib tutorial <http://www.loria.fr/~rougier/teaching/matplotlib/>`_ ：Matplotlib入门教程
 #. `Matplotlib 教程 <http://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/>`_ : Matplotlib tutorial中文翻译
 
-re
---
+Regular Expression
+------------------
 
 #. `Regular Expression HOWTO <https://docs.python.org/3.4/howto/regex.html>`_
 
-Python Packages
-===============
+Python模块
+==========
 
 标准库
 ------
@@ -94,6 +96,7 @@ IDE
 ====
 
 #. `Pyzh <http://pyzh.readthedocs.org/en/latest/>`_ :
+#. `Python 2 Module of the Week <http://pymotw.com/2/>`_ : 每周介绍一个模块
 #. `Python 3 Module of the Week <http://pymotw.com/3/index.html>`_ : 每周介绍一个模块
 #. `The Hitchhiker’s Guide to Python! <http://docs.python-guide.org/en/latest/>`_
 #. `Awesome Python <https://github.com/vinta/awesome-python>`_ ：Python优秀模块列表
