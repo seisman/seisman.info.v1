@@ -362,7 +362,6 @@ Flash插件
     sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
     sudo yum install flash-plugin
 
-
 效率类软件
 ==========
 
@@ -508,6 +507,23 @@ Vim插件
 - YouCompleteMe：代码补全
 - delimitMate：括号补全
 - indentLine：显示缩进对齐
+
+未完成
+======
+
+Google Earth
+------------
+
+理论上Google Earth应该可以跟Google Chrome用类似的方法来安装的，但是由于Google Earth的rpm包存在bug，导致无法通过上面的方法安装。
+
+::
+    $ cd -
+    $ wget https://dl.google.com/dl/earth/client/current/google-earth-stable_current_x86_64.rpm
+    $ rpm2cpio google-earth-stable_current_x86_64.rpm | cpio -div
+    $ sudo cp -r opt/google/earth /opt/google/
+    $ sudo cp etc/cron.daily/google-earth /etc/cron.daily/
+    $ rm -rf usr opt etc
+    $ sudo ln -s /opt/google/earth/free/googleearth /usr/bin/google-earth
 
 修订历史
 ========
