@@ -66,3 +66,5 @@ ETOPO1是精度为1弧分的全球地形起伏模型，其包含了陆地地形�
 ::
 
     grdreformat ETOPO1_Ice_g_gmt4.grd etopo1_ice_g_i2.bin=bs -N -V
+
+当然对于netCDF格式的网格文件，也可以直接用grdcut做裁剪，用grdimage画图，省去了grdraster的步骤。哪个方便用哪个。

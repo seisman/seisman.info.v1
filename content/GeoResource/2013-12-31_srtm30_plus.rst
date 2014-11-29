@@ -7,20 +7,28 @@
 :tags: 地形, 网格, 高程, GMT4, GMT5
 :slug: srtm30_plus
 
-主页： http://topex.ucsd.edu/WWW\_html/srtm30\_plus.html
+- 主页： http://topex.ucsd.edu/WWW_html/srtm30_plus.html
+- 精度：30弧秒（约1km）
+- 版本：V10（20130522）
 
-精度：30弧秒，网格精度约 1 km。
+数据说明
+========
 
-数据内容：
-
--  大部分区域使用SRTM30中的全球地形数据；
--  高纬度区域使用GTOPO30数据（无SRTM数据）；
--  南纬81度到北纬81度的海底地形数据来自于Smith和Sandwell的全球1分数据，见\ `这里`_\ ；更高精度的数据来自于\ `LDEO
-   Ridge Multibeam Synthesis Project`_\ 、\ `JAMSTEC Data Site for
-   Research Cruises`_\ 和\ `NGDC Coastal Relief Model`_\ 。
+- 大部分陆地区域使用SRTM30中的陆地高程数据；
+- SRTM在高纬度陆地区域无数据，则使用GTOPO30数据；
+- 南纬81度到北纬81度的海底地形数据来自于Smith和Sandwell的全球1分数据
+- 更高精度的数据来自于\ `LDEO Ridge Multibeam Synthesis Project`_\ 、\ `JAMSTEC Data Site for Research Cruises`_\ 和\ `NGDC Coastal Relief Model`_\ 。
 -  两极地区的数据来自于\ `International Bathymetric Chart of the Oceans`_\ 。
 
-.. _这里: http://topex.ucsd.edu/WWW_html/mar_topo.html
+数据下载
+========
+
+#. `Google KMZ文件 <ftp://topex.ucsd.edu/pub/srtm30_plus/SRTM30_PLUS.kmz>`_
+#. `说明文件 <ftp://topex.ucsd.edu/pub/srtm30_plus/README.V10.txt>`_
+#. `srtm30格式 <ftp://topex.ucsd.edu/pub/srtm30_plus/srtm30/>`_
+#. `topo30格式 <ftp://topex.ucsd.edu/pub/srtm30_plus/topo30/>`_
+#. `ASCII XYZ格式 <http://topex.ucsd.edu/cgi-bin/get_srtm30.cgi>`_
+
 .. _LDEO Ridge Multibeam Synthesis Project: http://ocean-ridge.ldeo.columbia.edu/general/html/home.html
 .. _JAMSTEC Data Site for Research Cruises: http://www.jamstec.go.jp/cruisedata/e/
 .. _NGDC Coastal Relief Model: http://www.ngdc.noaa.gov/mgg/coastal/coastal.html

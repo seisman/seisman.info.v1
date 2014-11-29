@@ -8,7 +8,7 @@
 :slug: global-relief-model-etopo2
 :summary: 全球地形数据etopo2。
 
-ETOPO2与ETOPO5类似，也是高程+海底地形数据，其采样间隔为2弧分。
+ETOPO2与ETOPO5类似，也是陆地高程+海底地形数据，其采样间隔为2弧分。
 
 官方地址： http://www.ngdc.noaa.gov/mgg/global/etopo2.html
 
@@ -40,7 +40,7 @@ ETOPO2与ETOPO5类似，也是高程+海底地形数据，其采样间隔为2弧
 
    ::
 
-    sudo cp ETOPO2v2c_i2_LSB.bin /usr/local/GMT-4.5.12/share/dbase
+    sudo cp ETOPO2v2c_i2_LSB.bin ${GMTHOME}/share/dbase
 
 #. 修改\ ``grdraster.info``\
 

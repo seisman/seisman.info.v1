@@ -121,12 +121,10 @@ GTOPO30是USGS公布的全球数字高程模型，其采样间隔为30弧秒。
    B=a10g10
    Inc=0.5m
    PS=${ID}.ps
-   verbose=-V
-   #verbose=
 
-   grdraster $ID -R$Range -I$Inc -Gout.grd $verbose
-   makecpt -Ctopo -T1/8000/1000 -Z $verbose &gt; colors.cpt
-   grdimage out.grd -B$B -R$Range -Yc -Xc -JQ15c -Ccolors.cpt $verbose > $PS
+   grdraster $ID -R$Range -I$Inc -Gout.grd
+   makecpt -Ctopo -T1/8000/1000 -Z > colors.cpt
+   grdimage out.grd -B$B -R$Range -Yc -Xc -JQ15c -Ccolors.cpt > $PS
 
    rm out.grd colors.cpt
 
