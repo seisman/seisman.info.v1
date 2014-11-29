@@ -13,6 +13,7 @@
 
 - 操作系统：Linux > iOS > Android > Windows
 - Linux发行版：CentOS 7.0
+
 - 浏览器： Google Chrome
 - 科学上网： `huhamhire-hosts`_ > `USTC LUG OpenVPN`_
 - 输入法： 搜狗（Linux）
@@ -21,6 +22,7 @@
 - 文献管理： `Mendeley`_
 - 配色方案： `Solarized`_ （vim, terminal, PyCharm, Gedit）
 - Windows下的SSH客户端: `Xshell Home/School`_
+- 音乐： 网易云音乐
 
 阅读与笔记
 ==========

@@ -2,7 +2,7 @@ GMT 5.1.1在Linux下的安装
 ########################
 
 :date: 2013-11-06 00:53
-:modified: 2014-11-04
+:modified: 2014-11-29
 :author: SeisMan
 :category: GMT
 :tags: 编译, GMT5, 安装
@@ -67,7 +67,11 @@ GMT5的依赖包，相对来说要复杂很多。
 
 一些需要注意的地方:
 
-#. CentOS 6官方源中cmake的版本为2.6.4，版本过低。需要先安装EPEL源，再安装EPEL源中的\ ``cmake28``\ ，并且在接下来的编译过程中要将\ ``cmake``\ 命令改成\ ``cmake28``\ ；
+#. CentOS **6.5**\ 官方源中cmake的版本为2.6.4，版本过低，无法满足要求；
+#. CentOS **6.6**\ 的官方源中cmake的版本升级至2.8.12，可以满足要求；
+#. 若已安装cmake，可以通过\ ``cmake --version``\ 检查cmake版本；
+#. 使用CentOS 6.5的用户可以\ ``yum update``\ 升级至6.6，即可使用较高版本的cmake；
+#. 若不愿意升级整个系统，则需要先安装EPEL源，再安装EPEL源中的\ ``cmake28``\ ，并且在接下来的编译过程中要将\ ``cmake``\ 命令改成\ ``cmake28``\ ；
 #. CentOS 7官方源中cmake版本为2.8.11，可以直接安装使用；
 #. CentOS官方源中不带有netCDF，需要先安装EPEL源。需要安装的包包括\ ``netcdf``\ , \ ``netcdf-devel``\ ，其他包（尤其是hdf5包）会根据依赖关系自动安装。
 #. GDAL包是非必须的，但是在数据格式转换时非常有用，建议安装。同样，CentOS需要先安装EPEL源；
@@ -223,6 +227,7 @@ PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个G
 - 2014-09-14：更新GSHHG至2.3.2；
 - 2014-09-26：Ubuntu下\ ``libxaw-dev``\ 应为\ ``libxaw7-dev``\ ；
 - 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
+- 2014-11-29：CentOS 6.6中的cmake版本为2.8.12；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/
