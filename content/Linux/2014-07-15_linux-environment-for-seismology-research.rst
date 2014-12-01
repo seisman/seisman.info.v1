@@ -3,7 +3,7 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2014-11-23
+:modified: 2014-12-01
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
@@ -106,13 +106,28 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 
 CentOS有很多第三方源，比如EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge等。根据上面提到的软件安装原则，为了尽可能保证系统的稳定性，此处大型第三方源只添加EPEL源。
 
-EPEL即Extra Packages for Enterprise Linux，为CentOS提供了额外的10000多个软件包，而且在不替换系统组件方面下了很多功夫，因而可以放心使用。
+EPEL
+~~~~
+
+`EPEL`_\ 即Extra Packages for Enterprise Linux，为CentOS提供了额外的10000多个软件包，而且在不替换系统组件方面下了很多功夫，因而可以放心使用。
 
 .. code-block:: bash
 
    sudo yum install epel-release
 
 执行完该命令后，在\ ``/etc/yum.repo.d``\ 目录下会多一个\ ``epel.repo``\ 文件。
+
+ELRepo
+~~~~~~
+
+`ELRepo`\ 包含了一些硬件相关的驱动程序，比如显卡、声卡驱动。
+
+::
+
+    sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+    sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+
+完成该命令后，在\ ``/etc/yum.repo.d``\ 目录下会多一个\ ``elrepo.repo``\ 文件。
 
 安装yum-axelget
 ---------------
@@ -131,6 +146,39 @@ EPEL即Extra Packages for Enterprise Linux，为CentOS提供了额外的10000多
     sudo yum update
 
 要更新的软件包有些多，可能需要一段时间。不过有了yum-axelget插件，速度已经快了很多啦。
+
+重启
+----
+
+此处建议重启。
+
+删除多余的kernel
+----------------
+
+在前面的\ ``yum update``\ 执行之后，可能会将kernel也一起更新，则在启动CentOS时启动项中会有很多项。
+
+确认当前使用的kernel版本号::
+
+    $ uname -r
+    3.10.0-123.9.3.el7.x86_64
+
+查找当前系统安装的所有kernel::
+
+    $ rpm -qa | grep kernel
+    kernel-3.10.0-123.8.1.el7.x86_64
+    kernel-3.10.0-123.9.3.el7.x86_64
+    kernel-devel-3.10.0-123.9.2.el7.x86_64
+    kernel-tools-3.10.0-123.9.3.el7.x86_64
+    kernel-headers-3.10.0-123.9.3.el7.x86_64
+    kernel-3.10.0-123.9.2.el7.x86_64
+    kernel-tools-libs-3.10.0-123.9.3.el7.x86_64
+    kernel-devel-3.10.0-123.8.1.el7.x86_64
+    kernel-devel-3.10.0-123.9.3.el7.x86_64
+
+可以看出有三个版本的kernel，123.8.1、123.9.2和123.9.3。除了最新的kernel外，建议多保留一个旧kernel，以免新kernel出现问题时可以通过旧kernel进入系统。因而此处删除123.8.1版本的kernel::
+
+    sudo yum remove kernel-3.10.0-123.8.1.el7.x86_64
+    sudo yum remove kernel-devel-3.10.0-123.8.1.el7.x86_64
 
 基础开发环境
 ============
@@ -165,7 +213,23 @@ GCC系列
 
 Linux默认只使用开源的显卡驱动，就目前的情况来看，开源驱动的效果还是不错的，但跟官方的闭源驱动相比还是有一定差距。最明显的区别是，在使用SAC的ppk功能放大波形时，使用开源驱动会出现延迟，而使用官方闭源则整个过程非常顺畅。
 
-驱动的安装过程参考“\ `安装NVIDIA显卡驱动 <{filename}/Linux/2014-07-13_install-nvidia-drivers-under-linux.rst>`_\ ” 一文。需要注意的是，在安装显卡驱动之后，若更新了kernel，会出现无法进入kernel的情况，即每次更新kernel之后都需要重新安装显卡驱动，这点需要注意。
+安装显卡检测程序::
+
+    sudo yum install nvidia-detect
+
+检测显卡型号以及对应的驱动::
+
+    $ nvidia-detect
+    Probing for supported NVIDIA devices...
+    [10de:06dd] NVIDIA Corporation GF100GL [Quadro 4000]
+    This device requires the current 340.58 NVIDIA driver kmod-nvidia
+
+安装显卡驱动::
+
+    sudo yum install nvidia-x11-drv nvidia-x11-drv-32bit
+    sudo yum remove xorg-x11-glamor
+
+重启。
 
 NTFS驱动
 --------
@@ -282,6 +346,18 @@ Python2与Python3之间是不完全兼容的，而我以Python3为主，所以�
 
     pip install requests
     pip install docopt
+
+等宽字体
+~~~~~~~~
+
+编程要用等宽字体，这点是常识了。一款适合编程的等宽字体，至少要满足如下几个要求：
+
+#. 易于区分“1”、“i”和“l”
+#. 易于区分“0”、“o”和“O”
+#. 易于区分中文下的左引号和右引号
+#. 美观
+
+目前选择的Source Code Pro。将解压后的字体文件放在\ ``~/.fonts``\ 目录下，并修改终端、gedit以及其他编辑器、IDE等的默认字体。
 
 日常软件
 ========
@@ -525,6 +601,11 @@ Google Earth
     $ rm -rf usr opt etc
     $ sudo ln -s /opt/google/earth/free/googleearth /usr/bin/google-earth
 
+参考
+====
+
+#. `ElRepo kmod-nvidia <http://elrepo.org/tiki/kmod-nvidia>`_
+
 修订历史
 ========
 
@@ -533,5 +614,8 @@ Google Earth
 - 2014-09-20：将小小输入法改为搜狗输入法；
 - 2014-11-20：使用zsh；
 - 2014-11-24：加入了VirtualBox虚拟机；
+- 2014-12-01：从ELRepo源中安装显卡驱动；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
+.. _EPEL: https://fedoraproject.org/wiki/EPEL
+.. _ELRepo: http://elrepo.org/tiki/tiki-index.php
