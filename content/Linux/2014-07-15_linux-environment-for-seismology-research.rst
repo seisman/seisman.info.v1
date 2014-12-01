@@ -82,7 +82,7 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 若干原则
 --------
 
-为了搭建一个稳定的系统，尽量避免因为各种瞎折腾而导致的系统问题，特订立了一些软件安装的原则。具体参见《\ `CentOS 7下的软件安装方法与策略 <{filename}/Linux/2014-10-23_how-to-install-softwares-under-centos-7.rst>`_\ 》。
+为了搭建一个稳定的系统，尽量避免因为各种瞎折腾而导致的系统问题，特订立了一些软件安装的原则。具体参见《\ `CentOS 7下的软件安装方法与策略 <{filename}/Linux/2014-11-23_how-to-install-softwares-under-centos-7.rst>`_\ 》。
 
 给一般账号root权限
 ------------------
@@ -593,6 +593,7 @@ Google Earth
 理论上Google Earth应该可以跟Google Chrome用类似的方法来安装的，但是由于Google Earth的rpm包存在bug，导致无法通过上面的方法安装。
 
 ::
+
     $ cd -
     $ wget https://dl.google.com/dl/earth/client/current/google-earth-stable_current_x86_64.rpm
     $ rpm2cpio google-earth-stable_current_x86_64.rpm | cpio -div

@@ -39,11 +39,11 @@ ELRepo源中包含了一系列驱动程序。
 
    #. 340.58版本::
 
-      sudo yum install nvidia-x11-drv nvidia-x11-drv-32bit
+        sudo yum install nvidia-x11-drv nvidia-x11-drv-32bit
 
    #. 304xx版本::
 
-      sudo yum install nvidia-x11-drv-304xx nvidia-x11-drv-304xx-32bit
+        sudo yum install nvidia-x11-drv-304xx nvidia-x11-drv-304xx-32bit
 
 #. 安装过程中可能会给出软件冲突的警告，需要卸载以下软件包及其依赖::
 
