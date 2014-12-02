@@ -455,6 +455,17 @@ Flash插件主要是看在线视频的时候要用。Google浏览器自带了Fla
     sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
     sudo yum install flash-plugin
 
+解压软件
+--------
+
+解压7z或zip格式需要p7zip，由EPEL提供::
+
+    sudo yum install p7zip
+
+解压rar格式需要unrar，该软件由Nux Dextop提供，但该源与EPEL源有冲突，所以直接下载该rpm进行安装::
+
+    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/unrar-debuginfo-5.0.12-2.el7.nux.x86_64.rpm
+
 效率类软件
 ==========
 
@@ -565,7 +576,6 @@ VirtualBox虚拟机
 ::
 
     sudo yum install nfs-utils     # 挂载NFS文件系统所必须
-    sudo yum install p7zip         # 7z格式压缩和解压
     sudo yum install xclip         # 终端的文本复制工具
     sudo yum install ImageMagick   # 其中的import和convert命令很有用
 
@@ -633,7 +643,7 @@ Google Earth
 - 2014-11-20：使用zsh；
 - 2014-11-24：加入了VirtualBox虚拟机；
 - 2014-12-01：从ELRepo源中安装显卡驱动；
-- 2014-12-02：新增Opera浏览器；
+- 2014-12-02：新增Opera浏览器和unrar；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
