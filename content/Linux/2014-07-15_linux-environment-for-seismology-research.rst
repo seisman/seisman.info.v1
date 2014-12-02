@@ -3,7 +3,7 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2014-12-01
+:modified: 2014-12-02
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
@@ -429,8 +429,25 @@ Google Chrome浏览器
 
     sudo yum install google-chrome-stable
 
+Opera浏览器
+-----------
+
+也可以选择Opera浏览器。
+
+下载地址：http://www.opera.com/download/guide/?os=linux
+
+选择CentOS RPM package进行下载。下载完成后，执行::
+
+    sudo yum localinstall opera-12.16-1860.x86_64.rpm
+
+想要卸载的话，就执行::
+
+    sudo yum remove opera
+
 Flash插件
 ---------
+
+Flash插件主要是看在线视频的时候要用。Google浏览器自带了Flash插件，所以这里安装的flash插件主要是为了firefox。
 
 ::
 
@@ -616,6 +633,7 @@ Google Earth
 - 2014-11-20：使用zsh；
 - 2014-11-24：加入了VirtualBox虚拟机；
 - 2014-12-01：从ELRepo源中安装显卡驱动；
+- 2014-12-02：新增Opera浏览器；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
