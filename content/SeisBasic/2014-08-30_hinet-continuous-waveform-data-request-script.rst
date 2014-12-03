@@ -2,7 +2,7 @@ Hinet连续波形数据申请及下载的脚本实现
 #####################################
 
 :date: 2014-08-30 22:22
-:modified: 2014-11-04
+:modified: 2014-12-03
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet, 数据, 申请, Python
@@ -30,43 +30,34 @@ Python实现数据申请示例
 
 .. code-block:: python
 
-    #!/usr/bin/env python
-    # -*- coding: utf-8 -*-
-    import requests
+	#!/usr/bin/env python
+	# -*- coding: utf-8 -*-
+	import requests
 
-    # 账户密码
-    user = "xxxxxxx"
-    passwd = "xxxxxxxxxxx"
+	auth = {
+	    'auth_un': 'xxxxxx',  # 用户名
+	    'auth_pw': 'xxxxxx',  # 密码
+	    }
 
-    # 数据申请信息
-    org = "01"
-    net = "01"
-    year = "2014"
-    month = "08"
-    day = "14"
-    hour = "02"
-    min = "25"
-    span = "5"
+	url = "https://hinetwww11.bosai.go.jp/auth/download/cont/cont_request.php"
+	# 构建query string
+	payload = {
+	    'org1':  '01',
+	    'org2':  '01',
+	    'year':  '2014',
+	    'month': '08',
+	    'day':   '14',
+	    'hour':  '02',
+	    'min':   '25',
+	    'span':  '5',
+	    'arc':   'ZIP',      # compressed format of the data
+	    'size':  '93680',    # estimated size of the data, it is not important
+	    'LANG':  'en',       # english version of web
+	    'rn':    '12345677'  # random value
+	}
 
-    url = "http://www.hinet.bosai.go.jp/REGS/download/cont/cont_request.php"
-    # 构建query string
-    payload = {
-        'org1':  org,
-        'org2':  net,
-        'year':  year,
-        'month': month,
-        'day':   day,
-        'hour':  hour,
-        'min':   min,
-        'span':  span,
-        'arc':   'ZIP',      # compressed format of the data
-        'size':  '93680',    # estimated size of the data, it is not important
-        'LANG':  'en',       # english version of web
-        'rn':    '12345677'  # random value
-    }
-
-    # 向Hi-net发送请求
-    requests.post(url, params=payload, auth=(user, passwd), timeout=5)
+	# 向Hi-net发送请求
+	requests.post(url, params=payload, data=auth, verify=False)
 
 就是这么简单。
 
@@ -85,17 +76,11 @@ Python实现数据申请示例
 
 查看下载页面的源码或直接查看数据的下载链接，可以知道，下载数据的实质是向Hi-net服务器发送如下请求::
 
-  http://www.hinet.bosai.go.jp/REGS/download/cont/cont_download.php?id=0005134055&LANG=en
+  https://hinetwww11.bosai.go.jp/auth/download/cont/cont_download.php?id=0005134055&LANG=en
 
 其中id为Status/Download页面第一列给出的10位整数。
 
-因而写脚本自动下载的关键步骤如下：
-
-#. 获取Status/Download的网页源码；
-#. 对源码进行解析，得出要下载的数据所对应的ID；
-#. 构建query-string，向服务器发送数据下载请求；
-
-用Python实现的话，可以使用模块\ ``requests``\ 和\ ``BeautifulSoup4``\ 。这里就不再多说了。
+因而写脚本自动下载的关键是获取要下载的数据的id，不再多说
 
 HinetContRequest.py
 ===================
@@ -193,3 +178,4 @@ HinetContRequest.py
 - 2014-08-30：初稿；
 - 2014-09-12：账号及密码位于配置文件中；
 - 2014-11-04：将数据申请与数据下载合并在一起；
+- 2014-12-03：由于Hinet网址的更新，原Python脚本失效，现已修正；

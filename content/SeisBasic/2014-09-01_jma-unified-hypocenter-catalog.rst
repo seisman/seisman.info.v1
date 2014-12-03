@@ -21,6 +21,6 @@ JMA对JMA、NIED、各大学以及机构收集的地震数据进行处理，形�
 
 该页面的请求原理与连续波形数据的请求原理类似，本质上就是向某个url添加query string，如下例::
 
-    http://www.hinet.bosai.go.jp/REGS/JMA/jmalist.php?LANG=en&list_span=1&list_year=2014&list_month=08&list_day=29
+    https://hinetwww11.bosai.go.jp/auth/jmalist.php?LANG=en&list_span=1&list_year=2014&list_month=08&list_day=29
 
 因而该请求可以很容易地用脚本实现。但由于该请求返回的是HMTL，因而还需要对HTML文本进行处理才能提取出地震目录。实现起来不难，但是意义不大。

@@ -9,9 +9,9 @@ Hi-net走时和震源机制数据
 
 Hi-net基于JMA Unified Hypocenter Catalog，提供了到时数据以及震源机制解目录。
 
-数据下载地址：http://www.hinet.bosai.go.jp/REGS/JMA/?LANG=en
+数据下载地址：https://hinetwww11.bosai.go.jp/auth/JMA/?LANG=en
 
-数据格式官方文档：http://www.hinet.bosai.go.jp/REGS/manual/dlDialogue.php?r=jmaformat&LANG=en
+数据格式官方文档：https://hinetwww11.bosai.go.jp/auth/manual/dlDialogue.php?r=jmaformat&LANG=en
 
 本文不谈数据格式，只讨论数据的下载问题。
 

@@ -2,7 +2,7 @@ Hi-net连续波形数据
 ##################
 
 :date: 2014-08-27 11:08
-:modified: 2014-11-02
+:modified: 2014-12-03
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet, 数据, 申请, 下载
@@ -12,7 +12,7 @@ Hi-net连续波形数据
 
 本文将介绍如何从Hi-net申请并下载连续波形数据，并介绍Hi-net数据的一些细节。
 
-连续波形数据申请地址：http://www.hinet.bosai.go.jp/REGS/download/cont/?LANG=en
+连续波形数据申请地址：https://hinetwww11.bosai.go.jp/auth/download/cont/?LANG=en
 
 第一印象
 ========
@@ -132,3 +132,4 @@ PS：下载数据时似乎同时只能下载5个数据，再点击其他数据�
 
 - 2014-08-27：初稿；
 - 2014-11-02：修订了部分内容，并加入了对火山台网的说明；
+- 2014-12-03：连续波形的申请网址发生变化；

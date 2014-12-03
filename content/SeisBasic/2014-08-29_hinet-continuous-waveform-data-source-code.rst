@@ -119,7 +119,7 @@ openRequest
 
     <a href="#" onClick="javascript:openRequest('01','01','2014','08','30','00','00','5','93680','en');return false;" onmouseover="changeImg('1')" onmouseout="changeImg('0')"><img src="./image/fulldl1_e.png" name="fulldl" class="img_border0" alt="" title="" /></a>
 
-可以看到，两种下载方式本质上没有区别，都是调用了\ ``openRequest``\ 函数。该函数的定义位于\ `js/cont.js?140825 <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?150825>`_\ 中，如下：
+可以看到，两种下载方式本质上没有区别，都是调用了\ ``openRequest``\ 函数。该函数的定义位于\ `js/cont.js?141201 <https://hinetwww11.bosai.go.jp/auth/download/cont/js/cont.js?141201>`_\ 中，如下：
 
 .. code-block:: javascript
 
@@ -162,7 +162,7 @@ openRequest
 
 比如，在已登录Hi-net的前提下，将如下url直接复制粘贴到浏览器中，即可完成数据的申请::
 
-    http://www.hinet.bosai.go.jp/REGS/download/cont/cont_request.php?org1=01&org2=01&year=2014&month=06&day=14&hour=00&min=00&span=5&arc=ZIP&size=93680&LANG=en&rn=1402728298194
+    https://hinetwww11.bosai.go.jp/auth/download/cont/cont_request.php?org1=01&org2=01&year=2014&month=06&day=14&hour=00&min=00&span=5&arc=ZIP&size=93680&LANG=en&rn=1402728298194
 
 其中rn以及size的取值没有太多实际意义。
 
@@ -195,3 +195,4 @@ openRequest
 
 - 2014-08-29：初稿；
 - 2014-11-03：更新了火山台网；
+- 2014-12-03：更新了连续数据申请链接；
