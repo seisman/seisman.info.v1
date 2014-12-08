@@ -21,8 +21,13 @@
 - 文件/目录比较工具： `meld`_ > `smartsynchronize`_ > vimdiff > diff
 - 文献管理： `Mendeley`_
 - 配色方案： `Solarized`_ （vim, terminal, PyCharm, Gedit）
-- Windows下的SSH客户端: `Xshell Home/School`_
 - 音乐： 网易云音乐
+
+Windows软件
+===========
+
+- SSH客户端: `Xshell Home/School`_
+- IDE： `Visual Studio Community 2013 with update 4`_
 
 阅读与笔记
 ==========
@@ -114,6 +119,7 @@ Python IDE
    虽然有修改版，将零修改为dotted版和dashed版，但使用过程中明显看到数字0的尺寸与其他数字尺寸有差，影响美观，故放弃该字体。
 
 
+
 .. _Droid Sans Mono: https://www.google.com/fonts/specimen/Droid+Sans+Mono
 .. _Dropbox: https://www.dropbox.com
 .. _feedly: http://feedly.com/
@@ -132,6 +138,7 @@ Python IDE
 .. _Source Code Pro: https://github.com/adobe-fonts/source-code-pro
 .. _USTC LUG OpenVPN: https://vpn.lug.ustc.edu.cn/
 .. _USTC GitLab: https://gitlab.lug.ustc.edu.cn/
+.. _Visual Studio Community 2013 with update 4: http://www.visualstudio.com/downloads/download-visual-studio-vs
 .. _Wunderlist: https://www.wunderlist.com/zh/
 .. _Xshell Home/School: http://www.netsarang.com/products/xsh_overview.html
 .. _zathura: http://pwmt.org/projects/zathura
