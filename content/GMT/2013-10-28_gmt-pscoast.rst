@@ -165,8 +165,8 @@ river可以分为如下几类：
 
 -  lon0/lat0指定了比例尺中心的经纬度位置。如果使用-Lx，则lon0/lat0被解释为相对原点的x、y距离。
 -  不同的经纬度，其比例尺不同，因而需要指定是要哪个地方的比例尺，slat指定纬度，对于倾斜投影也可以指定slon。
--  length为比例尺的长度，单位为kn，也可以使用英里（m）或海里（n）。默认比例尺为plain样式，可以使用-Lf得到fancy样式的比例尺。
--  对于fancy样式的比例尺，加上“+l”将在比例尺上方加上当前比例尺的单位（km），也可以加上“+llabel”自定义label。label的位置可以使用“+jjust”进行调节，其中just可以取b（bottom）、t（top）、l（left）和r（right）。
+-  length为比例尺的长度，单位为km，也可以使用英里（m）或海里（n）。默认比例尺为plain样式，可以使用-Lf得到fancy样式的比例尺。
+-  对于fancy样式的比例尺，加上“+l”将在比例尺上方加上当前比例尺的单位（km），也可以加上“+llabel”自定义label，该label的具体属性由\ ``LABEL_FONT``\ 、\ ``LABEL_FONT_SIZE``\ 和\ ``LABEL_OFFSET``\ 控制。label的位置可以使用“+jjust”进行调节，其中just可以取b（bottom）、t（top）、l（left）和r（right）。
 -  对于fancy样式的比例尺，加上“+u”可以在比例尺上所有注释处加上单位。
 -  +p和+f可以给比例尺的背景处加上边框并涂色。
 
@@ -257,3 +257,9 @@ pscoast可是使用-Gc剪切出陆地区域，接下来的绘图命令中只有�
    :align: center
    :alt: fig
    :width: 600 px
+
+修订历史
+========
+
+- 2013-10-28：初稿；
+- 2014-12-25：图例中label由LABEL_*控制；
