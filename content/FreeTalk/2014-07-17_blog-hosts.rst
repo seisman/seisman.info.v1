@@ -11,11 +11,11 @@
 
 刚使用静态博客的时候，一直将博客托管在国外的GitHub上，我自己测试的ping值大概是300ms左右，相对来说还是有些慢的。后来发现了GitCafe，其可以用于免费托管博客，且主机位于国内所以国内读者访问速度很快，最重要的一点是虽然其主机在国内但却不要求进行备案。（一直无法理解这一点，但是现在的情况的确是这样，不知道能用多久。）将博客托管在GitCafe后，我测试的ping值大概是20ms，速度的增长还是很明显的。也遇到个别国内的读者说不能正常访问，这个我就没办法了。
 
-今天，对博客的托管进行了一些改进，同时将博客的静态HTML文件托管在GitHub和GitCafe上，国内读者访问时使用GitCafe，国外读者访问时使用GitHub，这样以来国内和国外的大部分读者都可以有比较好的访问速度了。
+今天，对博客的托管进行了一些改进，同时将博客的静态HTML文件托管在GitHub和GitCafe上，国内读者访问时使用GitCafe，国外读者访问时使用GitHub，这样一来国内和国外的大部分读者都可以有比较好的访问速度了。
 
 目前博客的一些细节记录如下：
 
-#. 博客源码（Pelican配置以及rst源文件）托管在\ `GitHub <https://github.com/seisman/seisman.info>`_\ 上； 
+#. 博客源码（Pelican配置以及rst源文件）托管在\ `GitHub <https://github.com/seisman/seisman.info>`_\ 上；
 #. 生成的HTML文件push到GitHub上项目seisman.github.io的master分支，并使用CNAME设置别名；
 #. 生成的HTML文件push到GitCafe上项目seisman的gitcafe-pages分支，并设置别名。
 
@@ -23,7 +23,7 @@
 
 - http://seisman.info
 - http://seisman.github.io
-- http://seisman.gitcafe.com  
+- http://seisman.gitcafe.io
 
 DNSPod的具体设置如下图，这样的设置使得联通、电信、移动线路的用户（即大部分国内用户）走GitCafe，其他用户走GitHub。
 
@@ -46,3 +46,9 @@ DNSPod的具体设置如下图，这样的设置使得联通、电信、移动�
    :alt: ping1
 
 就目前的测试结果来看，国内大部分地区以及美国地区的访问者应该都可以有理想的访问速度了。
+
+修订历史
+========
+
+- 2014-07-17：初稿；
+- 2014-12-26：GitCafe的博客托管服务有所调整，gitcafe.com改成gitcafe.io，需要在DNS中设置CNAME；
