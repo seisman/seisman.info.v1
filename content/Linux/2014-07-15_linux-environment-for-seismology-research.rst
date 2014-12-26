@@ -381,8 +381,8 @@ WPS Office
 
 安装过程参考\ `CentOS下安装WPS Office <{filename}/Linux/2014-10-01_wps-office-for-centos7.rst>`_\ 一文。
 
-安装TeXLive 2014
-----------------
+TeXLive 2014
+------------
 
 系统是自带了TeXLive，版本较老，还是安装最新版比较好。
 
