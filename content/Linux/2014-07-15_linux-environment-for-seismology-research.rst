@@ -3,7 +3,7 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2014-12-02
+:modified: 2014-12-27
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
@@ -429,7 +429,16 @@ Google Chrome浏览器
 
     sudo yum install google-chrome-stable
 
-注意：由于某些大家都懂的原因，Google的官方源在国内可能无法正常访问，导致无法安装Chrome或者安装之后无法更新，这个问题自己想办法解决。
+由于某些大家都懂的原因，Google的官方源在国内可能无法正常访问，导致无法安装Chrome或者安装之后无法更新。某人自己托管了一份源镜像，解决了此问题，\ ``google-chrome.repo``\ 的内容改为::
+
+    [google-chrome]
+    name=google-chrome
+    #baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+    #gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+    mirrorlist=http://1dot75cm.tk/mirrorlist
+    gpgkey=http://1dot75cm.tk/src/linux_signing_key.pub
+    gpgcheck=1
+    enabled=1
 
 Opera浏览器
 -----------
@@ -470,13 +479,6 @@ Flash插件主要是看在线视频的时候要用。Google浏览器自带了Fla
 
 效率类软件
 ==========
-
-中文输入法
-----------
-
-刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是ibus，使用效果一般。fcitx是更好的选择，基于fcitx框架的搜狗输入法或许是更更好的选择。
-
-参考\ `CentOS7安装搜狗输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_\ 。
 
 zsh与oh my zsh
 --------------
@@ -550,6 +552,24 @@ autojump
     [[ -s /home/seisman/.autojump/etc/profile.d/autojump.sh ]] && source /home/seisman/.autojump/etc/profile.d/autojump.sh
     autoload -U compinit && compinit -u
 
+中文输入法
+----------
+
+刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是ibus，使用效果一般。fcitx是更好的选择，基于fcitx框架的搜狗输入法或许是更更好的选择。
+
+参考\ `CentOS7安装搜狗输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_\ 。
+
+PointDownload
+-------------
+
+点载,是一个能帮助你方便地从网络上下载各种文件的软件。支持主流的下载协议，包括http、ftp、磁力链接、BT、ed2k、迅雷专用链接、QQ旋风链接以及you-get支持的视频网页链接。
+
+安装该软件需要启用mosquito源，具体参见安装搜狗输入法一文。
+
+::
+
+    sudo yum install pointdownload
+
 HostTool
 --------
 
@@ -573,6 +593,7 @@ VirtualBox虚拟机
     sudo yum install VirtualBox-4.3
 
 这样就可以在Linux下虚拟一个Windows啦，好开心。
+
 
 工具软件
 ========
@@ -647,6 +668,7 @@ Dropbox
 ====
 
 #. `ElRepo kmod-nvidia <http://elrepo.org/tiki/kmod-nvidia>`_
+#. `PointDownload <https://github.com/PointTeam/PointDownload>`_
 
 修订历史
 ========
@@ -658,6 +680,7 @@ Dropbox
 - 2014-11-24：加入了VirtualBox虚拟机；
 - 2014-12-01：从ELRepo源中安装显卡驱动；
 - 2014-12-02：新增Opera浏览器和unrar；
+- 2014-12-27：新增pointdownload下载工具；google chrome采用非官方源镜像；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
