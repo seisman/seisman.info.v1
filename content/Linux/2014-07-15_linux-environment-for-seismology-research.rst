@@ -633,6 +633,16 @@ Google Earth
     $ rm -rf usr opt etc
     $ sudo ln -s /opt/google/earth/free/googleearth /usr/bin/google-earth
 
+安装完成后，启动后奔溃。。
+
+Dropbox
+-------
+
+::
+
+    wget https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
+    sudo rpm -i nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
+
 参考
 ====
 
