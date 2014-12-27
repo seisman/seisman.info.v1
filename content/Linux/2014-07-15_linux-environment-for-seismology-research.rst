@@ -429,6 +429,8 @@ Google Chrome浏览器
 
     sudo yum install google-chrome-stable
 
+注意：由于某些大家都懂的原因，Google的官方源在国内可能无法正常访问，导致无法安装Chrome或者安装之后无法更新，这个问题自己想办法解决。
+
 Opera浏览器
 -----------
 
@@ -551,11 +553,13 @@ autojump
 HostTool
 --------
 
-科学上网几乎已经成为每个搞科研的人的必备技能。科学上网的方式有很多，这里只说HostTool。
+科学上网几乎已经成为每个搞科研的人的必备技能。
 
-下载地址：https://hosts.huhamhire.com/
+科学上网的方式有很多，这里只说HostTool：https://hosts.huhamhire.com/
 
-解压之后，进入目录，直接\ ``sudo python2 hoststool.py``\ 即可运行。具体的使用不多说。
+HostTool科学上网本质上就是用最新的host文件替代了系统自带的host文件。
+
+下载解压后，进入目录，直接\ ``sudo python2 hoststool.py``\ 即可运行，具体的用法自己研究一下。
 
 VirtualBox虚拟机
 ----------------
