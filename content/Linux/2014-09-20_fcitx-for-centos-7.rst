@@ -3,7 +3,7 @@ CentOS 7安装fcitx中文输入法
 
 :author: SeisMan
 :date: 2014-09-20
-:modified: 2014-09-29
+:modified: 2014-12-27
 :category: Linux
 :tags: CentOS, 中文
 :slug:  fcitx-for-centos-7
@@ -50,10 +50,13 @@ mosquito-myrepo是一个私人制作的第三方源，其中包含了fcitx输入
 
 首先关闭gnome-shell 对键盘的监听，然后切换输入法为fcitx::
 
+    $ sudo pkill ibus-daemon
     $ gsettings set org.gnome.settings-daemon.plugins.keyboard active false
     $ imsettings-switch fcitx
+    $ fcitx -r; fcitx-configtool
+    $ sogou-qimpanel
 
-似乎需要重启，或者退出用户重新登陆。
+执行后面两个命令后可能会报一些错误，似乎可以不用管。执行完成之后，退出当前用户并重新登陆。
 
 安装其他输入法
 ==============
@@ -84,3 +87,4 @@ mosquito-myrepo在不断地支持更多的软件，这也进一步造成该repo�
 
 - 2014-09-20：初稿；
 - 2014-09-29：安装完成之后建议禁用该repo以避免任何可能的版本冲突；
+- 2014-12-27：更新sogou的配置；
