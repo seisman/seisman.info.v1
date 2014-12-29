@@ -475,7 +475,7 @@ Flash插件主要是看在线视频的时候要用。Google浏览器自带了Fla
 
 解压rar格式需要unrar，该软件由Nux Dextop提供，但该源与EPEL源有冲突，所以直接下载该rpm进行安装::
 
-    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/unrar-debuginfo-5.0.12-2.el7.nux.x86_64.rpm
+    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/unrar-5.0.12-2.el7.nux.x86_64.rpm
 
 效率类软件
 ==========
@@ -681,6 +681,7 @@ Dropbox
 - 2014-12-01：从ELRepo源中安装显卡驱动；
 - 2014-12-02：新增Opera浏览器和unrar；
 - 2014-12-27：新增pointdownload下载工具；google chrome采用非官方源镜像；
+- 2014-12-28：修订unrar的rpm文件链接；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
