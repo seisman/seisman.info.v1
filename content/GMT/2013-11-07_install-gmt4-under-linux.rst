@@ -1,9 +1,9 @@
-GMT 4.5.12在Linux下的安装
+GMT 4.5.13在Linux下的安装
 #########################
 
 :date: 2013-11-07 00:17
 :author: SeisMan
-:modified: 2014-09-14
+:modified: 2015-01-01
 :category: GMT
 :tags: 安装, GMT4, 编译
 :slug: install-gmt4-under-linux
@@ -13,7 +13,7 @@ GMT 4.5.12在Linux下的安装
 说明
 ====
 
-本文介绍如何Linux下如何编译安装GMT 4.5.12，不保证其适用于GMT的其他版本。
+本文介绍如何在Linux下编译GMT4的最新版本：GMT 4.5.13。
 
 很多Linux发行版的源中带有GMT软件包，但是版本一般较老，因而这里假定想要自己编译GMT4的读者，下载和编译的都是GMT4的最新版本，因而本文会随着GMT4新版本的发行而不断作出修改。
 
@@ -22,13 +22,12 @@ GMT 4.5.12在Linux下的安装
 
 官方ftp：ftp://ftp.soest.hawaii.edu/gmt
 
-需要下载的包包括\ [*]_\ ：
+需要下载的包包括：
 
-- `gmt-4.5.12-src.tar.bz2 <ftp://ftp.soest.hawaii.edu/gmt/gmt-4.5.12-src.tar.bz2>`_
-- `gshhg-gmt-2.3.2.tar.gz <ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.2.tar.gz>`_
+- `gmt-4.5.13-src.tar.bz2 <ftp://ftp.soest.hawaii.edu/gmt/gmt-4.5.13-src.tar.bz2>`_
+- `gshhg-gmt-2.3.4.tar.gz <ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.4.tar.gz>`_
 
-.. [*] 对于GMT中的\ ``triangulate``\ 命令，其源码有两个版本，一个遵循GPL协议，一个不遵循GPL协议。GMT的src包中包含了前者，若有特殊需求，需要使用后者源码的功能，可以下载\ ``gmt-4.5.12-non-gpl-src.tar.bz2``\ 。
-
+注：GMT中的\ ``triangulate``\ 命令有两个不同的源码，其中一个遵循GPL协议，另一个不遵循GPL协议。GMT的src包中包含了前者。若有特殊需求，需要使用后者源码的功能，可以下载\ `gmt-4.5.13-non-gpl-src.tar.bz2 <ftp://ftp.soest.hawaii.edu/gmt/gmt-4.5.13-non-gpl-src.tar.bz2>`_\ ，并将解压后的triangulate源码覆盖\ ``gmt-4.5.13-src.tar.bz2``\ 中的相应源码。
 
 依赖关系
 ========
@@ -36,7 +35,7 @@ GMT 4.5.12在Linux下的安装
 基础依赖包
 ----------
 
-GMT编译过程需要C编译器，以及一些系统级别的库文件。
+GMT编译过程需要C编译器，以及一些底层的库文件。
 
 对于Ubuntu/Debian::
 
@@ -49,7 +48,7 @@ GMT编译过程需要C编译器，以及一些系统级别的库文件。
 软件依赖包
 ----------
 
-GMT4主要依赖于netCDF，可以直接使用官方源中自带的netCDF包\ [*]_\ 。
+GMT4主要依赖于netCDF，可以直接使用Linux发行版官方源中提供的netCDF包\ [*]_\ 。
 
 对于Ubuntu/Debian::
 
@@ -71,19 +70,19 @@ GMT4主要依赖于netCDF，可以直接使用官方源中自带的netCDF包\ [*
 
 .. code-block:: bash
 
- $ tar -jxvf gmt-4.5.12-src.tar.bz2
- $ cd gmt-4.5.12
- $ ./configure --prefix=/opt/GMT-4.5.12
- $ make
- $ sudo make install-all
+   $ tar -jxvf gmt-4.5.12-src.tar.bz2
+   $ cd gmt-4.5.12
+   $ ./configure --prefix=/opt/GMT-4.5.12
+   $ make
+   $ sudo make install-all
 
 安装海岸线数据
 --------------
 
 .. code-block:: bash
 
-   $ tar -zxvf gshhg-gmt-2.3.2.tar.gz
-   $ sudo cp -r gshhg-gmt-2.3.2 /opt/GMT-4.5.12/share/coast
+   $ tar -zxvf gshhg-gmt-2.3.4.tar.gz
+   $ sudo cp -r gshhg-gmt-2.3.4 /opt/GMT-4.5.13/share/coast
 
 修改环境变量
 ------------
@@ -92,7 +91,7 @@ GMT4主要依赖于netCDF，可以直接使用官方源中自带的netCDF包\ [*
 
 .. code-block:: bash
 
-   $ echo 'export GMT4HOME=/opt/GMT-4.5.12' >> ~/.bashrc
+   $ echo 'export GMT4HOME=/opt/GMT-4.5.13' >> ~/.bashrc
    $ echo 'export PATH=${GMT4HOME}/bin:$PATH' >> ~/.bashrc
    $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64' >> ~/.bashrc
    $ exec $SHELL -l
@@ -115,3 +114,4 @@ GMT4主要依赖于netCDF，可以直接使用官方源中自带的netCDF包\ [*
 - 2014-09-26：Ubuntu下\ ``libxaw-dev``\ 应为\ ``libxaw7-dev``\ ；
 - 2014-10-14：修正了若干细节；
 - 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
+- 2015-01-01：更新至GMT4.5.13；
