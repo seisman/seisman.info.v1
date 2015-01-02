@@ -194,7 +194,7 @@ CSS_FILE = 'main.css'
 
 # Theme options
 SITE_DESCRIPTION = '关注和分享地震学相关知识、软件、代码。'
-SITE_LICENSE = '2013-2014 Copyright &copy; by <a href="http://seisman.info">SeisMan</a>; Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>'
+SITE_LICENSE = '2013-2015 Copyright &copy; by <a href="http://seisman.info">SeisMan</a>; Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>'
 SITESUBTITLE = '学会整理自己的经验是科研的第一步。'
 FEATURED_IMAGE = SITEURL + '/theme/images/apple-touch-icon-152x152.png'
 RECENT_ARTICLES_COUNT = 15
