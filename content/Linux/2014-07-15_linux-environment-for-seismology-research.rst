@@ -594,6 +594,35 @@ VirtualBox虚拟机
 
 这样就可以在Linux下虚拟一个Windows啦，好开心。
 
+同步网盘
+========
+
+网盘根据功能大概可以分为两类：同步网盘和备份网盘。既然是同步网盘，Linux下的客户端必不可少。就目前的情况，CentOS下能使用的同步网盘只有两个：Dropbox和坚果云。
+
+我主要用同步网盘将Linux机器上的PDF文献同步到iPad上。
+
+Dropbox
+-------
+
+又是一个被墙的工具，熟练掌握科学上网技巧的人可以使用，一般人还是不要用了。
+
+::
+
+    wget https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
+    sudo rpm -i nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
+
+坚果云
+------
+
+国内的全平台同步网盘，不限空间，但限制每月上传/下载流量。
+
+::
+
+    # 坚果云依赖于notify-python，该包位于Nux Dextop源中
+    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/notify-python-0.1.1-25.el7.nux.x86_64.rpm
+    # 下载
+    wget https://jianguoyun.com/static/exe/installer/fedora/nautilus_nutstore_amd64.rpm
+    sudo rpm -i nautilus_nutstore_amd64.rpm
 
 工具软件
 ========
@@ -622,20 +651,6 @@ VirtualBox虚拟机
 #. `pssac <{filename}/SeisWare/2013-08-04_install-pssac.rst>`_\ ：用GMT绘制SAC文件
 #. `distaz <{filename}/SeisWare/2013-07-03_calculate-dist-az-baz.rst>`_\ ：根据两点经纬度计算震中距和方位角
 
-模块、插件等等
-==============
-
-Vim插件
--------
-
-- bundle：vim插件管理
-- powerline：状态栏增强
-- nerdtree：文件浏览器
-- vim-colors-solarized：solarized配色
-- YouCompleteMe：代码补全
-- delimitMate：括号补全
-- indentLine：显示缩进对齐
-
 未完成
 ======
 
@@ -656,13 +671,6 @@ Google Earth
 
 安装完成后，启动后奔溃。。
 
-Dropbox
--------
-
-::
-
-    wget https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
-    sudo rpm -i nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
 
 参考
 ====
@@ -682,6 +690,7 @@ Dropbox
 - 2014-12-02：新增Opera浏览器和unrar；
 - 2014-12-27：新增pointdownload下载工具；google chrome采用非官方源镜像；
 - 2014-12-28：修订unrar的rpm文件链接；
+- 2015-01-03：新增同步网盘Dropbox和坚果云；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
