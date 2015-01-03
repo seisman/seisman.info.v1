@@ -2,7 +2,7 @@ pssac之安装
 ###########
 
 :date: 2013-08-04 15:13
-:modified: 2014-07-16       
+:modified: 2014-07-16
 :author: SeisMan
 :category: 地震学软件
 :tags: pssac, 编译, GMT4
@@ -19,26 +19,26 @@ pssac是Prof. Lupei Zhu根据GMT的psxy命令改写的一个小程序，利用GM
 
 .. code-block:: bash
 
- $ mkdir pssac
- $ cd pssac
- $ wget http://www.eas.slu.edu/People/LZhu/downloads/pssac.tar
- #下载基于GMT4.0的pssac包
- $ wget http://www.eas.slu.edu/People/LZhu/downloads/pssac.c
- #下载基于GMT4.5的pssac源码
- $ tar xvf pssac.tar
- $ cp pssac.c pssac #用新的pssac.c替换旧的
- $ cd pssac
+   $ mkdir pssac
+   $ cd pssac
+   $ wget http://www.eas.slu.edu/People/LZhu/downloads/pssac.tar
+   #下载基于GMT4.0的pssac包
+   $ wget http://www.eas.slu.edu/People/LZhu/downloads/pssac.c
+   #下载基于GMT4.5的pssac源码
+   $ tar xvf pssac.tar
+   $ cp pssac.c pssac #用新的pssac.c替换旧的
+   $ cd pssac
 
 修改Makefile
 ============
 
-用你最喜欢的编辑器打开Makefile文件，在文件头部加上1-5行的内容，并根据自己的情况稍作修改：
+用编辑器打开Makefile文件，在文件头部加上1-5行的内容，并根据自己的情况稍作修改：
 
 **注意：** 安装GMT4时必须用系统自带的软件包管理器安装netcdf3或netcdf4。
 
 .. code-block:: bash
 
- GMTHOME=/usr/local/GMT
+ GMTHOME=/opt/GMT-4.5.13
  GMT_INC=-I${GMTHOME}/include
  GMT_LIBS=-L${GMTHOME}/lib -lgmt -lpsl -lgmtps -lnetcdf -lm
 
@@ -62,10 +62,10 @@ pssac是Prof. Lupei Zhu根据GMT的psxy命令改写的一个小程序，利用GM
 
 .. code-block:: bash
 
- $ make
- cc -O -I/usr/local/local/GMT/include -c -o pssac.o pssac.c
- cc -O -I/usr/local/local/GMT/include -c -o sacio.o sacio.c
- cc -O -I/usr/local/local/GMT/include -o pssac pssac.o sacio.o -L/usr/local/local/GMT/lib -lgmt -lpsl -lgmtps -lnetcdf
+   $ make
+   cc -O -I/opt/GMT-4.5.13/include   -c -o pssac.o pssac.c
+   cc -O -I/opt/GMT-4.5.13/include   -c -o sacio.o sacio.c
+   cc -O -I/opt/GMT-4.5.13/include    -o pssac pssac.o sacio.o -L/opt/GMT-4.5.13/lib -lgmt -lpsl -lgmtps -lnetcdf -lm
 
 编译过程就是简单的make，如果没有错误的话应该会出现下面三行。
 
@@ -87,8 +87,8 @@ http://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80#C99
 
 .. code-block:: C
 
- typedef _Bool BOOLEAN;
- typedef GMT_LONG BOOLEAN;
+   typedef _Bool BOOLEAN;
+   typedef GMT_LONG BOOLEAN;
 
 其中GMT_LONG是Prof. Zhu 的新pssac.c代码中的用法。
 
@@ -97,5 +97,5 @@ http://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80#C99
 
 - 2013-04-17：初稿；
 - 2013-04-19：加入了对旧版本pssac.c的讨论。
-- 2014-06-24：GMT4的最近几个版本，都不再建议自己安装netcdf3了，最好还是自己利用系统自带的软件包管理器安装netcdf4。在这种情况下，netcdf会被安装到系统默认路径中，因而Makefile中不需要再指明netcdf的安装路径。
-- 2014-07-16：在某些系统下，GMT_LIBS需要加上\ ``-lm``\ 。  
+- 2014-06-24：GMT4的最近几个版本，都不再建议自己安装netcdf3了，最好还是自己利用系统自带的软件包管理器安装netcdf4。在这种情况下，netcdf会被安装到系统默认路径中，因而Makefile中不需要再指明netcdf的安装路径；
+- 2014-07-16：在某些系统下，GMT_LIBS需要加上\ ``-lm``\ ；
