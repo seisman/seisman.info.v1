@@ -12,6 +12,11 @@ Institution
 - `American Geophysical Union <http://sites.agu.org/>`_
 - `International Seismological Centre <http://www.isc.ac.uk/>`_
 
+Groups
+======
+
+- `Harvard Seismology <http://www.seismology.harvard.edu/index.html>`_
+
 
 Waveform Data
 =============
@@ -44,7 +49,6 @@ Software Library
 
 - `IRIS seiscode <https://seiscode.iris.washington.edu/>`_
 - `ORFEUS Seismological Software Library <http://www.orfeus-eu.org/software.html>`_
-
 
 Others
 ======
