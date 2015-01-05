@@ -3,17 +3,18 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2014-12-27
+:modified: 2015-01-05
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
 
 这篇博文记录了我用CentOS 7搭建\ **地震学科研环境**\ 的过程，供我个人在未来重装系统时参考。对于其他地震学科研人员，也许有借鉴意义。
 
-警告：
+阅读须知：
 
-#. 本文尽量写的浅显易懂，读者应掌握基本的Linux知识；
+#. 本文尽量写的浅显易懂，但要求读者掌握Linux基础知识；
 #. 本文所有操作均在CentOS 7下完成，其他发行版或多或少与CentOS 7不同，因而仅供参考；
+#. 本文所安装的软件纯粹出于个人习惯及喜好，读者应自己判断，按需安装；
 
 .. contents::
 
@@ -65,7 +66,7 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
   - ``/opt``\ ：个人习惯是将第三方软件都安装在\ ``/opt``\ 下，所以分了70G
   - ``/home``\ ：余下的全部空间
 
-#. 点击“Begin to Install”开始安装
+- 点击“Begin to Install”开始安装
 
 真正的安装
 ----------
@@ -526,13 +527,15 @@ chsh命令修改的是login shell，因而需要退出当前用户并重新登�
 autojump
 --------
 
-`autojump <https://github.com/joelthelion/autojump>`_\ 是一个非常智能的目录快速切换的工具。比如::
+`autojump <https://github.com/joelthelion/autojump>`_\ 是一个非常智能的目录快速切换的工具。简单演示如下::
 
     $ pwd
     /home/seisman
     $ cd Desktop
     $ cd /opt
     $ cd /usr/local
+
+    # 用j命令迅速从/usr/local跳转到与des匹配的目录，这里只有Desktop可以匹配
     $ j des
     $ pwd
     /home/seisman/Desktop
@@ -541,16 +544,8 @@ autojump
 
 安装::
 
-    git clone https://github.com/joelthelion/autojump.git
-    cd autojump
-    ./install.py  # 安装
-    cd ..
-    rm -rf autojump  # 删除
-
-然后，将如下语句加入到\ ``.zshrc``\ 中::
-
-    [[ -s /home/seisman/.autojump/etc/profile.d/autojump.sh ]] && source /home/seisman/.autojump/etc/profile.d/autojump.sh
-    autoload -U compinit && compinit -u
+    sudo yum install autojump
+    sudo yum install autojump-zsh
 
 中文输入法
 ----------
@@ -558,17 +553,6 @@ autojump
 刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是ibus，使用效果一般。fcitx是更好的选择，基于fcitx框架的搜狗输入法或许是更更好的选择。
 
 参考\ `CentOS7安装搜狗输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_\ 。
-
-PointDownload
--------------
-
-点载,是一个能帮助你方便地从网络上下载各种文件的软件。支持主流的下载协议，包括http、ftp、磁力链接、BT、ed2k、迅雷专用链接、QQ旋风链接以及you-get支持的视频网页链接。
-
-安装该软件需要启用mosquito源，具体参见安装搜狗输入法一文。
-
-::
-
-    sudo yum install pointdownload
 
 HostTool
 --------
@@ -627,11 +611,25 @@ Dropbox
 工具软件
 ========
 
+视频下载工具
+------------
+
+`you-get <https://github.com/soimort/you-get>`_\ 和\ `youtube-dl <https://github.com/rg3/youtube-dl>`\ 是两个用于从视频网站上下载视频文件的工具。其中，后者支持的网站更多，但前者对国内的视频网站支持更好。
+
+::
+
+    pip install you-get
+    pip install youtube-dl
+
+其他工具
+--------
+
 ::
 
     sudo yum install nfs-utils     # 挂载NFS文件系统所必须
     sudo yum install xclip         # 终端的文本复制工具
     sudo yum install ImageMagick   # 其中的import和convert命令很有用
+
 
 地球物理相关
 ============
@@ -650,6 +648,13 @@ Dropbox
 #. win32tools：Hinet自定义的win32格式转SAC格式
 #. `pssac <{filename}/SeisWare/2013-08-04_install-pssac.rst>`_\ ：用GMT绘制SAC文件
 #. `distaz <{filename}/SeisWare/2013-07-03_calculate-dist-az-baz.rst>`_\ ：根据两点经纬度计算震中距和方位角
+
+娱乐
+====
+
+::
+
+    sudo yum install 2048-cli   # 2048命令行版
 
 未完成
 ======
@@ -690,7 +695,8 @@ Google Earth
 - 2014-12-02：新增Opera浏览器和unrar；
 - 2014-12-27：新增pointdownload下载工具；google chrome采用非官方源镜像；
 - 2014-12-28：修订unrar的rpm文件链接；
-- 2015-01-03：新增同步网盘Dropbox和坚果云；
+- 2015-01-03：新增同步网盘Dropbox和坚果云；删除pointdownload；
+- 2015-01-05：autojump直接从epel中安装；新增youtube-dl、you-get和2048-cli；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
