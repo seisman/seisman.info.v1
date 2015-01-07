@@ -26,14 +26,14 @@ CentOS 7的安装与其他Linux发行版的安装差不多，个别地方稍有�
 准备工作
 --------
 
-#. 准备所需材料
+#. 准备材料
 
    - U盘：容量700M以上，用于制作U盘启动盘，因为在制作启动盘时会格式化U盘，所以U盘内不要包含重要资料
    - `CentOS 7.0 LiveCD ISO镜像文件 <http://mirrors.ustc.edu.cn/centos/7/isos/x86_64/CentOS-7.0-1406-x86_64-livecd.iso>`_
    - `Universal USB installer <http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/>`_\ ：Windows下的U盘启动盘制作工具
    - 一个已安装Windows的电脑：用于制作U盘启动盘
 
-#. 运行Universal USB installer制作U盘启动盘
+#. 运行Universal USB installer并制作U盘启动盘
 #. 将U盘插入计算机，重启，进入BIOS选择从U盘启动，即可进入CentOS的LiveCD
 #. 进入LiveCD后，点击桌面的“Install to Hard Drive”即可安装
 
@@ -105,7 +105,7 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 添加第三方源
 ------------
 
-CentOS有很多第三方源，比如EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge等。根据上面提到的软件安装原则，为了尽可能保证系统的稳定性，此处大型第三方源只添加EPEL源。
+CentOS有很多第三方源，比如EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge等。根据上面提到的软件安装原则，为了尽可能保证系统的稳定性，此处大型第三方源只添加EPEL源和ELRepo源。
 
 EPEL
 ~~~~
@@ -139,7 +139,7 @@ ELRepo
 
 安装该插件的同时会安装另一个软件axel。axel是一个并行下载工具，在下载http、ftp等简单协议的文件时非常好用。
 
-第一次全面升级
+第一次全面更新
 --------------
 
 在进一步操作之前，先把已经安装的软件包都升级到最新版::
@@ -202,9 +202,10 @@ GCC系列
 
 ::
 
+    sudo yum install make
     sudo yum install gdb     # 代码调试器
     sudo yum install cmake   # Cmake
-    sudo yum install git
+    sudo yum install git     # 版本控制
 
 驱动程序
 ========
@@ -225,7 +226,7 @@ Linux默认只使用开源的显卡驱动，就目前的情况来看，开源驱
     [10de:06dd] NVIDIA Corporation GF100GL [Quadro 4000]
     This device requires the current 340.58 NVIDIA driver kmod-nvidia
 
-安装显卡驱动::
+此处提示需要安装340.58版的显卡驱动。安装显卡驱动::
 
     sudo yum install nvidia-x11-drv nvidia-x11-drv-32bit
     sudo yum remove xorg-x11-glamor
@@ -269,7 +270,7 @@ Intel软件的申请以及安装参考《\ `Intel非商业免费开发工具 <{f
 
 还有一点需要注意的是，Intel也提供了并行相关的几个命令，比如mpicc、mpirun。所以openmpi、mpich和intel三者，在并行时只能用其中一个。
 
-并行开发
+并行计算
 --------
 
 并行可以用openmpi，也可以用mpich，二者应该是并列的。但是由于二者提供了几乎一样的命令，所以二者可以同时安装，但是不可以同时处于使用状态。
@@ -298,8 +299,11 @@ mpich
     export PATH=/usr/lib64/mpich/bin/:${PATH}
     module load mpi/mpich-x86_64
 
-Perl环境
---------
+脚本语言环境
+============
+
+Perl
+----
 
 CentOS 7.0自带了Perl 5.16.3（2013年03月11日发布），目前的最新版本为5.20.1（2014年09月14日发布）。
 
@@ -321,8 +325,8 @@ plenv管理新版本
 
     cpanm install Parallel::ForkManager # 并行模块
 
-Python环境
-----------
+Python
+------
 
 CentOS 7.0自带Python 2.7.5，目前Python 2的最新版本为2.7.8，Python 3的最新版本为3.4.2。
 
@@ -348,17 +352,6 @@ Python2与Python3之间是不完全兼容的，而我以Python3为主，所以�
     pip install requests
     pip install docopt
 
-等宽字体
-~~~~~~~~
-
-编程要用等宽字体，这点是常识了。一款适合编程的等宽字体，至少要满足如下几个要求：
-
-#. 易于区分“1”、“i”和“l”
-#. 易于区分“0”、“o”和“O”
-#. 易于区分中文下的左引号和右引号
-#. 美观
-
-目前选择的Source Code Pro。将解压后的字体文件放在\ ``~/.fonts``\ 目录下，并修改终端、gedit以及其他编辑器、IDE等的默认字体。
 
 日常软件
 ========
@@ -481,6 +474,31 @@ Flash插件主要是看在线视频的时候要用。Google浏览器自带了Fla
 效率类软件
 ==========
 
+这一类工具能够在不同方面提高科研的效率，也提高了使用者的体验。
+
+终端模拟器
+----------
+
+Gnome自带的终端模拟器是gnome-terminal。经常会需要开十几个终端，切换和管理起来比较麻烦。
+
+terminator
+~~~~~~~~~~
+
+terminator有很多功能，我只用到了终端分割的功能。\ ``Ctrl+Shift+O``\ 对终端水平分隔，\ ``Ctrl+Shift+E``\ 对终端垂直分隔，\ ``Alt+上下左右``\ 可以在各子终端中切换。
+
+::
+
+    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/terminator-0.97-6.el7.nux.noarch.rpm
+
+guake
+~~~~~
+
+按下F12即可启动guake，再次按下F12即可隐藏。有些时候需要临时执行一两个命令，但是又不想额外启动一个终端的情况下，guake是个不错的选择。
+
+::
+
+    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/guake-0.4.4-11.el7.nux.x86_64.rpm
+
 zsh与oh my zsh
 --------------
 
@@ -578,10 +596,22 @@ VirtualBox虚拟机
 
 这样就可以在Linux下虚拟一个Windows啦，好开心。
 
+等宽字体
+--------
+
+编程要用等宽字体，这点是常识了。一款适合编程的等宽字体，至少要满足如下几个要求：
+
+#. 易于区分“1”、“i”和“l”
+#. 易于区分“0”、“o”和“O”
+#. 易于区分中文下的左引号和右引号
+#. 美观
+
+目前选择的Source Code Pro。将解压后的字体文件放在\ ``~/.fonts``\ 目录下，并修改终端、gedit以及其他编辑器、IDE等的默认字体。
+
 同步网盘
 ========
 
-网盘根据功能大概可以分为两类：同步网盘和备份网盘。既然是同步网盘，Linux下的客户端必不可少。就目前的情况，CentOS下能使用的同步网盘只有两个：Dropbox和坚果云。
+网盘根据功能大概可以分为两类：同步网盘和备份网盘。既然是同步网盘，Linux下的客户端必不可少。就目前已知的情况来看，CentOS下能使用的同步网盘只有两个：Dropbox和坚果云。
 
 我主要用同步网盘将Linux机器上的PDF文献同步到iPad上。
 
@@ -598,7 +628,7 @@ Dropbox
 坚果云
 ------
 
-国内的全平台同步网盘，不限空间，但限制每月上传/下载流量。
+国内的全平台同步网盘，不限空间，但限制每月上传流量1G，下载流量3G。
 
 ::
 
@@ -697,6 +727,7 @@ Google Earth
 - 2014-12-28：修订unrar的rpm文件链接；
 - 2015-01-03：新增同步网盘Dropbox和坚果云；删除pointdownload；
 - 2015-01-05：autojump直接从epel中安装；新增youtube-dl、you-get和2048-cli；
+- 2015-01-07：新增terminator和guake；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
