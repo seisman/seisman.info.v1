@@ -12,6 +12,13 @@ Institution
 - `American Geophysical Union <http://sites.agu.org/>`_
 - `International Seismological Centre <http://www.isc.ac.uk/>`_
 
+Journals
+========
+
+- `Nature <http://www.nature.com/>`_
+- `Proceedings of the National Academy of Sciences <http://www.pnas.org/>`_
+- `Geophysical Journal International <http://gji.oxfordjournals.org/>`_
+
 Groups
 ======
 
