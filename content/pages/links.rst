@@ -17,11 +17,22 @@ Journals
 ========
 
 - `Nature <http://www.nature.com/>`_
-- `Proceedings of the National Academy of Sciences <http://www.pnas.org/>`_
-- `Geophysical Journal International <http://gji.oxfordjournals.org/>`_
+- `PNAS <http://www.pnas.org/>`_
+- `GJI <http://gji.oxfordjournals.org/>`_
+- `BSSA <http://bssa.geoscienceworld.org/>`_
+- `SRL <http://srl.geoscienceworld.org/>`_
+- `Geophysics <http://geophysics.geoscienceworld.org/>`_
+- `Reviews of Geophysics <http://agupubs.onlinelibrary.wiley.com/agu/journal/10.1002/(ISSN)1944-9208/>`_
+- `EOS Transactions <http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)2324-9250>`_
+- `Geochemistry, Geophysics, Geosystems <http://agupubs.onlinelibrary.wiley.com/agu/journal/10.1002/(ISSN)1525-2027/>`_
+- `GRL <http://agupubs.onlinelibrary.wiley.com/agu/journal/10.1002/(ISSN)1944-8007/>`_
+- `JGR: Solid Earth <http://agupubs.onlinelibrary.wiley.com/agu/jgr/journal/10.1002/(ISSN)2169-9356/>`_
+- `Tectonics <http://agupubs.onlinelibrary.wiley.com/agu/journal/10.1002/(ISSN)1944-9194/>`_
+- `Chinese Journal of Geophysics <http://agupubs.onlinelibrary.wiley.com/agu/journal/10.1002/(ISSN)2326-0440/>`_
+
 
 Groups
-======
+======http://bssa.geoscienceworld.org/
 
 - `Harvard Seismology <http://www.seismology.harvard.edu/index.html>`_
 
@@ -30,15 +41,17 @@ Waveform Data
 =============
 
 - `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
-- `NEID Hi-net <http://www.hinet.bosai.go.jp/>`_
+- `NIED Hi-net <http://www.hinet.bosai.go.jp/>`_
+- `NIED F-net waveform <http://www.fnet.bosai.go.jp/auth/dataget/?LANG=en>`_
 
-Catalog
-=======
+Event and Mechanism Catalog
+===========================
 
 - `PDE <http://earthquake.usgs.gov/data/pde.php>`_
 - `ANSS Comprehensive Catalog <http://earthquake.usgs.gov/earthquakes/search/>`_
 - `Global CMT <http://www.globalcmt.org/>`_
 - `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
+- `NIED Earthquake Mechanism Search <http://www.fnet.bosai.go.jp/event/search.php?LANG=en>`_
 
 University
 ==========
