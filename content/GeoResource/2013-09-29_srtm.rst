@@ -79,13 +79,23 @@ CGIAR-CSI
 
 **数据转换：**
 
-ArcInfo ASCII格式转GMT可识别的netCDF格式:: 
+ArcInfo ASCII格式转GMT可识别的netCDF格式::
 
  xyz2grd srtm_63_02.asc -Gstrm_63_02.grd -E -V
 
 GeoTiff格式转netCDF格式（详情参考\ `本文 <{filename}/GMT/2014-01-11_convert-geotiff-to-gmt.rst>`_\ ）::
 
  gdal_translate -of GMT srtm_56_05.tif srtm_56_05.grd
+
+**数据合并：**
+
+有时需要将多个数据合并成更大区域的数据。常见的做法是先将每个GeoTiff文件转换成netCDF格式，然后利用grdcut和grdpaste进行裁剪与合并。实际操作时，合并总会遇到一些问题，可能是由于数据的转换过程中存在问题导致的。
+
+推荐的做法是先将多个GeoTiff文件合并起来，然将合并后的GeoTiff文件转换成netCDF格式。
+
+合并GeoTiff文件可以用\ `gdal_merge.py <http://gdal.org/gdal_merge.html>`_\ ，使用该命令需要安装GDAL的Python绑定。在CentOS下要安装\ ``gdal-python``\ ；Ubuntu下要安装\ ``python-gdal``\ 或\ ``python3-gdal``\ 。转换命令如下::
+
+    gdal_merge.py -init 255 -o out.tif srtm_56_07.tif srtm_57_07.tif
 
 **FTP批量下载：**
 
@@ -142,7 +152,7 @@ USGS未名网站
 
 这个例子选用的数据是N52E130.hgt，北纬、东经，-R=130/131/52/53，对于南纬或者西经要注意负号。-Z后使用TL是实践的结果，官方文档中没有给出相关信息。
 
-:: 
+::
 
  xyz2grd N52E130.hgt -GN52E130.grd -I3c/3c -R130/131/52/53 -N-32768 -ZTLhw
 
@@ -181,14 +191,16 @@ Geotiff、DTED需要专门软件处理；BIL格式本质上就是一般的二进
 #. http://dds.cr.usgs.gov/srtm/version2_1/Documentation/Quickstart.pdf
 #. http://dds.cr.usgs.gov/srtm/version2_1/Documentation/SRTM_Topo.pdf
 #. http://www.cgiar-csi.org/data/srtm-90m-digital-elevation-database-v4-1
+#. `gdal_merge <http://gdal.org/gdal_merge.html>`_
 
 修订历史
 ========
 
--  2013-09-29：初稿；
--  2014-01-01：“中国科学院计算机网络信息中心”一节代码存在问题，因网址无法访问，暂时无法修订；
--  2014-01-08：增加了CGIAR-CSI数据源；
--  2014-01-09：新增了三个下载数据源，重整文章结构，将数据源分为推荐和非推荐两类。
--  2014-01-19：将CGIAR的ftp和Box下载移至不推荐来源中。
--  2014-01-19：重新编排整个文章的结构，将正确性证明部分去除。当初做正确性证明是因为在将将USGS未名网站提供的数据转换为网格文件时，官方文档提供的信息不充分，所以需要测试验证。现在SRTM存在更好的数据源，不必再考虑这个问题。
--  2014-05-22：调整文章结构。由于中科院的数据源一直没有修复，因而仅推荐使用CGIAR的数据。
+- 2013-09-29：初稿；
+- 2014-01-01：“中国科学院计算机网络信息中心”一节代码存在问题，因网址无法访问，暂时无法修订；
+- 2014-01-08：增加了CGIAR-CSI数据源；
+- 2014-01-09：新增了三个下载数据源，重整文章结构，将数据源分为推荐和非推荐两类。
+- 2014-01-19：将CGIAR的ftp和Box下载移至不推荐来源中。
+- 2014-01-19：重新编排整个文章的结构，将正确性证明部分去除。当初做正确性证明是因为在将USGS未名网站提供的数据转换为网格文件时，官方文档提供的信息不充分，所以需要测试验证。现在SRTM存在更好的数据源，不必再考虑这个问题。
+- 2014-05-22：调整文章结构。由于中科院的数据源一直没有修复，因而仅推荐使用CGIAR的数据；
+- 2015-01-15：新增gdal_merge.py，用于合并GeoTiff文件；
