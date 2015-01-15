@@ -341,6 +341,7 @@ CentOS 7.0自带Python 2.7.5，目前Python 2的最新版本为2.7.8，Python 3�
     sudo yum install scipy  # 科学计算库
     sudo yum install python-requests  # 网页请求
     sudo yum install python-docopt  # 命令行参数分析器
+    sudo yum install gdal-python    # gdal的Python绑定
 
 pyenv管理Python3
 ~~~~~~~~~~~~~~~~
