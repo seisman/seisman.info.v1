@@ -8,7 +8,8 @@ Institution
 ===========
 
 - `Incorporated Research Institutions for Seismology <http://www.iris.edu/hq/>`_
-- `NEID Hi-net <http://www.hinet.bosai.go.jp/>`_
+- `NIED Hi-net <http://www.hinet.bosai.go.jp/>`_
+- `NIED F-net <http://www.fnet.bosai.go.jp/>`_
 - `American Geophysical Union <http://sites.agu.org/>`_
 - `International Seismological Centre <http://www.isc.ac.uk/>`_
 

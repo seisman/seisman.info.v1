@@ -3,7 +3,7 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2015-01-05
+:modified: 2015-01-14
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
@@ -659,6 +659,7 @@ Dropbox
     sudo yum install nfs-utils     # 挂载NFS文件系统所必须
     sudo yum install xclip         # 终端的文本复制工具
     sudo yum install ImageMagick   # 其中的import和convert命令很有用
+    sudo yum install dos2unix unix2dos
 
 
 地球物理相关
