@@ -29,6 +29,7 @@ Journals
 - `JGR: Solid Earth <http://agupubs.onlinelibrary.wiley.com/agu/jgr/journal/10.1002/(ISSN)2169-9356/>`_
 - `Tectonics <http://agupubs.onlinelibrary.wiley.com/agu/journal/10.1002/(ISSN)1944-9194/>`_
 - `Chinese Journal of Geophysics <http://agupubs.onlinelibrary.wiley.com/agu/journal/10.1002/(ISSN)2326-0440/>`_
+- `EPSL <http://www.journals.elsevier.com/earth-and-planetary-science-letters/>`_
 
 
 Groups
