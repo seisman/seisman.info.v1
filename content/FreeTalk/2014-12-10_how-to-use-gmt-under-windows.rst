@@ -142,7 +142,13 @@ NppExec插件可以解决这个问题。安装该插件后（安装过程中需�
    :width: 700 px
    :alt: notepad++ with F6
 
-在其中输入\ ``$(FULL_CURRENT_PATH)``\ ，然后点击OK，即可执行该bat脚本，执行后的效果如下：
+在其中输入\ ``$(FULL_CURRENT_PATH)``\ ，然后点击OK，即可执行该bat脚本。
+
+**注意**\ ：
+
+在执行bat脚本的过程中，可能会出现生成的PS文件被放到notepad++的安装文件夹下，或者因为权限问题“拒绝访问”的错误，解决办法是在“插件”->“NppExec”中勾选“Follow $(CURRENT_DIRECTORY)”选项，并重启notepad++使其生效。该选项的作用是使得在执行bat之前，先cd到bat所在的路径，再执行bat脚本中的命令。
+
+执行后的效果如下：
 
 .. figure:: /images/2014121006.png
    :align: center
@@ -235,14 +241,16 @@ gsview是GMT官方推荐的PS查看器，它可以基本实现PS文件的实时�
 
 试想一下，在编辑区写脚本，写完了Ctrl+S保存，然后Ctrl+F6执行，眼睛移到终端区看看有没有错误和警告，有的话就修改脚本，重复以上动作，没有的话眼睛瞟一眼预览区，看看最终的绘图效果。整个过程都不需要动一下鼠标，比cmd、notepad、gsview之类可高效多了。
 
-Tips and Bugs
-=============
+Tips Or Bugs
+============
 
 #. Sumatra似乎不能打开GMT生成的含中文的PS文件；
 #. Notepad++默认将文件以UTF-8编码保存，因而若需要在PS文件中添加中文，则可能会导致乱码；
+#. 编辑bat文件时应注意dos里是没有续行符的，一条命令必须在一行写完。不像linux下的\, fortran90下的&和matlab下的...续行；
 
 修订历史
 ========
 
 - 2014-12-10：初稿；
 - 2015-01-13：加入了与GMT中文相关的几个注意事项；
+- 2015-01-17：NppExec插件应勾选“Follow $(CURRENT_DIRECTORY)”选项；Thanks to Joe Wang；
