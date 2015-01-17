@@ -2,7 +2,7 @@ Hinet连续波形数据申请及下载的脚本实现
 #####################################
 
 :date: 2014-08-30 22:22
-:modified: 2014-12-03
+:modified: 2015-01-17
 :author: SeisMan
 :category: 地震学基础
 :tags: Hinet, 数据, 申请, Python
@@ -16,71 +16,6 @@ Hinet连续波形数据申请及下载的脚本实现
 #. 向Hi-net发送数据请求
 #. 等待数据准备
 #. 下载数据
-
-这篇博文介绍了如何用Python实现以上步骤。为什么用Python呢？
-
-    Life is short, you need Python.
-
-Python实现数据申请示例
-======================
-
-下面\ **用尽可能少且简单**\ 的Python代码实现了Hi-net数据的申请。需要注意，此版本仅仅只是为了展示数据申请方法的原理，实际用起来并不方便也不智能！
-
-该脚本需要安装Python的requests模块。
-
-.. code-block:: python
-
-	#!/usr/bin/env python
-	# -*- coding: utf-8 -*-
-	import requests
-
-	auth = {
-	    'auth_un': 'xxxxxx',  # 用户名
-	    'auth_pw': 'xxxxxx',  # 密码
-	    }
-
-	url = "https://hinetwww11.bosai.go.jp/auth/download/cont/cont_request.php"
-	# 构建query string
-	payload = {
-	    'org1':  '01',
-	    'org2':  '01',
-	    'year':  '2014',
-	    'month': '08',
-	    'day':   '14',
-	    'hour':  '02',
-	    'min':   '25',
-	    'span':  '5',
-	    'arc':   'ZIP',      # compressed format of the data
-	    'size':  '93680',    # estimated size of the data, it is not important
-	    'LANG':  'en',       # english version of web
-	    'rn':    '12345677'  # random value
-	}
-
-	# 向Hi-net发送请求
-	requests.post(url, params=payload, data=auth, verify=False)
-
-就是这么简单。
-
-上面的版本用尽可能少的代码完成了数据的申请。一个优秀的脚本，还应该做更多的细节：
-
-- 支持更多的机构和台站，并对机构和台站代码进行判断
-- 判断日期是否合法
-- 判断日期是否在允许的范围区间内
-- 月、日、时、分、秒的格式为\ ``%02d``\ ，即month=02而不是month=2
-- 数据长度的格式为\ ``%d``\ ，即span=5而不是span=05
-
-数据下载
-========
-
-申请完数据之后，还需要及时将数据下载下来。最简单的办法是人工点击下载链接，但是这种方法相对来说太低效，因而还是考虑用脚本实现。
-
-查看下载页面的源码或直接查看数据的下载链接，可以知道，下载数据的实质是向Hi-net服务器发送如下请求::
-
-  https://hinetwww11.bosai.go.jp/auth/download/cont/cont_download.php?id=0005134055&LANG=en
-
-其中id为Status/Download页面第一列给出的10位整数。
-
-因而写脚本自动下载的关键是获取要下载的数据的id，不再多说
 
 HinetContRequest.py
 ===================
@@ -179,3 +114,4 @@ HinetContRequest.py
 - 2014-09-12：账号及密码位于配置文件中；
 - 2014-11-04：将数据申请与数据下载合并在一起；
 - 2014-12-03：由于Hinet网址的更新，原Python脚本失效，现已修正；
+- 2015-01-17：Hinet网址改动比较大，脚本实现需要更多的技巧，因而把原来的示例脚本删除；
