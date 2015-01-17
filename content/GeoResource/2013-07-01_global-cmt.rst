@@ -49,4 +49,5 @@ http://www.globalcmt.org/CMTfiles.html
 备注
 ====
 
+- GCMT中给出的地震矩单位是dyne-cm，而不是国际单位制的N-m。
 - GCMT目录的ASCII文件中震级采用mb和/或MS，为什么不用矩震级？使用面波和体波震级的最大问题是震级饱和，导致震级基本不会超过8级。
