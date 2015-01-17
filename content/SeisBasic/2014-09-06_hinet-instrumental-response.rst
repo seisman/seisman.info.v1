@@ -93,13 +93,13 @@ Analog-Digital Conversion
 
 模数转换器（ADC）的作用是将连续的模拟信号（电压，单位V）转换为离散的数字信号（单位为counts）。如果一个ADC的bit rate为8，则该ADC可以将模拟信号编码为\ :math:`2^8=256`\ 个不同的离散值，从0至255或从-128到127。
 
-若该ADC的电压测量范围为\ :math:`\pm 20 V`\ ，则该ADC可以将40V的电压测量范围转换为256种离散值，因而该ADC的电压分辨率为\ :math: `\frac{40V}{256 counts}=\frac{5}{32} V/counts`\ 。这一电压分辨率也称为最低有效位（LSB）电压，即“使得输出离散信号产生一个变化所需的最小输入电压的差值”。
+若该ADC的电压测量范围为\ :math:`\pm 20 V`\ ，则该ADC可以将40V的电压测量范围转换为256种离散值，因而该ADC的电压分辨率为40/256 V/counts。这一电压分辨率也称为最低有效位（LSB）电压，即“使得输出离散信号产生一个变化所需的最小输入电压的差值”。
 
 bit rate与LSB value之间的关系如下：
 
 .. math::
 
-   LSB = \frac{V_{high}-V_{low}}{2^{bitrate}}
+   \frac{V_{high}-V_{low}}{2^{bitrate}}
 
 其中\ :math:`V_{high}`\ 和\ :math:`V_{low}`\ 分别为ADC的测量电压上下限。
 
