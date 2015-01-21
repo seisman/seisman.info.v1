@@ -9,7 +9,7 @@
 
 这里有个概念是混乱的。有些数据只有陆地部分的地形，有些数据有陆地和海洋的地形，或许前者应该称为数字高程数据，后者称为地形起伏数据。做大地测量的应该更清楚这些专业名词。这里统称为地形数据。
 
-博客中提到的地形数据，按照精度从低到高排序如下：
+博客中提到的地形数据，按照分辨率从低到高排序如下：
 
 -  etopo5：\ `GMT网格数据之etopo5 <{filename}/GeoResource/2013-08-10_global-relief-model-etopo5.rst>`_
 -  etopo2：\ `GMT网格数据之ETOPO2v2 <{filename}/GeoResource/2013-08-11_global-relief-model-etopo2.rst>`_

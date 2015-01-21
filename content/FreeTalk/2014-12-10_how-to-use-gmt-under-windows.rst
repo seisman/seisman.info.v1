@@ -244,6 +244,7 @@ gsview是GMT官方推荐的PS查看器，它可以基本实现PS文件的实时�
 Tips Or Bugs
 ============
 
+#. 要使用Sumatra查看PS文件，必须先安装较新版本的ghostscript；
 #. Sumatra似乎不能打开GMT生成的含中文的PS文件；
 #. Notepad++默认将文件以UTF-8编码保存，因而若需要在PS文件中添加中文，则可能会导致乱码；
 #. 编辑bat文件时应注意dos里是没有续行符的，一条命令必须在一行写完。不像linux下的\, fortran90下的&和matlab下的...续行；
@@ -254,3 +255,4 @@ Tips Or Bugs
 - 2014-12-10：初稿；
 - 2015-01-13：加入了与GMT中文相关的几个注意事项；
 - 2015-01-17：NppExec插件应勾选“Follow $(CURRENT_DIRECTORY)”选项；Thanks to Joe Wang；
+- 2015-01-21：Sumatra查看PS文件时依赖于ghostscript；Thanks to Michael Song；

@@ -33,7 +33,7 @@ Journals
 
 
 Groups
-======http://bssa.geoscienceworld.org/
+======
 
 - `Harvard Seismology <http://www.seismology.harvard.edu/index.html>`_
 

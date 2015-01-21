@@ -56,6 +56,17 @@ mseed2sac
 - 网址: https://seiscode.iris.washington.edu/projects/mseed2sac
 - 说明: 将miniSEED格式转换为SAC格式
 
+数据获取工具
+============
+
+JWEED
+------
+
+- 版本: 4.1.1
+- 语言: Java
+- 网址: http://ds.iris.edu/ds/nodes/dmc/software/downloads/jweed/
+- 说明: 用Java实现的IRIS数据申请客户端。功能包括：筛选事件、台站以及下载波形数据和仪器响应文件。
+
 
 绘图类
 ======
@@ -63,7 +74,7 @@ mseed2sac
 Generic Mapping Tools
 ---------------------
 
-- 版本: 4.5.12 + 5.1.1
+- 版本: 4.5.13 + 5.1.1
 - 语言: C
 - 网址: http://gmt.soest.hawaii.edu/
 - 说明: 地球物理方向绘制地图必备神器。
