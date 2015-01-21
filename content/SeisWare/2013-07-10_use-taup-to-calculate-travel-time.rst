@@ -18,8 +18,8 @@ TauP和ttimes一样都是基于Buland和Chapman于1983年提出的方法，但Ta
 #. taup
 #. taup_console
 #. taup_time
-#. `taup_pierce <filename/SeisWare/2014-11-07_calcaulate-pierce-points-using-taup.rst>`_\ ：用于计算射线在各个速度分界面的穿透点
-#. `taup_setsac <{filename}/SeisWare/2014-11-10_mark-travel-time-using-taup.rst>`_\ 用于将震相到时、射线参数等信息写入头段中。
+#. `taup_pierce <{filename}/SeisWare/2014-11-07_calculate-pierce-points-using-taup.rst>`_\ ：用于计算射线在各个速度分界面的穿透点
+#. `taup_setsac <{filename}/SeisWare/2014-11-10_mark-travel-time-using-taup.rst>`_\ ：用于将震相到时、射线参数等信息写入头段中。
 #. taup_path
 #. taup_curve
 #. taup_create
