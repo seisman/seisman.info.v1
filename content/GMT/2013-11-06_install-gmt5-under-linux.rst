@@ -100,7 +100,7 @@ GMT5的依赖包，相对来说要复杂很多。
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.1.1")
     set (GMT_INSTALL_MODULE_LINKS FALSE)
-    set (GSHHG_ROOT "/home/seisman/Desktop/gmt/gshhg-gmt-.3.2")
+    set (GSHHG_ROOT "/home/seisman/Desktop/gmt/gshhg-gmt-2.3.2")
     set (COPY_GSHHG TRUE)
     set (DCW_ROOT "/home/seisman/Desktop/gmt/dcw-gmt-1.1.1")
     set (COPY_DCW TRUE)
