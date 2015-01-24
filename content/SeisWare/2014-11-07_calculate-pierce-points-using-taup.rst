@@ -5,7 +5,7 @@
 :author: SeisMan
 :category: 地震学软件
 :tags: 射线, TauP
-:slug: calcaulate-pierce-points-using-taup
+:slug: calculate-pierce-points-using-taup
 
 .. contents::
 
