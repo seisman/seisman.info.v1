@@ -48,7 +48,7 @@ GMT编译过程需要C编译器，以及一些底层的库文件。
 软件依赖包
 ----------
 
-GMT4主要依赖于netCDF，可以直接使用Linux发行版官方源中提供的netCDF包\ [*]_\ 。
+GMT4主要依赖于netCDF，可以直接使用Linux发行版官方源中提供的netCDF包\ [*]_\ 。除了netcdf之外，建议还安装gdal包。虽然GMT不依赖于gdal，但gdal可以轻松地将其他数据格式转换为GMT可识别的格式。
 
 对于Ubuntu/Debian::
 
@@ -70,9 +70,9 @@ GMT4主要依赖于netCDF，可以直接使用Linux发行版官方源中提供�
 
 .. code-block:: bash
 
-   $ tar -jxvf gmt-4.5.12-src.tar.bz2
-   $ cd gmt-4.5.12
-   $ ./configure --prefix=/opt/GMT-4.5.12
+   $ tar -jxvf gmt-4.5.13-src.tar.bz2
+   $ cd gmt-4.5.13
+   $ ./configure --prefix=/opt/GMT-4.5.13
    $ make
    $ sudo make install-all
 
