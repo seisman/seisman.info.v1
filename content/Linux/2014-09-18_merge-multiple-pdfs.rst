@@ -1,8 +1,9 @@
-Linux下合并多个PDF
-##################
+Linux下合并PDF
+###############
 
 :author: SeisMan
 :date: 2014-09-18
+:modified: 2015-01-27
 :category: Linux
 :tags: PDF, Linux
 :slug: merge-multiple-pdfs
@@ -10,6 +11,17 @@ Linux下合并多个PDF
 .. contents::
 
 经常需要将多个PDF合并为一个文件，这里收集了网上给出的一些方案，并总结一下。
+
+**推荐使用cpdf**
+
+cpdf
+====
+
+`cpdf <http://community.coherentpdf.com/>`_\ 全称是Coherent PDF Command Line Tools，是一个强大的PDF处理工具。PDF合并只是它的一个功能之一。
+
+::
+
+    cpdf input1.pdf input2.pdf -o output.pdf
 
 pdfunite
 ========
@@ -67,3 +79,9 @@ gs
 
 - https://blog.dbrgn.ch/2013/8/14/merge-multiple-pdfs/
 - http://stackoverflow.com/questions/2507766/merge-convert-multiple-pdf-files-into-one-pdf
+
+修订历史
+========
+
+- 2014-09-18：初稿；
+- 2015-01-27：新增cpdf；
