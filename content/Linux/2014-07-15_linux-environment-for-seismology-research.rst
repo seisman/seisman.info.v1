@@ -657,7 +657,7 @@ PDF处理工具
 
 `cpdf <http://community.coherentpdf.com/>`_\ 是一个跨平台的PDF处理工具，可以完成常见的PDF合并、切割、加密解密、书签、水印等功能。
 
-下载已编译好的\ `二进制包<https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip>`_\ ，解压，并将与自己的平台对应的二进制文件复制到\ ``${HOME}/bin``\ 目录下即可使用。
+下载已编译好的\ `二进制包 <https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip>`_\ ，解压，并将与自己的平台对应的二进制文件复制到\ ``${HOME}/bin``\ 目录下即可使用。
 
 其他工具
 --------
