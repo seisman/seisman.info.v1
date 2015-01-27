@@ -652,6 +652,13 @@ Dropbox
     pip install you-get
     pip install youtube-dl
 
+PDF处理工具
+-----------
+
+`cpdf <http://community.coherentpdf.com/>`_\ 是一个跨平台的PDF处理工具，可以完成常见的PDF合并、切割、加密解密、书签、水印等功能。
+
+下载已编译好的\ `二进制包<https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip>`_\ ，解压，并将与自己的平台对应的二进制文件复制到\ ``${HOME}/bin``\ 目录下即可使用。
+
 其他工具
 --------
 
@@ -730,6 +737,7 @@ Google Earth
 - 2015-01-03：新增同步网盘Dropbox和坚果云；删除pointdownload；
 - 2015-01-05：autojump直接从epel中安装；新增youtube-dl、you-get和2048-cli；
 - 2015-01-07：新增terminator和guake；
+- 2015-01-27：新增cpdf；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
