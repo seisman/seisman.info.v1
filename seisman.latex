@@ -1,3 +1,10 @@
+%
+% LaTeX template for pandoc 
+%
+%    pandoc post.rst -f rst -t latex -o post.pdf -s --template=seisman.latex \
+%       --toc --listings --number-sections --latex-engine=xelatex \
+%       -V SITEURL=http://seisman.info  
+%
 \documentclass[a4paper, 11pt, onside]{article}
 
 % 中文支持与字体设置
@@ -84,7 +91,6 @@ $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
 $endif$
 \date{}
-
 
 \pagestyle{main}
 
