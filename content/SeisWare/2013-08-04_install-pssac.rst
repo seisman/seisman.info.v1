@@ -34,21 +34,24 @@ pssac是Prof. Lupei Zhu根据GMT的psxy命令改写的一个小程序，利用GM
 
 用编辑器打开Makefile文件，在文件头部加上1-5行的内容，并根据自己的情况稍作修改：
 
-**注意：** 安装GMT4时必须用系统自带的软件包管理器安装netcdf3或netcdf4。
+**注意：**
 
-.. code-block:: bash
+#. 安装GMT4时必须用系统自带的软件包管理器安装netcdf3或netcdf4
+#. Makefile中的命令必须使用Tab键作为separator；
 
- GMTHOME=/opt/GMT-4.5.13
- GMT_INC=-I${GMTHOME}/include
- GMT_LIBS=-L${GMTHOME}/lib -lgmt -lpsl -lgmtps -lnetcdf -lm
+.. code-block:: makefile
 
- CFLAGS = -O ${GMT_INC}
+   GMTHOME=/opt/GMT-4.5.13
+   GMT_INC=-I${GMTHOME}/include
+   GMT_LIBS=-L${GMTHOME}/lib -lgmt -lpsl -lgmtps -lnetcdf -lm
 
- pssac: pssac.o sacio.o
-    $(LINK.c) -o $@ $@.o sacio.o $(GMT_LIBS)
+   CFLAGS = -O ${GMT_INC}
 
- clean:
-    rm -f pssac *.o
+   pssac: pssac.o sacio.o
+        $(LINK.c) -o $@ $@.o sacio.o $(GMT_LIBS)
+
+   clean:
+        rm -f pssac *.o
 
 -  ``GMTHOME``\ 为你安装的GMT的路径，需要根据自己的情况修改
 -  ``GMT_INC``\ 指定了GMT的头文件位置
