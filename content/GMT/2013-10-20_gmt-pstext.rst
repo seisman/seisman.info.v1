@@ -20,8 +20,8 @@ GMT命令之用pstext在图上写入文本
         [-A] [-B<params>] [-C<dx>/<dy>] [-D[j]<dx>[/<dy>][v[<pen>]]
         [-E<azim>/<elev>[+w<lon>/<lat>[<z>][+v<x0>/<y0>]] [-G<color>]
         [-H[<nrec>]] [-K] [-L] [-N] [-O] [-P] [-S<pen>] [-U[<just>/<dx>/<dy>/][c language="|<label>"][/c]]
-        [-V] [-W[<fill>,][o|O|c|C[<pen>]]] [-X[a|c|r]<x_shift>[u]] 
-        [-Y[a|c|r]<x_shift>[u]] [-Z[<zlevel>|+]] [-:[i|o]] [-c<ncopies>] 
+        [-V] [-W[<fill>,][o|O|c|C[<pen>]]] [-X[a|c|r]<x_shift>[u]]
+        [-Y[a|c|r]<x_shift>[u]] [-Z[<zlevel>|+]] [-:[i|o]] [-c<ncopies>]
         [-f[i|o]<colinfo>] [-m[<flag>]]
 
 文件格式
@@ -191,13 +191,13 @@ pstext的必须选项有-J和-R，对于三维图来还需要-Jz；
 
 .. code-block:: bash
 
- #!/bin/bash
- pstext -R0/4/0/4 -JX4c -B1f1g1/1f1g1 -S3p,red > a.ps <<EOF
- 3 0 25 0 0 CM TEXT
- EOF
+   #!/bin/bash
+   pstext -R0/4/0/4 -JX4c -B1f1g1/1f1g1 -S3p,red > a.ps <<EOF
+   2 2 0 25 0 0 CM TEXT
+   EOF
 
 .. figure:: /images/2013102006.jpg
-   :width: 600px
+   :width: 300px
    :alt: fig 1
 
 段落模式-m
@@ -210,7 +210,7 @@ pstext的必须选项有-J和-R，对于三维图来还需要-Jz；
     > x y size angle fontno justify linespace parwidth parjust
 
 首字符为">"，第二个字符为空格，x、y、size、angle、fontno、justify与前面所说的相同。linespace为行间距，parwidth为段落的宽度，parjust为段落对齐方式，可以是l（左对齐）、c（居中对齐）、r（右对齐）、j（分散对齐）。
- 
+
 .. code-block:: bash
 
  #!/bin/bash
