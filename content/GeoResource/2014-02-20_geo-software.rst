@@ -132,7 +132,7 @@ TauP
 - 版本: 2.1.2
 - 网址: http://www.seis.sc.edu/taup/
 - 说明: 强大的走时计算器，不过其功能可不仅仅只是计算走时这么简单。射线参数、射线路径、反射点、投射点都可以计算，支持自定义速度模型、支持不常见的震相。
-- 博文: `走时计算软件TauP <{filename}/SeisWare/2013-07-10_use-taup-to-calculate-travel-time.rst>`_
+- 博文: `走时计算软件TauP <{filename}/SeisWare/2013-07-10_taup-toolkit.rst>`_
 
 
 理论地震图
