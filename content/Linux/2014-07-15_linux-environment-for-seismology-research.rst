@@ -495,11 +495,13 @@ terminator有很多功能，我只用到了终端分割的功能。\ ``Ctrl+Shif
 guake
 ~~~~~
 
-按下F12即可启动guake，再次按下F12即可隐藏。有些时候需要临时执行一两个命令，但是又不想额外启动一个终端的情况下，guake是个不错的选择。
+有些时候需要临时执行一两个命令，但是又不想额外启动一个终端的情况下，guake是个不错的选择。
 
 ::
 
     sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/guake-0.4.4-11.el7.nux.x86_64.rpm
+
+安装完成后，在Application->System Tools里找到guake Terminal即可启动。按下F12即可呼出guake，再次按下F12即可隐藏。也可在终端执行\ ``guake-prefs``\ 对gauke进行配置。
 
 zsh与oh my zsh
 --------------
