@@ -2,7 +2,7 @@
 ####################
 
 :date: 2015-02-01
-:author: Joe Wang
+:author: SeisMan
 :category: GMT
 :tags: GMT技巧, GMT5
 :slug: plot-multiple-lines-in-different-scales
@@ -72,11 +72,11 @@
 
     REM plot Hy
     gmt psxy y.dat -R0/86400/-400/400 -Jx0.0002/0.005 -Wblue -O -K >>%ps%
-    gmt psbasemap -R0/86400/100/200 -J -Y2.5c -Bya100+l"nT" -BW+t"@;blue;@%%12%%\104@%%6%%Y" --MAP_FRAME_PEN=thick,blue --MAP_TICK_PEN_PRIMARY=default,blue --FONT_ANNOT_PRIMARY=12p,0,blue --MAP_TITLE_OFFSET=0p -O -K >>%ps%
+    gmt psbasemap -R0/86400/100/200 -J -Y2.5c -Bya100+l"nT" -BW+t"@;blue;@%%12%%\104@%%6%%Y" --FONT=blue --MAP_DEFAULT_PEN=+blue --MAP_TITLE_OFFSET=0p -O -K >>%ps%
 
     REM plot Hx
     gmt psxy x.dat -R0/86400/-55/30 -Jx0.0002/0.05 -Wred -O -K >>%ps%
-    gmt psbasemap -R0/86400/10/20 -J -Y3.25c -Bya10 -BW+t"@;red;@%%12%%\104@%%6%%X" --MAP_TITLE_OFFSET=0p --MAP_FRAME_PEN=thick,red --MAP_TICK_PEN_PRIMARY=default,red --MAP_TICK_PEN_PRIMARY=default,red --FONT_ANNOT_PRIMARY=12p,0,red -O -K >>%ps%
+    gmt psbasemap -R0/86400/10/20 -J -Y3.25c -Bya10 -BW+t"@;red;@%%12%%\104@%%6%%X" --MAP_TITLE_OFFSET=0p --FONT=red --MAP_DEFAULT_PEN=+blue -O -K >>%ps%
 
     gmt psxy -R%Rhour% -J%Jhour% -T -O >>%ps%
 
@@ -105,3 +105,4 @@
 
 - 2015-02-01：Joe Wang投稿；
 - 2015-02-01：SeisMan整理语句、优化脚本；
+- 2015-02-02：使用FONT和MAP_DEFAULT_PEN代替其他参数；

@@ -49,7 +49,7 @@ GMT默认使用的是Landscape模式，可以通过-P选项强制使用Portrait�
 ::
 
     %%BeginPageSetup
-    595 0 T 90 R 
+    595 0 T 90 R
     0.24 0.24 scale
     %%EndPageSetup
 
@@ -66,7 +66,7 @@ GMT默认使用的是Landscape模式，可以通过-P选项强制使用Portrait�
  psxy -JX1i/2i -R0/5/0/10 -B1/1 -K -T > 04.ps
  psxy -JX2i/1i -R0/10/0/5 -B1/1 -O -X2i -P -T >> 04.ps
 
-这两个例子中分别只有一个命令有-P选项。用evince查看一下，03.ps为Portrait模式，与02.ps完全相同；04.ps为Portrait模式，与01.ps完全相同。
+这两个例子中分别只有一个命令有-P选项。用evince查看一下，03.ps为Portrait模式，与02.ps完全相同；04.ps为Landscape模式，与01.ps完全相同。
 
 小结
 ====
