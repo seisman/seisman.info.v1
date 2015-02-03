@@ -3,12 +3,12 @@ SeisMan's Blog
 
 Hi, I am SeisMan, *a man learning seismology*.
 
-This is my personal blog. It is also called SeisMan, which represents *seismology manual*.
+This is my personal blog. It is also called SeisMan, which represents *seismological manual*.
 It focuses on basics and advances on seismology, softwares like GMT, SAC, and
 also programming languages and tools to solve seismological problems.
 
 It is a non-profit, technology-oriented blog. I hope it is useful for most
-Chinese students majoring seismology.
+Chinese students majoring in seismology.
 
 - Website: http://seisman.info
 - Markup Language: `reStructuredText`_
