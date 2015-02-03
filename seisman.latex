@@ -1,11 +1,12 @@
 %
-% LaTeX template for pandoc 
+% LaTeX template for pandoc
 %
+%  Usage:
 %    pandoc post.rst -f rst -t latex -o post.pdf -s --template=seisman.latex \
 %       --toc --listings --number-sections --latex-engine=xelatex \
-%       -V SITEURL=http://seisman.info  
+%       -V SITEURL=http://seisman.info
 %
-\documentclass[a4paper, 11pt, onside]{article}
+\documentclass[a4paper, 11pt, oneside]{article}
 
 % 中文支持与字体设置
 \usepackage[indentfirst, CheckSingle]{xeCJK}
