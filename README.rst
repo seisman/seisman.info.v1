@@ -12,7 +12,7 @@ Chinese students majoring in seismology.
 
 - Website: http://seisman.info
 - Markup Language: `reStructuredText`_
-- Generator: `Pelican`_ v3.4.0
+- Generator: `Pelican`_ v3.5.0
 - Theme: `Elegant`_ theme by `talha131`_, modified by myself
 
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
