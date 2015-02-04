@@ -20,7 +20,7 @@ GMT 5.1.1在Linux下的安装
 GMT 5.1.1 需要下载三个文件：
 
 #. GMT源码： http://gmtrac.soest.hawaii.edu/files/download?name=gmt-5.1.1-src.tar.gz
-#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gshhg/gshhg-gmt-2.3.2.tar.gz
+#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gshhg/gshhg-gmt-2.3.4.tar.gz
 #. 全球数字图表DCW： ftp://ftp.soest.hawaii.edu/dcw/dcw-gmt-1.1.1.tar.gz
 
 解决依赖关系
@@ -88,19 +88,19 @@ GMT5的依赖包，相对来说要复杂很多。
  $ pwd
  /home/seisman/Desktop/gmt
  $ ls
- dcw-gmt-1.1.1.tar.gz gmt-5.1.1-src.tar.gz gshhg-gmt-2.3.2.tar.gz
+ dcw-gmt-1.1.1.tar.gz gmt-5.1.1-src.tar.gz gshhg-gmt-2.3.4.tar.gz
  $ tar -zxvf gmt-5.1.1-src.tar.gz
  $ tar -zxvf dcw-gmt-1.1.1.tar.gz
- $ tar -zxvf gshhg-gmt-2.3.2.tar.gz
+ $ tar -zxvf gshhg-gmt-2.3.4.tar.gz
  $ cd gmt-5.1.1
  $ cp cmake/ConfigUserTemplate.cmake cmake/ConfigUser.cmake
  $ vi cmake/ConfigUser.cmake # 修改Config文件
 
-修改\ ``ConfigUser.cmake``\ 以对安装的细节进行自定义。一个基本的示例如下，找到相关行，并去掉该行最前面的”#“，再根据自身情况修改::
+修改\ ``ConfigUser.cmake``\ 以对安装的细节进行自定义。一个基本的示例如下，找到相关行，并去掉该行最前面的“#”，再根据自身情况修改::
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.1.1")
     set (GMT_INSTALL_MODULE_LINKS FALSE)
-    set (GSHHG_ROOT "/home/seisman/Desktop/gmt/gshhg-gmt-2.3.2")
+    set (GSHHG_ROOT "/home/seisman/Desktop/gmt/gshhg-gmt-2.3.4")
     set (COPY_GSHHG TRUE)
     set (DCW_ROOT "/home/seisman/Desktop/gmt/dcw-gmt-1.1.1")
     set (COPY_DCW TRUE)
@@ -110,7 +110,7 @@ GMT5的依赖包，相对来说要复杂很多。
 - ``GSHHG_ROOT``\ 为GSHHG数据的位置，需要对下载下来的压缩文件进行解压，并给出文件夹的\ **绝对路径**\ ；\ ``COPY_GSHHG``\ 为TRUE会将GSHHG数据复制到\ ``GMT/share/coast``\ 下；
 - ``DCW_ROOT``\ 设置DCW数据的位置，需给出DCW数据所在文件夹的绝对路径，\ ``COPY_DCW``\ 将数据复制到\ ``GMT/share/dcw``\ 下；
 
-PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个GSHHG和DCW数据的副本。可以将这些数据放置在系统中固定的位置（比如我把这些数据都放在\ ``/home/seisman/Datas``\ 目录下），然后有两种处理方式：其一，设置COPY_GSHHG为FALSE，则安装时不会将GSHHG数据复制到GMT目录下，而GMT命令运行时会到GSHHG_ROOT指定的目录中寻找数据；其二，使用默认的GSHHG_ROOT以及COPY_GSHHG，在安装完成之后，到GMT/share目录下设置一个target为\ ``/home/seisman/Datas/gshhg-gmt-2.3.2``\ ，link name为coast的软链接即可。对于DCW数据，同理。
+PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个GSHHG和DCW数据的副本。可以将这些数据放置在系统中固定的位置（比如我把这些数据都放在\ ``/home/seisman/Datas``\ 目录下），然后有两种处理方式：其一，设置COPY_GSHHG为FALSE，则安装时不会将GSHHG数据复制到GMT目录下，而GMT命令运行时会到GSHHG_ROOT指定的目录中寻找数据；其二，使用默认的GSHHG_ROOT以及COPY_GSHHG，在安装完成之后，到GMT/share目录下设置一个target为\ ``/home/seisman/Datas/gshhg-gmt-2.3.4``\ ，link name为coast的软链接即可。对于DCW数据，同理。
 
 修改完毕后，进行编译::
 
@@ -121,7 +121,7 @@ PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个G
 ``cmake ..``\ 会检查GMT对软件的依赖关系，我的检查结果如下::
 
     *  Options:
-    *  Found GSHHG database       : /home/seisman/Desktop/gmt/gshhg-gmt-2.3.2 (2.3.2)
+    *  Found GSHHG database       : /home/seisman/Desktop/gmt/gshhg-gmt-2.3.4 (2.3.4)
     *  Found DCW-GMT database     : /home/seisman/Desktop/gmt/dcw-gmt-1.1.1
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
@@ -228,6 +228,7 @@ PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个G
 - 2014-09-26：Ubuntu下\ ``libxaw-dev``\ 应为\ ``libxaw7-dev``\ ；
 - 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
 - 2014-11-29：CentOS 6.6中的cmake版本为2.8.12；
+- 2015-02-01：更新GSHHG至2.3.4；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/
