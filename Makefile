@@ -32,7 +32,6 @@ help:
 	@echo '   make pdf                    convert updated rST to PDF		   '
 	@echo '   make all                    upload web site to GitHub and Gitcafe'
 	@echo '																	   '
-	@echo '																	   '
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
