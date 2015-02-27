@@ -18,6 +18,11 @@
 .. code-block:: bash
 
     #!/bin/bash
+    #
+    # This script works for GMT 4.5.13 only!
+    # You need to modify it if you use other versions of GMT.
+    # You should read notes below before you go.
+    #
     R=g
     J=H25c
     B=60/30
