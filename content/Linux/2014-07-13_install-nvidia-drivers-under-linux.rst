@@ -12,6 +12,8 @@ Linux下安装NVIDIA显卡驱动
 
 对于CentOS用户而言，有两种安装NVIDIA显卡驱动的方法，从ELRepo源中安装或从源码编译驱动。对于一般的CentOS用户，建议使用第一种方法。
 
+.. contents::
+
 从ELRepo源中安装驱动
 ====================
 
