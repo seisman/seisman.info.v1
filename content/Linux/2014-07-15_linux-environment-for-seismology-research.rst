@@ -722,6 +722,7 @@ Google Earth
 参考
 ====
 
+#. `CentOS Yum软件库样例 <http://wiki.centos.org/zh/AdditionalResources/Repositories/GoogleYumRepos>`_
 #. `ElRepo kmod-nvidia <http://elrepo.org/tiki/kmod-nvidia>`_
 #. `PointDownload <https://github.com/PointTeam/PointDownload>`_
 
