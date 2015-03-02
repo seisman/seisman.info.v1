@@ -412,7 +412,7 @@ Google Chrome浏览器
 
 默认的浏览器是Firefox，还是更喜欢Chrome浏览器。
 
-在\ ``/etc/yum.repo.d/``\ 目录下新建文件\ ``google-chrome.repo``\ ，向其中添加如下内容::
+在\ ``/etc/yum.repos.d/``\ 目录下新建文件\ ``google-chrome.repo``\ ，向其中添加如下内容::
 
     [google-chrome]
     name=google-chrome
