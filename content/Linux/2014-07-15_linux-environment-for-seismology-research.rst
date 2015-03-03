@@ -473,6 +473,15 @@ Flash插件主要是看在线视频的时候要用。Google浏览器自带了Fla
 
     sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/unrar-5.0.12-2.el7.nux.x86_64.rpm
 
+FTP客户端
+---------
+
+FTP客户端，还是有界面的filezilla比较方便些。
+
+::
+
+    sudo yum install filezilla
+
 效率类软件
 ==========
 
@@ -742,6 +751,7 @@ Google Earth
 - 2015-01-05：autojump直接从epel中安装；新增youtube-dl、you-get和2048-cli；
 - 2015-01-07：新增terminator和guake；
 - 2015-01-27：新增cpdf；
+- 2015-03-03：新增filezilla；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
