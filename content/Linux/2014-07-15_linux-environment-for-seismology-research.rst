@@ -12,6 +12,7 @@
 
 阅读须知：
 
+#. 本文适用于个人电脑，不适用于服务器；
 #. 不推荐刚接触Linux的人使用CentOS发行版；
 #. 本文尽量写的浅显易懂，但要求读者掌握Linux基础知识；
 #. 本文所有操作均在CentOS 7下完成，其他发行版或多或少与CentOS 7不同，因而仅供参考；
@@ -38,9 +39,7 @@ CentOS 7的安装与其他Linux发行版的安装差不多，个别地方稍有�
 #. 将U盘插入计算机，重启，进入BIOS选择从U盘启动，即可进入CentOS的LiveCD
 #. 进入LiveCD后，点击桌面的“Install to Hard Drive”即可安装
 
-注：
-
-#. Linux下可以通过\ ``dd``\ 命令制作启动盘，但由于对原理不够了解，偶尔会导致制作失败，或制作成功后U盘容量有问题，还是用Windows下的Universal USB installer比较靠谱。
+注：Linux下可以通过\ ``dd``\ 命令制作启动盘，但由于对原理不够了解，偶尔会导致制作失败，或制作成功后U盘容量有问题，还是用Windows下的Universal USB installer比较靠谱。
 
 安装过程
 --------
@@ -48,7 +47,7 @@ CentOS 7的安装与其他Linux发行版的安装差不多，个别地方稍有�
 #. 选择安装过程中使用的语言：用默认的英文即可
 #. 选择区域和城市：Asia和Shanghai
 #. 键盘使用English(US)而不是English(UK)
-#. Hostname随便改，我用\ ``saturn.geolab``\
+#. Hostname可以改也可以不改，我用\ ``saturn.geolab``\
 #. 安装的目的地，选择要使用的硬盘，在“Other Storage Options”处选择“I will configure partioning”，即手动分区
 
 分区
@@ -106,7 +105,7 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 添加第三方源
 ------------
 
-CentOS有很多第三方源，比如EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge等。根据上面提到的软件安装原则，为了尽可能保证系统的稳定性，此处大型第三方源只添加EPEL源和ELRepo源。
+CentOS由于很追求稳定性，所以官方源中自带的软件不多，因而需要一些第三方源，比如EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge等。根据上面提到的软件安装原则，为了尽可能保证系统的稳定性，此处大型第三方源只添加EPEL源和ELRepo源。
 
 EPEL
 ~~~~
@@ -117,7 +116,7 @@ EPEL
 
    sudo yum install epel-release
 
-执行完该命令后，在\ ``/etc/yum.repo.d``\ 目录下会多一个\ ``epel.repo``\ 文件。
+执行完该命令后，在\ ``/etc/yum.repos.d``\ 目录下会多一个\ ``epel.repo``\ 文件。
 
 ELRepo
 ~~~~~~
@@ -129,7 +128,7 @@ ELRepo
     sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 
-完成该命令后，在\ ``/etc/yum.repo.d``\ 目录下会多一个\ ``elrepo.repo``\ 文件。
+完成该命令后，在\ ``/etc/yum.repos.d``\ 目录下会多一个\ ``elrepo.repo``\ 文件。
 
 安装yum-axelget
 ---------------
@@ -425,7 +424,7 @@ Google Chrome浏览器
 
     sudo yum install google-chrome-stable
 
-由于某些大家都懂的原因，Google的官方源在国内可能无法正常访问，导致无法安装Chrome或者安装之后无法更新。某人自己托管了一份源镜像，解决了此问题，\ ``google-chrome.repo``\ 的内容改为::
+由于Google的官方源在国内可能无法正常访问，导致安装失败或安装后无法正常更新。有人在国内服务器上做了Google官方源的镜像，若你相信该镜像是安全的，则可使用此国内镜像代替Google官方源，\ ``google-chrome.repo``\ 的内容改为::
 
     [google-chrome]
     name=google-chrome
@@ -599,12 +598,12 @@ HostTool科学上网本质上就是用最新的host文件替代了系统自带�
 VirtualBox虚拟机
 ----------------
 
-有时候可能需要在Windows下做一些操作，如果机器允许的话，可以安装VirtualBox虚拟机。
+有时候可能需要在Windows下做一些操作，如果机器性能足够好的话，可以安装VirtualBox虚拟机。
 
 ::
 
     wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
-    sudo mv virtualbox.repo /etc/yum.repo.d/
+    sudo mv virtualbox.repo /etc/yum.repos.d/
     sudo yum install VirtualBox-4.3
 
 这样就可以在Linux下虚拟一个Windows啦，好开心。
@@ -671,6 +670,15 @@ PDF处理工具
 
 下载已编译好的\ `二进制包 <https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip>`_\ ，解压，并将与自己的平台对应的二进制文件复制到\ ``${HOME}/bin``\ 目录下即可使用。
 
+BT软件
+------
+
+transmission是Linux下常用的Torrent下载软件::
+
+    sudo yum install transmission
+
+在“Application”->“Internet”->中可以启动transmission。
+
 其他工具
 --------
 
@@ -731,9 +739,9 @@ Google Earth
 参考
 ====
 
+#. `ELRepo官方网站 <http://elrepo.org/tiki/tiki-index.php>`_
+#. `ELRepo kmod-nvidia <http://elrepo.org/tiki/kmod-nvidia>`_
 #. `CentOS Yum软件库样例 <http://wiki.centos.org/zh/AdditionalResources/Repositories/GoogleYumRepos>`_
-#. `ElRepo kmod-nvidia <http://elrepo.org/tiki/kmod-nvidia>`_
-#. `PointDownload <https://github.com/PointTeam/PointDownload>`_
 
 修订历史
 ========
@@ -751,7 +759,7 @@ Google Earth
 - 2015-01-05：autojump直接从epel中安装；新增youtube-dl、you-get和2048-cli；
 - 2015-01-07：新增terminator和guake；
 - 2015-01-27：新增cpdf；
-- 2015-03-03：新增filezilla；
+- 2015-03-03：新增filezilla和transmission；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
