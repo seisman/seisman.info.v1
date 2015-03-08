@@ -14,6 +14,9 @@
 
 SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之一，《SAC参考手册》是一本详细介绍SAC用法的中文电子书。2011年暑假，我尝试翻译了官方的英文文档，2012年初将其整理为PDF，并放在网络上免费下载，2012年至2015年的三年间，该手册不断更新，目前文档的最新版本为v3.1。
 
+- 文档发布页：http://seisman.info/sac-manual.html
+- 项目主页：https://github.com/seisman/SAC_Docs_zh
+
 我为何不再维护
 ==============
 
