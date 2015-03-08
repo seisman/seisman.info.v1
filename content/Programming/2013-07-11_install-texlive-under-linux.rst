@@ -2,13 +2,27 @@ Linux下安装TeXLive 2014
 ########################
 
 :date: 2013-07-11 09:00
-:modified: 2014-07-06
+:modified: 2015-03-08
 :author: SeisMan
 :category: 编程
 :tags: 安装, LaTeX
 :slug: install-texlive-under-linux
 
 .. contents::
+
+依赖包
+======
+
+- 安装过程中需要调用Perl的模块\ ``Digest::MD5``\ 来检测ISO文件的完整性；
+- 升级过程中界面需要调用Perl的模块\ ``Tk``\ ；
+
+CentOS::
+
+    sudo yum install perl-Digest-MD5 perl-Tk
+
+Ubuntu::
+
+    sudo apt-get install libdigest-perl-md5-perl perl-tk
 
 安装
 ====
@@ -20,40 +34,50 @@ Linux下安装TeXLive 2014
 
 Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 
-挂载
-----
+
+挂载ISO镜像
+-----------
 
 .. code-block:: bash
 
- $ su
- # mount -o loop texlive2014.iso  /mnt/
- # cd /mnt
- # ./install-tl
+   $ su
+   # mount -o loop texlive2014.iso  /mnt/
+   # cd /mnt
+   # ./install-tl
 
-出现选项后，输入\ ``I``\ 直接安装（也可以更改选项）。不出意外的话，5分钟应该就OK了。
+出现选项后，输入\ ``I``\ 直接安装（也可以更改选项）。不出意外的话，5分钟应该就OK了，然后退出root用户；
 
 环境变量
 --------
 
-在\ ``~/.bashrc``\ 中加入如下语句：
+在当前用户的\ ``~/.bashrc``\ 中加入如下语句：
 
 .. code-block:: bash
 
- # TeX Live 2014
- export MANPATH=${MANPATH}:/usr/local/texlive/2014/texmf-dist/doc/man
- export INFOPATH=${INFOPATH}:/usr/local/texlive/2014/texmf-dist/doc/info
- export PATH=${PATH}:/usr/local/texlive/2014/bin/x86_64-linux
+   # TeX Live 2014
+   export MANPATH=${MANPATH}:/usr/local/texlive/2014/texmf-dist/doc/man
+   export INFOPATH=${INFOPATH}:/usr/local/texlive/2014/texmf-dist/doc/info
+   export PATH=${PATH}:/usr/local/texlive/2014/bin/x86_64-linux
 
-卸载
-----
+卸载ISO镜像
+-----------
 
 .. code-block:: bash
 
- $ cd /
- # sudo umount /mnt/
+   $ cd
+   $ sudo umount /mnt/
+
+更新TeXLive
+===========
+
+.. code-block:: bash
+
+   $ su
+   # tlmgr --gui
 
 修订历史
 ========
 
 - 2013-07-11：初稿；
 - 2014-07-06：修改为TeXLive2014，并删除中文字体部分；
+- 2015-03-08：新增“安装依赖”；
