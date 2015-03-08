@@ -10,7 +10,7 @@ SAC参考手册中文版
 
 .. contents::
 
-征集《SAC参考手册》维护者，有意者点\ `这里 <{filename}/SAC/2013-07-06_sac-manual.rst>`_\ ，长期有效。
+征集《SAC参考手册》维护者，有意者点\ `这里 <{filename}/FreeTalk/2015-03-07_maintainers-for-sac-manual-wanted.rst>`_\ ，长期有效。
 
 3.2 dev版
 =========
