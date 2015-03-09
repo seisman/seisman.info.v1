@@ -582,7 +582,7 @@ autojump
 
 刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是ibus，使用效果一般。fcitx是更好的选择，基于fcitx框架的搜狗输入法或许是更更好的选择。
 
-参考\ `CentOS7安装搜狗输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_\ 。
+参考\ `CentOS7安装fcitx中文输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_\ 。
 
 HostTool
 --------

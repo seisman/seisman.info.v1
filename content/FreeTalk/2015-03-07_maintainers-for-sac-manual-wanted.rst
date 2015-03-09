@@ -172,6 +172,7 @@ Push之后，进入GitHub网站，提交Pull Request即可。
 --------
 
 - 我对于Git也只是了解皮毛，上面的步骤也许有更简单的操作；
+- 使用Git进行协作的方式有好几种，文中说的是比较常用的一种方式；
 - `git简易指南 <http://www.bootcss.com/p/git-guide/>`_
 - `廖雪峰的Git教程 <http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000>`_
 - 可以多次\ ``add``\ 多次再\ ``commit``\ ，多次\ ``commit``\ 再\ ``push``\ ，多次\ ``push``\ 之后再pull request；

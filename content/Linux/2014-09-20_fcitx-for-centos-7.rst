@@ -3,7 +3,7 @@ CentOS 7安装fcitx中文输入法
 
 :author: SeisMan
 :date: 2014-09-20
-:modified: 2014-12-27
+:modified: 2015-03-09
 :category: Linux
 :tags: CentOS, 中文
 :slug:  fcitx-for-centos-7
@@ -19,49 +19,24 @@ CentOS 7安装fcitx中文输入法
 
 EPEL7几乎是CentOS必备的源::
 
-    $ wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-1.noarch.rpm
-    $ sudo rpm -ivh epel-release-7-1.noarch.rpm
-    $ sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    $ sudo yum install epel-release
 
 添加mosquito-myrepo源
 =====================
 
-mosquito-myrepo是一个私人制作的第三方源，其中包含了fcitx输入法以及基于fcitx的搜狗输入法。
+mosquito-myrepo是一个私人制作的第三方源，其中包含了fcitx输入法。
 
-- 项目地址： https://copr.fedoraproject.org/coprs/mosquito/myrepo/
+- 项目地址： https://github.com/1dot75cm/myrepo
 - 支持的发行版： Fedora 19/20/21/rawhide 以及RHEL/CentOS 7
 
 ::
 
-    $ yum-config-manager --add-repo=https://copr.fedoraproject.org/coprs/mosquito/myrepo/repo/epel-7/mosquito-myrepo-epel-7.repo
+    $ sudo yum-config-manager --add-repo=https://copr.fedoraproject.org/coprs/mosquito/myrepo/repo/epel-7/mosquito-myrepo-epel-7.repo
 
-安装搜狗输入法
-==============
+安装输入法
+==========
 
-安装
-----
-
-::
-
-    $ yum install sogou-pinyin sogou-pinyin-skins
-
-配置
-----
-
-首先关闭gnome-shell 对键盘的监听，然后切换输入法为fcitx::
-
-    $ sudo pkill ibus-daemon
-    $ gsettings set org.gnome.settings-daemon.plugins.keyboard active false
-    $ imsettings-switch fcitx
-    $ fcitx -r; fcitx-configtool
-    $ sogou-qimpanel
-
-执行后面两个命令后可能会报一些错误，似乎可以不用管。执行完成之后，退出当前用户并重新登陆。
-
-安装其他输入法
-==============
-
-搜狗输入法基本够用了，也可以安装其他中文输入法::
+可以选择下面的各种输入法中的某一个或多个::
 
     $ yum install fcitx-googlepinyin fcitx-cloudpinyin # 谷歌拼音输入法
     $ yum install fcitx-rime fcitx-cloudpinyin # 中州韵输入法
@@ -88,3 +63,4 @@ mosquito-myrepo在不断地支持更多的软件，这也进一步造成该repo�
 - 2014-09-20：初稿；
 - 2014-09-29：安装完成之后建议禁用该repo以避免任何可能的版本冲突；
 - 2014-12-27：更新sogou的配置；
+- 2015-03-09：由于搜狗输入法是私有软件，违反了copr的相关规定，因而目前该源中已不再包含搜狗输入法。故删除本文中搜狗输入法相关部分；
