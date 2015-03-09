@@ -2,10 +2,13 @@
 ###########################
 
 :date: 2015-03-07
+:modified: 2015-03-09
 :author: SeisMan
 :category: 胡言乱语
 :tags: SAC, 文档
 :slug: maintainers-for-sac-manual-wanted
+
+.. contents::
 
 如题，希望能够征集到至少一人参与《SAC参考手册》的维护。
 
@@ -25,7 +28,7 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
 - 进入博士阶段，科研的压力日益繁重，没有足够的时间和精力继续维护；
 - 我对于SAC已经足够熟悉，日常使用过程中，没有阅读手册的需求，也就没有更新的动力；
 
-SAC在接下来的若干年之内都不会被淘汰，依然是地震学专业常用的数据处理软件之一。随着SAC软件的更新，手册也需要及时的更新，以帮助更多的SAC初学者掌握SAC的用法。因而希望有人能够参与进来，共同维护并更新该手册。
+SAC在接下来的若干年之内都不会被淘汰，依然是地震学专业常用的数据处理软件之一。随着SAC软件的更新，手册也需要及时的更新，以帮助更多的SAC初学者掌握SAC的用法。因而希望有人（尤其是正在学习SAC的人）能够参与进来，共同维护并更新该手册。
 
 需要维护的内容
 ==============
@@ -43,10 +46,10 @@ SAC在接下来的若干年之内都不会被淘汰，依然是地震学专业�
 对维护者的最低要求
 ==================
 
-#. SAC用户或SAC初学者；
+#. SAC用户（SAC初学者）；
 #. 操作系统以Linux为主；
-#. 了解LaTeX的基础知识；
 #. 有时间和精力；
+#. 了解LaTeX、Git的基础知识（至少愿意学习和了解）；
 
 维护者可以得到什么
 ==================
@@ -57,22 +60,120 @@ SAC在接下来的若干年之内都不会被淘汰，依然是地震学专业�
 #. 结识更多的SAC用户以及地震学同行；
 #. 学会使用Git，参与开源项目；
 
-如何开始
+如何参与
 ========
 
-若有意参与到该手册的维护，请在博客中留言或直接邮件联系我。
+若有意参与到该手册的维护，请参考如下步骤，过程中遇到问题可以在博客中留言或直接邮件联系我。
 
-简单的说，需要如下步骤：
+简单的说，参与该项目需要如下步骤：
 
-#. 建一个GitHub账号；
-#. 在GitHub上fork该手册的源码；
-#. 将源码Clone至本机；
-#. 安装TexLive以及中文字体（可选）；
-#. 修改手册的源码；
-#. 编译查看效果；（可选）
-#. 提交更改，并push到GitHub上的repo里；
-#. 提交pull request；
+#. 拥有Linux系统；
+#. 拥有一个GitHub账户；
+#. 安装TexLive以及中英文字体（可选）；
+#. Fork手册源码，Clone至本地；
+#. 修改源码，提交修改，并Push到自己的Repo里，再提交Pull Request；
 
-上面列出的步骤都很简单，若有人愿意参与进来，我再具体写写其中的步骤。
+维护者需要了解三个工具：Linux、Git和LaTeX。其中，对于Git的要求较高，其余两者没有太多要求。
+
+安装TeXLive以及字体
+-------------------
+
+- 参考\ `Linux下安装TeXLive 2014 <{filename}/Programming/2013-07-11_install-texlive-under-linux.rst>`_\ 一文；
+- 本手册使用了非开源字体，包括Adobe的四种中文字体，以及Adobe Garamond Pro英文字体；
+- 字体可以从网上获取，或直接联系我索取；
+- 未来会尽量用开源字体替代非开源字体；
+
+了解GitHub
+----------
+
+- `注册 <https://github.com/join>`_\ GitHub账户；
+- 向GitHub账户中添加当前机器的SSH秘钥，参考“\ `GitHub官方文档 <https://help.github.com/articles/generating-ssh-keys/>`_\ ”。添加秘钥的目的是使得GitHub账户信任当前计算机，并赋予其\ **写**\ 权限；
+
+安装和配置git
+-------------
+
+- git是版本控制工具，gitk是用于查看的图形工具::
+
+    sudo yum install git gitk
+
+- 配置git::
+
+    git config --global user.name "Your Name"
+    git config --global user.email "you@example.com"
+
+第一次使用
+----------
+
+#. 进入该手册的\ `项目主页 <https://github.com/seisman/SAC_Docs_zh>`_\ ，点击右上角的fork；该操作会将\ ``seisman``\ 账户下的\ ``SAC_Docs_zh``\ 项目复制到你的账户下。下面均假定你的账户名叫\ ``USER``\ 。
+
+#. 在终端执行如下操作::
+
+       # 下载源码至本机
+       git clone git@github.com:USER/SAC_Docs_zh.git
+
+       # 添加seisman账户下的repo作为其中一个远程repo，并命名为seisman
+       git remote add seisman https://github.com/seisman/SAC_Docs_zh.git
+
+       # 编辑器修改文档，比如修改README.md
+
+       git add README.md        # 将修改的文件添加到缓存区
+       git commit -m "modify README.md"  # 提交修改，-m后接注释信息
+       git push -u origin master   # 将修改推送到GitHub服务器
+
+#. 进入 https://github.com/USER/SAC_Docs_zh\ ，点击Pull Request即可；
+#. 提交完Pull Request之后，我会审核修改，并决定是否接受Pull Request；
+
+第n次使用
+---------
+
+第一次使用的时候有些复杂，第n次使用的时候步骤就简单很多了。
+
+命令行操作如下::
+
+    # 从seisman的repo中拉取源码的最新版本
+    git pull seisman
+
+    # 将seisman的repo中的最新版本与本地版本合并
+    git merge seisman/master
+
+    #
+    # 修改文件 xxx.0 xxx.1 xxx.2
+    #
+
+    # 添加到缓冲区
+    git add xxx.0 xxx.1 xxx.2
+
+    # 提交更改
+    git commit -m 'commit messages'
+
+    # 推送更改到服务器
+    git push
+
+Push之后，进入GitHub网站，提交Pull Request即可。
+
+关于TeXLive
+-----------
+
+文档的源码是用LaTeX写的，用TeXLive提供的工具编译成PDF。目前本项目提供了两种构建方法，分别是\ ``make``\ 和\ ``scons``\ 。
+
+``make``\ 的使用::
+
+    make            # 构建PDF
+    make clean      # 删除构建过程中的辅助文件
+
+``scons``\ 的使用::
+
+    scons           # 构建PDF
+    scons -c        # 删除构建过程中的辅助文件
+
+从效率方面考虑，推荐使用scons，不过使用make也可以。
+
+其他说明
+--------
+
+- 我对于Git也只是了解皮毛，上面的步骤也许有更简单的操作；
+- `git简易指南 <http://www.bootcss.com/p/git-guide/>`_
+- `廖雪峰的Git教程 <http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000>`_
+- 可以多次\ ``add``\ 多次再\ ``commit``\ ，多次\ ``commit``\ 再\ ``push``\ ，多次\ ``push``\ 之后再pull request；
 
 总之，希望有人能够参与进来，哪怕只是改几个错别字也是极好的。

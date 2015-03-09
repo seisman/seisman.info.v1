@@ -30,22 +30,26 @@ ELRepo源中包含了一系列驱动程序。
 
 #. 检测显卡型号，并选择对应的驱动::
 
-    $ nvidia-detect
+    $ nvidia-detect -v
     Probing for supported NVIDIA devices...
     [10de:06dd] NVIDIA Corporation GF100GL [Quadro 4000]
-    This device requires the current 340.58 NVIDIA driver kmod-nvidia
+    This device requires the current 346.47 NVIDIA driver kmod-nvidia
 
-   根据\ ``nvidia-detect``\ 的输出信息，可以知道显卡的型号，以及要使用的驱动版本\ ``340.58``\ 。
+   根据\ ``nvidia-detect``\ 的输出信息，可以知道显卡的型号，以及要使用的驱动版本\ ``346.47``\ 。
 
 #. 安装显卡驱动
 
-   #. 340.58版本::
-
-        sudo yum install nvidia-x11-drv nvidia-x11-drv-32bit
-
-   #. 304xx版本::
+   #. 若驱动版本为304.xx，则安装304xx版本::
 
         sudo yum install nvidia-x11-drv-304xx nvidia-x11-drv-304xx-32bit
+
+   #. 若驱动版本为340.xx，则安装340xx版本::
+
+        sudo yum install nvidia-x11-drv-340xx nvidia-x11-drv-340xx-32bit
+
+   #. 对于大多数比较新的显卡来说，直接安装最新版的驱动即可::
+
+        sudo yum install nvidia-x11-drv nvidia-x11-drv-32bit
 
 #. 安装过程中可能会给出软件冲突的警告，需要卸载以下软件包及其依赖::
 
