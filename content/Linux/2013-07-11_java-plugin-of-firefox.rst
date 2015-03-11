@@ -29,7 +29,7 @@ Firefox安装Java插件
 
 4. 在firefox插件目录中建立到Java插件文件的软链接；
 
-   :: 
+   ::
 
     $ cd ~/.mozilla/plugins/
     $ ln -s /usr/java/jre1.7.0_21/lib/amd64/libnpjp2.so libnpjp2.so

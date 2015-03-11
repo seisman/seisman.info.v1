@@ -44,18 +44,18 @@ Python脚本版
 
 .. code-block:: python
 
- #!/usr/bin/env python
- from struct import pack
- if pack('@h', 1) == pack('<h', 1):
-    print "Little Endian"
- else:
-    print "Big Endian"
+   #!/usr/bin/env python
+   from struct import pack
+   if pack('@h', 1) == pack('<h', 1):
+       print "Little Endian"
+   else:
+       print "Big Endian"
 
 Jython脚本版
 
 .. code-block:: java
 
- from java.lang import System
- for property, value in dict(System.getProperties()).items():
- if property.endswith('cpu.endian'):
- return value
+   from java.lang import System
+   for property, value in dict(System.getProperties()).items():
+   if property.endswith('cpu.endian'):
+   return value
