@@ -48,7 +48,7 @@ SAC参考手册中文版
 
 - 使用Git管理源码
 - 整理结构和布局的修改
-- 新的小节: ”SAC IO升级版“、”暂存块变量的读写“、”SAC保存图像“
+- 新的小节: “SAC IO升级版”、“黑板变量的读写”、“SAC保存图像”
 - Bug修订
 
 下载地址: `SAC帮助文档中文版v2.3.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v2.3.pdf>`_
@@ -95,7 +95,7 @@ SAC参考手册中文版
 -  重新格式化整个文档，使得其看上去更规范，也易于以后的修改；
 -  文档中的所有C或Fortran代码从notepad++中直接导出，代码支持语法高亮；
 -  代码及正文英文字体采用Consolas字体。
--  增加了”在脚本中调用SAC“一节；
+-  增加了“在脚本中调用SAC”一节；
 -  新增了transfer、traveltime、saveimg、datagen命令（依赖于SAC v101.5c）；
 -  公式用公式编辑器编辑
 
