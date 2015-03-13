@@ -1,7 +1,9 @@
-征集《SAC参考手册》维护者
-###########################
+[置顶] 征集《SAC参考手册》维护者
+##################################
 
-:date: 2015-03-07
+.. :date: 2015-03-07
+
+:date: 2099-12-30
 :modified: 2015-03-09
 :author: SeisMan
 :category: 胡言乱语
@@ -63,6 +65,7 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
 
 #. 手册中会将你列为维护者，并留有邮箱；
 #. 结识更多的SAC用户以及地震学同行；
+#. 了解MarkDown和LaTeX的基础语法；
 #. 学会使用Git，参与开源项目；
 
 如何参与
@@ -101,7 +104,7 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
 
     sudo yum install git gitk
 
-- 配置git::
+- git全局配置::
 
     git config --global user.name "Your Name"
     git config --global user.email "you@example.com"
@@ -119,11 +122,15 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
        # 添加seisman账户下的repo作为其中一个远程repo，并命名为seisman
        git remote add seisman https://github.com/seisman/SAC_Docs_zh.git
 
-       # 编辑器修改文档，比如修改README.md
-
-       git add README.md        # 将修改的文件添加到缓存区
-       git commit -m "modify README.md"  # 提交修改，-m后接注释信息
-       git push -u origin master   # 将修改推送到GitHub服务器
+       # 用编辑器修改文档
+       #   比如先修改contributor.tex文件，该文件中包括了该手册的维护者的列表
+       #   参照已有的记录，添加自己的姓名/昵称、邮箱
+       #   开始时间是你开始维护此手册的时间
+       #   结束时间是你决定不再维护此手册的时间
+       # 修改该文档后，按如下操作提交并推送修改
+       git add contributor.tex           # 将修改的文件添加到缓存区
+       git commit -m "add contributor"   # 提交修改，-m后接注释信息
+       git push -u origin master         # 将修改推送到GitHub服务器
 
 #. 进入 https://github.com/USER/SAC_Docs_zh\ ，点击Pull Request即可；
 #. 提交完Pull Request之后，我会审核修改，并决定是否接受Pull Request；
@@ -183,3 +190,10 @@ Push之后，进入GitHub网站，提交Pull Request即可。
 - 可以多次\ ``add``\ 多次再\ ``commit``\ ，多次\ ``commit``\ 再\ ``push``\ ，多次\ ``push``\ 之后再pull request；
 
 总之，希望有人能够参与进来，哪怕只是改几个错别字也是极好的。
+
+修订历史
+========
+
+- 2015-03-07：初稿；
+- 2015-03-09：补充了参与维护的具体步骤；
+- 2015-03-13：置顶本文；
