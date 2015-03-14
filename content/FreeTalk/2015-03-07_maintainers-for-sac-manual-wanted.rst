@@ -4,7 +4,7 @@
 .. :date: 2015-03-07
 
 :date: 2099-12-30
-:modified: 2015-03-09
+:modified: 2015-03-14
 :author: SeisMan
 :category: 胡言乱语
 :tags: SAC, 文档
@@ -190,6 +190,18 @@ Push之后，进入GitHub网站，提交Pull Request即可。
 - 可以多次\ ``add``\ 多次再\ ``commit``\ ，多次\ ``commit``\ 再\ ``push``\ ，多次\ ``push``\ 之后再pull request；
 
 总之，希望有人能够参与进来，哪怕只是改几个错别字也是极好的。
+
+如何维护
+========
+
+在前面提到了手册中有哪些东西需要维护，根据工作量的大小大致可以分为两类：
+
+- 小工作量维护，比如修复简单的bug和typo、整理部分语句、微调LaTeX模板，可以直接修改并提交Pull Requests；
+- 大工作量维护，比如新增章节、调整文档整体结构等，为了避免多人重复劳动，请先到\ `项目主页 <https://github.com/seisman/SAC_Docs_zh>`_\ 中提交Issues
+
+  - 若暂时不打算解决该Issue，则设置标签为“Pull Request Welcomed”；
+  - 若正在解决该Issue，则设置标签为“In Progress”；
+  - Issue列表中所有标签为“Pull Request Welcomed”的Issue均可随意认领；
 
 修订历史
 ========

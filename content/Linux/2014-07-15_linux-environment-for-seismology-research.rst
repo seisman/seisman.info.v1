@@ -687,7 +687,7 @@ transmission是Linux下常用的Torrent下载软件::
     sudo yum install nfs-utils     # 挂载NFS文件系统所必须
     sudo yum install xclip         # 终端的文本复制工具
     sudo yum install ImageMagick   # 其中的import和convert命令很有用
-    sudo yum install dos2unix unix2dos
+    sudo yum install dos2unix unix2dos  # Windows和Linux换行符互相转换
 
 
 地球物理相关
