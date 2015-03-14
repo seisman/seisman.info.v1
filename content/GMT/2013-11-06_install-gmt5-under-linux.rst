@@ -2,7 +2,7 @@ GMT 5.1.1在Linux下的安装
 ########################
 
 :date: 2013-11-06 00:53
-:modified: 2014-11-29
+:modified: 2015-03-14
 :author: SeisMan
 :category: GMT
 :tags: 编译, GMT5, 安装
@@ -109,6 +109,7 @@ GMT5的依赖包，相对来说要复杂很多。
 - 设置\ ``GMT_INSTALL_MODULE_LINKS``\ 为FALSE，这样调用GMT模块时必须使用\ ``gmt modulename options``\ 的形式，也是GMT5推荐的使用方法；若该值为TRUE，则会在GMT的bin目录下建立多个指向\ ``gmt``\ 的形如\ ``pscoast``\ 的软链接；
 - ``GSHHG_ROOT``\ 为GSHHG数据的位置，需要对下载下来的压缩文件进行解压，并给出文件夹的\ **绝对路径**\ ；\ ``COPY_GSHHG``\ 为TRUE会将GSHHG数据复制到\ ``GMT/share/coast``\ 下；
 - ``DCW_ROOT``\ 设置DCW数据的位置，需给出DCW数据所在文件夹的绝对路径，\ ``COPY_DCW``\ 将数据复制到\ ``GMT/share/dcw``\ 下；
+- cmake似乎不能识别\ ``~``\ ，因而上面提到的所有路径中都不能用\ ``~``\ 代替\ ``/home/xxx``\ ；
 
 PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个GSHHG和DCW数据的副本。可以将这些数据放置在系统中固定的位置（比如我把这些数据都放在\ ``/home/seisman/Datas``\ 目录下），然后有两种处理方式：其一，设置COPY_GSHHG为FALSE，则安装时不会将GSHHG数据复制到GMT目录下，而GMT命令运行时会到GSHHG_ROOT指定的目录中寻找数据；其二，使用默认的GSHHG_ROOT以及COPY_GSHHG，在安装完成之后，到GMT/share目录下设置一个target为\ ``/home/seisman/Datas/gshhg-gmt-2.3.4``\ ，link name为coast的软链接即可。对于DCW数据，同理。
 
@@ -229,6 +230,7 @@ PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个G
 - 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
 - 2014-11-29：CentOS 6.6中的cmake版本为2.8.12；
 - 2015-02-01：更新GSHHG至2.3.4；
+- 2015-03-14：路径中不能用波浪号代替家目录；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/
