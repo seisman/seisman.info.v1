@@ -12,6 +12,7 @@ Institution
 - `NIED F-net <http://www.fnet.bosai.go.jp/>`_
 - `American Geophysical Union <http://sites.agu.org/>`_
 - `International Seismological Centre <http://www.isc.ac.uk/>`_
+- `Northern California Earthquake Data Center <http://www.ncedc.org/>`_
 
 Journals
 ========
@@ -49,10 +50,13 @@ Event and Mechanism Catalog
 ===========================
 
 - `PDE <http://earthquake.usgs.gov/data/pde.php>`_
+- `ANSS Catalog <http://www.ncedc.org/anss/>`_
+- `NCEC Catalog <http://www.ncedc.org/ncedc/catalogs.html>`_
 - `ANSS Comprehensive Catalog <http://earthquake.usgs.gov/earthquakes/search/>`_
 - `Global CMT <http://www.globalcmt.org/>`_
 - `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
 - `NIED Earthquake Mechanism Search <http://www.fnet.bosai.go.jp/event/search.php?LANG=en>`_
+- `UCB (University of California Berkeley) Moment Tensor Catalog <http://www.ncedc.org/ncedc/mt.html>`_
 
 University
 ==========
