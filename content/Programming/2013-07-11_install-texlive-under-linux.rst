@@ -73,7 +73,8 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 .. code-block:: bash
 
    $ su
-   # tlmgr --gui
+   # tlmgr update --self      # 更新TeXLive包管理器tlmgr
+   # tlmgr update --all       # 更新TeXLive的全部包
 
 安装额外的字体
 ==============
@@ -86,3 +87,4 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 - 2013-07-11：初稿；
 - 2014-07-06：修改为TeXLive2014，并删除中文字体部分；
 - 2015-03-08：新增“安装依赖”；
+- 2015-03-15：使用命令行更新包；
