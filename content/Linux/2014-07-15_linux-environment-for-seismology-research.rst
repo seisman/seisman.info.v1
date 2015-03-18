@@ -226,12 +226,14 @@ Linux默认只使用开源的显卡驱动，就目前的情况来看，开源驱
     [10de:06dd] NVIDIA Corporation GF100GL [Quadro 4000]
     This device requires the current 340.58 NVIDIA driver kmod-nvidia
 
-此处提示需要安装340.58版的显卡驱动。安装显卡驱动::
+此处提示需要安装340.58版的显卡驱动::
 
+    # 安装显卡驱动及其32位库文件
     sudo yum install nvidia-x11-drv nvidia-x11-drv-32bit
+    # 卸载与官方驱动冲突的开源驱动
     sudo yum remove xorg-x11-glamor
 
-重启。
+安装完显卡驱动后可以重启一下。
 
 NTFS驱动
 --------

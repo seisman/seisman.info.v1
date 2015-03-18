@@ -55,16 +55,16 @@ pstext的必须选项有-J和-R，对于三维图来还需要-Jz；
 
 .. code-block:: bash
 
- #!/bin/bash
- pstext -R0/10/0/10 -JX5i -B1g1f1/1f1g1 > a.ps <<EOF
- 5 5 25 45 0 CM TEST
- EOF
- rm .gmt*
+   #!/bin/bash
+   pstext -R0/10/0/10 -JX5i -B1g1f1/1f1g1 > a.ps <<EOF
+   5 5 25 45 0 CM TEST
+   EOF
+   rm .gmt*
 
 效果图：
 
 .. figure:: /images/2013102001.jpg
-   :width: 600px
+   :width: 300px
    :alt: fig 1
 
 由于justify选择了CM，所以字符串“TEST”的中心位于(5,5)处，然后整个字符串逆时针旋转了45度。
@@ -79,15 +79,15 @@ pstext的必须选项有-J和-R，对于三维图来还需要-Jz；
 
 .. code-block::bash
 
- #!/bin/bash
- pstext -R0/360/-80/80 -JM5i -B30/30 -A > a.ps <<EOF
- 180 30 25 0 0 CM TEXT1
- 180 -30 25 90 0 CM TEXT2
- EOF
- rm .gmt*
+   #!/bin/bash
+   pstext -R0/360/-80/80 -JM5i -B30/30 -A > a.ps <<EOF
+   180 30 25 0 0 CM TEXT1
+   180 -30 25 90 0 CM TEXT2
+   EOF
+   rm .gmt*
 
 .. figure:: /images/2013102002.jpg
-   :width: 600px
+   :width: 300px
    :alt: fig 1
 
 从图中可以看到，加上-A选项之后，angle=0时，文本为垂直向的，angle=90时，文本为水平向的。
@@ -99,27 +99,27 @@ pstext的必须选项有-J和-R，对于三维图来还需要-Jz；
 
 .. code-block:: bash
 
- #!/bin/bash
- pstext -R0/2/0/2 -JX2i -B1f1g1/1f1g1 -P -W -K > a.ps <<EOF
- 1 1 25 0 0 CM TEXT1
- EOF
+   #!/bin/bash
+   pstext -R0/2/0/2 -JX2i -B1f1g1/1f1g1 -P -W -K > a.ps <<EOF
+   1 1 25 0 0 CM TEXT1
+   EOF
 
- pstext -R0/2/0/2 -JX2i -B1f1g1/1f1g1 -P -Wyellow,o3p,black,solid -K -O -X3i >> a.ps <<EOF
- 1 1 25 0 0 CM TEXT2
- EOF
+   pstext -R0/2/0/2 -JX2i -B1f1g1/1f1g1 -P -Wyellow,o3p,black,solid -K -O -X3i >> a.ps <<EOF
+   1 1 25 0 0 CM TEXT2
+   EOF
 
- pstext -R0/2/0/2 -JX2i -B1f1g1/1f1g1 -P -WO2p,blue -K -O -X-3i -Y3i >> a.ps <<EOF
- 1 1 25 0 0 CM TEXT2
- EOF
+   pstext -R0/2/0/2 -JX2i -B1f1g1/1f1g1 -P -WO2p,blue -K -O -X-3i -Y3i >> a.ps <<EOF
+   1 1 25 0 0 CM TEXT2
+   EOF
 
- pstext -R0/2/0/2 -JX2i -B1f1g1/1f1g1 -P -W0/255/0,O2p,blue -C1c -K -O -X3i >> a.ps <<EOF
- 1 1 25 0 0 CM TEXT3
- EOF
+   pstext -R0/2/0/2 -JX2i -B1f1g1/1f1g1 -P -W0/255/0,O2p,blue -C1c -K -O -X3i >> a.ps <<EOF
+   1 1 25 0 0 CM TEXT3
+   EOF
 
- rm .gmt*
+   rm .gmt*
 
 .. figure:: /images/2013102003.jpg
-   :width: 600px
+   :width: 300px
    :alt: fig 1
 
 -  左下角的图是没有使用-W和-C的参考图；
@@ -135,16 +135,16 @@ pstext的必须选项有-J和-R，对于三维图来还需要-Jz；
 
 .. code-block:: bash
 
- #!/bin/bash
- pstext -R0/4/0/4 -JX8c -B1f1g1/1f1g1 -D1c/1cv > a.ps <<EOF
- 2 2 25 0 0 BL TEXT1
- 1 1 25 0 0 CM TEXT2
- EOF
+   #!/bin/bash
+   pstext -R0/4/0/4 -JX8c -B1f1g1/1f1g1 -D1c/1cv > a.ps <<EOF
+   2 2 25 0 0 BL TEXT1
+   1 1 25 0 0 CM TEXT2
+   EOF
 
- rm .gmt*
+   rm .gmt*
 
 .. figure:: /images/2013102004.jpg
-   :width: 600px
+   :width: 300px
    :alt: fig 1
 
 选项-E
@@ -169,19 +169,19 @@ pstext的必须选项有-J和-R，对于三维图来还需要-Jz；
 
 .. code-block:: bash
 
- #!/bin/bash
- pstext -R0/4/0/4 -JX4c -B1f1g1/1f1g1 -Gred -K > a.ps <<EOF
- 3 0 25 0 0 CM TEXT
- EOF
+   #!/bin/bash
+   pstext -R0/4/0/4 -JX4c -B1f1g1/1f1g1 -Gred -K > a.ps <<EOF
+   3 0 25 0 0 CM TEXT
+   EOF
 
- pstext -R0/4/0/4 -JX4c -B1f1g1/1f1g1 -Gred -N -O -X6c >> a.ps <<EOF
- 3 0 25 0 0 CM TEXT
- EOF
+   pstext -R0/4/0/4 -JX4c -B1f1g1/1f1g1 -Gred -N -O -X6c >> a.ps <<EOF
+   3 0 25 0 0 CM TEXT
+   EOF
 
- rm .gmt*
+   rm .gmt*
 
 .. figure:: /images/2013102005.jpg
-   :width: 600px
+   :width: 300px
    :alt: fig 1
 
 选项-S
@@ -213,17 +213,17 @@ pstext的必须选项有-J和-R，对于三维图来还需要-Jz；
 
 .. code-block:: bash
 
- #!/bin/bash
- pstext -R0/3/0/5 -JX3i -B1f1g1/1f1g1 -H -m -N -Y3i > a.ps <<EOF
- # x y size angle fontno justify linespace parwidth parjust
- > 0 -0.5 12 0 4 LT 13p 3i j
- @%5%Figure 1.@%% This illustration shows nothing useful, but it still needs
- a figure caption. Highlighted in @;255/0/0;red@;; you can see the locations
- of cities where it is @\_impossible@\_ to get any good Thai food; these are to be avoided.
- EOF
+   #!/bin/bash
+   pstext -R0/3/0/5 -JX3i -B1f1g1/1f1g1 -H -m -N -Y3i > a.ps <<EOF
+   # x y size angle fontno justify linespace parwidth parjust
+   > 0 -0.5 12 0 4 LT 13p 3i j
+   @%5%Figure 1.@%% This illustration shows nothing useful, but it still needs
+   a figure caption. Highlighted in @;255/0/0;red@;; you can see the locations
+   of cities where it is @_impossible@_ to get any good Thai food; these are to be avoided.
+   EOF
 
- rm .gmt*
+   rm .gmt*
 
 .. figure:: /images/2013102007.jpg
-   :width: 600px
+   :width: 300px
    :alt: fig 1
