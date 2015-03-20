@@ -30,10 +30,12 @@ Ubuntu::
 下载
 ----
 
-下载地址：http://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive2014.iso
+下载地址：
+
+- USTC镜像： http://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive2014.iso
+- 阿里云镜像： http://mirrors.aliyun.com/CTAN/systems/texlive/Images/texlive2014.iso
 
 Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
-
 
 挂载ISO镜像
 -----------
@@ -70,11 +72,22 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 更新TeXLive
 ===========
 
+可以使用如下命令更新TeX包，\ ``--repository``\ 选项指定了要使用哪一个CTAN镜像，这里使用了阿里云的CTAN镜像，也可指定其他CTAN镜像。若不使用该选项，则默认使用官方CTAN镜像，速度较慢。
+
 .. code-block:: bash
 
    $ su
-   # tlmgr update --self      # 更新TeXLive包管理器tlmgr
-   # tlmgr update --all       # 更新TeXLive的全部包
+   # 更新TeXLive包管理器tlmgr
+   # tlmgr update --self --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
+   # 更新TeXLive的全部包
+   # tlmgr update --all --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
+
+如果希望在图形界面下升级，可以使用如下命令调出tlmgr的中文图形界面：
+
+.. code-block:: bash
+
+   $ su
+   # tlmgr --gui --gui-lang zh_CN
 
 安装额外的字体
 ==============
@@ -88,3 +101,4 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 - 2014-07-06：修改为TeXLive2014，并删除中文字体部分；
 - 2015-03-08：新增“安装依赖”；
 - 2015-03-15：使用命令行更新包；
+- 2015-03-20：指定更新源以及GUI更新；
