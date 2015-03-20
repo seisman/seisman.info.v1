@@ -610,6 +610,11 @@ VirtualBox虚拟机
 
 这样就可以在Linux下虚拟一个Windows啦，好开心。
 
+需要注意两点：
+
+- 若机器性能不够，虚拟机的使用体验会非常差，所以不建议在老机器上使用；
+- 就个人经验，VirtualBox安装Windows 7虚拟机，每隔几天就会毫无征兆地异常退出一次，所以使用的时候注意随时保存数据；
+
 等宽字体
 --------
 
@@ -664,6 +669,8 @@ Dropbox
 
     pip install you-get
     pip install youtube-dl
+    # EPEL中提供了youtube-dl包，因而也可以使用yum安装。一般来说，pip安装的版本更新一些
+
 
 PDF处理工具
 -----------
