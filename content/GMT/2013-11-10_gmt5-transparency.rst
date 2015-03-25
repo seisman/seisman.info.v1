@@ -70,8 +70,8 @@ ps2raster可以将PS文件转换为bmp、eps、pdf、png、jpeg、ppm、tif格�
 
 注意：
 
--  是两步走，先用ps2raster将PS转换为PDF，再用convert将PDF转换为其他格式。
--  直接用convert将PS转换为其他任何格式（包括PDF），都没有透明效果。
+- 是两步走，先用ps2raster将PS转换为PDF，再用convert将PDF转换为其他格式。
+- 直接用convert将PS转换为其他任何格式（包括PDF），都没有透明效果。
 
 效果图
 ======
