@@ -44,7 +44,11 @@ CentOS 7的安装与其他Linux发行版的安装差不多，个别地方稍有�
 安装过程
 --------
 
-#. 选择安装过程中使用的语言：用默认的英文即可
+#. 选择安装过程中使用的语言，这里应\ **使用英语，不要使用汉语**\ 。若安装界面使用汉语，最终安装的系统中会出现两个比较麻烦的问题：
+
+   #. 家目录下的系统文件夹，比如Downloads、Desktop等会以中文表示，这使得在命令行cd变得很麻烦；
+   #. 终端中某些字符用英文字体，某些字符用中文字体，效果非常差，需要自己修改终端字体方可；
+
 #. 选择区域和城市：Asia和Shanghai
 #. 键盘使用English(US)而不是English(UK)
 #. Hostname可以改也可以不改，我用\ ``saturn.geolab``\
@@ -769,6 +773,7 @@ Google Earth
 - 2015-01-07：新增terminator和guake；
 - 2015-01-27：新增cpdf；
 - 2015-03-03：新增filezilla和transmission；
+- 2015-03-26：安装过程中不应使用中文安装界面；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
