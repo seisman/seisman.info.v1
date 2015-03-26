@@ -35,8 +35,8 @@ pssac绘图之地震剖面图
     ntkm.z nykm.z onkm.z sdkm.z
     SAC> sort gcarc
     SAC> p1
-    SAC> saveimg a.png
-    save file a.png [PNG]
+    SAC> saveimg a.pdf
+    save file a.pdf [PDF]
 
 .. figure:: /images/2013080601.png
    :alt: Figure 1
@@ -48,7 +48,7 @@ SAC画出来的图质量会比较差，效果不太好。
 
 ::
 
-     $ ./pssac -JX6i -R200/1600/-10/10 -B100/5 *.z > a.ps 
+     $ ./pssac -JX6i -R200/1600/-10/10 -B100/5 *.z > a.ps
 
 .. figure:: /images/2013080602.jpg
    :alt: Figure 2
@@ -58,7 +58,7 @@ SAC画出来的图质量会比较差，效果不太好。
 
 ::
 
-     $ ./pssac -JX6i -R0/1420/10/40 -B100/5 -Edt-5 -M1 *.z > a.ps 
+     $ ./pssac -JX6i -R0/1420/10/40 -B100/5 -Edt-5 -M1 *.z > a.ps
 
 .. figure:: /images/2013080603.jpg
    :alt: Figure 3
@@ -72,7 +72,7 @@ SAC画出来的图质量会比较差，效果不太好。
 
 ::
 
-     $ ./pssac -JX5i -R0/1420/10/40 -B200/5 -Edt1 -M0.5/-1 -G0/0/0/0 -r -S150 *.z > a.ps 
+     $ ./pssac -JX5i -R0/1420/10/40 -B200/5 -Edt1 -M0.5/-1 -G0/0/0/0 -r -S150 *.z > a.ps
 
 .. figure:: /images/2013080604.jpg
    :alt: Figure 4
@@ -85,5 +85,6 @@ SAC画出来的图质量会比较差，效果不太好。
 修订历史
 =========
 
--  2013-08-06：初稿；
--  2014-01-11：修正\ ``-Edt-1``\ 为\ ``-Edt1``\ ；
+- 2013-08-06：初稿；
+- 2014-01-11：修正\ ``-Edt-1``\ 为\ ``-Edt1``\ ；
+- 2015-03-26：SAC新版本中\ ``saveimg``\ 默认只支持PS和PDF格式，此处将PNG改成PDF；
