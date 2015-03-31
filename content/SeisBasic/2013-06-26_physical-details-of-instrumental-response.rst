@@ -93,6 +93,8 @@ Digital Stages
 
 离散信号滤波可以采用FIR滤波器，也可以采用IIR滤波器。多数情况下采用FIR滤波器，这意味着这个阶段只需要考虑放大系数\ :math:`S_d`\ ，归一化因子\ :math:`A_0`\ 不需要考虑，或者可以认为其为1.0。同样，对于数据重采样以及时间校正也不会引入新的响应函数。
 
+说明：FIR滤波器的响应函数可以近似认为其振幅恒为1，实际情况下，在Nyquist采样率附近会有5%左右的震荡。因而当感兴趣的频率比Nyquist频率小很多时可以不必考虑FIR滤波器的响应函数。
+
 小结
 ====
 
@@ -115,6 +117,7 @@ Digital Stages
 ====
 
 #. `SEED Reference Manual <http://www.fdsn.org/seed_manual/SEEDManual_V2.4.pdf>`_, Version 2.4, August 2012, P71-P78, P151-169
+#. `EarthScope 2009 workshop <http://www.iris.edu/hq/es_course/content/2009.html>`_ session2
 
 修订历史
 ========

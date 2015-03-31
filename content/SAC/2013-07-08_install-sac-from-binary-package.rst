@@ -9,4 +9,4 @@ SAC二进制版的安装
 
 本文不再更新维护！
 
-安装二进制版SAC的流程，在《\ `SAC参考手册 <{filename}/SAC/2013-07-06_sac-manual.rst>`_\ 》的”安装SAC“一节中有详细说明。
+安装二进制版SAC的流程，在《\ `SAC参考手册 <{filename}/SAC/2013-07-06_sac-manual.rst>`_\ 》的“安装SAC”一节中有详细说明。
