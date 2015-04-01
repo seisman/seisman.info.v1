@@ -2,7 +2,7 @@ pssac2的安装
 ############
 
 :date: 2013-08-09 00:01
-:modified: 2015-01-03
+:modified: 2015-04-01
 :author: SeisMan
 :category: 地震学软件
 :tags: pssac2, 编译
@@ -17,14 +17,13 @@ GMT4版
 下载
 ----
 
-GMT4下的pssac2貌似没有更官方的下载地址，现在只能找到下面这个
+GMT4下的pssac2貌似没有更官方的下载地址，specfem3d中包含了pssac2的源码：
 
 .. code-block:: bash
 
-   $ mkdir pssac2
+   $ git clone --recursive https://github.com/geodynamics/specfem3d.git
+   $ mv specfem3d/utils/ADJOINT_TOMOGRAPHY_TOOLS/measure_adj/UTIL/pssac2 .
    $ cd pssac2
-   $ wget -r -np -nd http://geodynamics.org/svn/cig/seismo/3D/ADJOINT_TOMO/measure_adj/UTIL/pssac2/ --no-check-certificate
-   $ rm index.html robots.txt
 
 修改
 ----
@@ -38,7 +37,6 @@ GMT4下的pssac2貌似没有更官方的下载地址，现在只能找到下面�
 
 .. code-block:: bash
 
-   $ chmod +x configure
    $ ./configure --with-gmt=/opt/GMT-4.5.13
    $ make
 
@@ -64,3 +62,4 @@ GMT5版
 
 - 2013-08-09：初稿；
 - 2015-01-03：添加了pssac2的GMT5版本并简化了GMT4版本的说明；
+- 2015-04-01：更新了pssac2的GMT4版本的地址；
