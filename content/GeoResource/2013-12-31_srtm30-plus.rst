@@ -1,0 +1,94 @@
+全球地形起伏数据：SRTM30_PLUS
+##############################
+
+:date: 2013-12-31 19:10
+:updated: 2015-04-07
+:author: SeisMan
+:category: 地球物理相关资源
+:tags: 地形, 网格, 高程, GMT4, GMT5
+:slug: srtm30-plus
+
+- 主页：http://topex.ucsd.edu/WWW_html/srtm30_plus.html
+- 精度：30弧秒（约1km）
+- 版本：V11（20141129）
+
+数据说明
+========
+
+- 整个数据被分为33个文件，与GTOPO30相同；
+- 同时也提供了单个包含全部地形数据的二进制文件；
+- 提供了1分和2分精度的netCDF格式网格文件；
+- 大部分陆地区域使用SRTM30中的陆地高程数据；
+- SRTM在高纬度陆地区域无数据，则使用GTOPO30数据；
+- 纬度[-81,81]范围内的海底地形数据来自于Smith和Sandwell的全球1分数据；
+- 更高精度的数据来自于\ `LDEO Ridge Multibeam Synthesis Project`_\ 、\ `JAMSTEC Data Site for Research Cruises`_\ 和\ `NGDC Coastal Relief Model`_\ 。
+- 两极地区的数据来自于\ `International Bathymetric Chart of the Oceans`_\ 。
+
+其他信息：
+
+#. `说明文件 <ftp://topex.ucsd.edu/pub/srtm30_plus/README.V11.txt>`_
+#. `Google KMZ文件 <ftp://topex.ucsd.edu/pub/srtm30_plus/SRTM30_PLUS.kmz>`_
+
+#. `srtm30格式 <ftp://topex.ucsd.edu/pub/srtm30_plus/srtm30/>`_
+
+数据的使用
+==========
+
+XYZ格式
+-------
+
+下载： `ASCII XYZ格式 <http://topex.ucsd.edu/cgi-bin/get_srtm30.cgi>`_
+
+比如下载的经度[5,7]，纬度[5,7]范围内的数据，可使用如下GMT5命令转换::
+
+    gmt xyz2grd data.xyz -Gdata.nc -R5/7/5/7 -I30s/30s -r -V
+
+topo30格式
+----------
+
+二进制格式: ftp://topex.ucsd.edu/pub/srtm30_plus/topo30/topo30
+netCDF格式: ftp://topex.ucsd.edu/pub/srtm30_plus/topo30/topo30.grd
+
+数据有1.7GB，直接下载netCDF即可使用。
+
+若是下载了二进制格式的，可以向\ ``grdraser``\ 中添加如下语句::
+
+   44 "SRTM30_PLUS"                "m"     -R0/360/-90/90          -I0.5m          PG i 1           0    -9999      srtm30_plus B
+
+未测试，同时不建议这样使用。
+
+srtm30格式
+----------
+
+SRTM30_PLUS遵循了\ `GTOPO30 <2013-08-11_global-digital-elevation-model-gtopo30.rst>`_\ 的数据处理方法，其将全球分为33个区块。GTOPO30仅包含了陆地的地形数据，而SRTM30_PLUS则包含了陆地地形和海洋深度数据，因而SRTM30_PLUS完全可以替代GTOPO30数据。
+
+二进制格式: ftp://topex.ucsd.edu/pub/srtm30_plus/srtm30/data/
+
+SRTM30_PLUS的二进制格式的使用方法与GTOPO30相同，不再多说。
+
+netCDF格式: ftp://topex.ucsd.edu/pub/srtm30_plus/srtm30/grd/
+
+SRTM30_PLUS同时提供了33个区块的netCDF格式的网格文件，可以直接用于GMT绘图。
+
+从二进制到netCDF格式的转换，使用了\ `bin2grd脚本 <ftp://topex.ucsd.edu/pub/srtm30_plus/srtm30/grd/bin2grd>`_\ 。
+
+topo1和topo2
+------------
+
+SRTM30_PLUS同时提供了1分和2分精度的数据，这个数据应该与ETOPO1和ETOPO2类似。直接用ETOPO就好。
+
+topo1: ftp://topex.ucsd.edu/pub/srtm30_plus/topo1_topo2/topo1.grd
+topo2: ftp://topex.ucsd.edu/pub/srtm30_plus/topo1_topo2/topo2.grd
+
+修订历史
+========
+
+- 2013-12-31：初稿；
+- 2015-04-07：更新版本，增加了对不同格式的说明；
+
+.. _LDEO Ridge Multibeam Synthesis Project: http://ocean-ridge.ldeo.columbia.edu/general/html/home.html
+.. _JAMSTEC Data Site for Research Cruises: http://www.jamstec.go.jp/cruisedata/e/
+.. _NGDC Coastal Relief Model: http://www.ngdc.noaa.gov/mgg/coastal/coastal.html
+.. _International Bathymetric Chart of the Oceans: http://www.ngdc.noaa.gov/mgg/bathymetry/arctic/arctic.html
+
+

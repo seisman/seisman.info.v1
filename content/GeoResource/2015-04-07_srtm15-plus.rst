@@ -1,0 +1,18 @@
+全球地形起伏数据：SRTM15_PLUS
+#############################
+
+:date: 2015-04-07
+:author: SeisMan
+:category: 地球物理相关资源
+:tags: 地形, 网格, 高程, GMT4, GMT5
+:slug: srtm15-plus
+
+SRTM15_PLUS是\ `SRTM30_PLUS <{filename}/GeoResource/2013-12-31_srtm30-plus.rst>`_\ 的升级版，其空间分辨率为15弧秒，相当于0.5km。其包含了陆地高程和海洋深度数据，具体信息参考SRTM30_PLUS的介绍。
+
+数据下载：
+
+#. `README <ftp://topex.ucsd.edu/pub/srtm15_plus/README.V1.txt>`_
+#. `Google KMZ <ftp://topex.ucsd.edu/pub/srtm15_plus/SRTM15.kmz>`_
+#. `14GB netCDF数据 <ftp://topex.ucsd.edu/pub/srtm15_plus/topo15.grd>`_
+
+netCDF数据可直接在GMT中使用。

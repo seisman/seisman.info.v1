@@ -11,19 +11,20 @@
 
 博客中提到的地形数据，按照分辨率从低到高排序如下：
 
--  etopo5：\ `GMT网格数据之etopo5 <{filename}/GeoResource/2013-08-10_global-relief-model-etopo5.rst>`_
--  etopo2：\ `GMT网格数据之ETOPO2v2 <{filename}/GeoResource/2013-08-11_global-relief-model-etopo2.rst>`_
--  etopo1：\ `GMT网格数据之ETOPO1 <{filename}/GeoResource/2013-08-11_global-relief-model-etopo1.rst>`_
--  GEBCO： \ `GEBCO：全球水深数据 <{filename}/GeoResource/2014-02-05_gebco-global-bathymetry-data.rst>`_
--  GTOPO30：\ `GMT网格数据之GTOPO30 <{filename}/GeoResource/2013-08-11_global-digital-elevation-model-gtopo30.rst>`_
--  SRTM30\_PLUS：\ `全球地形起伏数据：SRTM30_PLUS <{filename}/GeoResource/2013-12-31_srtm30_plus.rst>`_
--  SRTM3：\ `高精度地形网格数据SRTM <{filename}/GeoResource/2013-09-29_srtm.rst>`_
--  ASTER GDEM：\ `全球数字高程数据：ASTER GDEM <{filename}/GeoResource/2014-01-12_aster-gdem.rst>`_
+- etopo5： `GMT网格数据之etopo5 <{filename}/GeoResource/2013-08-10_global-relief-model-etopo5.rst>`_
+- etopo2： `GMT网格数据之ETOPO2v2 <{filename}/GeoResource/2013-08-11_global-relief-model-etopo2.rst>`_
+- etopo1： `GMT网格数据之ETOPO1 <{filename}/GeoResource/2013-08-11_global-relief-model-etopo1.rst>`_
+- GEBCO：  `GEBCO：全球水深数据 <{filename}/GeoResource/2014-02-05_gebco-global-bathymetry-data.rst>`_
+- GTOPO30： `GMT网格数据之GTOPO30 <{filename}/GeoResource/2013-08-11_global-digital-elevation-model-gtopo30.rst>`_
+- SRTM30_PLUS： `全球地形起伏数据：SRTM30_PLUS <{filename}/GeoResource/2013-12-31_srtm30-plus.rst>`_
+- SRTM15_PLUS： `全球地形起伏数据：SRTM15_PLUS <{filename}/GeoResource/2015-04-07_srtm15-plus.rst>`_
+- SRTM3： `高精度地形网格数据SRTM <{filename}/GeoResource/2013-09-29_srtm.rst>`_
+- ASTER GDEM： `全球数字高程数据：ASTER GDEM <{filename}/GeoResource/2014-01-12_aster-gdem.rst>`_
 
 整理如下表：
 
 +--------------+---------------+--------------+------------+
-| 数据源       | 空间分辨率    | 覆盖范围     | 陆地和海洋 |
+| 数据源       | 空间分辨率    | 覆盖范围     | 陆地/海洋  |
 +==============+===============+==============+============+
 | etopo5       | 5弧分         | 全球         | 陆地+海洋  |
 +--------------+---------------+--------------+------------+
@@ -35,7 +36,9 @@
 +--------------+---------------+--------------+------------+
 | GTOPO30      | 30弧秒        | 全球         | 陆地       |
 +--------------+---------------+--------------+------------+
-| SRTM30\_PLUS | 30弧秒(约1km) | 纬度[-81,81] | 陆地       |
+| SRTM30_PLUS  | 30弧秒(约1km) | 纬度[-81,81] | 陆地+海洋  |
++--------------+---------------+--------------+------------+
+| SRTM15_PLUS  | 15弧秒(约500m)| 纬度[-81,81] | 陆地+海洋  |
 +--------------+---------------+--------------+------------+
 | SRTM         | 3弧秒(约90m)  | 纬度[-60,60] | 陆地       |
 +--------------+---------------+--------------+------------+
