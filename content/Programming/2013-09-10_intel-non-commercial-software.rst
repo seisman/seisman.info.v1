@@ -2,6 +2,7 @@ Intel 非商业开发工具安装记录
 ############################
 
 :date: 2013-09-10 11:39
+:updated: 2015-04-08
 :author: SeisMan
 :category: 编程
 :tags: 安装, Intel, C, Fortran
@@ -9,13 +10,15 @@ Intel 非商业开发工具安装记录
 
 .. contents::
 
-Intel提供了一些不错的开发工具，但都是非开源且收费的。对于Linux用户，还提供了非商业免费版。
+Intel为学生提供了非商业的License，使得学生可以免费获取Intel开发工具一年的使用权。
 
-网址：http://software.intel.com/en-us/non-commercial-software-development
+Linux和Windows用户可以申请Intel Parallel Studio XE的Professional版；对于OS X用户，则只能申请Composer版。
 
-Linux下非商业免费的工具包括：C++编译器、Fortran编译器、Inspector、VTune、IPP、MKL。
+Professional版包括：C/C++编译器、Inspector、VTune、IPP、MKL、Advisor，似乎不含Fortran编译器
 
-Intel® Parallel Studio XE 2013包含了所有免费的工具。在填写一些必要的信息之后即可下载，同时Intel会向注册邮箱内发送license，有效期一年，一年后需要重新申请。
+地址： https://software.intel.com/en-us/qualify-for-free-software/student
+
+申请时需要填写edu邮箱，再填写其他一些必要的信息即可。然后Intel会向注册邮箱内发送license以及下载链接。License有效期一年，一年后需要重新申请。
 
 依赖关系
 ========
@@ -46,7 +49,7 @@ Intel® Parallel Studio XE 2013包含了所有免费的工具。在填写一些�
     Step 1 of 7 | Welcome > Missing Optional Prerequisite(s)
     --------------------------------------------------------------------------------
     There are one or more optional unresolved issues. It is highly recommended to
-    resolve them all before you continue the installation. You can fix them without 
+    resolve them all before you continue the installation. You can fix them without
     exiting from the installation and re-check. Or you can quit from the
     installation, fix them and run the installation again.
     --------------------------------------------------------------------------------
@@ -67,7 +70,7 @@ Intel® Parallel Studio XE 2013包含了所有免费的工具。在填写一些�
     --------------------------------------------------------------------------------
     Please type a selection or press "Enter" to accept default choice [1]: 1
 
-检测过程中，intel给出”不支持当前操作系统“的错误，除非系统非常老，否则该错误都可以忽略。如果出现其他错误，需要”detailed info about issues“逐一排查。
+检测过程中，intel给出“不支持当前操作系统”的错误，除非系统非常老，否则该错误都可以忽略。如果出现其他错误，需要“detailed info about issues”逐一排查。
 
 激活
 ====
@@ -82,11 +85,11 @@ Intel® Parallel Studio XE 2013包含了所有免费的工具。在填写一些�
     rights to use the product. Alternatively, you can choose to evaluate the
     product or defer activation by choosing the evaluate option. Evaluation software
     will time out in about one month. Also you can use license file, license
-    manager, or remote activation if the system you are installing on does not 
+    manager, or remote activation if the system you are installing on does not
     have internet access activation options.
     --------------------------------------------------------------------------------
     1. I want to activate my product using a serial number [default]
-    2. I want to evaluate my product or activate later 
+    2. I want to evaluate my product or activate later
     3. I want to activate either remotely, or by using a license file, or by using a
        license manager
 
@@ -94,13 +97,13 @@ Intel® Parallel Studio XE 2013包含了所有免费的工具。在填写一些�
     b. Back to the previous menu
     q. Quit
     --------------------------------------------------------------------------------
-    Please type a selection or press "Enter" to accept default choice [1]: 1            
+    Please type a selection or press "Enter" to accept default choice [1]: 1
 
     Please type your serial number (the format is XXXX-XXXXXXXX): 查看邮箱找激活码
     --------------------------------------------------------------------------------
     Activation completed successfully.
     --------------------------------------------------------------------------------
-    Press "Enter" key to continue: 
+    Press "Enter" key to continue:
 
 安装完成
 ========
@@ -112,13 +115,13 @@ Intel® Parallel Studio XE 2013包含了所有免费的工具。在填写一些�
     Thank you for installing and using the
     Intel(R) Parallel Studio XE 2013 Update 3 for Linux*
 
-    Reminder: Intel(R) VTune(TM) Amplifier XE users must be members of the "vtune" 
+    Reminder: Intel(R) VTune(TM) Amplifier XE users must be members of the "vtune"
     permissions group in order to use Event-based Sampling.
 
     To register your product purchase, visit
     https://registrationcenter.intel.com/RegCenter/registerexpress.aspx?clientsn=N43
     3-3FHWSF85
-        
+
     To get started using Intel(R) VTune(TM) Amplifier XE 2013 Update 5:
         - To set your environment variables: source
     /opt/intel/vtune_amplifier_xe_2013/amplxe-vars.sh
@@ -158,14 +161,14 @@ Intel® Parallel Studio XE 2013包含了所有免费的工具。在填写一些�
                /opt/intel/composer_xe_2013/Documentation/en_US/get_started_lc.htm.
                /opt/intel/composer_xe_2013/Documentation/en_US/get_started_lf.htm.
 
-          
+
     To view movies and additional training, visit
     http://www.intel.com/software/products.
 
     --------------------------------------------------------------------------------
     q. Quit [default]
     --------------------------------------------------------------------------------
-    Please type a selection or press "Enter" to accept default choice [q]: 
+    Please type a selection or press "Enter" to accept default choice [q]:
 
 修改环境变量
 ============
@@ -206,5 +209,6 @@ Intel® Parallel Studio XE 2013包含了所有免费的工具。在填写一些�
 修订历史
 ========
 
-- 2013-09-10：初稿for CentOS 6.5； 
-- 2014-07-15：加入了依赖包for CentOS 7.0；  
+- 2013-09-10：初稿for CentOS 6.5；
+- 2014-07-15：加入了依赖包for CentOS 7.0；
+- 2015-04-08：Intel非商业软件在停止一段时间后重新接受申请；
