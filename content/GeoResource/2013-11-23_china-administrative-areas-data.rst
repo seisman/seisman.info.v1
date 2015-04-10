@@ -249,17 +249,13 @@ PS2：中国的国界在有些地方是有争议的，因而使用该国界数�
 
 这里提供中国全境的转换之后的数据，可直接用于GMT绘图，需要原始shapefile的自己去官方网站下载。
 
-数据打包下载地址，根据需求选择不同的压缩格式：
-
-- `China_Adm.7z <http://seisman.qiniudn.com/downloads/China_Adm.7z>`_ 20.5M
-- `China_Adm.tar.bz2 <http://seisman.qiniudn.com/downloads/China_Adm.tar.bz2>`_ 33.2M
-- `China_Adm.zip <http://seisman.qiniudn.com/downloads/China_Adm.zip>`_ 37.4M
-- `China_Adm.tar.gz <http://seisman.qiniudn.com/downloads/China_Adm.tar.gz>`_ 43M
+数据打包下载地址: `China_Adm.7z <http://seisman.qiniudn.com/downloads/China_Adm.7z>`_ 20.5M
 
 修订历史
 ========
 
--  2013-11-23：初稿；
--  2013-11-28：绘制2级和3级边界时，利用clip的方法以减少人工操作。Thanks to @yangtze。
--  2013-12-05：删除了数据包中的冗余隐藏文件，重新打包，提供多种格式下载。
--  2014-01-19：不推荐下载全球行政区划数据；
+- 2013-11-23：初稿；
+- 2013-11-28：绘制2级和3级边界时，利用clip的方法以减少人工操作。Thanks to @yangtze。
+- 2013-12-05：删除了数据包中的冗余隐藏文件，重新打包，提供多种格式下载。
+- 2014-01-19：不推荐下载全球行政区划数据；
+- 2015-04-11：存在个别IP恶意下载数据，导致我流量异常高，因而删除其他格式的数据压缩包，仅留下7z格式的，若仍出现流量异常，则删除该数据；
