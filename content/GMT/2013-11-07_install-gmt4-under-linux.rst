@@ -82,7 +82,8 @@ GMT4主要依赖于netCDF，可以直接使用Linux发行版官方源中提供�
 .. code-block:: bash
 
    $ tar -zxvf gshhg-gmt-2.3.4.tar.gz
-   $ sudo cp -r gshhg-gmt-2.3.4 /opt/GMT-4.5.13/share/coast
+   $ sudo mkdir /opt/GMT-4.5.13/share/coast
+   $ sudo cp -r gshhg-gmt-2.3.4/* /opt/GMT-4.5.13/share/coast/
 
 修改环境变量
 ------------
