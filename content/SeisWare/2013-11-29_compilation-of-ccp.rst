@@ -20,24 +20,24 @@ CCP，即Common-Conversion-Point，用于共转换点地震数据的叠加，这
 
 .. code-block:: bash
 
- $ wget http://www.eas.slu.edu/People/LZhu/downloads/ccp1.0.tar
- $ tar -xvf ccp1.0.tar
- $ cd ccp
- $ make clean
+   $ wget http://www.eas.slu.edu/People/LZhu/downloads/ccp1.0.tar
+   $ tar -xvf ccp1.0.tar
+   $ cd ccp
+   $ make clean
 
 修改Makefile
 ============
 
-在Makefile中加入如下两行，定义变量GMT\_INC和GMT\_LIB：
+在Makefile中加入如下两行，定义变量\ ``GMT_INC``\ 和\ ``GMT_LIB``\ ：
 
 .. code-block:: make
 
-    GMT_INC = -I/opt/GMT/include -I/opt/netcdf/include
-    GMT_LIBS = -L/opt/GMT/lib -lgmt -lpsl -L/opt/netcdf/lib -lnetcdf -lm -s
+    GMT_INC = -I/opt/GMT/include
+    GMT_LIBS = -L/opt/GMT/lib -lgmt -lpsl -lnetcdf -lm -s
 
 编译
 ====
 
 ::
 
- $ make
+    $ make
