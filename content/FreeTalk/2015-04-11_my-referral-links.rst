@@ -52,3 +52,12 @@ Dropbox是知名的网盘服务，与百度云之类的网盘不同，其提供�
 邀请链接： https://db.tt/sC6uCvbu (2/32)
 
 若点击此链接注册Dropbox，则我和你都会获得500MB的永久容量。
+
+OneDrive
+========
+
+微软的云服务，新版的Word、Excel、PowerPoint以及Onenote等等都可以直接保存到OneDrive中。初始免费容量15G。
+
+邀请链接： https://onedrive.live.com/?invref=7a70adf12890b43a&invsrc=90 (0/10)
+
+若点击此链接注册OneDrive，则我和你均可获得500MB容量。
