@@ -32,7 +32,7 @@ Aki & Richards (1980)对于断层参数的定义如下图:
 
 断层的几何形态由走向（strike）和倾角（dip）两个量完全决定。
 
-一个断层有两个表面，分别称之为上盘（hanging wall）和下盘（footer wall），图中所示为断层的footer wall。
+一个断层有两个表面，分别称之为上盘（hanging wall）和下盘（foot wall），图中所示为断层的foot wall。
 
 断层面与水平地表面存在一交线，一条线存在两个方向，哪个方向才是真正的走向呢？地震学里的定义是“当观测者沿着走向方向看时，hanging wall位于观测者的右手边”。这样的定义唯一确定了一个方向为走向方向。走向（strike）的角度定义为正北方向顺时针旋转到走向方向的角度，即图中的\ :math:`\phi_s`\ ，其中\ :math:`\phi_s \in [0,2\pi)`\ 。
 
@@ -41,7 +41,7 @@ Aki & Richards (1980)对于断层参数的定义如下图:
 断层滑动
 ========
 
-断层的滑移\ :math:`\mathbf{u}`\ 是一个矢量，定义为“断层上盘（hanging wall）相对于下盘（footer wall）的滑动”。。一般取\ :math:`\mathbf{u}`\ 的大小为滑移量u，取\ :math:`\mathbf{u}`\ 的方向为滑动方向，而滑移角（rake）即定义为断层走向与滑动方向之间的夹角，即图中\ :math:`\lambda`\ 。注意这里滑移角rake是逆时针计算的。rake的取值范围为\ :math:`-\pi < \lambda < \pi`\ 。
+断层的滑移\ :math:`\mathbf{u}`\ 是一个矢量，定义为“断层上盘（hanging wall）相对于下盘（foot wall）的滑动”。。一般取\ :math:`\mathbf{u}`\ 的大小为滑移量u，取\ :math:`\mathbf{u}`\ 的方向为滑动方向，而滑移角（rake）即定义为断层走向与滑动方向之间的夹角，即图中\ :math:`\lambda`\ 。注意这里滑移角rake是逆时针计算的。rake的取值范围为\ :math:`-\pi < \lambda < \pi`\ 。
 
 断层的命名
 ==========

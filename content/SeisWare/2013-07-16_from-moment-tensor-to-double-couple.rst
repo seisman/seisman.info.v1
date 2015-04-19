@@ -19,7 +19,7 @@ Double Couple由四个参数描述：Strike、Dip、Rake、Moment；Moment Tenso
 - axe2dc：将主轴坐标系下的结果转换为double couple解；
 - ten2dc.pl：我写的perl脚本，实现两个程序的衔接（作者给的是shell脚本）
 
-原文链接： http://www.fcaglp.unlp.edu.ar/~esuarez/gmt/1998/0102.html
+原文链接： http://www.fcaglp.unlp.edu.ar/~esuarez/gmt/1998/0102.html （死链）
 
 代码下载： http://seisman.qiniudn.com/downloads/ten2dc.tar.gz
 
