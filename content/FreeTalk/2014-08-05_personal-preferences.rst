@@ -25,7 +25,7 @@
 - IDE： `Visual Studio Community 2013 with update 4`_
 - RSS阅读器： `feedly`_
 - 稍后阅读： `Pocket`_ + Chrome书签
-- 笔记类工具： `印象笔记`_ + `马克飞象`_
+- 笔记类工具： OneNote
 - 清单管理： `Wunderlist`_
 - 高级编程语言： C > Fortran
 - 脚本语言： Python3 > Perl > Bash
@@ -80,6 +80,4 @@
 .. _Xshell Home/School: http://www.netsarang.com/products/xsh_overview.html
 .. _zathura: http://pwmt.org/projects/zathura
 .. _百度云: http://yun.baidu.com
-.. _马克飞象: http://maxiang.info
 .. _坚果云: https://jianguoyun.com
-.. _印象笔记: https://www.yinxiang.com/

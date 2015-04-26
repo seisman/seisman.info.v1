@@ -53,6 +53,16 @@ Stage 0
 
 174-182行是第0阶段，这个阶段给出了Sensitivity=3.377320E+09。其实际上等于前面三个阶段的放大系数\ :math:`S_d`\ 的乘积，这个阶段只是起到了辅助验证的作用。
 
+有些时候会遇到Stage 0给出的增益并不等于前几个阶段的增益的乘积的情况，此时会报如下错误::
+
+    computed and reported sensitivities differ by more than 5 percent
+
+其中computed sensitivity指的是各个stage的增益的乘积，reported sensitivity指的是stage 0给出的增益，二者之间相差5%以上。
+
+出现这个错误的可能原因是仪器响应文件有问题。
+
+官方的答复见： http://www.iris.washington.edu/pipermail/sac-help/2014-February/001674.html
+
 仪器响应与各个阶段的振幅响应
 ============================
 

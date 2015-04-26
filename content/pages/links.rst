@@ -4,15 +4,46 @@ Links
 :date: 2014-09-30
 :slug: links
 
+.. contents::
+
 Institution
 ===========
 
 - `Incorporated Research Institutions for Seismology <http://www.iris.edu/hq/>`_
-- `NIED Hi-net <http://www.hinet.bosai.go.jp/>`_
-- `NIED F-net <http://www.fnet.bosai.go.jp/>`_
 - `American Geophysical Union <http://sites.agu.org/>`_
 - `International Seismological Centre <http://www.isc.ac.uk/>`_
+
+Event and Mechanism Catalog
+===========================
+
+- `PDE <http://earthquake.usgs.gov/data/pde.php>`_
+- `ANSS Catalog <http://www.ncedc.org/anss/>`_
+- `NCEC Catalog <http://www.ncedc.org/ncedc/catalogs.html>`_
+- `ANSS Comprehensive Catalog <http://earthquake.usgs.gov/earthquakes/search/>`_
+- `Global CMT <http://www.globalcmt.org/>`_
+- `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
+- `NIED Earthquake Mechanism Search <http://www.fnet.bosai.go.jp/event/search.php?LANG=en>`_
+- `UCB (University of California Berkeley) Moment Tensor Catalog <http://www.ncedc.org/ncedc/mt.html>`_
+
+Seismic Network / Waveform Data
+===============================
+
+- `NIED Hi-net <http://www.hinet.bosai.go.jp/>`_
+- `NIED F-net <http://www.fnet.bosai.go.jp/>`_
 - `Northern California Earthquake Data Center <http://www.ncedc.org/>`_
+- `Southern California Seismic Network <http://www.scsn.org>`_
+- `Pacific Northwest Seismic Network <http://pnsn.org/>`_
+- `Alaska Earthquake Information Center <http://www.aeic.alaska.edu/>`_
+- `Canadian National Seismic Network <http://www.earthquakescanada.nrcan.gc.ca/stndon/CNSN-RNSC/index-eng.php>`_
+
+Software and Tools
+==================
+
+- `Generic Mapping Tools <http://gmt.soest.hawaii.edu/>`_
+- `Seismic Analysis Code <http://www.iris.edu/ds/nodes/dmc/software/downloads/sac/>`_
+- `The TauP Toolkit <http://www.seis.sc.edu/taup/index.html>`_
+- `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
+- `IRIS DMC Google Map Service <http://ds.iris.edu/gmap/>`_
 
 Journals
 ========
@@ -32,43 +63,15 @@ Journals
 - `Chinese Journal of Geophysics <http://agupubs.onlinelibrary.wiley.com/agu/journal/10.1002/(ISSN)2326-0440/>`_
 - `EPSL <http://www.journals.elsevier.com/earth-and-planetary-science-letters/>`_
 
-
 Groups
 ======
 
 - `Harvard Seismology <http://www.seismology.harvard.edu/index.html>`_
 
-
-Waveform Data
-=============
-
-- `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
-- `NIED Hi-net <http://www.hinet.bosai.go.jp/>`_
-- `NIED F-net waveform <http://www.fnet.bosai.go.jp/auth/dataget/?LANG=en>`_
-
-Event and Mechanism Catalog
-===========================
-
-- `PDE <http://earthquake.usgs.gov/data/pde.php>`_
-- `ANSS Catalog <http://www.ncedc.org/anss/>`_
-- `NCEC Catalog <http://www.ncedc.org/ncedc/catalogs.html>`_
-- `ANSS Comprehensive Catalog <http://earthquake.usgs.gov/earthquakes/search/>`_
-- `Global CMT <http://www.globalcmt.org/>`_
-- `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
-- `NIED Earthquake Mechanism Search <http://www.fnet.bosai.go.jp/event/search.php?LANG=en>`_
-- `UCB (University of California Berkeley) Moment Tensor Catalog <http://www.ncedc.org/ncedc/mt.html>`_
-
 University
 ==========
 
 - `University of Science and Technology of China <http://www.ustc.edu.cn/>`_
-
-Software
-========
-
-- `Generic Mapping Tools <http://gmt.soest.hawaii.edu/>`_
-- `Seismic Analysis Code <http://www.iris.edu/ds/nodes/dmc/software/downloads/sac/>`_
-- `The TauP Toolkit <http://www.seis.sc.edu/taup/index.html>`_
 
 Software Library
 ================

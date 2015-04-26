@@ -7,34 +7,30 @@ GeoTiff格式转GMT netCDF格式
 :tags: 格式转换, GMT5
 :slug: convert-geotiff-to-gmt
 
-`GDAL`_\ 提供了不少小工具，其中，gdal\_translate可用于网格数据的格式转换。
+`GDAL`_\ 提供了不少小工具，其中，\ ``gdal_translate``\ 可用于网格数据的格式转换。
 
-转换命令：
+下面的命令可以将GeoTiff格式的数据转换为GMT可识别的netCDF格式::
 
-::
+    gdal_translate -of GMT srtm_56_05.tif srtm_56_05.nc
 
-    gdal_translate -of GMT srtm_56_05.tif srtm_56_05.grd
-
-经grdinfo及绘图测试，生成的grd文件可以在GMT中使用。
-
-其语法如下：
+``gdal_translate``\ 的语法如下：
 
 ::
 
-    Usage: gdal_translate [--help-general]
+    Usage: gdal_translate [--help-general] [--long-usage]
            [-ot {Byte/Int16/UInt16/UInt32/Int32/Float32/Float64/
                  CInt16/CInt32/CFloat32/CFloat64}] [-strict]
-           [-of format] [-b band] [-expand {gray|rgb|rgba}]
+           [-of format] [-b band] [-mask band] [-expand {gray|rgb|rgba}]
            [-outsize xsize[%] ysize[%]]
-           [-unscale] [-scale [src_min src_max [dst_min dst_max]]]
-           [-srcwin xoff yoff xsize ysize] [-projwin ulx uly lrx lry]
+           [-unscale] [-scale[_bn] [src_min src_max [dst_min dst_max]]]* [-exponent[_bn] exp_val]*
+           [-srcwin xoff yoff xsize ysize] [-projwin ulx uly lrx lry] [-epo] [-eco]
            [-a_srs srs_def] [-a_ullr ulx uly lrx lry] [-a_nodata value]
            [-gcp pixel line easting northing [elevation]]*
            [-mo "META-TAG=VALUE"]* [-q] [-sds]
-           [-co "NAME=VALUE"]*
+           [-co "NAME=VALUE"]* [-stats] [-norat]
            src_dataset dst_dataset
 
--of后接要转换的数据格式，其支持的格式如下：
+``-of``\ 后接要转换的数据格式，使用\ ``gdal_translate --long-usage``\ 可以看到，支持的格式如下：
 
 ::
 
