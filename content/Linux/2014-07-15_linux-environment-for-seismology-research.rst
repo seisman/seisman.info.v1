@@ -210,6 +210,7 @@ GCC系列
     sudo yum install gdb     # 代码调试器
     sudo yum install cmake   # Cmake
     sudo yum install git     # 版本控制
+    sudo yum install git-svn # git的svn插件
 
 驱动程序
 ========
@@ -270,7 +271,7 @@ Clang可以认为是GCC的替代品，可以用于编译C、C++、Objective-C和
 Intel系列
 ---------
 
-Intel的大部分软件都是非开源且收费的，但同时部分软件也提供了Linux下的非商业免费版。比如icc、ifort、mkl数学库以及代码性能分析工具等。
+Intel的大部分软件都是非开源且收费的，但同时部分软件也提供了Linux下的非商业免费版。比如icc、mkl数学库以及代码性能分析工具等。
 
 Intel软件的申请以及安装参考《\ `Intel非商业免费开发工具 <{filename}/Programming/2013-09-10_intel-non-commercial-software.rst>`_\ 》。
 
@@ -586,7 +587,7 @@ autojump
 中文输入法
 ----------
 
-刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是ibus，使用效果一般。fcitx是更好的选择，基于fcitx框架的搜狗输入法或许是更更好的选择。
+刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是ibus，使用效果一般。fcitx是更好的选择，基于fcitx框架的搜狗输入法或许是更好的选择。
 
 参考\ `CentOS7安装fcitx中文输入法 <{filename}/Linux/2014-09-20_fcitx-for-centos-7.rst>`_\ 。
 
