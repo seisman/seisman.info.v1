@@ -81,13 +81,7 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
 
 维护者需要了解三个工具：Linux、Git和LaTeX。其中，对于Git的要求较高，其余两者没有太多要求。
 
-安装TeXLive以及字体
--------------------
-
-- 参考\ `Linux下安装TeXLive 2014 <{filename}/Programming/2013-07-11_install-texlive-under-linux.rst>`_\ 一文；
-- 本手册使用了非开源字体，包括Adobe的四种中文字体，以及Adobe Garamond Pro英文字体；
-- 字体可以从网上获取，或直接联系我索取；
-- 未来会尽量用开源字体替代非开源字体；
+关于如何利用LaTeX编译生成PDF，请参考项目主页里的README。
 
 了解GitHub
 ----------
@@ -160,23 +154,6 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
     git push
 
 Push之后，进入GitHub网站，提交Pull Request即可。
-
-关于TeXLive
------------
-
-文档的源码是用LaTeX写的，用TeXLive提供的工具编译成PDF。目前本项目提供了两种构建方法，分别是\ ``make``\ 和\ ``scons``\ 。
-
-``make``\ 的使用::
-
-    make            # 构建PDF
-    make clean      # 删除构建过程中的辅助文件
-
-``scons``\ 的使用::
-
-    scons           # 构建PDF
-    scons -c        # 删除构建过程中的辅助文件
-
-编译生成PDF并不是必须的，生成PDF的目的只是为了检查修改后的效果。
 
 其他说明
 --------
