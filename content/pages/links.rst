@@ -78,6 +78,7 @@ Software Library
 
 - `IRIS seiscode <https://seiscode.iris.washington.edu/>`_
 - `ORFEUS Seismological Software Library <http://www.orfeus-eu.org/software.html>`_
+- `S&MG Research Group Software <http://rses.anu.edu.au/seismology/index.php?p=software>`_
 
 Others
 ======
