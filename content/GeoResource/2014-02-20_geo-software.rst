@@ -205,3 +205,12 @@ Generalized Cut-and-Paste
 - 作者: Lupei Zhu
 - 网址: http://www.eas.slu.edu/People/LZhu/home.html
 - 说明: 用于反演震源机制解的CAP方法，虽然是1.0版，实际上N年前国内就已经有很多人在使用这个代码了。
+
+Adaptive Stacking
+-----------------
+
+- 语言: Fortran
+- 版本: 1.0
+- 作者: Nick Rawlinson and Brian Kennett
+- 网址: http://rses.anu.edu.au/seismology/soft/astack/index.html
+- 说明: 震相对齐。
