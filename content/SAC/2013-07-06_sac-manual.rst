@@ -2,7 +2,7 @@ SAC参考手册中文版
 #################
 
 :date: 2013-07-06 18:21
-:modified: 2014-09-25
+:modified: 2015-05-02
 :author: SeisMan
 :category: SAC
 :tags: 书籍, PDF
@@ -12,13 +12,49 @@ SAC参考手册中文版
 
 征集《SAC参考手册》维护者，有意者点\ `这里 <{filename}/FreeTalk/2015-03-07_maintainers-for-sac-manual-wanted.rst>`_\ ，长期有效。
 
-3.2 dev版
+3.3 dev版
 =========
 
-此文档使用Git进行版本控制，我会不定期更新或修正文档内容，读者可以下载已定稿的3.1版或正在修订中的3.2-dev版。待更新积累到一定程度的时候，我会正式发布3.2版。
+此文档使用Git进行版本控制，我会不定期更新或修正文档内容，读者可以下载已定稿的3.2版或正在修订中的3.3-dev版。待更新积累到一定程度的时候，我会正式发布3.3版。
 
-下载地址： `3.2-dev版 <https://github.com/seisman/SAC_Docs_zh/blob/master/SAC_Docs.pdf?raw=true>`_
+下载地址： `3.3-dev版 <https://github.com/seisman/SAC_Docs_zh/blob/master/SAC_Docs.pdf?raw=true>`_
 
+2015-05-02 3.2版
+================
+
+对于用户:
+
+- 修复bugs和typos；
+- 命令整理：
+
+  - `systemcommand`
+  - `transfer`
+
+- 新增内容
+
+  - 波形排序
+  - 标记震相理论走时的三种方法
+  - 图像格式转换
+  - SAC初始化宏文件
+  - SAC命令的长度上限
+  - 字节序
+  - 新增附录“仪器响应”，整理了“去仪器响应”一节
+
+- 新增示例
+
+  - 调用SAC的Hilbert函数
+
+对于维护者:
+
+- 新增ChangeLog；
+- 更新README，可根据说明自行编译源码生成PDF；
+- 修改Makefile，对依赖的检测更加智能；
+- 英文使用TeX默认字体；中文使用开源中文字体Fandol；
+- 使用`minted`实现代码的语法高亮，替代`listings`；
+- datetime宏包升级至datetime2；
+- 简化了绘图脚本的Makefile；
+
+下载地址: `SAC参考手册v3.2.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v3.2.pdf>`_
 
 2014-09-25 3.1版
 ================
@@ -31,7 +67,6 @@ SAC参考手册中文版
 - Bug修订；
 
 下载地址: `SAC参考手册v3.1.pdf <http://seisman.qiniudn.com/downloads/sac-manual-v3.1.pdf>`_
-
 
 2014-04-18 3.0版
 ================
