@@ -25,17 +25,15 @@ GMT技巧之图像合并
 
 下面主要说说修改绘图脚本的方法。
 
-====================================华丽的分割线================================
-
 GMT绘图的基本原理是：每个绘图命令产生一堆PS代码，代表图形的一个部分（一个图层？），一大堆PS代码就构成了一张图。
 
 对于上面的例子来说，理论上只要将绘制这三个图的所有GMT命令全部都放在一个脚本中即可，也就是“脚本合并=图像合并”。
 
 合并脚本过程中的一些要点：
 
--  所有绘图命令的输出要重定向到同一个PS文件中；
--  注意-K、-O选项的正确使用；
--  使用-X、-Y调节每个子图的位置；
+- 所有绘图命令的输出要重定向到同一个PS文件中；
+- 注意-K、-O选项的正确使用；
+- 使用-X、-Y调节每个子图的位置；
 
 如果原脚本很复杂，脚本之间存在相同的变量，直接合并脚本可能会存在变量重复定义或者相互影响的问题，继而影响绘图结果。这种情况下多个脚本可以不必合并，另写一个脚本\ **顺序执行**\ 这几个脚本就好，单个脚本遵循上面的要点修改即可。
 
@@ -69,29 +67,3 @@ GMT绘图的基本原理是：每个绘图命令产生一堆PS代码，代表图
    调整0.24的大小，可以实现在保持纸张大小不变的前提下整体缩放图形的目的。
 
 这个时候应该就大功告成了。
-
-====================================华丽的分割线================================
-
-**Private Notes:**
-
-.. code-block:: c
-
- GMT 4.5.9 pslib.c:
- L1696: fprintf (PSL->internal.fp, "%g %g scale\n", xscl, yscl);
- L1693: xscl *= scl;
- L1432: // xscl, yscl: Global scaling, usually left to 1,1
- L1677: scl = PSL->internal.points_pr_unit / PSL->internal.scale;
- L1554: PSL->internal.points_pr_unit = 72.0; gmtdefaults中指出PostScript内部定义dpi=72;
- L1553: PSL->internal.scale = (double)dpi; /* Dots pr. unit resolution of output device */
- L1429: PSL_LONG ps_plotinit_hires (char *plotfile, PSL_LONG overlay, PSL_LONG mode, double xoff, double yoff, double xscl, double yscl, PSL_LONG ncopies, PSL_LONG dpi, PSL_LONG unit, double *page_size, int *rgb, c onst char *encoding, struct EPS *eps)
-
- GMT 4.5.9 gmt_plot.c:
- L4348: ps_plotinit_hires (CNULL, GMT_ps.overlay, PS_bit_settings, GMT_ps.x_origin, GMT_ps.y_origin,
- L4349: GMT_ps.x_scale, GMT_ps.y_scale, GMT_ps.n_copies, GMT_ps.dpi, GMT_INCH,
- L4350: GMT_ps.paper_width, GMT_ps.page_rgb, GMT_ps.encoding_name, eps);
-
- GMT 4.5.9 gmt_init.c:
- L4165: GMT_ps.dpi = gmtdefs.dpi; /* Plotter resolution in dots-per-inch */
- L2021-L2027: dip由gmtdefaults中的DOTS_PR_INCH(300)决定。 0.24=72/300;
-
-直接修改PS文件中的scale，可以实现图像缩放；而修改DOTS\_PR\_INCH，生成的PS文件中的scale确实会变化，但是实际上却没有达到图像缩放的目的！Why？还有其他参数同时被修改了？
