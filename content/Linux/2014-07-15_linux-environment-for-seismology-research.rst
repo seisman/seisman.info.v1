@@ -360,6 +360,19 @@ Python2与Python3之间是不完全兼容的，而我以Python3为主，所以�
     pip install requests
     pip install docopt
 
+编程相关软件
+============
+
+编辑器
+------
+
+#. vim
+#. sublime text 3
+
+IDE
+----
+
+- Python IDE：\ `PyCharm Community Edition <https://www.jetbrains.com/pycharm/>`_
 
 日常软件
 ========
