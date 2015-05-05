@@ -12,13 +12,6 @@ SAC参考手册中文版
 
 征集《SAC参考手册》维护者，有意者点\ `这里 <{filename}/FreeTalk/2015-03-07_maintainers-for-sac-manual-wanted.rst>`_\ ，长期有效。
 
-3.3 dev版
-=========
-
-此文档使用Git进行版本控制，我会不定期更新或修正文档内容，读者可以下载已定稿的3.2版或正在修订中的3.3-dev版。待更新积累到一定程度的时候，我会正式发布3.3版。
-
-下载地址： `3.3-dev版 <https://github.com/seisman/SAC_Docs_zh/blob/master/SAC_Docs.pdf?raw=true>`_
-
 2015-05-02 3.2版
 ================
 
