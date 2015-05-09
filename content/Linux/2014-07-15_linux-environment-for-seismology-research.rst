@@ -294,6 +294,8 @@ openmpi
     export PATH=/usr/lib64/openmpi/bin/:${PATH}
     module load mpi/openmpi-x86_64
 
+PS：要使用\ ``module``\ 命令需要先安装\ ``environment-modules``\ 包。
+
 mpich
 ~~~~~
 
