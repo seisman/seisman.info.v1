@@ -111,7 +111,9 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
        # 下载源码至本机
        git clone git@github.com:USER/SAC_Docs_zh.git
 
+
        # 添加seisman账户下的repo作为其中一个远程repo，并命名为seisman
+       cd SAC_Docs_zh/
        git remote add seisman https://github.com/seisman/SAC_Docs_zh.git
 
        # 用编辑器修改文档

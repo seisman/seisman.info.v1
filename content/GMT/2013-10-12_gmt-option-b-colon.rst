@@ -14,9 +14,10 @@ GMT进阶之-B选项中的冒号
 问题描述
 ========
 
-如下图，想要用-B选项给图加上标题，标题的格式为“Title : eltiT”，即想要在标题中加个冒号，为了增加问题的复杂度，标题中还有空格。
+如下图，想要用-B选项给图加上标题，标题的格式为\ ``Title : eltiT``\ ，即想要在标题中加个冒号，为了增加问题的复杂度，标题中还有空格。
 
-.. figure:: /images/2013101201.jpg
+.. figure:: /images/2013101201.png
+   :width: 400px
    :align: center
    :alt: fig
 
@@ -28,10 +29,10 @@ Bash实现
 
 .. code-block:: bash
 
- #!/bin/bash
- psbasemap -R0/5/0/5 -JX5i -B1/1:."Title eltiT": > a.ps
+   #!/bin/bash
+   psbasemap -R0/5/0/5 -JX5i -B1/1:."Title eltiT": > a.ps
 
-用:."string":这样的方式可以很容易的加上标题，由于字符串中有空格，所以需要用双引号（或单引号）将标题字符串括起来。
+用\ ``:."string":``\ 这样的方式可以很容易的加上标题，由于字符串中有空格，所以需要用双引号（或单引号）将标题字符串括起来。
 
 经典错误写法
 ------------
@@ -40,8 +41,8 @@ Bash实现
 
 .. code-block:: bash
 
- #!/bin/bash
- psbasemap -R0/5/0/5 -JX5i -B1/1:."Title : eltiT": > a.ps
+   #!/bin/bash
+   psbasemap -R0/5/0/5 -JX5i -B1/1:."Title : eltiT": > a.ps
 
 
 直接运行报错如下：
@@ -55,12 +56,12 @@ Bash实现
 正确写法
 --------
 
-既然-B选项把冒号当作分界符，那么字符串中就不能再出现":"了，考虑用冒号的八进制编码来表示冒号。查查GMT官方文档的附录F可以知道冒号对应的八进制编码为"\072"。脚本如下所示：
+既然-B选项把冒号当作分界符，那么字符串中就不能再出现\ ``:``\ 了，考虑用冒号的八进制编码来表示冒号。查查GMT官方文档的附录F可以知道冒号对应的八进制编码为\ ``\072``\ 。脚本如下所示：
 
 .. code-block:: bash
 
- #!/bin/bash
- psbasemap -R0/5/0/5 -JX5i -B1/1:."Title \072 eltiT": > a.ps
+   #!/bin/bash
+   psbasemap -R0/5/0/5 -JX5i -B1/1:."Title \072 eltiT": > a.ps
 
 为什么用八进制表示冒号就可以呢？GMT对-B选项进行解释时，遇到了":."，代表着接下来的字符串是标题，然后往后寻找找到下一个冒号":"，并将":."和":"之间的字符串作为标题。那么对于这种情况来说这个字符串就是"Title \072 eltiT"（引号不是字符串的一部分）。由于GMT是用C语言写的，当把字符串"Title \072 eltiT"用类似printf("Title \072 eltiT")的语法写到PS文件中时，就变成了"Title : eltiT"。即字符串以"Title \072 eltiT"的形式被GMT解释，然后以"Title : eltiT"的形式被C打印出来。
 
@@ -121,7 +122,7 @@ Perl实现
 一种正确的写法
 --------------
 
-.. code-block:: perl 
+.. code-block:: perl
 
  #!/usr/bin/env perl
  system 'psbasemap -R0/10/0/10 -JX6i -B1/1:."Title \072 eltiT": > a.ps';
@@ -177,13 +178,13 @@ Perl实现
 
 ::
 
-    awk '{print $1}' infile 
+    awk '{print $1}' infile
 
 当在bash中调用awk时，由于单引号的存在，bash不会对$1进行解释，此时$1交给awk取解释，这也许是你想要的。但是有些时候，如果真的想要将bash的变量$par交给awk就会出现问题：
 
 ::
 
-    awk '{print $par,$1}' infile 
+    awk '{print $par,$1}' infile
 
 由于单引号的存在，awk看到的是字符"$par"，而不是变量$par的值，所以$par交给了awk取解释，而awk又不认识变量$par，就会出现问题。为了解决bash向awk传递变量的问题，awk设计了-v选项，感觉问题一下子就被复杂化了。相反，perl是一个自给自足的体系，就不会存在类似的设计缺陷了。
 

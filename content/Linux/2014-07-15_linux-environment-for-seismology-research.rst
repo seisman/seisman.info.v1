@@ -3,7 +3,7 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2015-01-14
+:modified: 2015-05-11
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
@@ -31,7 +31,7 @@ CentOS 7的安装与其他Linux发行版的安装差不多，个别地方稍有�
 #. 准备材料
 
    - U盘：容量700M以上，用于制作U盘启动盘，因为在制作启动盘时会格式化U盘，所以U盘内不要包含重要资料
-   - `CentOS 7.0 LiveCD ISO镜像文件 <http://mirrors.ustc.edu.cn/centos/7/isos/x86_64/CentOS-7.0-1406-x86_64-livecd.iso>`_
+   - `CentOS 7.1 LiveCD ISO镜像文件 <http://mirrors.ustc.edu.cn/centos/7.1.1503/isos/x86_64/CentOS-7-x86_64-LiveCD-1503.iso>`_
    - `Universal USB installer <http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/>`_\ ：Windows下的U盘启动盘制作工具
    - 一个已安装Windows的电脑：用于制作U盘启动盘
 
@@ -650,7 +650,7 @@ VirtualBox虚拟机
 同步网盘
 ========
 
-网盘根据功能大概可以分为两类：同步网盘和备份网盘。既然是同步网盘，Linux下的客户端必不可少。就目前已知的情况来看，CentOS下能使用的同步网盘只有两个：Dropbox和坚果云。
+网盘根据功能大概可以分为两类：同步网盘和备份网盘。既然是同步网盘，Linux下的客户端必不可少。就目前已知的情况来看，CentOS7下能使用的同步网盘只有三个：Dropbox、MEGA和坚果云。
 
 我主要用同步网盘将Linux机器上的PDF文献同步到iPad上。
 
@@ -664,6 +664,22 @@ Dropbox
     wget https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
     sudo rpm -i nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
 
+MEGA
+----
+
+MEGA： https://mega.co.nz/
+
+免费容量50G，作为同步盘来说基本是够用了。
+
+::
+
+    # 下载主程序
+    wget https://mega.nz/linux/MEGAsync/CentOS_7/x86_64/megasync-CentOS_7.x86_64.rpm
+    # 下载文件管理器扩展（可选）
+    wget https://mega.nz/linux/MEGAsync/CentOS_7/x86_64/nautilus-megasync-CentOS_7.x86_64.rpm
+    sudo yum localinstall megasync-CentOS_7.x86_64.rpm
+    sudo yum localinstall nautilus-megasync-CentOS_7.x86_64.rpm
+
 坚果云
 ------
 
@@ -676,6 +692,7 @@ Dropbox
     # 下载
     wget https://jianguoyun.com/static/exe/installer/fedora/nautilus_nutstore_amd64.rpm
     sudo rpm -i nautilus_nutstore_amd64.rpm
+
 
 工具软件
 ========
@@ -790,6 +807,7 @@ Google Earth
 - 2015-01-27：新增cpdf；
 - 2015-03-03：新增filezilla和transmission；
 - 2015-03-26：安装过程中不应使用中文安装界面；
+- 2015-05-11：新增MEGA同步网盘；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
