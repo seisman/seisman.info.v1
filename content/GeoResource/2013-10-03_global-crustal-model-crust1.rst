@@ -187,7 +187,7 @@ GMT 5::
 
 没有认真选择cpt文件，看上去效果不好，从细节上看，数据的转换是没有问题的。
 
-.. figure:: /images/2013100301.jpg
+.. figure:: /images/2013100301.png
    :width: 600 px
    :alt: crust1.0 model
 
