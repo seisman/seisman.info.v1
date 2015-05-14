@@ -31,9 +31,10 @@ ghostscript的中文支持
 
 启动cmd，键入如下命令::
 
-   C:\Program Files\gs\gs9.15\bin\gswin64c.exe C:\Program Files\gs\gs9.15\examples\cjk\gscjk_ag.ps
+   cd "C:\Program Files\gs\gs9.16\bin"
+   gswin64.exe ..\examples\cjk\gscjk_ag.ps
 
-该命令用命令行版本的gswin64c打开gscjk_ag.ps，若能看到中文，则说明ghostscript是可以正常支持中文的。
+该命令用命令行版本的\ ``gswin64c``\ 打开\ ``gscjk_ag.ps``\ ，若能看到中文，则说明ghostscript是可以正常支持中文的。
 
 gsview的中文支持
 ================
