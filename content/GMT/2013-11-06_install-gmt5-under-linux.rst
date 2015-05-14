@@ -101,7 +101,7 @@ GMT5的依赖包，相对来说要复杂很多。
 
 修改\ ``ConfigUser.cmake``\ 以对安装的细节进行自定义。一个基本的示例如下，找到相关行，并去掉该行最前面的“#”，再根据自身情况修改::
 
-    set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.1.1")
+    set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.1.2")
     set (GMT_INSTALL_MODULE_LINKS FALSE)
     set (GSHHG_ROOT "/home/seisman/Desktop/gmt/gshhg-gmt-2.3.4")
     set (COPY_GSHHG TRUE)

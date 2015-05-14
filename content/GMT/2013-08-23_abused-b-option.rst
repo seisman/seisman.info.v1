@@ -26,15 +26,15 @@ GMT的官方文档里称“-B选项大概是GMT里最复杂的选项了，但多
 
 .. code-block:: bash
 
- #!/bin/bash
+   #!/bin/bash
 
- J=X6i
- R=0/10/0/10
- B=1/1
- PS=TestB0.ps
+   J=X6i
+   R=0/10/0/10
+   B=1/1
+   PS=TestB0.ps
 
- psxy -J$J -R$R -T -K > $PS
- psxy -J$J -R$R -T -O >> $PS
+   psxy -J$J -R$R -T -K > $PS
+   psxy -J$J -R$R -T -O >> $PS
 
 这两条命令是用于开关GMT的，没有-B选项，其虽然生成了一些PS代码，但是实际却不显示任何内容。
 
@@ -43,15 +43,15 @@ GMT的官方文档里称“-B选项大概是GMT里最复杂的选项了，但多
 
 .. code-block:: bash
 
- #!/bin/bash
+   #!/bin/bash
 
- J=X6i
- R=0/10/0/10
- B=1/1"
- PS=TestB1.ps
+   J=X6i
+   R=0/10/0/10
+   B=1/1
+   PS=TestB1.ps
 
- psxy -J$J -R$R -B$B -T -K > $PS
- psxy -J$J -R$R -T -O >> $PS
+   psxy -J$J -R$R -B$B -T -K > $PS
+   psxy -J$J -R$R -T -O >> $PS
 
 这个例子给第一个psxy命令加上了-B选项，当然也改了一下名字。看一下TestB1.ps会发现，\ **-B的作用是给图形绘制边框**\ ，这是唯一的区别。
 
@@ -60,15 +60,15 @@ GMT的官方文档里称“-B选项大概是GMT里最复杂的选项了，但多
 
 .. code-block:: bash
 
- #!/bin/bash
+   #!/bin/bash
 
- J=X6i
- R=0/10/0/10
- B=1/1
- PS=TestB2.ps
+   J=X6i
+   R=0/10/0/10
+   B=1/1
+   PS=TestB2.ps
 
- psxy -J$J -R$R -B$B -T -K > $PS
- psxy -J$J -R$R -B$B -T -O >> $PS
+   psxy -J$J -R$R -B$B -T -K > $PS
+   psxy -J$J -R$R -B$B -T -O >> $PS
 
 这个例子给第二个psxy命令也加上了-B选项。查看TestB2.ps会发现，这张图与TestB1.ps是一样的。这有两种可能：
 
@@ -82,15 +82,15 @@ GMT的官方文档里称“-B选项大概是GMT里最复杂的选项了，但多
 
 .. code-block:: bash
 
- #!/bin/bash
+   #!/bin/bash
 
- J=X6i
- R=0/10/0/10
- B=1/1
- PS=TestB3.ps
+   J=X6i
+   R=0/10/0/10
+   B=1/1
+   PS=TestB3.ps
 
- psxy -J$J -R$R -B$B -T -K > $PS
- psxy -J$J -R$R -B$B -X1i -T -O >> $PS
+   psxy -J$J -R$R -B$B -T -K > $PS
+   psxy -J$J -R$R -B$B -X1i -T -O >> $PS
 
 这个例子在前一个例子的基础上加了个-X选项，将第二个psxy绘制的边框做了个偏移，可以看到ps文件中出现了两个边框，这个例子进一步证明了两个-B选项都是有绘制边框的。
 
@@ -107,7 +107,8 @@ GMT的每个绘图命令都会生成一堆PS代码，这些PS代码表示了整�
 活用-B选项
 ----------
 
-#. `绘制波形对比图 <{filename}/GMT/2013-09-15_waveform-comparison-plot.rst>`_\
+#. `绘制波形对比图 <{filename}/GMT/2013-09-15_waveform-comparison-plot.rst>`_
+#. `绘制双Y轴 <{filename}/GMT/2014-06-12_double-y-axis-plot.rst>`_
 
 滥用-B选项
 ----------
@@ -125,7 +126,7 @@ GMT的每个绘图命令都会生成一堆PS代码，这些PS代码表示了整�
 
 #. 重复使用-B选项，导致绘制出的图边框发虚，即看上去精度很低
 
-   \ `GMT边框发虚的原因及解决办法 <{filename}/GMT/2014-12-09_blurry-frame-in-gmt.rst>`_
+   `GMT边框发虚的原因及解决办法 <{filename}/GMT/2014-12-09_blurry-frame-in-gmt.rst>`_
 
 修订历史
 ========
@@ -133,3 +134,4 @@ GMT的每个绘图命令都会生成一堆PS代码，这些PS代码表示了整�
 - 2013-08-22：初稿；
 - 2013-09-15：增加了“活用-B选项的一个例子”；
 - 2014-12-09：增加了“GMT边框发虚”的链接；
+- 2015-05-12：新增“绘制双Y轴”的链接；

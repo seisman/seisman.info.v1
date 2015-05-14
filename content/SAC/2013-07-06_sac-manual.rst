@@ -52,7 +52,7 @@ SAC参考手册中文版
 - 更新README，可根据说明自行编译源码生成PDF；
 - 修改Makefile，对依赖的检测更加智能；
 - 英文使用TeX默认字体；中文使用开源中文字体Fandol；
-- 使用`minted`实现代码的语法高亮，替代`listings`；
+- 使用\ ``minted``\ 实现代码的语法高亮，替代\ ``listings``\ ；
 - datetime宏包升级至datetime2；
 - 简化了绘图脚本的Makefile；
 
