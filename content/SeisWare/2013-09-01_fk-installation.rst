@@ -27,17 +27,25 @@ fk是Prof. Lupei Zhu写的一个计算水平分层介质中理论地震图的小
 修改Makefile
 ============
 
+fk3.2自带的Makefile有一堆问题，下面会说明遇到的问题以及如何解决。
+
+这里先提供我修改好的Makefile，读者可以直接下载这个文件，然后重命名为\ ``Makefile``\ ，并覆盖fk自带的Makefile即可。
+
+修改版Makefile下载地址： http://seisman.qiniudn.com/downloads/Makefile.fk.3.2
+
 修改Fortran编译器选项
 ---------------------
 
 程序的大部分代码是用Fortran 77的语法写的，由于Fortran 77规定每行超过第72列的字符会被忽略，而代码中部分行超过了72列。因而要修改编译器选项，加入语句如下::
 
- FC=gfortran -ffixed-line-length-none
+    FC=gfortran -ffixed-line-length-none
+
+其中\ ``-ffixed-line-length-none``\ 表示不限制每一行的长度。
 
 SAC子程序支持
 -------------
 
-部分代码中调用了SAC提供的子程序，如果已经安装了SAC，那么可以将\ ``CFLAGS``\ 和\ ``SACLIB``\ 两行去除注释。
+部分代码中调用了SAC提供的子程序，如果已经安装了SAC，那么可以将\ ``CFLAGS``\ 和\ ``SACLIB``\ 两行去除注释，并根据自己的SAC安装路径做修改。
 
 sachd链接数学库
 ---------------
@@ -60,36 +68,25 @@ sachd链接数学库
     sachd: sachd.o sacio.o
         ${LINK.c} -o $@ $^
 
-改成
-
-::
+改成::
 
     sachd: sachd.o sacio.o
         ${LINK.c} -o $@ $^ -lm
 
 即可。
 
-Makefile下载
-------------
-
-Makefile下载地址： http://seisman.qiniudn.com/downloads/Makefile.fk.3.2
-
-下载并将其覆盖fk自带的Makefile即可。
 
 编译
 ====
 
 ::
 
- $ make
+    $ make
 
 安装
 ====
 
 为了使用的方便，建议将编译生成的二进制文件\ ``fk``\ 、\ ``st_fk``\ 、\ ``syn``\ 和\ ``trav``\ 、\ ``sachd``\ 以及脚本文件\ ``fk.pl``\ 复制到\ ``$HOME/bin``\ 或者其他可搜索的路径中即可。
-
-说明
-====
 
 - ``fk``\ ：程序的核心，负责计算格林函数；
 - ``st_fk``\ ：与fk相似，负责计算静态位移；
