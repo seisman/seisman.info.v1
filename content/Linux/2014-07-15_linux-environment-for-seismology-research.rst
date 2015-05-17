@@ -617,23 +617,6 @@ HostTool科学上网本质上就是用最新的host文件替代了系统自带�
 
 下载解压后，进入目录，直接\ ``sudo python2 hoststool.py``\ 即可运行，具体的用法自己研究一下。
 
-VirtualBox虚拟机
-----------------
-
-有时候可能需要在Windows下做一些操作，如果机器性能足够好的话，可以安装VirtualBox虚拟机。
-
-::
-
-    wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
-    sudo mv virtualbox.repo /etc/yum.repos.d/
-    sudo yum install VirtualBox-4.3
-
-这样就可以在Linux下虚拟一个Windows啦，好开心。
-
-需要注意两点：
-
-- 若机器性能不够，虚拟机的使用体验会非常差，所以不建议在老机器上使用；
-- 更新kernel之后需要执行\ ``sudo /etc/init.d/vboxdrv setup``\ ；
 
 等宽字体
 --------
@@ -646,6 +629,32 @@ VirtualBox虚拟机
 #. 美观
 
 目前选择的Source Code Pro。将解压后的字体文件放在\ ``~/.fonts``\ 目录下，并修改终端、gedit以及其他编辑器、IDE等的默认字体。
+
+虚拟机
+======
+
+有时候可能需要在Windows下做一些操作，如果机器性能足够好的话，可以安装虚拟机。
+
+VirtualBox虚拟机
+----------------
+
+VirtuabBox的安装::
+
+    wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+    sudo mv virtualbox.repo /etc/yum.repos.d/
+    sudo yum install VirtualBox-4.3
+
+需要注意两点：
+
+- 若机器性能不够，虚拟机的使用体验会非常差，所以不建议在老机器上使用；
+- 更新kernel之后需要执行\ ``sudo /etc/init.d/vboxdrv setup``\ ；
+
+gnome-boxes
+-----------
+
+gnome-boxes是GNOME3开发的一个虚拟机工具::
+
+    sudo yum install gnome-boxes
 
 同步网盘
 ========
@@ -808,6 +817,7 @@ Google Earth
 - 2015-03-03：新增filezilla和transmission；
 - 2015-03-26：安装过程中不应使用中文安装界面；
 - 2015-05-11：新增MEGA同步网盘；
+- 2015-05-16：新增gnome-boxes；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL

@@ -30,7 +30,7 @@ PDF合并::
 
     cpdf input1.pdf input2.pdf -o output.pdf
 
-切割PDF中的1至页以及12页至最后页::
+切割PDF中的1至3页以及12页至最后页::
 
     cpdf input.pdf 1-3,12-end -o output.pdf
 
