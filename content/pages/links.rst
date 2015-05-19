@@ -13,16 +13,21 @@ Institution
 - `American Geophysical Union <http://sites.agu.org/>`_
 - `International Seismological Centre <http://www.isc.ac.uk/>`_
 
-Event and Mechanism Catalog
-===========================
+Event Catalog
+=============
 
 - `PDE <http://earthquake.usgs.gov/data/pde.php>`_
 - `ANSS Catalog <http://www.ncedc.org/anss/>`_
 - `NCEC Catalog <http://www.ncedc.org/ncedc/catalogs.html>`_
 - `ANSS Comprehensive Catalog <http://earthquake.usgs.gov/earthquakes/search/>`_
-- `Global CMT <http://www.globalcmt.org/>`_
 - `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
 - `NIED Earthquake Mechanism Search <http://www.fnet.bosai.go.jp/event/search.php?LANG=en>`_
+
+Focal Mechanism
+===============
+
+- `Global CMT <http://www.globalcmt.org/>`_
+- `ISC Focal Mechanism <http://www.isc.ac.uk/iscbulletin/search/fmechanisms/>`
 - `UCB (University of California Berkeley) Moment Tensor Catalog <http://www.ncedc.org/ncedc/mt.html>`_
 
 Seismic Network / Waveform Data
