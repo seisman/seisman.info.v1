@@ -48,19 +48,20 @@ GMT编译过程需要C编译器，以及一些底层的库文件。
 软件依赖包
 ----------
 
-GMT4主要依赖于netCDF，可以直接使用Linux发行版官方源中提供的netCDF包\ [*]_\ 。除了netcdf之外，建议还安装gdal包。虽然GMT不依赖于gdal，但gdal可以轻松地将其他数据格式转换为GMT可识别的格式。
+GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供的netCDF包。除了netcdf之外，建议还安装gdal包。虽然GMT不依赖于gdal，但gdal可以轻松地将其他数据格式转换为GMT可识别的格式。
 
 对于Ubuntu/Debian::
 
     sudo apt-get install libnetcdf-dev libgdal1-dev
 
-对于RHEL/CentOS/Fedora\ [*]_\ ::
+对于RHEL/CentOS/Fedora::
 
     sudo yum install netcdf netcdf-devel gdal gdal-devel
 
-.. [*] GMT4可以使用netCDF3或netCDF4，但新版本的GMT正在逐渐放弃对netCDF3的支持，因而建议\ **使用netCDF4**\ ，且建议\ **不要自行编译netCDF4**\ 。
+注意：
 
-.. [*] CentOS和RHEL的官方源中没有netCDF，需要首先添加EPEL源再安装netCDF。
+#. 一定不要试图自己手动编译netCDF。如果在阅读本文之前曾经手动编译过，一定要将原来手动编译生成的文件删除干净。通常可以使用\ ``locate netcdf``\ ，找到\ ``/usr/local``\ 目录下的与netCDF相关的文件，直接删除即可。
+#. CentOS和RHEL的官方源中没有netCDF，需要首先添加EPEL源再安装netCDF；Fedora官方源中自带netCDF；
 
 安装GMT
 =======
@@ -75,6 +76,8 @@ GMT4主要依赖于netCDF，可以直接使用Linux发行版官方源中提供�
    $ ./configure --prefix=/opt/GMT-4.5.13
    $ make
    $ sudo make install-all
+
+其中\ ``--prefix``\ 指定了GMT安装路径，你可以指定为其他路径，但要注意后面其他步骤要与这里的路径统一。
 
 安装海岸线数据
 --------------

@@ -44,10 +44,18 @@ ASTER GDEM，即先进星载热发射和反射辐射仪全球数字高程模型�
 
 ::
 
-    gdal_translate -of GMT ASTGTM2_N36E111_dem.tif ASTGTM2_N36E111_dem.grd
+    gdal_translate -of GMT ASTGTM2_N36E111_dem.tif ASTGTM2_N36E111_dem.nc
 
 与SRTM的区别
 ============
 
 -  SRTM数据的纬度覆盖范围是[-60,60]，ASTER GDEM数据的纬度覆盖范围为[-83,83]；
 -  SRTM的空间分辨率一般为90m，只有美国境内存在空间分辨率为30m的数据；ASTER GDEM的空间分辨率为30m；
+
+数据合并
+========
+
+可以使用GMT自带的grdpaster命令将两个相邻的网格文件合并起来。
+
+- GMT 4.5.13的grdpaste有问题，会出现“Grids do not share command edge.”的错误；
+- GMT 5.1.2的grdpaste没有问题；

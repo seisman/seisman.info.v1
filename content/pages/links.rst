@@ -27,7 +27,7 @@ Focal Mechanism
 ===============
 
 - `Global CMT <http://www.globalcmt.org/>`_
-- `ISC Focal Mechanism <http://www.isc.ac.uk/iscbulletin/search/fmechanisms/>`
+- `ISC Focal Mechanism <http://www.isc.ac.uk/iscbulletin/search/fmechanisms/>`_
 - `UCB (University of California Berkeley) Moment Tensor Catalog <http://www.ncedc.org/ncedc/mt.html>`_
 
 Seismic Network / Waveform Data
