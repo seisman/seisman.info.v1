@@ -39,11 +39,13 @@ GMT编译过程需要C编译器，以及一些底层的库文件。
 
 对于Ubuntu/Debian::
 
-    sudo apt-get install g++ libxt-dev libxaw7-dev libxmu-dev libSM-dev
+    sudo apt-get install gcc g++ make
+    sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev
 
 对于CentOS/RHEL/Fedora::
 
-    sudo yum install gcc-c++ libXt-devel libXaw-devel libXmu-devel libSM-devel
+    sudo yum install gcc gcc-c++ make
+    sudo yum install libXt-devel libXaw-devel libXmu-devel libSM-devel zlib-devel
 
 软件依赖包
 ----------
