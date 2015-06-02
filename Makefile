@@ -72,10 +72,10 @@ pdf:
 	qrsync ~/.qiniu.conf
 
 github:
-	git push github $(BRANCH):master
+	git push github $(BRANCH):master --force
 
 gitcafe:
-	git push gitcafe $(BRANCH):gitcafe-pages
+	git push gitcafe $(BRANCH):gitcafe-pages --force
 
 import:
 	ghp-import -b $(BRANCH) $(OUTPUTDIR) -m "`date +'%Y-%m-%d %H:%M:%S'`"
