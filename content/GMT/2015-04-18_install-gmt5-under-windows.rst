@@ -1,7 +1,8 @@
-GMT 5.1.1在Windows下的安装
+GMT 5.1.2在Windows下的安装
 ##########################
 
 :date: 2015-04-18
+:modified: 2015-06-02
 :author: SeisMan
 :category: GMT
 :tags: GMT5, Windows, 安装
@@ -9,14 +10,14 @@ GMT 5.1.1在Windows下的安装
 
 .. contents::
 
-本文介绍如何在Windows 7下安装GMT5.1.1。
+本文介绍如何在Windows 7下安装GMT5.1.2。
 
 下载
 ====
 
-Windows下安装GMT5.1.1需要下载三个文件：
+Windows下安装GMT5.1.2需要下载三个文件：
 
-#. `GMT 64位安装包 <http://gmt.soest.hawaii.edu/files/download?name=gmt-5.1.1-win64.exe>`_ 或 `GMT 32位安装包 <http://gmt.soest.hawaii.edu/files/download?name=gmt-5.1.1-win32.exe>`_
+#. `GMT 64位安装包 <http://gmt.soest.hawaii.edu/files/download?name=gmt-5.1.2-win64.exe>`_ 或 `GMT 32位安装包 <http://gmt.soest.hawaii.edu/files/download?name=gmt-5.1.2-win32.exe>`_
 
 #. `ghostscript 64位安装包 <http://downloads.ghostscript.com/public/gs916w64.exe>`_ 或 `ghostscript 32位安装包 <http://downloads.ghostscript.com/public/gs916w32.exe>`_
 
@@ -93,3 +94,9 @@ GMT自带了一些例子，可以把\ ``C:\programs\gmt5\share\doc\examples``\ �
 #. `GMT4脚本风格指南 <{filename}/FreeTalk/2014-05-13_gmt4-style-guide.rst>`_ ：虽然是针对GMT4的，但是对GMT5也有一定的指导意义
 #. `Windows下使用GMT的正确姿势 <{filename}/FreeTalk/2014-12-10_how-to-use-gmt-under-windows.rst>`_ ：教你如何在Windows下更愉快地使用GMT
 #. `GMT在Windows下的中文支持 <{filename}/GMT/2014-03-27_gmt-chinese-support-under-windows.rst>`_ ：如何在GMT中添加中文
+
+修订历史
+========
+
+- 2015-04-18：初稿；
+- 2015-06-02：更新至5.1.2；
