@@ -20,8 +20,9 @@ Event Catalog
 - `ANSS Catalog <http://www.ncedc.org/anss/>`_
 - `NCEC Catalog <http://www.ncedc.org/ncedc/catalogs.html>`_
 - `ANSS Comprehensive Catalog <http://earthquake.usgs.gov/earthquakes/search/>`_
-- `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
 - `NIED Earthquake Mechanism Search <http://www.fnet.bosai.go.jp/event/search.php?LANG=en>`_
+- `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
+- `EHB Bulletin <http://www.isc.ac.uk/ehbbulletin/>`_
 
 Focal Mechanism
 ===============

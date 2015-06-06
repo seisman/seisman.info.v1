@@ -51,6 +51,16 @@
 - `yaseis`_: 频率-波数法，球状分层介质下的理论地震图
 - `AxiSEM`_: 球层介质中的3D弹性、非弹性、各向异性、声波理论地震图
 - `Instaseis`_: 用Python写的，基于AxiSEM的地震图合成工具
+- `GEMINI`_:
+- `DSM`_: Direct Solution Method
+- `SOFI2D`_: 二维有限差分
+- `SOFI3D`_: 三维有限差分
+
+震源机制
+========
+
+- `gcap`_: 通用Cut and Paste方法反演震源机制
+- `pyTDMT`_: 时间域震源机制反演的Python实现
 
 特定功能类
 ==========
@@ -58,12 +68,10 @@
 - `hk`_: 用于接收函数研究的代码。
 - `CCP`_: 共转换点地震数据叠加，用于接收函数研究。
 - `IRFFM`_: 带界面的接收函数软件包。
-- `gcap`_: 用于反演震源机制解的CAP方法，虽然是1.0版，实际上N年前国内就已经有很多人在使用这个代码了。
 - `astack`_: 自适应迭代以实现震相对齐。
 - `LASIF`_: 基于Python的大规模全波形反演框架，似乎是层析成像。
 
 .. _astack: http://rses.anu.edu.au/seismology/soft/astack/index.html
-
 .. _SAC: http://www.iris.edu/ds/nodes/dmc/forms/sac/
 .. _CPS330: http://www.eas.slu.edu/eqc/eqccps.html
 .. _rdseed: http://www.iris.edu/ds/nodes/dmc/forms/rdseed/
@@ -88,3 +96,8 @@
 .. _AxiSEM: http://seis.earth.ox.ac.uk/axisem/
 .. _Instaseis: http://instaseis.net/
 .. _LASIF: http://www.lasif.net/
+.. _pyTDMT: https://github.com/fabriziobernardi/pydmt
+.. _GEMINI: http://www.quest-itn.org/library/software/gemini-greens-function-of-the-earth-by-minor-integration
+.. _DSM: http://www-solid.eps.s.u-tokyo.ac.jp/~dsm/software/software.htm
+.. _SOFI2D: https://www.gpi.kit.edu/Software.php
+.. _SOFI3D: https://www.gpi.kit.edu/Software.php
