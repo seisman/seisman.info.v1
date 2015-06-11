@@ -33,7 +33,6 @@ Windows下常用的脚本是bat，Linux常用的是Bash、Perl和Python。使用
    grdimage ...
    psxy ...
 
-
 不要跨平台写脚本
 ================
 
