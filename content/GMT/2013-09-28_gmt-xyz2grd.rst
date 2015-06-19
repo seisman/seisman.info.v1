@@ -14,9 +14,9 @@ GMT命令之xyz2grd生成网格数据
 
 ::
 
-    xyz2grd xyzfile -Ggrdfile -Ixinc[unit][=|+][/yinc[unit][=|+]] 
-        -Rwest/east/south/north[r] [ -A[n|z|u|l] ] 
-        [ -Dxname/yname/zname/scale/offset/title/remark ] [ -E[nodata] ] [ -F ] 
+    xyz2grd xyzfile -Ggrdfile -Ixinc[unit][=|+][/yinc[unit][=|+]]
+        -Rwest/east/south/north[r] [ -A[n|z|u|l] ]
+        [ -Dxname/yname/zname/scale/offset/title/remark ] [ -E[nodata] ] [ -F ]
         [ -H[i][nrec] ] [ -Nnodata ] [ -S[zfile] ] [ -V ] [ -Z[flags] ] [ -:[i|o] ]
         [ -bi[s|S|d|D[ncol]|c[var1/...]] ] [ -fcolinfo ]
 

@@ -1,8 +1,8 @@
-Linux下安装TeXLive 2014
+Linux下安装TeXLive 2015
 ########################
 
-:date: 2013-07-11 09:00
-:modified: 2015-03-08
+:date: 2013-07-11
+:modified: 2015-06-19
 :author: SeisMan
 :category: 编程
 :tags: 安装, LaTeX
@@ -18,11 +18,11 @@ Linux下安装TeXLive 2014
 
 CentOS::
 
-    sudo yum install perl-Digest-MD5 perl-Tk
+    $ sudo yum install perl-Digest-MD5 perl-Tk
 
 Ubuntu::
 
-    sudo apt-get install libdigest-perl-md5-perl perl-tk
+    $ sudo apt-get install libdigest-perl-md5-perl perl-tk
 
 安装
 ====
@@ -32,8 +32,10 @@ Ubuntu::
 
 下载地址：
 
-- USTC镜像： http://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive2014.iso
-- 阿里云镜像： http://mirrors.aliyun.com/CTAN/systems/texlive/Images/texlive2014.iso
+- 官方镜像: http://mirrors.ctan.org/systems/texlive/Images/texlive2015.iso
+- USTC镜像： http://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive2015.iso
+
+.. - 阿里云镜像： http://mirrors.aliyun.com/CTAN/systems/texlive/Images/texlive2015.iso
 
 Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 
@@ -43,11 +45,11 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 .. code-block:: bash
 
    $ su
-   # mount -o loop texlive2014.iso  /mnt/
+   # mount -o loop texlive2015.iso  /mnt/
    # cd /mnt
    # ./install-tl
 
-出现选项后，输入\ ``I``\ 直接安装（也可以更改选项）。不出意外的话，5分钟应该就OK了，然后退出root用户；
+出现选项后，输入\ ``I``\ 直接安装（也可以更改选项）。不出意外的话，5分钟应该就OK了，然后退出root用户。
 
 环境变量
 --------
@@ -56,10 +58,10 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 
 .. code-block:: bash
 
-   # TeX Live 2014
-   export MANPATH=${MANPATH}:/usr/local/texlive/2014/texmf-dist/doc/man
-   export INFOPATH=${INFOPATH}:/usr/local/texlive/2014/texmf-dist/doc/info
-   export PATH=${PATH}:/usr/local/texlive/2014/bin/x86_64-linux
+   # TeX Live 2015
+   export MANPATH=${MANPATH}:/usr/local/texlive/2015/texmf-dist/doc/man
+   export INFOPATH=${INFOPATH}:/usr/local/texlive/2015/texmf-dist/doc/info
+   export PATH=${PATH}:/usr/local/texlive/2015/bin/x86_64-linux
 
 卸载ISO镜像
 -----------
@@ -72,14 +74,26 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 更新TeXLive
 ===========
 
-可以使用如下命令更新TeX包，\ ``--repository``\ 选项指定了要使用哪一个CTAN镜像，这里使用了阿里云的CTAN镜像，也可指定其他CTAN镜像。若不使用该选项，则默认使用官方CTAN镜像，速度较慢。
+可以使用如下命令更新TeXLive宏包::
 
 .. code-block:: bash
 
    $ su
    # 更新TeXLive包管理器tlmgr
-   # tlmgr update --self --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
+   # tlmgr update --self
    # 更新TeXLive的全部包
+   # tlmgr update --all
+
+默认情况下，会自动搜索合适的镜像来更新，也可以使用\ ``--repository``\ 选项指定了要使用哪一个CTAN镜像。
+
+比如USTC镜像::
+
+   # tlmgr update --self --repository http://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet/
+   # tlmgr update --all --repository http://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet/
+
+比如阿里云镜像::
+
+   # tlmgr update --self --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
    # tlmgr update --all --repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
 
 如果希望在图形界面下升级，可以使用如下命令调出tlmgr的中文图形界面：
@@ -102,3 +116,4 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 - 2015-03-08：新增“安装依赖”；
 - 2015-03-15：使用命令行更新包；
 - 2015-03-20：指定更新源以及GUI更新；
+- 2015-06-13：更新至TeXLive 2015；

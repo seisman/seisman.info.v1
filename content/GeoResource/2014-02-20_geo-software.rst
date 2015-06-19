@@ -14,6 +14,7 @@
 
 - `SAC`_: Seismic Analysis Code，地震学数据处理的常用软件。
 - `CPS330`_
+- `ObsPy`_: 基于Python的地震学数据处理框架
 
 数据格式转换
 ============
@@ -21,6 +22,7 @@
 - `rdseed`_: SEED格式转换为SAC等地震数据格式
 - `win32tools`_: Hi-net提供的工具，用于将WIN32格式的数据转换为SAC格式
 - `mseed2sac`_: 将miniSEED格式转换为SAC格式
+- `dataselect`_: miniSEED数据处理
 
 数据获取工具
 ============
@@ -55,6 +57,10 @@
 - `DSM`_: Direct Solution Method
 - `SOFI2D`_: 二维有限差分
 - `SOFI3D`_: 三维有限差分
+- `SPECFEM2D`_: 谱元法2D
+- `SPECFEM3D`_: 谱元法3D(笛卡尔坐标系)
+- `SPECFEM3D Global`_: 谱元法3D(球坐标系)
+
 
 震源机制
 ========
@@ -101,3 +107,8 @@
 .. _DSM: http://www-solid.eps.s.u-tokyo.ac.jp/~dsm/software/software.htm
 .. _SOFI2D: https://www.gpi.kit.edu/Software.php
 .. _SOFI3D: https://www.gpi.kit.edu/Software.php
+.. _SPECFEM2D: https://geodynamics.org/cig/software/specfem2d/
+.. _SPECFEM3D: https://geodynamics.org/cig/software/specfem3d/
+.. _SPECFEM3D Global: https://geodynamics.org/cig/software/specfem3d_globe/
+.. _ObsPy: https://github.com/obspy/obspy/wiki
+.. _dataselect: https://seiscode.iris.washington.edu/projects/dataselect
