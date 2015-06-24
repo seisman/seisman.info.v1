@@ -5,7 +5,7 @@
 :author: SeisMan
 :category: 地球物理相关资源
 :tags: 数据, 网格, GMT5, GMT4
-:slug: images-of-crustal-age-of-the-ocean-floor
+:slug: ocean-floor-crustal-age
 
 简介
 ====
@@ -40,7 +40,7 @@ netCDF格式
 --------
 
 ::
-    
+
     bzip2 -d age.3.2.nc.bz2
 
 数据转换
@@ -62,7 +62,7 @@ netCDF格式
     PS=age.ps
     psxy -R$R -J$J -T -K > $PS
     grdimage -R$R -J$J -B$B -Cage.cpt age.3.2.nc2 -K -O >> $PS
-    pscoast -R$R -J$J -B$B -Glightblue -K -O >> $PS 
+    pscoast -R$R -J$J -B$B -Glightblue -K -O >> $PS
     psscale -Ba20 -Cage.cpt -D10.5c/-1c/15c/.35ch -K -O >> $PS
     psxy -R$R -J$J -T -O >> $PS
 
