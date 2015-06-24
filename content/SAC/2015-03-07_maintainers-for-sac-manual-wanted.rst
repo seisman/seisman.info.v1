@@ -4,7 +4,7 @@
 :date: 2015-03-07
 :modified: 2015-03-14
 :author: SeisMan
-:category: 胡言乱语
+:category: SAC
 :tags: SAC, 文档
 :slug: maintainers-for-sac-manual-wanted
 

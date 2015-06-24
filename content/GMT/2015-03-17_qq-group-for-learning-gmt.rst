@@ -3,7 +3,7 @@ GMT学习QQ群
 
 :date: 2015-03-17
 :author: SeisMan
-:category: 胡言乱语
+:category: GMT
 :slug: qq-group-for-learning-gmt
 :tags: GMT
 

@@ -4,7 +4,7 @@ GMT4脚本风格指南
 :date: 2014-05-13 13:00
 :modified: 2015-03-17
 :author: SeisMan
-:category: 胡言乱语
+:category: GMT
 :tags: GMT4, Guide
 :slug: gmt4-style-guide
 

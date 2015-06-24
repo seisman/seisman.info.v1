@@ -5,7 +5,7 @@ Windows下使用GMT的正确姿势
 :modified: 2015-01-13
 :author: SeisMan
 :tags: GMT4, GMT5, Windows
-:category: 胡言乱语
+:category: GMT
 :slug: how-to-use-gmt-under-windows
 
 .. contents::
