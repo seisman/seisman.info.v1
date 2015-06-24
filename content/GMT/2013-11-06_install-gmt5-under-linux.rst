@@ -29,31 +29,36 @@ GMT 5.1.2 需要下载三个文件：
 基础依赖包
 ----------
 
-GMT编译过程需要C编译器，以及一些系统级别的库文件。
+GMT的编译需要C和C++编译器、cmake，以及一些比较底层的库文件。
 
 对于Ubuntu/Debian::
 
     sudo apt-get install gcc g++
     sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev
+    sudo apt-get install cmake
 
 对于CentOS/RHEL/Fedora::
 
     sudo yum install gcc gcc-c++
     sudo yum install libXt-devel libXaw-devel libXmu-devel libSM-devel zlib-devel
+    sudo yum install cmake
+
+GMT的编译过程要求cmake的版本大于\ ``2.8.5``\ ，需要注意：
+
+#. 安装cmake之后，可以通过\ ``cmake --version``\ 检查cmake版本；
+#. CentOS **6.5**\ 的官方源中cmake的版本为2.6.4，版本过低，无法满足要求；
+#. CentOS **6.6**\ 的官方源中cmake的版本为2.8.12，可以满足要求；
+#. 使用CentOS 6.5的用户可以\ ``yum update``\ 升级至6.6，即可使用较高版本的cmake；
+#. CentOS 6.5用户若不愿意升级整个系统，则需要先安装EPEL源，再安装EPEL源中的\ ``cmake28``\ ，并且在接下来的编译过程中要将\ ``cmake``\ 命令改成\ ``cmake28``\ ；
+#. CentOS 7官方源中cmake版本为2.8.11，可以直接安装使用；
 
 软件依赖包
 ----------
 
-GMT5的依赖包，相对来说要复杂很多。
+GMT5的依赖包，相对来说要复杂很多：
 
-必须的包包括：
-
-- 看ps文件需要\ ``ghostscript``\ ；
-- 编译需要\ ``cmake``\ （>=2.8.5）；
-- 网格文件需要\ ``netCDF``\ （>=4.0,且需要支持netCDF-4/HDF5）。
-
-其他可有可无的依赖包括：
-
+- 看PS文件以及将PS转换成其他格式需要\ ``ghostscript``\ ；
+- 网格文件需要\ ``netCDF``\ （>=4.0，且需要支持netCDF-4/HDF5）。
 - Perl兼容正则表达式库\ `PCRE`_\ ；
 - 地理空间数据抽象库\ `GDAL`_\ ；
 - Fourier变换库\ `FFTW`_ ；
@@ -61,27 +66,27 @@ GMT5的依赖包，相对来说要复杂很多。
 
 对于Ubuntu/Debian::
 
-    sudo apt-get install ghostscript build-essential cmake libnetcdf-dev libgdal1-dev
+    # 必须安装的包
+    sudo apt-get install ghostscript libnetcdf-dev
+    # 推荐安装的包
+    sudo apt-get install libpcre3-dev libfftw3-dev libgdal1-dev
+    # 不推荐安装的包
+    sudo apt-get install python-sphinx
 
 对于RHEL/CentOS/Fedora::
 
-    # 安装必须依赖包
-    sudo yum install ghostscript cmake netcdf netcdf-devel gdal gdal-devel
-    # 安装非必须依赖包
-    sudo yum install pcre-devel fftw-devel sphinx
+    # 安装必须的包
+    sudo yum install ghostscript netcdf-devel
+    # 推荐安装的包
+    sudo yum install pcre-devel fftw-devel gdal-devel
+    # 不推荐安装的包
+    sudo yum install python-sphinx
 
 一些需要注意的地方:
 
-#. 一定不要试图自己手动编译netCDF。如果在阅读本文之前曾经手动编译过，一定要将原来手动编译>生成的文件删除干净。通常可以使用\ ``locate netcdf``\ 找到\ ``/usr/local``\ 目录下的与net  CDF相关的文件，直接删除即可。
-#. CentOS **6.5**\ 官方源中cmake的版本为2.6.4，版本过低，无法满足要求；
-#. CentOS **6.6**\ 的官方源中cmake的版本升级至2.8.12，可以满足要求；
-#. 使用CentOS 6.5的用户可以\ ``yum update``\ 升级至6.6，即可使用较高版本的cmake；
-#. 若已安装cmake，可以通过\ ``cmake --version``\ 检查cmake版本；
-#. 若不愿意升级整个系统，则需要先安装EPEL源，再安装EPEL源中的\ ``cmake28``\ ，并且在接下来的编译过程中要将\ ``cmake``\ 命令改成\ ``cmake28``\ ；
-#. CentOS 7官方源中cmake版本为2.8.11，可以直接安装使用；
+#. 一定不要试图自己手动编译netCDF。如果在阅读本文之前曾经手动编译过，一定要将原来手动编译生成的文件删除干净。通常可以使用\ ``locate netcdf``\ 找到\ ``/usr/local``\ 目录下的与netCDF相关的文件，直接删除即可。
 #. CentOS官方源中不带有netCDF，需要先安装EPEL源。需要安装的包包括\ ``netcdf``\ , \ ``netcdf-devel``\ ，其他包（尤其是hdf5包）会根据依赖关系自动安装。
-#. GDAL包是非必须的，但是在数据格式转换时非常有用，建议安装。同样，CentOS需要先安装EPEL源；
-#. PCRE以及FFTW等其他非必须包，如有需要，可以自行搜索安装；
+#. pcre、fftw和gdal不是必须要安装的，但是推荐安装。其中gdal在做数据格式转换时非常有用；
 #. 其他发行版很久不用了，不清楚细节，读者可以在使用过程中补充。
 
 安装GMT

@@ -85,9 +85,11 @@ Software Library
 - `IRIS seiscode <https://seiscode.iris.washington.edu/>`_
 - `ORFEUS Seismological Software Library <http://www.orfeus-eu.org/software.html>`_
 - `S&MG Research Group Software <http://rses.anu.edu.au/seismology/index.php?p=software>`_
+- `CIG Software <https://geodynamics.org/cig/software/>`_
 
 Others
 ======
 
 - `IRIS Data Request Status <http://www.iris.edu/ds/nodes/dmc/data/request-status/>`_
 - `IASPEI standard phase list <http://www.isc.ac.uk/standards/phases/>`_
+- `GMT cpt <http://soliton.vm.bytemark.co.uk/pub/cpt-city/>`_

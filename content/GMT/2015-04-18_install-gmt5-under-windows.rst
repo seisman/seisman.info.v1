@@ -91,8 +91,8 @@ GMT自带了一些例子，可以把\ ``C:\programs\gmt5\share\doc\examples``\ �
 
 安装完成后，你可以对如下几篇博文感兴趣：
 
-#. `GMT4脚本风格指南 <{filename}/FreeTalk/2014-05-13_gmt4-style-guide.rst>`_ ：虽然是针对GMT4的，但是对GMT5也有一定的指导意义
-#. `Windows下使用GMT的正确姿势 <{filename}/FreeTalk/2014-12-10_how-to-use-gmt-under-windows.rst>`_ ：教你如何在Windows下更愉快地使用GMT
+#. `GMT4脚本风格指南 <{filename}/GMT/2014-05-13_gmt4-style-guide.rst>`_ ：虽然是针对GMT4的，但是对GMT5也有一定的指导意义
+#. `Windows下使用GMT的正确姿势 <{filename}/GMT/2014-12-10_how-to-use-gmt-under-windows.rst>`_ ：教你如何在Windows下更愉快地使用GMT
 #. `GMT在Windows下的中文支持 <{filename}/GMT/2014-03-27_gmt-chinese-support-under-windows.rst>`_ ：如何在GMT中添加中文
 
 修订历史

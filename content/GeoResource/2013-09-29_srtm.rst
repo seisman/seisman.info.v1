@@ -24,27 +24,25 @@ SRTM，全称为Shuttle Radar Topography Mission，该项目获取了北纬60度
 
 SRTM地形数据主要包含两类数据：SRTM3和SRTM1。
 
--  SRTM3精度为3弧秒，即90m一个点，包括非洲、北美、南美、欧亚、澳大利亚以及部分岛屿；
--  SRTM1精度为1弧秒，即30m一个点，仅限美国地区；
+- SRTM3精度为3弧秒，即90m一个点，包括非洲、北美、南美、欧亚、澳大利亚以及部分岛屿；
+- SRTM1精度为1弧秒，即30m一个点，仅限美国地区；
 
 数据信息 For 1x1
 ----------------
 
 北纬60度到南纬60度的数据被分成了1度\*1度的单元，共计上万个数据文件。
 
--  文件名中包含了该单元左下角位置的信息；比如文件名\ **类似**\ N37W105的数据文件，其单元左下角的坐标为(37N,105W)；
--  每个SRTM3数据文件包含了1201\*1201个采样点；
--  高程数据单位为m，参考水准面为WGS84大地水准面模型；
--  网格划分采用gridline registration方式，因而单元的南北边及左右边与相邻单元的边重合。
+- 文件名中包含了该单元左下角位置的信息；比如文件名\ **类似**\ N37W105的数据文件，其单元左下角的坐标为(37N,105W)；
+- 每个SRTM3数据文件包含了1201\*1201个采样点；
+- 高程数据单位为m，参考水准面为WGS84大地水准面模型；
+- 网格划分采用gridline registration方式，因而单元的南北边及左右边与相邻单元的边重合。
 
 数据信息 For 5x5
 ----------------
 
 部分网站将数据分割为5度\*5度单元，其相对1度\*1度单元使用起来免去了cut和paste的麻烦。在经度方向上，从-180度到180度，划分为72个区块；在纬度方向上，从60度到-60度，划分为24个区块，可以参考\ `这里 <http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp>`_\ 的图示，其文件名格式为“srtm\_经度区块数\_纬度区块数.zip”。
 
-或者也可以这样计算
-
-::
+或者也可以这样计算::
 
     x = int((lon+180.0)/5.0)+1;
     y = int((60-lat)/5.0)+1;
@@ -59,7 +57,6 @@ SRTM地形数据主要包含两类数据：SRTM3和SRTM1。
 CGIAR-CSI
 ---------
 
-
 **网址：** http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp
 
 **版本：**\ 4.1
@@ -68,24 +65,28 @@ CGIAR-CSI
 
 **备注：**
 
--  数据为5度x5度一个单元；
--  数据选择界面友好，简单易用，支持鼠标点选、拖曳或者直接输入经纬度范围；
--  鼠标点选的注意事项：鼠标的真实点击位置与地图感知到的点击位置大概相差半个网格间距！点选时需要单击每个单元的下半部分才能选中。不知Bug来源，系统问题？浏览器问题？
--  下载数据的时候选择HTTP下载方式。若使用FTP下载方式需要首先申请用户名和密码。
--  提供\ ``ArcInfo ASCII``\ 和\ ``GeoTiff``\ 两种数据格式，需要转换方可在GMT中使用。
--  \ ``ArcInfo ASCII``\ 格式的数据可以使用GMT自带的\ ``xyz2grd``\ 命令转换成netCDF格式；
--  \ ``Geotiff``\ 格式的数据需要使用GDAL提供的命令\ ``gdal_translate``\ 转换为netCDF格式；
--  推荐使用\ ``GeoTiff``\ 格式，文件尺寸相对于\ ``ArcInfo ASCII``\ 文件要小很多；
+- 数据为5度x5度一个单元；
+- 数据选择界面友好，简单易用，支持鼠标点选、拖曳或者直接输入经纬度范围；
+- 鼠标点选的注意事项：鼠标的真实点击位置与地图感知到的点击位置大概相差半个网格间距！点选时需要单击每个单元的下半部分才能选中。不知Bug来源，系统问题？浏览器问题？
+- 下载数据的时候选择HTTP下载方式。若使用FTP下载方式需要首先申请用户名和密码。
+- 提供\ ``ArcInfo ASCII``\ 和\ ``GeoTiff``\ 两种数据格式，需要转换方可在GMT中使用。
+- ``ArcInfo ASCII``\ 格式的数据可以使用GMT自带的\ ``xyz2grd``\ 命令转换成netCDF格式；
+- ``Geotiff``\ 格式的数据需要使用GDAL提供的命令\ ``gdal_translate``\ 转换为netCDF格式；
+- 推荐使用\ ``GeoTiff``\ 格式，文件尺寸相对于\ ``ArcInfo ASCII``\ 文件要小很多；
 
 **数据转换：**
 
-ArcInfo ASCII格式转GMT可识别的netCDF格式::
+ArcInfo ASCII格式：
 
- xyz2grd srtm_63_02.asc -Gstrm_63_02.grd -E -V
+GMT4提供的xyz2grd命令可以直接将ArcInfo ASCII格式的数据转换为GMT可识别的netCDF格式::
+
+    xyz2grd srtm_63_02.asc -Gstrm_63_02.grd -E -V
+
+GMT5的xyz2grd不再支持ArcInfo ASCII格式，但可使用gdal实现转换。
 
 GeoTiff格式转netCDF格式（详情参考\ `本文 <{filename}/GMT/2014-01-11_convert-geotiff-to-gmt.rst>`_\ ）::
 
- gdal_translate -of GMT srtm_56_05.tif srtm_56_05.grd
+    gdal_translate -of GMT srtm_56_05.tif srtm_56_05.grd
 
 **数据合并：**
 

@@ -16,5 +16,5 @@ Collections
 #. `个人偏好列表 <{filename}/FreeTalk/2014-08-05_personal-preferences.rst>`_
 #. `Hi-net系列博文 <{filename}/SeisBasic/2014-08-25_hinet-things.rst>`_
 #. `用CentOS 7打造合适的科研环境 <{filename}/Linux/2014-07-15_linux-environment-for-seismology-research.rst>`_
-#. `GMT4脚本风格指南 <{filename}/FreeTalk/2014-05-13_gmt4-style-guide.rst>`_
+#. `GMT4脚本风格指南 <{filename}/GMT/2014-05-13_gmt4-style-guide.rst>`_
 #. `GMT5参考手册 <http://gmt5.seisman.info>`_
