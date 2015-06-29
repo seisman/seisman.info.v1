@@ -73,11 +73,7 @@ Groups
 ======
 
 - `Harvard Seismology <http://www.seismology.harvard.edu/index.html>`_
-
-University
-==========
-
-- `University of Science and Technology of China <http://www.ustc.edu.cn/>`_
+- `Global Seismology Group at Rice University <http://www.gseis.rice.edu/>`_
 
 Software Library
 ================
@@ -93,3 +89,4 @@ Others
 - `IRIS Data Request Status <http://www.iris.edu/ds/nodes/dmc/data/request-status/>`_
 - `IASPEI standard phase list <http://www.isc.ac.uk/standards/phases/>`_
 - `GMT cpt <http://soliton.vm.bytemark.co.uk/pub/cpt-city/>`_
+- `Source Time Function <http://ds.iris.edu/spud/sourcetimefunction>`_

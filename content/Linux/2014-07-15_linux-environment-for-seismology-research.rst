@@ -125,9 +125,7 @@ EPEL
 ELRepo
 ~~~~~~
 
-`ELRepo`\ 包含了一些硬件相关的驱动程序，比如显卡、声卡驱动。
-
-::
+`ELRepo`\ 包含了一些硬件相关的驱动程序，比如显卡、声卡驱动::
 
     sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
@@ -398,7 +396,26 @@ WPS Office
 
 安装过程参考\ `CentOS下安装WPS Office <{filename}/Linux/2014-10-01_wps-office-for-centos7.rst>`_\ 一文。
 
-TeXLive 2014
+PS/PDF阅读器
+------------
+
+系统自带的evince阅读器，可以打开PS和PDF文件，基本足够日常的使用了。
+
+zathura
+~~~~~~~
+
+zathura可以查看PS、PDF、djvu格式的文件，可以作为evince的替代品::
+
+    sudo yum install zathura zathura-plugins-all
+
+ghostscript
+~~~~~~~~~~~
+
+::
+
+    sudo yum install ghostscript
+
+TeXLive 2015
 ------------
 
 系统是自带了TeXLive，版本较老，还是安装最新版比较好。
@@ -818,6 +835,7 @@ Google Earth
 - 2015-03-26：安装过程中不应使用中文安装界面；
 - 2015-05-11：新增MEGA同步网盘；
 - 2015-05-16：新增gnome-boxes；
+- 2015-06-26：新增zathura和ghostscript；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
