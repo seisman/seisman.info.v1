@@ -30,7 +30,7 @@ PAGE_EXCLUDES = []
 
 # Articles
 ARTICLE_PATHS = ['']
-ARTICLE_EXCLUDES = ['images', 'draft', 'pdfs', 'theme']
+ARTICLE_EXCLUDES = ['images', 'draft', 'pdfs', 'theme', 'trash']
 
 # Metadata
 SLUGIFY_SOURCE = 'basename'  # use basename as slug

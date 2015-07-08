@@ -12,6 +12,7 @@ Institution
 - `Incorporated Research Institutions for Seismology <http://www.iris.edu/hq/>`_
 - `American Geophysical Union <http://sites.agu.org/>`_
 - `International Seismological Centre <http://www.isc.ac.uk/>`_
+- `Observatories and Research Facilities for European Seismology <http://www.orfeus-eu.org/index.html>`_
 
 Event Catalog
 =============

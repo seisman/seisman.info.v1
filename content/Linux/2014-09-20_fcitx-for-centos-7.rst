@@ -10,6 +10,10 @@ CentOS 7安装fcitx中文输入法
 
 .. contents::
 
+**本文不再更新**
+
+目前不确定是否可行，具体参考：https://github.com/1dot75cm/myrepo
+
 前面\ `CentOS 7.0下安装小小输入法 <{filename}/Linux/2014-07-10_install-yong-chinese-input-method-under-centos-7.rst>`_\ 一文中已经介绍了如何在CentOS 7下安装小小输入法来输入中文，实际用起来还是有不少不如意的地方。
 
 今天恰好发现了CentOS 7下安装fcitx输入法的简单方法，如下。

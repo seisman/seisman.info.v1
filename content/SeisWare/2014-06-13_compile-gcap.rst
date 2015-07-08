@@ -6,7 +6,6 @@ gCAP的安装
 :category: 地震学软件
 :tags: 震源机制解
 :slug: compile-gcap
-:modified:
 
 gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目前该代码已经公开。
 
