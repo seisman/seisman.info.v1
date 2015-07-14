@@ -3,7 +3,7 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2015-05-11
+:modified: 2015-07-14
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
@@ -46,7 +46,7 @@ CentOS 7的安装与其他Linux发行版的安装差不多，个别地方稍有�
 
 #. 选择安装过程中使用的语言，这里应\ **使用英语，不要使用汉语**\ 。若安装界面使用汉语，最终安装的系统中会出现两个比较麻烦的问题：
 
-   #. 家目录下的系统文件夹，比如Downloads、Desktop等会以中文表示，这使得在命令行cd变得很麻烦；
+   #. 家目录下的系统文件夹，比如Downloads、Desktop等会以中文表示，这使得在命令行\ ``cd``\ 变得很麻烦；
    #. 终端中某些字符用英文字体，某些字符用中文字体，效果非常差，需要自己修改终端字体方可；
 
 #. 选择区域和城市：Asia和Shanghai
@@ -109,7 +109,7 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 添加第三方源
 ------------
 
-CentOS由于很追求稳定性，所以官方源中自带的软件不多，因而需要一些第三方源，比如EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge等。根据上面提到的软件安装原则，为了尽可能保证系统的稳定性，此处大型第三方源只添加EPEL源和ELRepo源。
+CentOS由于很追求稳定性，所以官方源中自带的软件不多，因而需要一些第三方源，比如EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge等。根据上面提到的软件安装原则，为了尽可能保证系统的稳定性，此处大型第三方源只添加EPEL源、Nux Dextop和ELRepo源。
 
 EPEL
 ~~~~
@@ -121,6 +121,15 @@ EPEL
    sudo yum install epel-release
 
 执行完该命令后，在\ ``/etc/yum.repos.d``\ 目录下会多一个\ ``epel.repo``\ 文件。
+
+Nux Dextop
+~~~~~~~~~~
+
+`Nux Dextop`_\ 中包含了一些与多媒体相关的软件包，作者尽量保证不覆盖base源。官方说明中说该源与EPEL兼容，实际上个别软件包存在冲突，但基本不会造成影响:
+
+    sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+
+完成该命令后，在\ ``/etc/yum/repos.d``\ 目录下会多一个\ ``nux-dextop.repo``\ 文件。
 
 ELRepo
 ~~~~~~
@@ -252,7 +261,7 @@ CentOS下默认无法挂载NTFS格式的硬盘。需安装nfts-3g即可实现即
 Java环境
 --------
 
-Java的一大特色在于跨平台，只有安装了Java运行环境，即可运行Java程序::
+Java的一大特色在于跨平台，安装了Java运行环境，即可运行Java程序::
 
     sudo yum install java                        # java运行环境
 
@@ -415,6 +424,15 @@ ghostscript
 
     sudo yum install ghostscript
 
+master-pdf-editor
+~~~~~~~~~~~~~~~~~
+
+官方网站: https://code-industry.net/free-pdf-editor/
+
+::
+
+    sudo yum localinstall http://get.code-industry.net/public/master-pdf-editor3-3.2.62-1.x86_64.rpm
+
 TeXLive 2015
 ------------
 
@@ -507,9 +525,9 @@ Flash插件主要是看在线视频的时候要用。Google浏览器自带了Fla
 
     sudo yum install p7zip
 
-解压rar格式需要unrar，该软件由Nux Dextop提供，但该源与EPEL源有冲突，所以直接下载该rpm进行安装::
+解压rar格式需要unrar，该软件由Nux Dextop提供::
 
-    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/unrar-5.0.12-2.el7.nux.x86_64.rpm
+    sudo yum install unrar
 
 FTP客户端
 ---------
@@ -533,11 +551,9 @@ Gnome自带的终端模拟器是gnome-terminal。经常会需要开十几个终�
 terminator
 ~~~~~~~~~~
 
-terminator有很多功能，我只用到了终端分割的功能。\ ``Ctrl+Shift+O``\ 对终端水平分隔，\ ``Ctrl+Shift+E``\ 对终端垂直分隔，\ ``Alt+上下左右``\ 可以在各子终端中切换。
+terminator有很多功能，我只用到了终端分割的功能。\ ``Ctrl+Shift+O``\ 对终端水平分隔，\ ``Ctrl+Shift+E``\ 对终端垂直分隔，\ ``Alt+上下左右``\ 可以在各子终端中切换。terminator由Nux Dextop提供::
 
-::
-
-    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/terminator-0.97-6.el7.nux.noarch.rpm
+    sudo yum install terminator
 
 guake
 ~~~~~
@@ -546,7 +562,7 @@ guake
 
 ::
 
-    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/guake-0.4.4-11.el7.nux.x86_64.rpm
+    sudo yum install guake
 
 安装完成后，在Application->System Tools里找到guake Terminal即可启动。按下F12即可呼出guake，再次按下F12即可隐藏。也可在终端执行\ ``guake-prefs``\ 对gauke进行配置。
 
@@ -634,7 +650,6 @@ HostTool科学上网本质上就是用最新的host文件替代了系统自带�
 
 下载解压后，进入目录，直接\ ``sudo python2 hoststool.py``\ 即可运行，具体的用法自己研究一下。
 
-
 等宽字体
 --------
 
@@ -659,19 +674,28 @@ VirtuabBox的安装::
 
     wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
     sudo mv virtualbox.repo /etc/yum.repos.d/
-    sudo yum install VirtualBox-4.3
+    sudo yum install VirtualBox-5.0
 
 需要注意两点：
 
 - 若机器性能不够，虚拟机的使用体验会非常差，所以不建议在老机器上使用；
 - 更新kernel之后需要执行\ ``sudo /etc/init.d/vboxdrv setup``\ ；
+- 在VirtualBox安装虚拟系统后，记得使用“设备”->“安装增强功能”，使用效果会更好；
 
 gnome-boxes
 -----------
 
-gnome-boxes是GNOME3开发的一个虚拟机工具::
+gnome-boxes是GNOME3开发的一个虚拟机工具，使用体验不如VirtualBox::
 
     sudo yum install gnome-boxes
+
+Wine
+----
+
+Wine是一个可以让Windows程序运行在Linux下的软件。类似虚拟机，但跟虚拟机又不太一样::
+
+    sudo yum install wine
+
 
 同步网盘
 ========
@@ -713,8 +737,8 @@ MEGA： https://mega.co.nz/
 
 ::
 
-    # 坚果云依赖于notify-python，该包位于Nux Dextop源中
-    sudo yum localinstall http://li.nux.ro/download/nux/dextop/el7/x86_64/notify-python-0.1.1-25.el7.nux.x86_64.rpm
+    # 坚果云依赖于notify-python
+    sudo yum install notify-python
     # 下载
     wget https://jianguoyun.com/static/exe/installer/fedora/nautilus_nutstore_amd64.rpm
     sudo rpm -i nautilus_nutstore_amd64.rpm
@@ -734,7 +758,6 @@ MEGA： https://mega.co.nz/
     pip install youtube-dl
     # EPEL中提供了youtube-dl包，因而也可以使用yum安装。一般来说，pip安装的版本更新一些
 
-
 PDF处理工具
 -----------
 
@@ -751,6 +774,26 @@ transmission是Linux下常用的Torrent下载软件::
 
 在“Application”->“Internet”->中可以启动transmission。
 
+uGet
+----
+
+http://ugetdm.com/
+
+uGet是Linux下的一个下载工具，支持HTTP、HTTPS、FTP、Torrent等，支持多连接，并可以监视剪贴板::
+
+    sudo yum --enablerepo=epel-testing install uget aria2
+
+截图软件shutter
+---------------
+
+GNOME自带了截图工具。\ ``PrtScn``\ 为截取整个屏幕；\ ``Alt+PrtScn``\ 为截取当前窗口；\ ``Shift+PrtScn``\ 为自定义截屏区域。
+
+`shutter`_\ 是一个功能更强大的截图工具，支持不同的截图方式、图片格式，还支持图片的简单编辑与注释::
+
+    sudo yum install shutter
+
+可以通过\ `修改快捷键使shutter成为默认的截图工具 <http://shutter-project.org/faq-help/set-shutter-as-the-default-screenshot-tool/>`_\ 。
+
 其他工具
 --------
 
@@ -760,6 +803,7 @@ transmission是Linux下常用的Torrent下载软件::
     sudo yum install xclip         # 终端的文本复制工具
     sudo yum install ImageMagick   # 其中的import和convert命令很有用
     sudo yum install dos2unix unix2dos  # Windows和Linux换行符互相转换
+    sudo yum install meld          # 图形界面下的文件差异比较工具
 
 
 地球物理相关
@@ -836,7 +880,10 @@ Google Earth
 - 2015-05-11：新增MEGA同步网盘；
 - 2015-05-16：新增gnome-boxes；
 - 2015-06-26：新增zathura和ghostscript；
+- 2015-07-14：新增Nux Dextop源，uGet、shutter；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL
 .. _ELRepo: http://elrepo.org/tiki/tiki-index.php
+.. _Nux Dextop: http://li.nux.ro/repos.html
+.. _shutter: http://shutter-project.org/

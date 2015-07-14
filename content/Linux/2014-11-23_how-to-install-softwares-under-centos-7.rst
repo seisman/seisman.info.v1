@@ -2,7 +2,7 @@ CentOS 7下的软件安装方法及策略
 ##############################
 
 :date: 2014-11-23
-:modified: 2014-12-01
+:modified: 2015-07-14
 :author: SeisMan
 :category: Linux
 :tags: CentOS
@@ -61,6 +61,7 @@ CentOS自带的四个官方源中，默认打开的有base、updates、extras，
 
    #. EPEL：包含6500多个软件，科研必备
    #. ELRepo：包含几十个各种硬件的驱动程序
+   #. Nux Dextop：多媒体相关的软件包（与EPEL的个别软件相冲突，可忽略）
 
 #. 有些小型第三方源，仅包含了几个软件，确认与官方源和EPEL源不会冲突，也可以添加
 
@@ -196,7 +197,7 @@ mosquito-myrepo是一个私人维护的源，其中包含了中文输入法、QQ
 
 简单总结一下:
 
-#. 为系统添加EPEL源、ELRepo源和个别其他小型第三方源
+#. 为系统添加EPEL源、Nux Dextop、ELRepo源和个别其他小型第三方源
 #. 能够从源中安装的就从源中安装
 #. 不能从源中安装的尽量找rpm包安装
 #. 找不到rpm包的就试试linuxbrew
@@ -207,3 +208,4 @@ mosquito-myrepo是一个私人维护的源，其中包含了中文输入法、QQ
 
 #. 2014-11-23：初稿；
 #. 2014-12-01：第三方源中加入ELRepo源；
+#. 2015-07-14：第三方源中加入Nux Dextop；

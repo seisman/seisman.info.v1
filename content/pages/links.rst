@@ -75,6 +75,7 @@ Groups
 
 - `Harvard Seismology <http://www.seismology.harvard.edu/index.html>`_
 - `Global Seismology Group at Rice University <http://www.gseis.rice.edu/>`_
+- `Berkeley Global Seismology <http://seismo.berkeley.edu/wiki_br/Main_Page>`_
 
 Software Library
 ================

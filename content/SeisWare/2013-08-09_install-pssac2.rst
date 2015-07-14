@@ -56,6 +56,7 @@ GMT5版
 .. code-block:: bash
 
    $ ./configure --with-gmt=/opt/GMT-5.1.1
+   $ make
 
 修订历史
 ========
