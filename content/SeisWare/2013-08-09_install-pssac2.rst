@@ -2,60 +2,43 @@ pssac2的安装
 ############
 
 :date: 2013-08-09 00:01
-:modified: 2015-04-01
+:modified: 2015-07-17
 :author: SeisMan
 :category: 地震学软件
 :tags: pssac2, 编译
 :slug: install-pssac2
-:summary: 安装pssac2.
 
-pssac2是由Brian Savage基于Lupei Zhu的pssac修改得到的，其继承了pssac的优质特性，同时在很多方面又有了进一步的提高。比如选项更加符合GMT的风格，且支持直接在地图上绘制地震图（这个在pssac中很困难），目前pssac2有两个版本，分别支持GMT4和GMT5。
+``pssac2``\ 是由Brian Savage基于Lupei Zhu的\ ``pssac``\ 修改得到的，其继承了\ ``pssac``\ 的优质特性，同时在很多方面又有了进一步的提高。
+
+``pssac2``\ 目前有两个版本，一个支持GMT4，一个支持GMT5。
 
 GMT4版
 ======
 
-下载
-----
+GMT4版本的\ ``pssac2``\ 没有官方下载地址，目前只在\ ``specfem3d``\ 程序包中找到有\ ``pssac2``\ 的源码。
 
-GMT4下的pssac2貌似没有更官方的下载地址，specfem3d中包含了pssac2的源码：
+由于specfem3d中的pssac2下载起来有些麻烦，这里我整理了一个版本供读者下载：
 
-.. code-block:: bash
+下载地址：http://seisman.qiniudn.com/downloads/pssac2_GMT4.tar.gz
 
-   $ git clone --recursive https://github.com/geodynamics/specfem3d.git
-   $ mv specfem3d/utils/ADJOINT_TOMOGRAPHY_TOOLS/measure_adj/UTIL/pssac2 .
-   $ cd pssac2
-
-修改
-----
-
-在\ ``pssac2.c``\ 中\ ``#include <gmt.h>``\ 语句后添加如下语句::
-
-    typedef GMT_LONG BOOLEAN;
-
-编译
-----
+安装方法如下：
 
 .. code-block:: bash
 
+   $ tar -xvf pssac2_GMT4.tar.gz
+   $ cd pssac2_GMT4
    $ ./configure --with-gmt=/opt/GMT-4.5.13
    $ make
+
+如果成功执行，则会在当前目录生成可执行文件\ ``pssac2``\ ，即可直接使用。
 
 GMT5版
 ======
 
-下载
-----
-
 .. code-block:: bash
 
-   git clone https://github.com/savage13/pssac2.git
-
-编译
-----
-
-.. code-block:: bash
-
-   $ ./configure --with-gmt=/opt/GMT-5.1.1
+   $ git clone https://github.com/savage13/pssac2.git
+   $ ./configure --with-gmt=/opt/GMT-5.1.2
    $ make
 
 修订历史
@@ -64,3 +47,4 @@ GMT5版
 - 2013-08-09：初稿；
 - 2015-01-03：添加了pssac2的GMT5版本并简化了GMT4版本的说明；
 - 2015-04-01：更新了pssac2的GMT4版本的地址；
+- 2015-07-17：为GMT4版本的pssac2提供了新的下载链接；
