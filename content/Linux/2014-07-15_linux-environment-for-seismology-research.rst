@@ -827,6 +827,17 @@ GNOME自带了截图工具。\ ``PrtScn``\ 为截取整个屏幕；\ ``Alt+PrtSc
 娱乐
 ====
 
+影音播放器
+----------
+
+Nux Dextop提供了mplayer和VLC，可以用于播放常见格式的音频和视频，二者选其一安装即可::
+
+    sudo yum install mplayer
+    sudo yum install vlc
+
+游戏
+----
+
 ::
 
     sudo yum install 2048-cli   # 2048命令行版
