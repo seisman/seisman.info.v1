@@ -35,6 +35,8 @@ GMT4版本的\ ``pssac2``\ 没有官方下载地址，目前只在\ ``specfem3d`
 GMT5版
 ======
 
+GMT5版本的pssac2似乎有不少bug，谨慎使用。
+
 .. code-block:: bash
 
    $ git clone https://github.com/savage13/pssac2.git

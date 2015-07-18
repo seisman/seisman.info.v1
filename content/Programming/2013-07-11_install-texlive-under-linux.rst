@@ -74,7 +74,7 @@ Linux下可以用wget、axel，windows下可以用迅雷，怎么快怎么来。
 更新TeXLive
 ===========
 
-可以使用如下命令更新TeXLive宏包::
+可以使用如下命令更新TeXLive宏包：
 
 .. code-block:: bash
 
