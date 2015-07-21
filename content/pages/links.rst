@@ -24,6 +24,7 @@ Event Catalog
 - `NIED Earthquake Mechanism Search <http://www.fnet.bosai.go.jp/event/search.php?LANG=en>`_
 - `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
 - `EHB Bulletin <http://www.isc.ac.uk/ehbbulletin/>`_
+- `SCSN catalog <http://service.scedc.caltech.edu/eq-catalogs/date_mag_loc.php>`_
 
 Focal Mechanism
 ===============
@@ -32,6 +33,7 @@ Focal Mechanism
 - `ISC Focal Mechanism <http://www.isc.ac.uk/iscbulletin/search/fmechanisms/>`_
 - `UCB (University of California Berkeley) Moment Tensor Catalog <http://www.ncedc.org/ncedc/mt.html>`_
 - `NIED CMT solutions <http://www.fnet.bosai.go.jp/event/joho.php?LANG=en>`_
+- `SCSN Moment Tensor Catalog <http://service.scedc.caltech.edu/eq-catalogs/CMTsearch.php>`_
 
 Seismic Network / Waveform Data
 ===============================
@@ -40,6 +42,7 @@ Seismic Network / Waveform Data
 - `NIED F-net <http://www.fnet.bosai.go.jp/>`_
 - `Northern California Earthquake Data Center <http://www.ncedc.org/>`_
 - `Southern California Seismic Network <http://www.scsn.org>`_
+- `Southern California Seismic Network at Caltech <http://scedc.caltech.edu/>`_
 - `Pacific Northwest Seismic Network <http://pnsn.org/>`_
 - `Alaska Earthquake Information Center <http://www.aeic.alaska.edu/>`_
 - `Canadian National Seismic Network <http://www.earthquakescanada.nrcan.gc.ca/stndon/CNSN-RNSC/index-eng.php>`_

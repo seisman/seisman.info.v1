@@ -5,7 +5,7 @@ GMT边框发虚的原因及解决办法
 :date: 2014-12-09
 :tags: GMT4, GMT5, GMT技巧
 :category: GMT
-:slug: blurry-frame-in-GMT.rst
+:slug: blurry-frame-in-GMT
 
 GMT绘制的PS格式的图片一向以高精度著称。在画图的时候偶尔会遇到，PS图片中其他地方精度都很高，唯独边框看上去有些发虚，精度比较低。
 

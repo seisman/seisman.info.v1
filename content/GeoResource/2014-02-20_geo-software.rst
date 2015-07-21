@@ -61,12 +61,12 @@
 - `SPECFEM3D`_: 谱元法3D(笛卡尔坐标系)
 - `SPECFEM3D Global`_: 谱元法3D(球坐标系)
 
-
 震源机制
 ========
 
 - `gcap`_: 通用Cut and Paste方法反演震源机制
 - `pyTDMT`_: 时间域震源机制反演的Python实现
+- `WPhase`_: W Phase方法反演震源机制
 
 特定功能类
 ==========
@@ -76,6 +76,11 @@
 - `IRFFM`_: 带界面的接收函数软件包。
 - `astack`_: 自适应迭代以实现震相对齐。
 - `LASIF`_: 基于Python的大规模全波形反演框架，似乎是层析成像。
+
+数学处理类
+==========
+
+- `SHTOOLS`_: 实现球谐相关操作，包括变换、重建、旋转、谱分析等。
 
 .. _astack: http://rses.anu.edu.au/seismology/soft/astack/index.html
 .. _SAC: http://www.iris.edu/ds/nodes/dmc/forms/sac/
@@ -112,3 +117,5 @@
 .. _SPECFEM3D Global: https://geodynamics.org/cig/software/specfem3d_globe/
 .. _ObsPy: https://github.com/obspy/obspy/wiki
 .. _dataselect: https://seiscode.iris.washington.edu/projects/dataselect
+.. _SHTOOLS: https://github.com/SHTOOLS/SHTOOLS
+.. _WPhase: http://eost.u-strasbg.fr/wphase/
