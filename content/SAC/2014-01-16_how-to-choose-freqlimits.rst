@@ -3,7 +3,7 @@ freqlimits的选取
 
 :date: 2014-01-16 09:33
 :author: SeisMan
-:category: 地震学基础
+:category: SAC
 :tags: 仪器响应
 :slug: how-to-choose-freqlimits
 

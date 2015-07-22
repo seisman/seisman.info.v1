@@ -25,6 +25,7 @@ Event Catalog
 - `ISC Bulletin <http://www.isc.ac.uk/iscbulletin/search/catalogue/>`_
 - `EHB Bulletin <http://www.isc.ac.uk/ehbbulletin/>`_
 - `SCSN catalog <http://service.scedc.caltech.edu/eq-catalogs/date_mag_loc.php>`_
+- `JMA Unified Hypocenter Catalog <https://hinetwww11.bosai.go.jp/auth/JMA/?LANG=en>`_
 
 Focal Mechanism
 ===============
@@ -34,6 +35,13 @@ Focal Mechanism
 - `UCB (University of California Berkeley) Moment Tensor Catalog <http://www.ncedc.org/ncedc/mt.html>`_
 - `NIED CMT solutions <http://www.fnet.bosai.go.jp/event/joho.php?LANG=en>`_
 - `SCSN Moment Tensor Catalog <http://service.scedc.caltech.edu/eq-catalogs/CMTsearch.php>`_
+- `JMA Focal Mechanism Catalog <https://hinetwww11.bosai.go.jp/auth/JMA/?LANG=en>`_
+
+Arrival Time Data
+=================
+
+- `JMA Arrival Time Data <https://hinetwww11.bosai.go.jp/auth/JMA/?LANG=en>`_
+- `ISC Arrival Time Data <http://www.isc.ac.uk/iscbulletin/search/arrivals/>`_
 
 Seismic Network / Waveform Data
 ===============================
