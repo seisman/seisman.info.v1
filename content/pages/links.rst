@@ -47,15 +47,6 @@ Seismic Network / Waveform Data
 - `Alaska Earthquake Information Center <http://www.aeic.alaska.edu/>`_
 - `Canadian National Seismic Network <http://www.earthquakescanada.nrcan.gc.ca/stndon/CNSN-RNSC/index-eng.php>`_
 
-Software and Tools
-==================
-
-- `Generic Mapping Tools <http://gmt.soest.hawaii.edu/>`_
-- `Seismic Analysis Code <http://www.iris.edu/ds/nodes/dmc/software/downloads/sac/>`_
-- `The TauP Toolkit <http://www.seis.sc.edu/taup/index.html>`_
-- `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
-- `IRIS DMC Google Map Service <http://ds.iris.edu/gmap/>`_
-
 Journals
 ========
 
@@ -89,6 +80,15 @@ Software Library
 - `S&MG Research Group Software <http://rses.anu.edu.au/seismology/index.php?p=software>`_
 - `CIG Software <https://geodynamics.org/cig/software/>`_
 
+Software and Tools
+==================
+
+- `Generic Mapping Tools <http://gmt.soest.hawaii.edu/>`_
+- `Seismic Analysis Code <http://www.iris.edu/ds/nodes/dmc/software/downloads/sac/>`_
+- `The TauP Toolkit <http://www.seis.sc.edu/taup/index.html>`_
+- `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
+- `IRIS DMC Google Map Service <http://ds.iris.edu/gmap/>`_
+
 Others
 ======
 
@@ -96,3 +96,4 @@ Others
 - `IASPEI standard phase list <http://www.isc.ac.uk/standards/phases/>`_
 - `GMT cpt <http://soliton.vm.bytemark.co.uk/pub/cpt-city/>`_
 - `Source Time Function <http://ds.iris.edu/spud/sourcetimefunction>`_
+- `Earth Model <http://ds.iris.edu/ds/products/emc/>`_
