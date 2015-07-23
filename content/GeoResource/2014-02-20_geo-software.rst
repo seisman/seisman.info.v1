@@ -67,6 +67,7 @@
 - `gcap`_: 通用Cut and Paste方法反演震源机制
 - `pyTDMT`_: 时间域震源机制反演的Python实现
 - `WPhase`_: W Phase方法反演震源机制
+- `focmec`_: 确定并绘制震源机制
 
 特定功能类
 ==========
@@ -119,3 +120,4 @@
 .. _dataselect: https://seiscode.iris.washington.edu/projects/dataselect
 .. _SHTOOLS: https://github.com/SHTOOLS/SHTOOLS
 .. _WPhase: http://eost.u-strasbg.fr/wphase/
+.. _focmec: https://seiscode.iris.washington.edu/projects/focmec
