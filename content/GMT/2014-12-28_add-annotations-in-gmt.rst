@@ -11,7 +11,7 @@ GMT中添加注释和标注
 
 下图展示了绘图时一个常见的需求：
 
-.. figure:: /images/2014122801.jpg
+.. figure:: /images/2014122801.png
    :width: 600 px
    :alt: final figure
 
@@ -107,7 +107,7 @@ GMT中添加注释和标注
 
 最终得到的效果如下图（辅助底图的（0,0）点与纸张左下角重合，（29.7,21）点与纸张右上角重合）：
 
-.. figure:: /images/2014122802.jpg
+.. figure:: /images/2014122802.png
    :align: center
    :width: 800 px
    :alt: auxiliary basemap
@@ -161,7 +161,7 @@ GMT中添加注释和标注
 
 效果图如下：
 
-.. figure:: /images/2014122803.jpg
+.. figure:: /images/2014122803.png
    :align: center
    :width: 800 px
    :alt: auxiliary basemap

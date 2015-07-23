@@ -122,14 +122,14 @@ http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO5/TOPO/ETOPO5/
 
 .. code-block:: bash
 
- #!/bin/bash
+   #!/bin/bash
 
- grdraster 1 -Rg -I5m -Gout.grd
- makecpt -Cglobe -T-10500/8000/1000 -Z > colors.cpt
- grdimage out.grd -Ba60g30 -Rg -Yc -Xc -JN0/25c -Ccolors.cpt -K > etopo5.ps
- psscale -Ba2500f500::/:"m": -Ccolors.cpt -D12.5c/-2c/15c/.35ch -O >> etopo5.ps
+   grdraster 1 -Rg -I5m -Gout.grd
+   makecpt -Cglobe -T-10500/8000/1000 -Z > colors.cpt
+   grdimage out.grd -Ba60g30 -Rg -Yc -Xc -JN0/25c -Ccolors.cpt -K > etopo5.ps
+   psscale -Ba2500f500::/:"m": -Ccolors.cpt -D12.5c/-2c/15c/.35ch -O >> etopo5.ps
 
- rm out.grd colors.cpt
+   rm out.grd colors.cpt
 
 .. figure:: /images/2013081001.jpg
    :alt: etopo map

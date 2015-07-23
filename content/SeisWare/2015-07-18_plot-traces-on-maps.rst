@@ -57,6 +57,7 @@
 .. figure:: /images/2015061801.png
    :width: 600 px
    :align: center
+   :alt: fig1
 
 第一个波形振幅图
 ================
@@ -87,6 +88,7 @@
 .. figure:: /images/2015061802.png
    :width: 600 px
    :align: center
+   :alt: fig2
 
 解释一些pssac中各个选项的含义及作用：
 
@@ -132,6 +134,7 @@
 .. figure:: /images/2015061803.png
    :width: 600 px
    :align: center
+   :alt: fig3
 
 上图还是有问题。因为\ ``-X``\ 和\ ``-Y``\ 控制的是pssac的底图原点相当于地图底图的原点的偏移量，因而导致波形的底图边框左下角恰好位于台站位置处。
 
@@ -142,6 +145,7 @@
 .. figure:: /images/2015061804.png
    :width: 600 px
    :align: center
+   :alt: fig4
 
 绘制所有波形
 ============
@@ -184,6 +188,7 @@
 .. figure:: /images/2015061805.png
    :width: 600 px
    :align: center
+   :alt: fig5
 
 上图还是有些问题，比如\ ``nykl.z``\ 台站的波形右边有点过界了，\ ``sdkl.z``\ 似乎被限幅了，可以修改\ ``-JX4c/2.6c``\ 来微调。微调的事情就不再说了。
 
@@ -282,6 +287,7 @@
 .. figure:: /images/2015061806.png
    :width: 600 px
    :align: center
+   :alt: fig6
 
 几点说明：
 
