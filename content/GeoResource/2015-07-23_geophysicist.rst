@@ -18,6 +18,7 @@ A
 C
 ==
 
+- `Andrew Curtis <http://www.geos.ed.ac.uk/homes/acurtis/>`_
 - `Chris Chapman <http://bullard.esc.cam.ac.uk/~chapman/>`_
 - `Robert W. Clayton <http://web.gps.caltech.edu/~clay/>`_
 - `Vernon F. Cormier <http://www.phys.uconn.edu/~cormier>`_
