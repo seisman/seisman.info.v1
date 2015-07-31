@@ -1,0 +1,27 @@
+安装evt2sac
+###########
+
+:date: 2015-07-31
+:author: SeisMan
+:category: 地震学软件
+:tags: SAC, 格式转换
+:slug: evt2sac
+
+``evt2sac``\ 用于将NEIC的EVT格式的数据转换为SAC格式。
+
+主页：https://seiscode.iris.washington.edu/projects/evt2sac
+
+``evt2sac``\ 最近一次更新是1993年，20多年前的代码编译起来还是有些困难的，因而一点一点介绍如何修改代码就太麻烦了，本文直接给出我修改后可编译的版本。
+
+修改后的代码下载：`evt2sac.tar.bz2 <http://7j1zxm.com1.z0.glb.clouddn.com/downloads/evt2sac.tar.bz2>`_
+
+对官方代码的修改列举如下：
+
+#. 修改并简化Makefile，使用gcc和gfortran编译器
+#. 删除了不需要的文件
+#. ``evt2sac.c``\ 、\ ``evt_subs.c``\ 、\ ``ndt_subs.c``\ 中include了\ ``stdlib.h``\ 、\ ``string.h``\ 等头文件
+#. ``fglue2.F``\ 中，subroutine中的include语句需要放在变量定义之前
+#. 修复了\ ``fprintf``\ 的语法错误
+#. ``distaz_``\ 改为\ ``distaz``\ ，请删除了前两个参数中的\ ``&``\ 符号。主要是因为SAC的源码已经从Fortran变成了C。
+
+修改后的版本可以直接编译（可能需要修改Makefile中的\ ``SACLIB``\ 变量）。但是否能够正常使用，尚不确定。

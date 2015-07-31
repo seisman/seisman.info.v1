@@ -28,6 +28,7 @@
 ============
 
 - `jweed`_: 用Java实现的IRIS数据申请客户端。
+- `SOD`_: 数据自动下载命令行工具。
 
 绘图类
 ======
@@ -121,3 +122,4 @@
 .. _SHTOOLS: https://github.com/SHTOOLS/SHTOOLS
 .. _WPhase: http://eost.u-strasbg.fr/wphase/
 .. _focmec: https://seiscode.iris.washington.edu/projects/focmec
+.. _SOD: http://www.seis.sc.edu/sod/
