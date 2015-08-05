@@ -15,7 +15,7 @@
 手册简介
 ========
 
-SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之一，《SAC参考手册》是一本详细介绍SAC用法的中文电子书。2011年暑假，我尝试翻译了官方的英文文档，2012年初将其整理为PDF，并放在网络上免费下载，2012年至2015年的三年间，该手册不断更新，目前文档的最新版本为v3.1。
+SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之一，《SAC参考手册》是一本详细介绍SAC用法的中文电子书。2011年暑假，我尝试翻译了官方的英文文档，2012年初将其整理为PDF，并放在网络上免费下载，2012年至2015年的三年间，该手册不断更新，目前文档的最新版本为v3.3。
 
 - 文档发布页：http://seisman.info/sac-manual.html
 - 项目主页：https://github.com/seisman/SAC_Docs_zh
@@ -75,7 +75,7 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
 
 #. 拥有Linux系统；
 #. 拥有一个GitHub账户；
-#. 安装TexLive以及中英文字体（可选）；
+#. 安装TexLive（可选）；
 #. Fork手册源码，Clone至本地；
 #. 修改源码，提交修改，并Push到自己的Repo里，再提交Pull Request；
 
@@ -161,7 +161,7 @@ Push之后，进入GitHub网站，提交Pull Request即可。
 --------
 
 - 我对于Git也只是了解皮毛，上面的步骤也许有更简单的操作；
-- 使用Git进行协作的方式有好几种，文中说的是比较常用的一种方式；
+- Git协作的方式有很多种，可以参考\ `Git使用规范流程 <http://www.ruanyifeng.com/blog/2015/08/git-use-process.html>`_
 - `git简易指南 <http://www.bootcss.com/p/git-guide/>`_
 - `廖雪峰的Git教程 <http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000>`_
 - 可以多次\ ``add``\ 多次再\ ``commit``\ ，多次\ ``commit``\ 再\ ``push``\ ，多次\ ``push``\ 之后再pull request；

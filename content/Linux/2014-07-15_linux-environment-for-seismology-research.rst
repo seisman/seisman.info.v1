@@ -481,16 +481,17 @@ Google Chrome浏览器
 
     sudo yum install google-chrome-stable
 
-由于Google的官方源在国内可能无法正常访问，导致安装失败或安装后无法正常更新。有人在国内服务器上做了Google官方源的镜像，若你相信该镜像是安全的，则可使用此国内镜像代替Google官方源，\ ``google-chrome.repo``\ 的内容改为::
+Google官方源在国内可能无法正常访问，导致安装失败或安装后无法正常更新，可以尝试修改\ ``gpgcheck=0``\ 再安装。(Thanks to 徐弥坚)
 
-    [google-chrome]
-    name=google-chrome
-    #baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
-    #gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
-    mirrorlist=http://1dot75cm.tk/mirrorlist
-    gpgkey=http://1dot75cm.tk/src/linux_signing_key.pub
-    gpgcheck=1
-    enabled=1
+.. 这个私人镜像似乎已经不再更新了，故而删除。
+.. 有人在国内服务器上做了Google官方源的镜像，若你相信该镜像是安全的，则可使用此国内镜像代替Google官方源，\ ``google-chrome.repo``\ 的内容改为::
+..  name=google-chrome
+..  #baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+..  #gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+..  mirrorlist=http://1dot75cm.tk/mirrorlist
+..  gpgkey=http://1dot75cm.tk/src/linux_signing_key.pub
+..  gpgcheck=1
+..  enabled=1
 
 Opera浏览器
 -----------
