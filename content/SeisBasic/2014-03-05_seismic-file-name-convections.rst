@@ -5,7 +5,7 @@
 :date: 2014-03-05 21:48
 :category: 地震学基础
 :tag: 数据
-:slug: seismic-file-name-convetions
+:slug: seismic-file-name-convections
 
 .. contents::
 
@@ -56,7 +56,7 @@ Location ID其实是台站下的subcode，即一个台站处，有多套仪器�
 
 - D: Data of undetermined state
 - M: Merged Data
-- R: Raw waveform Data 
+- R: Raw waveform Data
 - Q: QC'd data
 
 一般见到的都是M。
@@ -74,7 +74,7 @@ Band Code是通道名的第一个字符，表示了仪器的采样率以及响�
 .. figure:: /images/2014030501.jpg
    :align: center
    :width: 700px
-   :height: 400px 
+   :height: 400px
    :alt: Band Code from SEED Reference Manual
 
    Band Code
@@ -92,7 +92,7 @@ Instrument Code         说明
 H               High Gain Seismometer
 L               Low Gain Seismometer
 G               Gravimeter
-M               Mass position Seismometer 
+M               Mass position Seismometer
 N               Accelerometer
 =============== =========================
 
@@ -118,7 +118,7 @@ U V W  可选分量
 
 需要注意的是：当仪器的方向与东西方向的夹角小于5度时，此Orientation Code 取为E；当与东西方向夹角大于5度时，Orientation Code取为1(或2).对于南北方向同理。
 
-因而，即便Orientation Code为N，也并不意味着台站是南北方向的，真实的方向还是需要看SAC头段中的\ ``cmpaz``\ 和\ ``cpminc``\ 。 
+因而，即便Orientation Code为N，也并不意味着台站是南北方向的，真实的方向还是需要看SAC头段中的\ ``cmpaz``\ 和\ ``cpminc``\ 。
 
 参考
 ====
