@@ -17,6 +17,7 @@ Quantitative Seismology (Aki and Richards,1980) 中式（4.29）给出了零迹�
 
 .. figure:: /images/2014050101.jpg
    :width: 600px
+   :align: center
    :alt: equation for moment tensor source
 
 其中等式右边共计5项，第一项为近场项，第二、三项分别是P、S波的中间场项，第四、五项分别为P、S波的远场项。一般研究辐射花样大多关注于P波远场辐射花样，即第四项。
@@ -24,7 +25,8 @@ Quantitative Seismology (Aki and Richards,1980) 中式（4.29）给出了零迹�
 式（4.91）中给出了远场P波位移的矢量形式，看上去更加直观一些：
 
 .. figure:: /images/2014050102.jpg
-   :width: 250px
+   :width: 200px
+   :align: center
    :alt: P-wave far-field term
 
 其中，除去震源时间函数以及绝对振幅，只留下辐射花样相关的因子：
@@ -44,6 +46,7 @@ Quantitative Seismology (Aki and Richards,1980) 中式（4.29）给出了零迹�
 
 .. figure:: /images/2014050103.jpg
    :width: 450px
+   :align: center
    :alt: NED-coordinate
 
 可以得到，此坐标下，离源矢量\ :math:`\mathbf{\gamma}`\ 的具体形式:
@@ -67,12 +70,14 @@ Global CMT给出了零迹矩张量解和断层参数解。
 
    .. figure:: /images/2014050104.jpg
       :width: 400px
+      :align: center
       :alt: double-couple-to-moment-tensor
 
 #. 若使用GCMT给出的矩张量解，由于GCMT给出的是(Mrr, Mtt, Mff, Mrt, Mrf, Mtf)解，即USE坐标系下的矩张量，需要转换成NED坐标系的矩张量，方可使用。转换公式如下：
 
    .. figure:: /images/2014050105.jpg
       :width: 400px
+      :align: center
       :alt: from-ned-to-use
 
 不同的文献给出的坐标系可能不同，比如这里提到的NED坐标系和USE坐标系。即便相同的坐标系所使用的符号也可能不同，比如GCMT的\ :math:`(r,t,f)`\ 坐标系和Aki&Richards(1980)中给出的\ :math:`(r,\Delta,\phi)`\ 坐标系其实都是USE坐标系。
@@ -238,6 +243,7 @@ Global CMT给出了零迹矩张量解和断层参数解。
 
 .. figure:: /images/2014050106.jpg
    :width: 450px
+   :align: center
    :alt: moment-tensor-wulff-projection
 
 矩张量+Schmidt投影
@@ -245,6 +251,7 @@ Global CMT给出了零迹矩张量解和断层参数解。
 
 .. figure:: /images/2014050107.jpg
    :width: 450px
+   :align: center
    :alt: moment-tensor-Schmidt-projection
 
 断层参数+Wulff投影
@@ -252,6 +259,7 @@ Global CMT给出了零迹矩张量解和断层参数解。
 
 .. figure:: /images/2014050108.jpg
    :width: 450px
+   :align: center
    :alt: double-coule-wulff-projection
 
 断层参数+Schmidt投影
@@ -259,6 +267,7 @@ Global CMT给出了零迹矩张量解和断层参数解。
 
 .. figure:: /images/2014050109.jpg
    :width: 450px
+   :align: center
    :alt: double-coule-Schmidt-projection
 
 GMT psmeca绘制矩张量解
@@ -275,6 +284,7 @@ psmeca的\ ``-Sm``\ 选择可以用于在地图上绘制GCMT矩张量形式的�
 
 .. figure:: /images/2014050110.jpg
    :width: 600px
+   :align: center
    :alt: gmt-psmeca-moment-tensor
 
 GMT psmeca绘制矩张量的double couple部分
@@ -291,6 +301,7 @@ GMT psmeca绘制矩张量的double couple部分
 
 .. figure:: /images/2014050111.jpg
    :width: 600px
+   :align: center
    :alt: gmt-psmeca-double-couple
 
 Mopad绘制矩张量
@@ -304,6 +315,7 @@ Mopad是一个可以计算与绘制矩张量的Python脚本，其功能强大，
 
 .. figure:: /images/2014050112.jpg
    :width: 400px
+   :align: center
    :alt: plot radiation pattern using mopad
 
 图像格式转换
@@ -312,7 +324,6 @@ Mopad是一个可以计算与绘制矩张量的Python脚本，其功能强大，
 利用ps2raster命令可以将PS文件转换为其它格式的图像，最好选择透明的PNG格式::
 
     ps2raster -A -TG beachball.ps
-
 
 一些小结
 ========

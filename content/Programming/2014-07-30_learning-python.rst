@@ -81,6 +81,7 @@ Python模块
 #. `huhamhire-hosts <https://hosts.huhamhire.com/>`_ ：Host更新与发布
 #. `ReText <http://sourceforge.net/p/retext/home/ReText/>`_ : Markdown和reStructuredText文本编辑器
 #. `you-get <https://github.com/soimort/you-get>`_ ：国内外视频网站下载工具
+#. `flake8 https://flake8.readthedocs.org/en/2.4.0/`: Python脚本风格检查工具
 
 PEP
 ===
