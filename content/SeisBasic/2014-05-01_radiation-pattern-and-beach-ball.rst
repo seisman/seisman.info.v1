@@ -15,7 +15,7 @@ P波辐射花样计算公式
 
 Quantitative Seismology (Aki and Richards,1980) 中式（4.29）给出了零迹地震矩M所产生的n分量位移公式：
 
-.. figure:: /images/2014050101.jpg
+.. figure:: /images/2014050101.png
    :width: 600px
    :align: center
    :alt: equation for moment tensor source
@@ -24,7 +24,7 @@ Quantitative Seismology (Aki and Richards,1980) 中式（4.29）给出了零迹�
 
 式（4.91）中给出了远场P波位移的矢量形式，看上去更加直观一些：
 
-.. figure:: /images/2014050102.jpg
+.. figure:: /images/2014050102.png
    :width: 200px
    :align: center
    :alt: P-wave far-field term
@@ -241,7 +241,7 @@ Global CMT给出了零迹矩张量解和断层参数解。
 矩张量+Wulff投影
 ----------------
 
-.. figure:: /images/2014050106.jpg
+.. figure:: /images/2014050106.png
    :width: 450px
    :align: center
    :alt: moment-tensor-wulff-projection
@@ -249,7 +249,7 @@ Global CMT给出了零迹矩张量解和断层参数解。
 矩张量+Schmidt投影
 ------------------
 
-.. figure:: /images/2014050107.jpg
+.. figure:: /images/2014050107.png
    :width: 450px
    :align: center
    :alt: moment-tensor-Schmidt-projection
@@ -257,7 +257,7 @@ Global CMT给出了零迹矩张量解和断层参数解。
 断层参数+Wulff投影
 ------------------
 
-.. figure:: /images/2014050108.jpg
+.. figure:: /images/2014050108.png
    :width: 450px
    :align: center
    :alt: double-coule-wulff-projection
@@ -265,7 +265,7 @@ Global CMT给出了零迹矩张量解和断层参数解。
 断层参数+Schmidt投影
 --------------------
 
-.. figure:: /images/2014050109.jpg
+.. figure:: /images/2014050109.png
    :width: 450px
    :align: center
    :alt: double-coule-Schmidt-projection
@@ -282,7 +282,7 @@ psmeca的\ ``-Sm``\ 选择可以用于在地图上绘制GCMT矩张量形式的�
     121.71 -12.01 29 -1.35 5.41 -4.06 -3.21 -3.58 -0.74 24 X Y 201304191751A
     EOF
 
-.. figure:: /images/2014050110.jpg
+.. figure:: /images/2014050110.png
    :width: 600px
    :align: center
    :alt: gmt-psmeca-moment-tensor
@@ -299,7 +299,7 @@ GMT psmeca绘制矩张量的double couple部分
     121.71 -12.01 29 -1.35 5.41 -4.06 -3.21 -3.58 -0.74 24 X Y 201304191751A
     EOF
 
-.. figure:: /images/2014050111.jpg
+.. figure:: /images/2014050111.png
    :width: 600px
    :align: center
    :alt: gmt-psmeca-double-couple
