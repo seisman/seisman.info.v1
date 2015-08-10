@@ -69,6 +69,15 @@ crust1.0中含说明文档readme一份，模型文件四个，用于读取模型
 程序
 ----
 
+编译代码
+^^^^^^^^
+
+使用如下命令编译::
+
+    gfortran getCN1point.f -o getCN1point
+
+其他同理。
+
 getCN1point
 ^^^^^^^^^^^
 

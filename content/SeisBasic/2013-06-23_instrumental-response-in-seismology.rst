@@ -2,7 +2,6 @@
 ################
 
 :date: 2013-06-23 16:58
-:modified:
 :author: SeisMan
 :category: 地震学基础
 :tags: 仪器响应
