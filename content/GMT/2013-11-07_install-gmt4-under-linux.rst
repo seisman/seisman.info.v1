@@ -109,6 +109,14 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 - 第三个命令将GMT4的lib目录加入到动态链接库路径中，若为32位系统，则为\ ``lib``\ ；64位系统则为\ ``lib64``\ ；
 - 第四个命令是重新载入bash，相当于\ ``source ~/.bashrc``\ 。
 
+命令测试
+========
+
+在终端键入\ ``psxy -``\ ，若出现如下输出，则安装成功::
+
+    $ psxy -
+    psxy 4.5.13 [64-bit] - Plot lines, polygons, and symbols on maps
+
 修订历史
 ========
 

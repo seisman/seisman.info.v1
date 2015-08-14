@@ -197,34 +197,22 @@ PS2：上面的PS要是没看懂的话就直接忽略吧。
 - 第三个命令将GMT5的lib目录加入到动态链接库路径中，若为32位系统，则为\ ``lib``\ ；64位系统则为\ ``lib64``\ ；
 - 第四个命令是重新载入bash，相当于\ ``source ~/.bashrc``\ 。
 
-安装测试
-========
+测试是否安装成功
+================
 
 在终端键入\ ``gmt``\ ，若出现如下输出，则安装成功::
 
     $ gmt
 
     GMT - The Generic Mapping Tools, Version 5.1.2 (r14256) [64-bit]
-    (c) 1991-2015 Paul Wessel, Walter H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe
 
-    Supported in part by the US National Science Foundation (http://www.nsf.gov/)
-    and volunteers from around the world (see http://gmt.soest.hawaii.edu/).
+.. Ubuntu 14.04和15.04下，若出现如下错误::
+..  $ gmt
+..  Sub-commands for gmt:
+..  install    install more modules
+..  ERROR: Please specify valid params for 'gmt'.
 
-    This program comes with NO WARRANTY, to the extent permitted by law.
-    You may redistribute copies of this program under the terms of the
-    GNU Lesser General Public License (http://www.gnu.org/licenses/lgpl.html).
-    For more information about these matters, see the file named LICENSE.TXT.
-
-    usage: gmt [options]
-           gmt <module name> [<module options>]
-
-    options:
-      --help            List and description of GMT modules.
-      --version         Print version and exit.
-      --show-datadir    Show data directory and exit.
-      --show-bindir     Show directory of executables and exit.
-
-    if <module options> is '=' we call exit (0) if module exist and non-zero otherwise.
+.. 这是因为Ubuntu的\ ``libgenome-perl``\ 包中提供了同名的命令\ ``/usr/bin/gmt``\ 。
 
 参考来源
 ========
