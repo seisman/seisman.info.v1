@@ -44,6 +44,8 @@
 
    * - `Donald V. Helmberger <http://www.gps.caltech.edu/content/donald-v-helmberger>`_
      -
+   * - `Robert van der Hilst <http://eaps4.mit.edu/faculty/Hilst/>`_
+     -
    * - `Kei Hirose <http://www.geo.titech.ac.jp/lab/hirose/en/home.html>`_
      -
 
