@@ -12,23 +12,21 @@ GMT进阶之自定义GMT的Logo
 这篇博文想干什么？
 ===================
 
-如下图，这篇博文的目的就是把左边的时间戳变成右边的时间戳。黑底白字的部分，我称之为Logo。
+GMT中使用-U选项可以给图加一个时间戳，如下图左图所示。
+
+这篇博文的目的就是把左边的时间戳变成右边的时间戳。黑底白字的部分，我称之为Logo。
 
 .. figure:: /images/2013111901.jpg
    :align: center
    :alt: gmt logo
    :width: 600 px
 
-为什么要自定义Logo？
-=====================
-
--  生命在于折腾；
--  体现个性；
--  类似于微博配图加水印，算是图片版权说明；
--  给自己打广告；
+当初想要自定义logo，是因为看到了\ `Hi-net <http://www.hinet.bosai.go.jp/>`_\ 首页的地图中有自定义logo为\ ``Hi-net NIED``\ 觉得挺有意思，对于某些机构来说，加上一个个性化的logo应该也算是一种需求。
 
 理解原理
 ========
+
+本文的内容基于GMT 5.1.0。写完本文之后，我因为没有自定义logo的需求了，所以本文在一段时间内应该不会再更新。不过本文介绍的方法应该可以很容易应用到更新版的GMT5以及之前的GMT4中。
 
 gmt_timestamp
 --------------
@@ -36,7 +34,7 @@ gmt_timestamp
 函数定义
 ++++++++
 
-以下代码来自于GMT-5.1.0/src/gmt_plot.c：
+以下代码来自于\ ``GMT-5.1.0/src/gmt_plot.c``\ ：
 
 .. code-block:: c
 
@@ -114,12 +112,12 @@ gmt_timestamp
 源码说明
 ++++++++
 
--  L16：定义数组dim，其中dim[0]代表时间戳黑色部分的宽度，dim[1]代表黑色部分的高度，dim[2]没有用；其单位为英寸；
+-  L16：定义数组dim，其中\ ``dim[0]``\ 代表时间戳黑色部分的宽度，\ ``dim[1]``\ 代表黑色部分的高度，\ ``dim[2]``\ 没有用；其单位为英寸；
 -  L25：开始向PS文件中写入代码；
 -  L26-L31：一些设置；
 -  L51：设置填充色为黑色；
 -  L52：绘制矩形；
--  L53：将GMT_glyph写入矩形中；这个是重点！
+-  L53：将\ ``GMT_glyph``\ 写入矩形中；这个是重点！
 -  L54-L56：写入时间；
 -  L60-L63：写入command或者label；
 -  L65：结束；
@@ -127,7 +125,7 @@ gmt_timestamp
 GMT_glyph
 ----------
 
-GMT_glyph的定义位于gmt_plot.c中：
+GMT_glyph的定义位于\ ``gmt_plot.c``\ 中：
 
 .. code-block:: c
 
@@ -148,7 +146,7 @@ GMT_glyph的定义位于gmt_plot.c中：
 PSL_plotcolorimage
 -------------------
 
-PSL_plotcolorimage的函数声明如下，取自GMT5.1.0/src/pslib.c：
+``PSL_plotcolorimage``\ 的函数声明如下，取自\ ``GMT5.1.0/src/pslib.c``\ ：
 
 .. code-block:: c
 
@@ -186,26 +184,26 @@ PSL_plotcolorimage的函数声明如下，取自GMT5.1.0/src/pslib.c：
 
 直接利用GIMP创建位图文件。
 
-打开GIMP，"文件->新建"，设置宽度"520"，高度"90"，分辨率"600"，色彩空间为灰色，填充前景色。
+打开GIMP，“文件->新建”，设置宽度“520”，高度“90”，分辨率“600”，色彩空间为灰色，填充前景色。
 
 .. figure:: /images/2013111902.jpg
    :align: center
    :alt:  fig
    :width: 600 px
 
-输入文件，字体"STIXGeneral Bold Italic"，大小为"95"，居中，上下留白2像素，左右留白12像素；
+输入文件，字体“STIXGeneral Bold Italic”，大小为“95”，居中，上下留白2像素，左右留白12像素；
 
 .. figure:: /images/2013111903.jpg
    :align: center
    :alt:  fig
    :width: 600 px
 
-保存为Sun Raster格式，文件名为raster.im8，提示需要导出，数据格式选择\ "**标准**\ "。
+保存为Sun Raster格式，文件名为raster.im8，提示需要导出，数据格式选择\ **标准**\ 。
 
 将Sun Raster文件转换为xbm格式
 -----------------------------
 
-xbm格式类似于C语言的格式，也就是GMT\_glyph数组所需要的。
+xbm格式类似于C语言的格式，也就是\ ``GMT_glyph``\ 数组所需要的。
 
 #. 执行\ ``raster2xbm``\ ，(代码在这里\ `下载 <http://seisman.qiniudn.com/downloads/raster2xbm.tar.gz>`_\ )，将输出保存到gmt\_plot.c中的char数组GMT_glyph中。
 #. 将\ ``unsigned char GMT_glyph[2520]``\ 改成\ ``unsigned char GMT_glyph[46800]``\ ，其中46800=520\*90；
@@ -215,9 +213,11 @@ xbm格式类似于C语言的格式，也就是GMT\_glyph数组所需要的。
 重新编译GMT
 -----------
 
+修改完代码后，需要重新编译GMT。理论上，上面所做的改动仅会影响到-U选项，而不会影响到其他选项的功能。
+
 一些说明
 ========
 
--  这里改变的Logo的宽度而没有改变Logo的高度，主要是因为Logo与后面的时间戳共用一个高度，修改高度之后可能很多东西都要改，这样比较麻烦；
--  GMT原始的Logo为黑白1-bit图，精度稍显不够，因而这里使用8-bit灰度图；当然也可以使用彩色图；
--  GIMP可以直接保存为xbm格式的1-bit图，之所以不使用，一方面是因为1-bit精度不够，另一方面是GIMP保存的xbm格式的数据的字节序与本机的字节序不同，导致Logo相邻两列或四列的数据相互交换位置。
+- 这里改变的Logo的宽度而没有改变Logo的高度，主要是因为Logo与后面的时间戳共用一个高度，修改高度之后可能很多东西都要改，这样比较麻烦；
+- GMT原始的Logo为黑白1-bit图，精度稍显不够，因而这里使用8-bit灰度图；当然也可以使用彩色图；
+- GIMP可以直接保存为xbm格式的1-bit图，之所以不使用，一方面是因为1-bit精度不够，另一方面是GIMP保存的xbm格式的数据的字节序与本机的字节序不同，导致Logo相邻两列或四列的数据相互交换位置。

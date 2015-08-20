@@ -84,6 +84,11 @@
 
 - `SHTOOLS`_: 实现球谐相关操作，包括变换、重建、旋转、谱分析等。
 
+函数库
+======
+
+- `libmseed`_: 用于读写miniSEED格式的C函数库
+
 .. _astack: http://rses.anu.edu.au/seismology/soft/astack/index.html
 .. _SAC: http://www.iris.edu/ds/nodes/dmc/forms/sac/
 .. _CPS330: http://www.eas.slu.edu/eqc/eqccps.html
@@ -123,3 +128,4 @@
 .. _WPhase: http://eost.u-strasbg.fr/wphase/
 .. _focmec: https://seiscode.iris.washington.edu/projects/focmec
 .. _SOD: http://www.seis.sc.edu/sod/
+.. _libmseed: https://seiscode.iris.washington.edu/projects/libmseed

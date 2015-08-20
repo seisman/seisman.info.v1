@@ -20,7 +20,7 @@ GMT绘制图中图
 
 .. figure:: /images/2015081601.png
    :align: center
-   :width: 500 px
+   :width: 600 px
    :alt: insert map
 
 GMT5 脚本
@@ -66,7 +66,7 @@ GMT5 脚本
 
 整个脚本的思路已经在脚本注释中做了解释。本质上就是先绘制小区域地图而不去管insert map，待小区域地图绘制完成后，再单独绘制一个insert map。
 
-绘制大区域地图时，使用了两个命令：pscoast和psxy。其中，pscoast的作用是绘制大区域地图的边框以及海岸线，psxy用于在大区域地图内绘制一个矩形区域。
+绘制insert map时，使用了两个命令：pscoast和psxy。其中，pscoast的作用是绘制大区域地图的边框以及海岸线，psxy用于在大区域地图内绘制一个矩形区域。
 
 在使用pscoast命令绘制大区域地图时，有几个需要解释的地方：
 
@@ -74,6 +74,7 @@ GMT5 脚本
 #. 默认情况下，边框内部是透明的，此时会在insert map内看到下一图层里的一些元素，``-B+gwhite``\ 使得边框内填充白色；
 #. ``--MAP_FRAME_TYPE=plain``\ 设置边框类型为一般的直线，默认值是fancy即火车轨道边框；
 #. 可以设置\ ``MAP_FRAME_PEN``\ 以修改边框的粗细；
+#. pscoast命令中可以使用-X和-Y选项以调整insert map在图中的位置；
 
 GMT4脚本
 ========
