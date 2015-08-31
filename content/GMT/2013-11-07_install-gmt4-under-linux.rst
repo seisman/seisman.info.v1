@@ -39,6 +39,7 @@ GMT编译过程需要C编译器，以及一些底层的库文件。
 
 对于Ubuntu/Debian::
 
+    sudo apt-get update
     sudo apt-get install gcc g++ make
     sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev
 
@@ -54,6 +55,7 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 
 对于Ubuntu/Debian::
 
+    sudo apt-get update
     sudo apt-get install libnetcdf-dev libgdal1-dev
 
 对于RHEL/CentOS/Fedora::

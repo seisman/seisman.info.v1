@@ -47,7 +47,10 @@ GMT目前还不能识别shapefile格式的数据，因而就需要将shapefile�
 格式转换
 --------
 
-命令从网上找到的，CHN_adm0为要生成的数据的文件名前缀，但是为什么要出现两次，表示很不解。
+要将shp格式转换成GMT可识别的格式，可以使用gdal提供的ogr2ogr命令。Linux用户可以直接安装gdal，Windows用户则需要到gdal官网下载安装。另外，Windows用户也可以用ArcGIS等软件实现格式的转换。
+
+
+具体的转换命令是从网上找到的，CHN_adm0为要生成的数据的文件名前缀，但是为什么要出现两次，表示很不解。
 
 ::
 
@@ -76,16 +79,18 @@ PS1：数据为多段数据，在GMT4中需要使用\ ``-m``\ 选项，而GMT5�
 PS2：中国的国界在有些地方是有争议的，因而使用该国界数据绘制的地图是不能在正规期刊上发表的。
 
 .. code-block:: bash
- R=72/136/15/54
- J=M15c
- PS=china.ps
 
- gmt psxy -J$J -R$R -T -K -U > $PS
- gmt psxy -R$R -J$J CHN_adm0.gmt -K -O >> $PS
- gmt psxy -R$R -J$J HKG_adm0.gmt -K -O >> $PS
- gmt psxy -R$R -J$J MAC_adm0.gmt -K -O >> $PS
- gmt psxy -R$R -J$J TWN_adm0.gmt -K -O >> $PS
- gmt psxy -R$R -J$J -T -O >> $PS
+   #!/bin/bash
+   R=72/136/15/54
+   J=M15c
+   PS=china.ps
+
+   gmt psxy -J$J -R$R -T -K -U > $PS
+   gmt psxy -R$R -J$J CHN_adm0.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J HKG_adm0.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J MAC_adm0.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J TWN_adm0.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J -T -O >> $PS
 
 代码运行过程中GMT会出现如下的警告(或错误？)
 
@@ -109,16 +114,16 @@ PS2：中国的国界在有些地方是有争议的，因而使用该国界数�
 
 .. code-block:: bash
 
- R=72/136/15/54
- J=M15c
- PS=china.ps
+   R=72/136/15/54
+   J=M15c
+   PS=china.ps
 
- gmt psxy -J$J -R$R -T -K -U > $PS
- gmt psxy -R$R -J$J CHN_adm1.gmt -K -O >> $PS
- gmt psxy -R$R -J$J HKG_adm1.gmt -K -O >> $PS
- gmt psxy -R$R -J$J MAC_adm0.gmt -K -O >> $PS
- gmt psxy -R$R -J$J TWN_adm1.gmt -K -O >> $PS
- gmt psxy -R$R -J$J -T -O >> $PS
+   gmt psxy -J$J -R$R -T -K -U > $PS
+   gmt psxy -R$R -J$J CHN_adm1.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J HKG_adm1.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J MAC_adm0.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J TWN_adm1.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J -T -O >> $PS
 
 效果图：
 
@@ -142,28 +147,28 @@ PS2：中国的国界在有些地方是有争议的，因而使用该国界数�
 
 .. code-block:: bash
 
- R=114/120/29/35
- J=M10c
- PS=anhui.ps
+   R=114/120/29/35
+   J=M10c
+   PS=anhui.ps
 
- gmt psxy -J$J -R$R -T -K -U > $PS
- gmt psxy -R$R -J$J Anhui_adm2.gmt -K -O >> $PS
- gmt psxy -R$R -J$J -T -O >> $PS
+   gmt psxy -J$J -R$R -T -K -U > $PS
+   gmt psxy -R$R -J$J Anhui_adm2.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J -T -O >> $PS
 
 上面的脚本有一个很不方便的地方：想要画一个省的2级数据，每次都要从CHN_adm2.gmt中手动提取该省的数据信息。下面的例子可以避免这种手动提取的过程，主要通过DCW数据和psclip命令，使用全国2级数据（CHN_adm2.gmt），但是只绘制安徽省的2级数据。
 
 .. code-block:: bash
 
- R=114/120/29/35
- J=M10c
- PS=anhui.ps
+   R=114/120/29/35
+   J=M10c
+   PS=anhui.ps
 
- gmt psxy -J$J -R$R -T -K -U > $PS
- gmt pscoast -FCN.34 -M > Anhui_bnd.gmt
- gmt psclip -J$J -R$R Anhui_bnd.gmt -K -O >> $PS
- gmt psxy -R$R -J$J CHN_adm2.gmt -K -O >> $PS
- gmt psclip -C -K -O >> $PS
- gmt psxy -R$R -J$J -T -O >> $PS
+   gmt psxy -J$J -R$R -T -K -U > $PS
+   gmt pscoast -FCN.34 -M > Anhui_bnd.gmt
+   gmt psclip -J$J -R$R Anhui_bnd.gmt -K -O >> $PS
+   gmt psxy -R$R -J$J CHN_adm2.gmt -K -O >> $PS
+   gmt psclip -C -K -O >> $PS
+   gmt psxy -R$R -J$J -T -O >> $PS
 
 脚本利用pscoast命令，将安徽省（代码为34）的省界数据导出到文件Anhui_bnd.gmt中，然后利用该文件进行clip，psxy绘图时虽然使用的是全国的2级数据CHN_adm2.gmt，但是只有安徽省内的部分会被绘制出来，最后还需要再次调用psclip以结束clip。
 
@@ -171,15 +176,15 @@ PS2：中国的国界在有些地方是有争议的，因而使用该国界数�
 
 .. code-block:: bash
 
- R=114/120/29/35
- J=M10c
- PS=anhui.ps
+   R=114/120/29/35
+   J=M10c
+   PS=anhui.ps
 
- gmt psxy -J$J -R$R -T -K -U > $PS
- gmt pscoast -FCN.34 -M | gmt psclip -J$J -R$R -K -O >> $PS
- gmt psxy -R$R -J$J CHN_adm2.gmt -K -O >> $PS
- gmt psclip -C -K -O >> $PS
- gmt psxy -R$R -J$J -T -O >> $PS
+   gmt psxy -J$J -R$R -T -K -U > $PS
+   gmt pscoast -FCN.34 -M | gmt psclip -J$J -R$R -K -O >> $PS
+   gmt psxy -R$R -J$J CHN_adm2.gmt -K -O >> $PS
+   gmt psclip -C -K -O >> $PS
+   gmt psxy -R$R -J$J -T -O >> $PS
 
 上面三个脚本的最终结果基本是一致的，效果图如下：
 
@@ -197,14 +202,14 @@ PS2：中国的国界在有些地方是有争议的，因而使用该国界数�
 
 .. code-block:: bash
 
- R=114.8/120/29.3/36
- J=M14c
- PS=anhui.ps
+   R=114.8/120/29.3/36
+   J=M14c
+   PS=anhui.ps
 
- gmt psxy -J$J -R$R -T -K -U > $PS
- gmt psxy -R$R -J$J CHN_adm3.gmt -W0.5p,gray -K -O >> $PS
- gmt psxy -R$R -J$J CHN_adm2.gmt -W1p -K -O >> $PS
- gmt psxy -R$R -J$J -T -O >> $PS
+   gmt psxy -J$J -R$R -T -K -U > $PS
+   gmt psxy -R$R -J$J CHN_adm3.gmt -W0.5p,gray -K -O >> $PS
+   gmt psxy -R$R -J$J CHN_adm2.gmt -W1p -K -O >> $PS
+   gmt psxy -R$R -J$J -T -O >> $PS
 
 效果图如下：
 
@@ -218,16 +223,16 @@ PS2：中国的国界在有些地方是有争议的，因而使用该国界数�
 
 .. code-block:: bash
 
- R=114.8/120/29.3/36
- J=M14c
- PS=anhui.ps
+   R=114.8/120/29.3/36
+   J=M14c
+   PS=anhui.ps
 
- gmt psxy -J$J -R$R -T -K -U > $PS
- gmt pscoast -FCN.34 -M | gmt psclip -J$J -R$R -K -O >> $PS
- gmt psxy -R$R -J$J CHN_adm3.gmt -W0.5p,gray -K -O >> $PS
- gmt psxy -R$R -J$J CHN_adm2.gmt -W1p -K -O >> $PS
- gmt psclip -C -K -O >> $PS
- gmt psxy -R$R -J$J -T -O >> $PS
+   gmt psxy -J$J -R$R -T -K -U > $PS
+   gmt pscoast -FCN.34 -M | gmt psclip -J$J -R$R -K -O >> $PS
+   gmt psxy -R$R -J$J CHN_adm3.gmt -W0.5p,gray -K -O >> $PS
+   gmt psxy -R$R -J$J CHN_adm2.gmt -W1p -K -O >> $PS
+   gmt psclip -C -K -O >> $PS
+   gmt psxy -R$R -J$J -T -O >> $PS
 
 效果图如下：
 

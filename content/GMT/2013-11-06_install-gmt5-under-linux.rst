@@ -33,6 +33,7 @@ GMT的编译需要C和C++编译器、cmake，以及一些比较底层的库文�
 
 对于Ubuntu/Debian::
 
+    sudo apt-get update
     sudo apt-get install gcc g++
     sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev
     sudo apt-get install cmake
@@ -66,6 +67,7 @@ GMT5的依赖包，相对来说要复杂很多：
 
 对于Ubuntu/Debian::
 
+    sudo apt-get update
     # 必须安装的包
     sudo apt-get install ghostscript libnetcdf-dev
     # 推荐安装的包
@@ -206,13 +208,14 @@ PS2：上面的PS要是没看懂的话就直接忽略吧。
 
     GMT - The Generic Mapping Tools, Version 5.1.2 (r14256) [64-bit]
 
-.. Ubuntu 14.04和15.04下，若出现如下错误::
-..  $ gmt
-..  Sub-commands for gmt:
-..  install    install more modules
-..  ERROR: Please specify valid params for 'gmt'.
+Ubuntu 14.04/15.04以及部分Debian用户，可能会出现如下信息::
 
-.. 这是因为Ubuntu的\ ``libgenome-perl``\ 包中提供了同名的命令\ ``/usr/bin/gmt``\ 。
+    $ gmt
+    Sub-commands for gmt:
+    install    install more modules
+    ERROR: Please specify valid params for 'gmt'.
+
+出现该错误的原因是这几个发行版中的\ ``libgenome-perl``\ 包中提供了同名的命令\ ``/usr/bin/gmt``\ ，把该软件包卸载即可。
 
 参考来源
 ========
@@ -233,6 +236,7 @@ PS2：上面的PS要是没看懂的话就直接忽略吧。
 - 2015-02-01：更新GSHHG至2.3.4；
 - 2015-03-14：路径中不能用波浪号代替家目录；
 - 2015-05-05：更新至GMT 5.1.2；
+- 2015-08-29：Ubuntu和Debian中存在与gmt冲突的包；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/
