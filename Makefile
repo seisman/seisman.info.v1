@@ -17,7 +17,7 @@ endif
 
 help:
 	@echo 'Makefile for SeisMan Blog Powered by Pelican						   '
-	@echo '																	   '
+	@echo ''
 	@echo 'Usage:															   '
 	@echo '   make html                   (re)generate the web site			   '
 	@echo '   make clean                  remove the generated files		   '
