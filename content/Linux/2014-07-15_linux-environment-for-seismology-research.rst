@@ -176,16 +176,16 @@ ELRepo
 
 查找当前系统安装的所有kernel::
 
-    $ rpm -qa | grep kernel
+    $ rpm -qa | grep kernel | sort
     kernel-3.10.0-123.8.1.el7.x86_64
-    kernel-3.10.0-123.9.3.el7.x86_64
-    kernel-devel-3.10.0-123.9.2.el7.x86_64
-    kernel-tools-3.10.0-123.9.3.el7.x86_64
-    kernel-headers-3.10.0-123.9.3.el7.x86_64
     kernel-3.10.0-123.9.2.el7.x86_64
-    kernel-tools-libs-3.10.0-123.9.3.el7.x86_64
+    kernel-3.10.0-123.9.3.el7.x86_64
     kernel-devel-3.10.0-123.8.1.el7.x86_64
+    kernel-devel-3.10.0-123.9.2.el7.x86_64
     kernel-devel-3.10.0-123.9.3.el7.x86_64
+    kernel-headers-3.10.0-123.9.3.el7.x86_64
+    kernel-tools-3.10.0-123.9.3.el7.x86_64
+    kernel-tools-libs-3.10.0-123.9.3.el7.x86_64
 
 可以看出有三个版本的kernel，123.8.1、123.9.2和123.9.3。除了最新的kernel外，建议多保留一个旧kernel，以免新kernel出现问题时可以通过旧kernel进入系统。因而此处删除123.8.1版本的kernel::
 

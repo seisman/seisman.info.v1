@@ -37,6 +37,7 @@
 - 部分公式太麻烦，直接使用的截图，在PDF中效果较差
 - 部分URL没有以链接的形式显示
 - 图片不能为GIF格式，否则无法生成PDF
+- 无法指定PDF中的图片尺寸
 
 .. _Pandoc: http://johnmacfarlane.net/pandoc/
 .. _makepdf.py: https://github.com/seisman/seisman.info/blob/master/makepdf.py
