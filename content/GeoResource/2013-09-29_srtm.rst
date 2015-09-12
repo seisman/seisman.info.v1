@@ -94,7 +94,7 @@ GeoTiff格式转netCDF格式（详情参考\ `本文 <{filename}/GMT/2014-01-11_
 
 推荐的做法是先将多个GeoTiff文件合并起来，然将合并后的GeoTiff文件转换成netCDF格式。
 
-合并GeoTiff文件可以用\ `gdal_merge.py <http://gdal.org/gdal_merge.html>`_\ ，使用该命令需要安装GDAL的Python绑定。在CentOS下要安装\ ``gdal-python``\ ；Ubuntu下要安装\ ``python-gdal``\ 或\ ``python3-gdal``\ 。转换命令如下::
+合并GeoTiff文件可以用\ `gdal_merge.py <http://gdal.org/gdal_merge.html>`_\ ，CentOS下要安装\ ``gdal-python``\ ；Ubuntu下要安装\ ``python-gdal``\ 或\ ``python3-gdal``\ 。转换命令如下::
 
     gdal_merge.py -init 255 -o out.tif srtm_56_07.tif srtm_57_07.tif
 

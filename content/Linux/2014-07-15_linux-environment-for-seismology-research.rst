@@ -13,7 +13,7 @@
 阅读须知：
 
 #. 本文适用于个人电脑，不适用于服务器；
-#. 不推荐刚接触Linux的人使用CentOS发行版；
+#. **不推荐刚接触Linux的人使用CentOS发行版**\ ；
 #. 本文尽量写的浅显易懂，但要求读者掌握Linux基础知识；
 #. 本文所有操作均在CentOS 7下完成，其他发行版或多或少与CentOS 7不同，因而仅供参考；
 #. 本文所安装的软件纯粹出于个人习惯及喜好，读者应自己判断，按需安装；
@@ -125,7 +125,7 @@ EPEL
 Nux Dextop
 ~~~~~~~~~~
 
-`Nux Dextop`_\ 中包含了一些与多媒体相关的软件包，作者尽量保证不覆盖base源。官方说明中说该源与EPEL兼容，实际上个别软件包存在冲突，但基本不会造成影响:
+`Nux Dextop`_\ 中包含了一些与多媒体相关的软件包，作者尽量保证不覆盖base源。官方说明中说该源与EPEL兼容，实际上个别软件包存在冲突，但基本不会造成影响::
 
     sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
 
@@ -253,7 +253,6 @@ NTFS驱动
 CentOS下默认无法挂载NTFS格式的硬盘。需安装nfts-3g即可实现即插即用::
 
     sudo yum install ntfs-3g
-
 
 进阶开发环境
 ============

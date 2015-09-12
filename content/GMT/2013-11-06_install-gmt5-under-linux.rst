@@ -35,7 +35,7 @@ GMT的编译需要C和C++编译器、cmake，以及一些比较底层的库文�
 
     sudo apt-get update
     sudo apt-get install gcc g++
-    sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev
+    sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev zlib1g-dev
     sudo apt-get install cmake
 
 对于CentOS/RHEL/Fedora::
@@ -49,7 +49,7 @@ GMT的编译过程要求cmake的版本大于\ ``2.8.5``\ ，需要注意：
 #. 安装cmake之后，可以通过\ ``cmake --version``\ 检查cmake版本；
 #. CentOS **6.5**\ 的官方源中cmake的版本为2.6.4，版本过低，无法满足要求；
 #. CentOS **6.6**\ 的官方源中cmake的版本为2.8.12，可以满足要求；
-#. 使用CentOS 6.5的用户可以\ ``yum update``\ 升级至6.6，即可使用较高版本的cmake；
+#. 使用CentOS 6.5的用户可以\ ``yum update``\ 将系统升级到6.6，即可使用较高版本的cmake；
 #. CentOS 6.5用户若不愿意升级整个系统，则需要先安装EPEL源，再安装EPEL源中的\ ``cmake28``\ ，并且在接下来的编译过程中要将\ ``cmake``\ 命令改成\ ``cmake28``\ ；
 #. CentOS 7官方源中cmake版本为2.8.11，可以直接安装使用；
 
@@ -71,7 +71,7 @@ GMT5的依赖包，相对来说要复杂很多：
     # 必须安装的包
     sudo apt-get install ghostscript libnetcdf-dev
     # 推荐安装的包
-    sudo apt-get install libpcre3-dev libfftw3-dev libgdal1-dev
+    sudo apt-get install libpcre3-dev libfftw3-dev libgdal1-dev python-gdal
     # 不推荐安装的包
     sudo apt-get install python-sphinx
 
@@ -80,13 +80,13 @@ GMT5的依赖包，相对来说要复杂很多：
     # 安装必须的包
     sudo yum install ghostscript netcdf-devel
     # 推荐安装的包
-    sudo yum install pcre-devel fftw-devel gdal-devel
+    sudo yum install pcre-devel fftw-devel gdal-devel gdal-python
     # 不推荐安装的包
     sudo yum install python-sphinx
 
 一些需要注意的地方:
 
-#. 一定不要试图自己手动编译netCDF。如果在阅读本文之前曾经手动编译过，一定要将原来手动编译生成的文件删除干净。通常可以使用\ ``locate netcdf``\ 找到\ ``/usr/local``\ 目录下的与netCDF相关的文件，直接删除即可。
+#. 一定不要试图自己手动编译netCDF，因为手动编译很难解决依赖问题，网上的大多数手动编译netCDF的教程中都关闭了netCDF对HDF5的支持，因而导致GMT5无法使用。如果在阅读本文之前曾经手动编译过，一定要将原来手动编译生成的文件删除干净。通常可以使用\ ``locate netcdf``\ 找到\ ``/usr/local``\ 目录下的与netCDF相关的文件，直接删除即可。
 #. CentOS官方源中不带有netCDF，需要先安装EPEL源。需要安装的包包括\ ``netcdf``\ , \ ``netcdf-devel``\ ，其他包（尤其是hdf5包）会根据依赖关系自动安装。
 #. pcre、fftw和gdal不是必须要安装的，但是推荐安装。其中gdal在做数据格式转换时非常有用；
 #. 其他发行版很久不用了，不清楚细节，读者可以在使用过程中补充。
@@ -107,9 +107,9 @@ GMT5的依赖包，相对来说要复杂很多：
    $ tar -zxvf gshhg-gmt-2.3.4.tar.gz
    $ cd gmt-5.1.2
    $ cp cmake/ConfigUserTemplate.cmake cmake/ConfigUser.cmake
-   $ vi cmake/ConfigUser.cmake # 修改Config文件
+   $ gedit cmake/ConfigUser.cmake   # 修改ConfigUser.cmake
 
-修改\ ``ConfigUser.cmake``\ 以对安装的细节进行自定义。一个基本的示例如下，找到相关行，并去掉该行最前面的“#”，再根据自身情况修改::
+对\ ``ConfigUser.cmake``\ 进行修改以自定义安装的细节。一个基本的示例如下，找到相关行，并去掉该行最前面的“#”，再根据自身情况修改::
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.1.2")
     set (GMT_INSTALL_MODULE_LINKS FALSE)
@@ -120,15 +120,15 @@ GMT5的依赖包，相对来说要复杂很多：
 
 - ``CMAKE_INSTALL_PREFIX``\ 设置GMT的安装路径；
 - 设置\ ``GMT_INSTALL_MODULE_LINKS``\ 为FALSE，这样调用GMT模块时必须使用\ ``gmt modulename options``\ 的形式，也是GMT5推荐的使用方法；若该值为TRUE，则会在GMT的bin目录下建立多个指向\ ``gmt``\ 的形如\ ``pscoast``\ 的软链接；
-- ``GSHHG_ROOT``\ 为GSHHG数据的位置，需要对下载下来的压缩文件进行解压，并给出文件夹的\ **绝对路径**\ ；\ ``COPY_GSHHG``\ 为TRUE会将GSHHG数据复制到\ ``GMT/share/coast``\ 下；
-- ``DCW_ROOT``\ 设置DCW数据的位置，需给出DCW数据所在文件夹的绝对路径，\ ``COPY_DCW``\ 将数据复制到\ ``GMT/share/dcw``\ 下；
-- cmake似乎不能识别\ ``~``\ ，因而上面提到的所有路径中都不能用\ ``~``\ 代替\ ``/home/xxx``\ ；
+- ``GSHHG_ROOT``\ 为GSHHG数据所在文件夹的\ **绝对路径**\ ；\ ``COPY_GSHHG``\ 为TRUE会将GSHHG数据复制到\ ``GMT/share/coast``\ 下；
+- ``DCW_ROOT``\ 设置DCW数据据所在文件夹的\ **绝对路径**\ ，\ ``COPY_DCW``\ 将数据复制到\ ``GMT/share/dcw``\ 下；
+- cmake似乎不能识别\ ``~``\ ，因而上面提到的所有路径中都不能用\ ``~``\ 代替\ ``/home/seisman``\ ；
 
 PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个GSHHG和DCW数据的副本。可以将这些数据放置在系统中固定的位置（比如我把这些数据都放在\ ``/home/seisman/Datas``\ 目录下），然后有两种处理方式：其一，设置COPY_GSHHG为FALSE，则安装时不会将GSHHG数据复制到GMT目录下，而GMT命令运行时会到GSHHG_ROOT指定的目录中寻找数据；其二，使用默认的GSHHG_ROOT以及COPY_GSHHG，在安装完成之后，到GMT/share目录下设置一个target为\ ``/home/seisman/Datas/gshhg-gmt-2.3.4``\ ，link name为coast的软链接即可。对于DCW数据，同理。
 
 PS2：上面的PS要是没看懂的话就直接忽略吧。
 
-修改完毕后，进行编译::
+修改并保存后，继续执行如下命令以检查GMT的依赖关系::
 
     $ mkdir build
     $ cd build/
@@ -165,7 +165,7 @@ PS2：上面的PS要是没看懂的话就直接忽略吧。
     -- Configuring done
     -- Generating done
 
-检查完毕，开始编译和安装::
+正常情况下的检查结果应该与上面给出的列出，若出现问题，则需要检查之前的步骤是否有误，检查完毕后重新执行\ ``cmake ..``\ ，直到出现类似的检查结果。检查完毕后，开始编译和安装::
 
     $ make
     $ sudo make install
@@ -183,7 +183,7 @@ PS2：上面的PS要是没看懂的话就直接忽略吧。
 修改环境变量
 ============
 
-修改环境变量并使其生效
+修改环境变量并使其生效：
 
 .. code-block:: bash
 
@@ -237,6 +237,7 @@ Ubuntu 14.04/15.04以及部分Debian用户，可能会出现如下信息::
 - 2015-03-14：路径中不能用波浪号代替家目录；
 - 2015-05-05：更新至GMT 5.1.2；
 - 2015-08-29：Ubuntu和Debian中存在与gmt冲突的包；
+- 2015-09-06：推荐安装gdal的Python绑定；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/

@@ -53,7 +53,7 @@ GMT官方没有为Mac提供GMT4的安装包，因而只能通过其他方式安�
 #. 安装海岸线数据
 #. 修改环境变量
 
-具体操作参考\ `Linux下安装GMT4 <{filename}/GMT/install-gmt4-under-linux.rst>`_\ 一文，Linux与Mac唯一的不同仅仅是“解决依赖关系”这一步。
+具体操作参考\ `Linux下安装GMT4 <{filename}/GMT/2013-11-07_install-gmt4-under-linux.rst>`_\ 一文，Linux与Mac唯一的不同仅仅是“解决依赖关系”这一步。
 
 解决依赖关系
 ------------

@@ -56,11 +56,11 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 对于Ubuntu/Debian::
 
     sudo apt-get update
-    sudo apt-get install libnetcdf-dev libgdal1-dev
+    sudo apt-get install libnetcdf-dev libgdal1-dev python-gdal
 
 对于RHEL/CentOS/Fedora::
 
-    sudo yum install netcdf netcdf-devel gdal gdal-devel
+    sudo yum install netcdf netcdf-devel gdal gdal-devel gdal-python
 
 注意：
 
@@ -131,3 +131,4 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 - 2014-10-14：修正了若干细节；
 - 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
 - 2015-01-01：更新至GMT4.5.13；
+- 2015-09-06：推荐安装GDAL的Python绑定（内含\ ``gdal_merge.py``\ ）；
