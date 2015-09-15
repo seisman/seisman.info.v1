@@ -70,8 +70,12 @@ conda
 
 anaconda自带了conda命令用于安装与更新模块，比如::
 
+    # 安装模块
     conda install scipy
+    # 更新模块
     conda update scipy
+    # 更新所有模块
+    conda update --all
 
 不过conda能安装的模块很有限。
 
