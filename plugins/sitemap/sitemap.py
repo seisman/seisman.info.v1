@@ -160,11 +160,16 @@ class SitemapGenerator(object):
             pri = self.priorities['indexes']
             chfreq = self.changefreqs['indexes']
 
+        pageurl = '' if page.url == 'index.html' else page.url
+        
+        #Exclude URLs from the sitemap:
+        sitemapExclude = []
 
         if self.format == 'xml':
-            fd.write(XML_URL.format(self.siteurl, page.url, lastmod, chfreq, pri))
+            if pageurl not in sitemapExclude:
+                fd.write(XML_URL.format(self.siteurl, pageurl, lastmod, chfreq, pri))
         else:
-            fd.write(self.siteurl + '/' + page.url + '\n')
+            fd.write(self.siteurl + '/' + pageurl + '\n')
 
     def get_date_modified(self, page, default):
         if hasattr(page, 'modified'):
