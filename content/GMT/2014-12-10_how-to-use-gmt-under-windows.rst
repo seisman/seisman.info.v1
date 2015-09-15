@@ -249,7 +249,7 @@ Tips Or Bugs
 #. 要使用Sumatra查看PS文件，必须先安装较新版本的ghostscript；
 #. Sumatra似乎不能打开GMT生成的含中文的PS文件；
 #. Notepad++默认将文件以UTF-8编码保存，因而若需要在PS文件中添加中文，则可能会导致乱码；
-#. 编辑bat文件时应注意dos里是没有续行符的，一条命令必须在一行写完。不像linux下的\, fortran90下的&和matlab下的...续行；
+#. 编辑bat文件时应注意dos里是没有续行符的，一条命令必须在一行写完。不像Linux下的 ``\`` 、Fortran90下的 ``&`` 和matlab下的 ``...`` 续行；
 
 修订历史
 ========
