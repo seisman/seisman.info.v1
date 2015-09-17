@@ -37,6 +37,8 @@
 
    * - **G**
      -
+   * - `Peter Gerstoft <http://www.mpl.ucsd.edu/people/pgerstoft/>`_
+     -
    * - `Yu Jeffrey Gu <http://www.ualberta.ca/~ygu/>`_
      -
    * - **H**
