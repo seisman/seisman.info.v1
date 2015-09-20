@@ -23,6 +23,13 @@ GMT 5.1.2 需要下载三个文件：
 #. 全球海岸线数据GSHHG： http://gmt.soest.hawaii.edu/files/download?name=gshhg-gmt-2.3.4.tar.gz
 #. 全球数字图表DCW： http://gmt.soest.hawaii.edu/files/download?name=dcw-gmt-1.1.1.tar.gz
 
+下载完成后，可以用\ ``md5sum``\ 检查压缩文件的md5值，以保证该文件是完整且未被篡改的::
+
+    $ md5sum dcw-gmt-1.1.1.tar.gz gmt-5.1.2-src.tar.gz gshhg-gmt-2.3.4.tar.gz
+    f37787b207006708d7385722066817c7  dcw-gmt-1.1.1.tar.gz
+    dacaa6863fa6a0059d53b49216912007  gmt-5.1.2-src.tar.gz
+    80947a92cc88927aff070556ca5ab133  gshhg-gmt-2.3.4.tar.gz
+
 解决依赖关系
 ============
 
@@ -238,6 +245,7 @@ Ubuntu 14.04/15.04以及部分Debian用户，可能会出现如下信息::
 - 2015-05-05：更新至GMT 5.1.2；
 - 2015-08-29：Ubuntu和Debian中存在与gmt冲突的包；
 - 2015-09-06：推荐安装gdal的Python绑定；
+- 2015-09-18：下载完成后检测压缩文件的md5值；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/

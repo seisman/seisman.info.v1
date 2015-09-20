@@ -3,7 +3,7 @@
 
 :author: SeisMan
 :date: 2014-07-15 13:07
-:modified: 2015-07-14
+:modified: 2015-09-18
 :category: Linux
 :tags: CentOS, Perl, Python
 :slug: linux-environment-for-seismology-research
@@ -227,25 +227,7 @@ GCC系列
 
 Linux默认只使用开源的显卡驱动，就目前的情况来看，开源驱动的效果还是不错的，但跟官方的闭源驱动相比还是有一定差距。最明显的区别是，在使用SAC的ppk功能放大波形时，使用开源驱动会出现延迟，而使用官方闭源则整个过程非常顺畅。
 
-安装显卡检测程序::
-
-    sudo yum install nvidia-detect
-
-检测显卡型号以及对应的驱动::
-
-    $ nvidia-detect
-    Probing for supported NVIDIA devices...
-    [10de:06dd] NVIDIA Corporation GF100GL [Quadro 4000]
-    This device requires the current 340.58 NVIDIA driver kmod-nvidia
-
-此处提示需要安装340.58版的显卡驱动::
-
-    # 安装显卡驱动及其32位库文件
-    sudo yum install nvidia-x11-drv nvidia-x11-drv-32bit
-    # 卸载与官方驱动冲突的开源驱动
-    sudo yum remove xorg-x11-glamor
-
-安装完显卡驱动后可以重启一下。
+关于显卡驱动的安装，请参考\ `Linux下安装nvidia显卡驱动 <{filename}/Linux/2014-07-13_install-nvidia-drivers-under-linux.rst>`_\  一文中的“从ELRepo源中安装驱动”部分。
 
 NTFS驱动
 --------
@@ -871,6 +853,7 @@ Google Earth
 - 2015-06-26：新增zathura和ghostscript；
 - 2015-07-14：新增Nux Dextop源，uGet、shutter；
 - 2015-09-03：删除地球物理相关软件；
+- 2015-09-18：删除显卡驱动安装的具体步骤，直接链接到相关博文；
 
 .. _yum-axelget: https://dl.fedoraproject.org/pub/epel/7/x86_64/repoview/yum-axelget.html
 .. _EPEL: https://fedoraproject.org/wiki/EPEL

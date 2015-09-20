@@ -38,11 +38,11 @@ Anaconda的特点：
 
    安装支持Python 2.7的Anaconda::
 
-    $ pyenv install anaconda-2.0.1
+    $ pyenv install anaconda-2.0.1 -v
 
    安装支持Python 3.4的Anaconda::
 
-    $ pyenv install anaconda3-2.0.1
+    $ pyenv install anaconda3-2.0.1 -v
 
 #. 申请免费的学术License
 

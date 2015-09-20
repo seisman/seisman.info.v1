@@ -29,6 +29,13 @@ GMT 4.5.13在Linux下的安装
 
 注：GMT中的\ ``triangulate``\ 命令有两个不同的源码，其中一个遵循GPL协议，另一个不遵循GPL协议。GMT的src包中包含了前者。若有特殊需求，需要使用后者源码的功能，可以下载\ `gmt-4.5.13-non-gpl-src.tar.bz2 <ftp://ftp.soest.hawaii.edu/gmt/gmt-4.5.13-non-gpl-src.tar.bz2>`_\ ，并将解压后的triangulate源码覆盖\ ``gmt-4.5.13-src.tar.bz2``\ 中的相应源码。
 
+下载完成后，可以用\ ``md5sum``\ 检查压缩文件的md5值，以保证该文件是完整且未被篡改的::
+
+    $ md5sum gmt-4.5.13-src.tar.bz2 dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz 
+    cc577e8c600ab0ea8e1ee7412a5902a6  gmt-4.5.13-src.tar.bz2
+    f37787b207006708d7385722066817c7  dcw-gmt-1.1.1.tar.gz
+    80947a92cc88927aff070556ca5ab133  gshhg-gmt-2.3.4.tar.gz
+
 依赖关系
 ========
 
@@ -132,3 +139,4 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 - 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
 - 2015-01-01：更新至GMT4.5.13；
 - 2015-09-06：推荐安装GDAL的Python绑定（内含\ ``gdal_merge.py``\ ）；
+- 2015-09-18：下载后检查压缩文件的md5值；

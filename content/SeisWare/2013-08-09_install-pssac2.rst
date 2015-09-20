@@ -15,11 +15,24 @@ pssac2的安装
 GMT4版
 ======
 
-GMT4版本的\ ``pssac2``\ 没有官方下载地址，目前只在\ ``specfem3d``\ 程序包中找到有\ ``pssac2``\ 的源码。
+GMT4版本的\ ``pssac2``\ 没有官方下载地址，目前只在\ `specfem3d <https://github.com/geodynamics/specfem3d/tree/master/utils/ADJOINT_TOMOGRAPHY_TOOLS/measure_adj/UTIL/pssac2>`_\ 程序包中找到有\ ``pssac2``\ 的源码。
 
 由于specfem3d中的pssac2下载起来有些麻烦，这里我整理了一个版本供读者下载：
 
-下载地址：http://seisman.qiniudn.com/downloads/pssac2_GMT4.tar.gz
+下载地址：http://7j1zxm.com1.z0.glb.clouddn.com/downloads/pssac2_GMT4.tar.gz
+
+本文提供的版本在specfem3d给的源码的基础上做了如下操作与修改：
+
+#. 将源码压缩成\ ``tar.gz``\ 格式，方便下载；
+#. ``configure``\ 文件的第2467行原为::
+
+        LDFLAGS+=" -L${withval}/lib "
+
+   修改为::
+
+        LDFLAGS+=" -L${withval}/lib -L${withval}/lib64"
+
+   修改后的版本同时考虑了GMT库文件在\ ``lib``\ 和\ ``lib64``\ 的两种可能性。
 
 安装方法如下：
 
