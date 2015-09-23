@@ -45,6 +45,14 @@ GMT4版本的\ ``pssac2``\ 没有官方下载地址，目前只在\ `specfem3d <
 
 如果成功执行，则会在当前目录生成可执行文件\ ``pssac2``\ ，即可直接使用。
 
+某些版本可能会出现如下错误::
+
+    pssac2.c:27: error: conflicting types for 'BOOLEAN'
+    /opt/GMT4/include/gmt.h:278: note: previous declaration of 'BOOLEAN' was here
+
+出错的原因是\ ``BOOLEAN``\ 类型在两个地方的定义有冲突，把\ ``pssac2.c``\ 中第27行的\ ``typedef GMT_LONG BOOLEAN``\ 删除即可。
+
+
 GMT5版
 ======
 

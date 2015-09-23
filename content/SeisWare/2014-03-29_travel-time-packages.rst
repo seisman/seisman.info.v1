@@ -10,16 +10,22 @@
 地震波走时的计算是地震学的一个基本问题。下面列出几个目前已知的几个可以计算地震波走时的包。
 
 #. IASPEI Travel Time Software - AK135 version
-   
+
    网址：http://rses.anu.edu.au/seismology/soft/ttsoft.html
-   
-   源码为Fortran版本，这个版本的源码很旧，曾经试图编译，发现很多语法编译器已经不再支持，想要用起来需要一番功夫。
+
+   这个版本的源码比较古老，可能是用Fortran77甚至更老的版本写的。曾经试图编译，发现很多语法编译器已经不再支持，改起来应该不困难，但是有些繁琐，不建议使用。且该版本只支持ak135模型。
+
+#.iaspei-tau
+
+   网址：https://seiscode.iris.washington.edu/projects/iaspei-tau
+
+   原始的ttimes的修改版本，支持ak135和iasp91模型。
 
 #. George Helffrich修改版
 
    网址：http://www1.gly.bris.ac.uk/~george/sac-bugs.html#ttimes
 
-   Fortran版本，该版本是在前者的基础上修改得到，相比前者，加入了更多的速度模型，可以直接编译使用。
+   Fortran版本，该版本是在ttimes的基础上修改得到，相比ttimes，加入了更多的速度模型，可以直接编译使用。
 
 #. TauP Toolkit
 
