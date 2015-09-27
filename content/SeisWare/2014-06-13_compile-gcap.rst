@@ -7,15 +7,13 @@ gCAP的安装
 :tags: 震源机制解
 :slug: compile-gcap
 
-gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目前该代码已经公开。
+gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目前该代码已经开源。
 
 #. 下载gCAP源码
 
    下载地址： http://www.eas.slu.edu/People/LZhu/downloads/gcap1.0.tar
 
-#. 解压
-
-   ::
+#. 解压::
 
        tar -xvf gcap1.0.tar
 
@@ -41,11 +39,11 @@ gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目�
 
    Makefile下载地址： http://seisman.qiniudn.com/downloads/Makefile.gCAP
 
-#. 编译
-
-   ::
+#. 编译::
 
        make
+
+#. 要能够正确运行gcap，需要将编译生成的二进制文件\ ``cap``\ 、``cap_dir``\ 、\ ``mtdcmp``\ 、\ ``radpttn``\ 加入到PATH中，使得SHELL可以找到这几个命令。一种方法是把这几个二进制文件都复制到\ ``/usr/loca/bin``\ 或\ ``${HOME}/bin``\ 中，另一种做法是直接把gcap的源码路径加入到PATH环境变量中。
 
 #. 其它
 
