@@ -12,6 +12,8 @@
 .. list-table::
    :widths: 10 10
 
+   * - **Name**
+     - **Research Keywords**
    * - **A**
      -
    * - `Charles J. Ammon <http://eqseis.geosc.psu.edu/~cammon/>`_
@@ -89,6 +91,8 @@
      -
    * - `Barbara Romanowicz <http://seismo.berkeley.edu/~barbara/>`_
      -
+   * - `Michael Ritzwoller <http://ciei.colorado.edu/ritzwoller_m>`_
+     -
    * - `Sebatian Rost <http://homepages.see.leeds.ac.uk/~earsro>`_
      -
 
@@ -126,7 +130,7 @@
    * - **W**
      -
    * - `Lianxing Wen <http://seis.ustc.edu.cn/>`_
-     -
+     - LLSVP, CMB, Inner Core, ICB
 
    * - **Y**
      -

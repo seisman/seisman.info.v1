@@ -11,7 +11,7 @@ IRIS FTP数据下载的几个方法
 
 从IRIS申请地震数据，有些工具会将准备好的数据放在ftp中，供用户下载。
 
-FTP地址格式如下： ftp://ftp.iris.washington.edu/pub/userdata/USERNAME\ ，其中USERNAME因人而异。
+FTP地址格式如下： ftp://ftp.iris.washington.edu/pub/userdata/USERNAME\ ，其中\ ``USERNAME``\ 因人而异。
 
 下载方式
 ========
@@ -23,16 +23,16 @@ FTP地址格式如下： ftp://ftp.iris.washington.edu/pub/userdata/USERNAME\ �
 
 ::
 
- $ ftp ftp.iris.washington.edu
- Name (iris:joe): anonymous # 匿名登录
- Password: JoeSeismologist@email.net # 密码随意，建议填写邮件地址
- ftp> cd pub/userdata
- ftp> ls -f
- ftp> cd Joe_Seismologist # 进入自己的目录
- ftp> ls -l
- ftp> binary # 二进制传输
- ftp> mget * # 下载所有文件
- ftp> quit
+    $ ftp ftp.iris.washington.edu
+    Name (iris:joe): anonymous # 匿名登录
+    Password: JoeSeismologist@email.net # 密码随意，建议填写邮件地址
+    ftp> cd pub/userdata
+    ftp> ls -f
+    ftp> cd Joe_Seismologist # 进入自己的目录
+    ftp> ls -l
+    ftp> binary # 二进制传输
+    ftp> mget * # 下载所有文件
+    ftp> quit
 
 wget下载全部文件
 ----------------
@@ -43,12 +43,12 @@ wget下载全部文件
 
 其中
 
--  Directory为要保存的文件路径，默认为当前目录；
--  -m等效于-r -N -l inf --no-remove-listing，其中-r表示对文件夹进行递归，-N表示只下载比本地文件新的文件；-l指定递归深度，inf表示无穷递归；
--  -nd表示不在本地重建目录结构，这意味着无论FTP中的目录结构有多复杂，所有文件都保存到本地的一个目录中；
--  -np表示不遍历父目录；
--  -r表示递归下载；
--  -c表示支持断点续传；
+- ``Directory``\ 为要保存的文件路径，默认为当前目录；
+- ``-m``\ 等效于\ ``-r -N -l inf --no-remove-listing``\ ，其中\ ``-r``\ 表示对文件夹进行递归，\ ``-N``\ 表示只下载比本地文件新的文件；\ ``-l``\ 指定递归深度，\ ``inf``\ 表示无穷递归；
+- ``-nd``\ 表示不在本地重建目录结构，这意味着无论FTP中的目录结构有多复杂，所有文件都保存到本地的一个目录中；
+- ``-np``\ 表示不遍历父目录；
+- ``-r``\ 表示递归下载；
+- ``-c``\ 表示支持断点续传；
 
 wget下载单个或多个文件
 ----------------------
@@ -57,10 +57,9 @@ wget下载单个或多个文件
 
     wget -P Directory -m -nd -np -r -c -A "FileName" ftp://ftp.iris.washington.edu/pub/userdata/USERNAME/
 
+其中\ ``-A``\ 表示只下载“FileName”指定的文件。FileName可以表示后缀也可以表示模式，当FileName中只包含英文字母时，则表示后缀，比如FileName为seed，则表示下载所有以seed为后缀的文件。
 
-其中-A表示只下载"FileName"指定的文件。FileName可以表示后缀也可以表示模式，当FileName中只包含英文字母时，则表示后缀，比如FileName为seed，则表示下载所有以seed为后缀的文件。
-
-当FileName中包含通配符\ ``* ? [ ]``\ 时，FileName表示模式，只下载文件名符合该模式的文件，比如FileName为”2010*.seed“，则表示只下载所有文件名匹配”2010*.seed“的文件。
+当FileName中包含通配符\ ``* ? [ ]``\ 时，FileName表示模式，只下载文件名符合该模式的文件，比如FileName为“2010*.seed”，则表示只下载所有文件名匹配“2010*.seed”的文件。
 
 缺点
 ====
