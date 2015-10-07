@@ -6,16 +6,15 @@
 %       --toc --listings --number-sections --latex-engine=xelatex \
 %       -V SITEURL=http://seisman.info
 %
-\documentclass[a4paper, 11pt, oneside]{article}
+\documentclass[a4paper, zihao=5, oneside]{ctexart}
 
 % 中文支持与字体设置
-\usepackage[indentfirst, CheckSingle]{xeCJK}
-\setmainfont[Mapping=tex-text]{Adobe Garamond Pro}
-\setmonofont{DejaVu Sans Mono}
-\setCJKmainfont[BoldFont={Adobe Heiti Std},
-    ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
-\setCJKsansfont{Adobe Heiti Std}
-\setCJKmonofont{Adobe Fangsong Std}
+%\setmainfont[Mapping=tex-text]{Adobe Garamond Pro}
+%\setmonofont{DejaVu Sans Mono}
+%\setCJKmainfont[BoldFont={Adobe Heiti Std},
+%    ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+%\setCJKsansfont{Adobe Heiti Std}
+%\setCJKmonofont{Adobe Fangsong Std}
 
 % 页面设置
 \usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}

@@ -69,7 +69,12 @@ def rst2pdf(rst, pdf):
 
 
 if __name__ == '__main__':
+    # parser arguments
     arguments = docopt(__doc__)
+
+    # create dir for PDF
+    if not os.path.exists(pdfdir):
+            os.makedirs(pdfdir)
 
     for root, dirs, files in os.walk(base):
         head, tail = os.path.split(root)
