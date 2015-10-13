@@ -105,3 +105,4 @@ Others
 - `GMT cpt <http://soliton.vm.bytemark.co.uk/pub/cpt-city/>`_
 - `Source Time Function <http://ds.iris.edu/spud/sourcetimefunction>`_
 - `Earth Model <http://ds.iris.edu/ds/products/emc/>`_
+- `FDSN Network Codes <http://www.fdsn.org/networks/>`_

@@ -31,7 +31,7 @@ GMT 4.5.13在Linux下的安装
 
 下载完成后，可以用\ ``md5sum``\ 检查压缩文件的md5值，以保证该文件是完整且未被篡改的::
 
-    $ md5sum gmt-4.5.13-src.tar.bz2 dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz 
+    $ md5sum gmt-4.5.13-src.tar.bz2 dcw-gmt-1.1.1.tar.gz gshhg-gmt-2.3.4.tar.gz
     cc577e8c600ab0ea8e1ee7412a5902a6  gmt-4.5.13-src.tar.bz2
     f37787b207006708d7385722066817c7  dcw-gmt-1.1.1.tar.gz
     80947a92cc88927aff070556ca5ab133  gshhg-gmt-2.3.4.tar.gz
@@ -42,31 +42,31 @@ GMT 4.5.13在Linux下的安装
 基础依赖包
 ----------
 
-GMT编译过程需要C编译器，以及一些底层的库文件。
+GMT编译过程需要开发相关工具。
 
 对于Ubuntu/Debian::
 
     sudo apt-get update
     sudo apt-get install gcc g++ make
-    sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev
 
 对于CentOS/RHEL/Fedora::
 
     sudo yum install gcc gcc-c++ make
-    sudo yum install libXt-devel libXaw-devel libXmu-devel libSM-devel zlib-devel
 
 软件依赖包
 ----------
 
-GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供的netCDF包。除了netcdf之外，建议还安装gdal包。虽然GMT不依赖于gdal，但gdal可以轻松地将其他数据格式转换为GMT可识别的格式。
+GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供的netCDF包。除了netCDF之外，建议还安装gdal包。虽然GMT不依赖于gdal，但gdal可以轻松地将其他数据格式转换为GMT可识别的格式。
 
 对于Ubuntu/Debian::
 
     sudo apt-get update
+    sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev
     sudo apt-get install libnetcdf-dev libgdal1-dev python-gdal
 
 对于RHEL/CentOS/Fedora::
 
+    sudo yum install libXt-devel libXaw-devel libXmu-devel libSM-devel
     sudo yum install netcdf netcdf-devel gdal gdal-devel gdal-python
 
 注意：
@@ -140,3 +140,4 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 - 2015-01-01：更新至GMT4.5.13；
 - 2015-09-06：推荐安装GDAL的Python绑定（内含\ ``gdal_merge.py``\ ）；
 - 2015-09-18：下载后检查压缩文件的md5值；
+- 2015-10-11：重新整理了软件的依赖关系；

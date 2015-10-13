@@ -36,20 +36,16 @@ GMT 5.1.2 需要下载三个文件：
 基础依赖包
 ----------
 
-GMT的编译需要C和C++编译器、cmake，以及一些比较底层的库文件。
+GMT的编译需要C和C++编译器、cmake等开发工具。
 
 对于Ubuntu/Debian::
 
     sudo apt-get update
-    sudo apt-get install gcc g++
-    sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev zlib1g-dev
-    sudo apt-get install cmake
+    sudo apt-get install gcc g++ cmake make
 
 对于CentOS/RHEL/Fedora::
 
-    sudo yum install gcc gcc-c++
-    sudo yum install libXt-devel libXaw-devel libXmu-devel libSM-devel zlib-devel
-    sudo yum install cmake
+    sudo yum install gcc gcc-c++ cmake make
 
 GMT的编译过程要求cmake的版本大于\ ``2.8.5``\ ，需要注意：
 
@@ -78,7 +74,7 @@ GMT5的依赖包，相对来说要复杂很多：
     # 必须安装的包
     sudo apt-get install ghostscript libnetcdf-dev
     # 推荐安装的包
-    sudo apt-get install libpcre3-dev libfftw3-dev libgdal1-dev python-gdal
+    sudo apt-get install libpcre3-dev libfftw3-dev libgdal-dev python-gdal
     # 不推荐安装的包
     sudo apt-get install python-sphinx
 
@@ -246,6 +242,7 @@ Ubuntu 14.04/15.04以及部分Debian用户，可能会出现如下信息::
 - 2015-08-29：Ubuntu和Debian中存在与gmt冲突的包；
 - 2015-09-06：推荐安装gdal的Python绑定；
 - 2015-09-18：下载完成后检测压缩文件的md5值；
+- 2015-10-11：GMT5不依赖于Xt等库文件；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/

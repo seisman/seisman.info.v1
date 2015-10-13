@@ -54,10 +54,10 @@ GMT目前还不能识别shapefile格式的数据，因而就需要将shapefile�
 
 ::
 
-    $ ogr2ogr -f GMT -nln CHN_adm0 CHN_adm0 CHN_adm0.shp
-    $ ogr2ogr -f GMT -nln CHN_adm1 CHN_adm1 CHN_adm1.shp
-    $ ogr2ogr -f GMT -nln CHN_adm2 CHN_adm2 CHN_adm2.shp
-    $ ogr2ogr -f GMT -nln CHN_adm3 CHN_adm3 CHN_adm3.shp
+    ogr2ogr -f GMT -nln CHN_adm0 CHN_adm0 CHN_adm0.shp
+    ogr2ogr -f GMT -nln CHN_adm1 CHN_adm1 CHN_adm1.shp
+    ogr2ogr -f GMT -nln CHN_adm2 CHN_adm2 CHN_adm2.shp
+    ogr2ogr -f GMT -nln CHN_adm3 CHN_adm3 CHN_adm3.shp
 
 对于Hong Kong、Macao、Taiwan的数据做类似操作，最终生成了一堆以gmt结尾的文件。共计10个，如下：
 

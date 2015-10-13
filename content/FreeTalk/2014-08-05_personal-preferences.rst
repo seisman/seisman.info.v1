@@ -13,7 +13,7 @@
 日常工具
 ========
 
-#. 操作系统：CentOS 7.1 > iOS 8 > Windows 10 > Android 5.0
+#. 操作系统：CentOS 7.1 > iOS 9 > Windows 10 > Android 5.0
 #. 浏览器： Google Chrome
 #. 音乐： 网易云音乐
 #. RSS阅读器： `feedly`_
@@ -53,7 +53,8 @@
 
 #. 文献管理： `Mendeley`_
 #. 科学上网： `huhamhire-hosts`_ > `USTC LUG OpenVPN`_
-#. SSH客户端: `Xshell Home/School`_ （Windows）
+#. SSH客户端： `Xshell Home/School`_ （Windows）
+#. scp客户端： `WinSCP`_
 
 网盘
 ====
@@ -83,6 +84,7 @@
 .. _USTC LUG OpenVPN: https://vpn.lug.ustc.edu.cn/
 .. _USTC GitLab: https://gitlab.lug.ustc.edu.cn/
 .. _Visual Studio Community 2015: http://www.visualstudio.com/downloads/download-visual-studio-vs
+.. _WinSCP: https://winscp.net/eng/docs/lang:chs
 .. _Wunderlist: https://www.wunderlist.com/zh/
 .. _Xshell Home/School: http://www.netsarang.com/products/xsh_overview.html
 .. _zathura: http://pwmt.org/projects/zathura
