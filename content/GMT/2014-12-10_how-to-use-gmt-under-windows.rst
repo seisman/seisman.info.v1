@@ -220,14 +220,16 @@ PS查看器
 
 gsview是GMT官方推荐的PS查看器，它可以基本实现PS文件的实时预览。这里说“基本实现”，因为在每次生成PS文件后，总是需要将焦点切换到gsview软件上，gsview才会重新载入PS文件。不喜欢gsview的另一个原因是，gsview是商业软件，需要注册才可以使用，未注册的软件在每次打开PS文件时都会弹出要求注册的对话框，很是烦人。
 
-推荐使用\ `Sumatra <http://www.sumatrapdfreader.org/free-pdf-reader.html>`_\ ，一个非常精致小巧的阅读器，支持PDF、PS、epub等多种格式。
+推荐使用\ `SumatraPDF <http://www.sumatrapdfreader.org/free-pdf-reader.html>`_\ ，一个非常精致小巧的阅读器，支持PDF、PS、epub等多种格式。
 
-在我眼中，Sumatra相对于gsview的优势在于：
+在我眼中，SumatraPDF相对于gsview的优势在于：
 
 #. 免费软件，不会弹出讨厌的注册对话框
-#. 完全自动重载PS文件，实时预览PS文件，而不是像gsview一样需要将焦点切换到软件上才可重载；
+#. 完全自动重载PS文件，实时预览PS文件，而不是像gsview一样需要将焦点切换到软件上才可重载
 
-如果觉得sumatra不错，可以将PS文件的默认打开方式设置为Sumatra。
+如果觉得SumatraPDF不错，可以将PS文件的默认打开方式设置为SumatraPDF。
+
+默认情况下，SumatraPDF是不能打开含中文的PS文件的，这就需要设置环境变量\ ``GS_FONTPATH``\ 为gs指定字体的搜索路径。具体步骤是：“我的电脑”上右键点击“属性”->“高级系统设置”->在“高级”选项卡中点击“环境变量(N)...”->“新建”系统变量->变量名为\ ``GS_FONTPATH``\ ，变量值为\ ``C:\Windows\Fonts``\ 。如果设置后依然无法打开含中文的PS文件，可以考虑升级gs的版本，gs 9.05和9.18经测试都是可以的。
 
 效果图
 ======
@@ -246,8 +248,7 @@ gsview是GMT官方推荐的PS查看器，它可以基本实现PS文件的实时�
 Tips Or Bugs
 ============
 
-#. 要使用Sumatra查看PS文件，必须先安装较新版本的ghostscript；
-#. Sumatra似乎不能打开GMT生成的含中文的PS文件；
+#. 要使用SumatraPDF查看PS文件，必须先安装较新版本的ghostscript；
 #. Notepad++默认将文件以UTF-8编码保存，因而若需要在PS文件中添加中文，则可能会导致乱码；
 #. 编辑bat文件时应注意dos里是没有续行符的，一条命令必须在一行写完。不像Linux下的 ``\`` 、Fortran90下的 ``&`` 和matlab下的 ``...`` 续行；
 
@@ -257,4 +258,5 @@ Tips Or Bugs
 - 2014-12-10：初稿；
 - 2015-01-13：加入了与GMT中文相关的几个注意事项；
 - 2015-01-17：NppExec插件应勾选“Follow $(CURRENT_DIRECTORY)”选项；Thanks to Joe Wang；
-- 2015-01-21：Sumatra查看PS文件时依赖于ghostscript；Thanks to Michael Song；
+- 2015-01-21：SumatraPDF查看PS文件时依赖于ghostscript；Thanks to Michael Song；
+- 2015-10-13：SumatraPDF可以查看含中文的PS文件；

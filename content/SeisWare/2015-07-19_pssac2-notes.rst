@@ -4,7 +4,7 @@ pssac2使用教程
 :date: 2015-07-19
 :author: SeisMan
 :category: 地震学软件
-:tags: pssac2, GMT技巧
+:tags: pssac2, GMT技巧, 教程
 :slug: pssac2-notes
 
 .. contents::
