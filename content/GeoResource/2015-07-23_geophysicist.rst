@@ -91,6 +91,8 @@
      -
    * - `Barbara Romanowicz <http://seismo.berkeley.edu/~barbara/>`_
      -
+   * - `Jeroen Ritsema <http://www.earth.lsa.umich.edu/~jritsema/>`_
+     -
    * - `Michael Ritzwoller <http://ciei.colorado.edu/ritzwoller_m>`_
      -
    * - `Sebatian Rost <http://homepages.see.leeds.ac.uk/~earsro>`_
