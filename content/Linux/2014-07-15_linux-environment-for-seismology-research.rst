@@ -448,21 +448,22 @@ Google Chrome浏览器
 
 默认的浏览器是Firefox，还是更喜欢Chrome浏览器。
 
-在\ ``/etc/yum.repos.d/``\ 目录下新建文件\ ``google-chrome.repo``\ ，向其中添加如下内容::
+Google官方源在国内可能无法正常访问，故而添加Fedora中文社区提供的镜像源::
 
-    [google-chrome]
-    name=google-chrome
-    baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
-    enabled=1
-    gpgcheck=1
-    gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+    sudo wget http://repo.fdzh.org/chrome/google-chrome-mirrors.repo -P /etc/yum.repos.d/
 
 安装::
 
     sudo yum install google-chrome-stable
 
-Google官方源在国内可能无法正常访问，导致安装失败或安装后无法正常更新，可以尝试修改\ ``gpgcheck=0``\ 再安装。(Thanks to 徐弥坚)
+.. 在\ ``/etc/yum.repos.d/``\ 目录下新建文件\ ``google-chrome.repo``\ ，向其中添加如下内容::
+..    name=google-chrome
+..    baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+..    enabled=1
+..    gpgcheck=1
+..    gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 
+.. 导致安装失败或安装后无法正常更新，可以尝试修改\ ``gpgcheck=0``\ 再安装。(Thanks to 徐弥坚)
 .. 这个私人镜像似乎已经不再更新了，故而删除。
 .. 有人在国内服务器上做了Google官方源的镜像，若你相信该镜像是安全的，则可使用此国内镜像代替Google官方源，\ ``google-chrome.repo``\ 的内容改为::
 ..  name=google-chrome

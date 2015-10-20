@@ -48,12 +48,15 @@ Seismic Network / Waveform Data
 
 - `NIED Hi-net <http://www.hinet.bosai.go.jp/>`_
 - `NIED F-net <http://www.fnet.bosai.go.jp/>`_
+- `NIED K-net, KiK-net <http://www.kyoshin.bosai.go.jp/>`_
 - `Northern California Earthquake Data Center <http://www.ncedc.org/>`_
 - `Southern California Seismic Network <http://www.scsn.org>`_
 - `Southern California Seismic Network at Caltech <http://scedc.caltech.edu/>`_
 - `Pacific Northwest Seismic Network <http://pnsn.org/>`_
 - `Alaska Earthquake Information Center <http://www.aeic.alaska.edu/>`_
 - `Canadian National Seismic Network <http://www.earthquakescanada.nrcan.gc.ca/stndon/CNSN-RNSC/index-eng.php>`_
+- `中国地震科学探测台站数据中心 <http://www.chinarraydmc.org/>`_
+- `国家测震台网数据备份中心 <http://www.seisdmc.ac.cn/>`_
 
 Journals
 ========

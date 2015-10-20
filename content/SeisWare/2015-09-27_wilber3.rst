@@ -65,7 +65,7 @@ B区的“Show Record Section”可以预览地震波形。台站筛选完成后
 点击“Request Data”后会出现如下界面：
 
 .. figure:: /images/2015092803.png
-   :width: 800 px
+   :width: 600 px
    :align: center
    :alt: wilber find event
 
