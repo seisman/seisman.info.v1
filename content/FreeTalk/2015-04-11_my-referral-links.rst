@@ -61,3 +61,10 @@ OneDrive
 邀请链接： https://onedrive.live.com/?invref=7a70adf12890b43a&invsrc=90 (0/10)
 
 若点击此链接注册OneDrive，则我和你均可获得500MB容量。
+
+LastPass
+========
+
+LastPass是一款跨平台的密码管理器，支持Linux。桌面版免费，若需要同步到移动端则需要付费升级。
+
+邀请链接：https://lastpass.com/f?9962066
