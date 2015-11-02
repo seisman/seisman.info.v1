@@ -31,7 +31,9 @@ GADM，是一个全球行政区划数据库。包括了几乎全部国家和地�
 ogr2ogr
 =======
 
-GMT目前还不能识别shapefile格式的数据，因而就需要将shapefile格式转换为GMT可识别的格式。转换工具为ogr2ogr，这是GDAL自带的一个命令，因而如果正确安装了GMT5的话应该是很容易找到这个命令。
+GMT目前还不能识别shapefile格式的数据，因而就需要将shapefile格式转换为GMT可识别的格式。
+
+GDAL里的 ``ogr2ogr`` 命令可以实现数据的转换。如果找不到 ``ogr2ogr`` 命令，Ubuntu下需要安装 ``gdal-bin`` ，CentOS下需要安装 ``gdal`` 。
 
 以中国数据为例：
 
