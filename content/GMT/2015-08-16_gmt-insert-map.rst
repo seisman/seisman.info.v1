@@ -29,13 +29,7 @@ GMT5 脚本
 .. code-block:: bash
 
     #!/bin/bash
-
-    # xmin, xmax, ymin, ymax是要绘制的小区域的范围
-    xmin=115
-    xmax=123
-    ymin=35
-    ymax=40
-    R=$xmin/$xmax/$ymin/$ymax   # 小区域地图的范围-R
+    R=115/123/35/40             # 小区域地图的范围-R
     J=M20c                      # 小区域的投影方式-J
     PS=map.ps
 
@@ -53,20 +47,15 @@ GMT5 脚本
     Jg=M7c              # 大区域地图的投影方式-J
     # 绘制大区域地图的海岸线及边框
     gmt pscoast -R$Rg -J$Jg -B0 -B+gwhite -Df -N1 -W -A5000 -K -O --MAP_FRAME_TYPE=plain >> $PS
-    # 在大区域地图内绘制小区域所在的方框
-    gmt psxy -R$Rg -J$Jg -W2p,blue -K -O -L >> $PS << EOF
-    $xmin $ymin
-    $xmin $ymax
-    $xmax $ymax
-    $xmax $ymin
-    EOF
+    # 利用psbasemap在大区域地图内绘制小区域所在的方框
+    gmt psbasemap -R$Rg -J$Jg -D$R+p2p,blue -K -O >> $PS
 
     # 结束GMT绘图
     gmt psxy -R$R -J$J -T -O >> $PS
 
 整个脚本的思路已经在脚本注释中做了解释。本质上就是先绘制小区域地图而不去管insert map，待小区域地图绘制完成后，再单独绘制一个insert map。
 
-绘制insert map时，使用了两个命令：pscoast和psxy。其中，pscoast的作用是绘制大区域地图的边框以及海岸线，psxy用于在大区域地图内绘制一个矩形区域。
+绘制insert map时，使用了两个命令：pscoast和psbasemap。其中，pscoast的作用是绘制大区域地图的边框以及海岸线，psbasemap用于在大区域地图内绘制一个矩形区域，当然也可以用psxy命令代替。
 
 在使用pscoast命令绘制大区域地图时，有几个需要解释的地方：
 
@@ -109,3 +98,9 @@ GMT4脚本相对于GMT5脚本的主要区别在于：GMT5中任意命令都可�
     EOF
 
     psxy -R$R -J$J -T -O >> $PS
+
+修订历史
+========
+
+- 2015-08-16：初稿
+- 2015-11-02：GMT5脚本使用 ``psbasemap`` 的 ``-D`` 选项以简化代码
