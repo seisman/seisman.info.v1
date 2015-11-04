@@ -95,7 +95,7 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 .. code-block:: bash
 
    $ tar -xvf gshhg-gmt-2.3.4.tar.gz
-   $ sudo mv gshhg-gmt-2.3.4 /opt/GMT-4.5.13/share/coast
+   $ sudo mv gshhg-gmt-2.3.4 /opt/GMT-4.5.14/share/coast
 
 
 修改环境变量
@@ -105,7 +105,7 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 
 .. code-block:: bash
 
-   $ echo 'export GMT4HOME=/opt/GMT-4.5.13' >> ~/.bashrc
+   $ echo 'export GMT4HOME=/opt/GMT-4.5.14' >> ~/.bashrc
    $ echo 'export PATH=${GMT4HOME}/bin:$PATH' >> ~/.bashrc
    $ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64' >> ~/.bashrc
    $ exec $SHELL -l
