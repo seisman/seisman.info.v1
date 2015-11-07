@@ -2,7 +2,7 @@ GMT 5.1.2在Linux下的安装
 ########################
 
 :date: 2013-11-06 00:53
-:modified: 2015-05-05
+:modified: 2015-11-07
 :author: SeisMan
 :category: GMT
 :tags: 编译, GMT5, 安装
@@ -10,25 +10,28 @@ GMT 5.1.2在Linux下的安装
 
 .. contents::
 
-本文介绍如何在Linux下编译安装GMT5。对于想要自己编译安装GMT5的读者而言，我默认读者下载并想要安装的是最新的GMT5版本，因而本文会随着GMT5新版本的发布而不断更新。
+本文介绍如何在Linux下安装GMT 5.1.x。
 
-若新版本的安装方式与旧版本的安装方式有区别，则本文只介绍新版本的安装方式（也许会提几句与旧版本的区别）。执意要安装旧版本GMT5的读者，需要自己解决所遇到的问题。
+说明：
+
+#. 仅适用于5.1.0、5.1.1和5.1.2
+#. 所有命令均在一般用户下完成，需要root权限的命令都用 ``sudo`` 执行
 
 下载
 ====
 
 GMT 5.1.2 需要下载三个文件：
 
-#. GMT源码： http://gmt.soest.hawaii.edu/files/download?name=gmt-5.1.2-src.tar.gz
-#. 全球海岸线数据GSHHG： http://gmt.soest.hawaii.edu/files/download?name=gshhg-gmt-2.3.4.tar.gz
-#. 全球数字图表DCW： http://gmt.soest.hawaii.edu/files/download?name=dcw-gmt-1.1.1.tar.gz
+#. GMT源码： ftp://ftp.soest.hawaii.edu/gmt/gmt-5.1.2-src.tar.gz
+#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.4.tar.gz
+#. 全球数字图表DCW： ftp://ftp.soest.hawaii.edu/gmt/dcw-gmt-1.1.2.tar.gz
 
-下载完成后，可以用\ ``md5sum``\ 检查压缩文件的md5值，以保证该文件是完整且未被篡改的::
+下载完成后，可以用 ``md5sum`` 检查压缩文件的md5值，以保证该文件是完整且未被篡改的::
 
-    $ md5sum dcw-gmt-1.1.1.tar.gz gmt-5.1.2-src.tar.gz gshhg-gmt-2.3.4.tar.gz
-    f37787b207006708d7385722066817c7  dcw-gmt-1.1.1.tar.gz
+    $ md5sum gmt-5.1.2-src.tar.gz gshhg-gmt-2.3.4.tar.gz dcw-gmt-1.1.2.tar.gz
     dacaa6863fa6a0059d53b49216912007  gmt-5.1.2-src.tar.gz
     80947a92cc88927aff070556ca5ab133  gshhg-gmt-2.3.4.tar.gz
+    45c99d30026742dbc0b1644ea64f496d  dcw-gmt-1.1.2.tar.gz
 
 解决依赖关系
 ============
@@ -47,13 +50,13 @@ GMT的编译需要C和C++编译器、cmake等开发工具。
 
     sudo yum install gcc gcc-c++ cmake make
 
-GMT的编译过程要求cmake的版本大于\ ``2.8.5``\ ，需要注意：
+GMT的编译过程要求cmake的版本 ``>=2.8.5`` ，需要注意：
 
-#. 安装cmake之后，可以通过\ ``cmake --version``\ 检查cmake版本；
+#. 安装cmake之后，可以通过 ``cmake --version`` 检查cmake版本；
 #. CentOS **6.5**\ 的官方源中cmake的版本为2.6.4，版本过低，无法满足要求；
 #. CentOS **6.6**\ 的官方源中cmake的版本为2.8.12，可以满足要求；
-#. 使用CentOS 6.5的用户可以\ ``yum update``\ 将系统升级到6.6，即可使用较高版本的cmake；
-#. CentOS 6.5用户若不愿意升级整个系统，则需要先安装EPEL源，再安装EPEL源中的\ ``cmake28``\ ，并且在接下来的编译过程中要将\ ``cmake``\ 命令改成\ ``cmake28``\ ；
+#. 使用CentOS 6.5的用户可以 ``yum update`` 将系统升级到6.6，即可使用较高版本的cmake；
+#. CentOS 6.5用户若不愿意升级整个系统，则需要先安装EPEL源，再安装EPEL源中的 ``cmake28`` ，并且在接下来的编译过程中要将 ``cmake`` 命令改成 ``cmake28`` ；
 #. CentOS 7官方源中cmake版本为2.8.11，可以直接安装使用；
 
 软件依赖包
@@ -61,12 +64,12 @@ GMT的编译过程要求cmake的版本大于\ ``2.8.5``\ ，需要注意：
 
 GMT5的依赖包，相对来说要复杂很多：
 
-- 看PS文件以及将PS转换成其他格式需要\ ``ghostscript``\ ；
-- 网格文件需要\ ``netCDF``\ （>=4.0，且需要支持netCDF-4/HDF5）。
-- Perl兼容正则表达式库\ `PCRE`_\ ；
-- 地理空间数据抽象库\ `GDAL`_\ ；
-- Fourier变换库\ `FFTW`_ ；
-- 如果想要自行编译文档的话还需要\ `Sphinx`_\ 。
+- 看PS文件以及将PS转换成其他格式需要 ``ghostscript``
+- 网格文件需要 ``netCDF`` （>=4.0，且需要支持netCDF-4/HDF5）
+- Perl兼容正则表达式库 `PCRE`_
+- 地理空间数据抽象库 `GDAL`_
+- Fourier变换库 `FFTW`_
+- 如果想要自行编译文档的话还需要 `Sphinx`_ 以及 TeXLive
 
 对于Ubuntu/Debian::
 
@@ -74,7 +77,9 @@ GMT5的依赖包，相对来说要复杂很多：
     # 必须安装的包
     sudo apt-get install ghostscript libnetcdf-dev
     # 推荐安装的包
-    sudo apt-get install libpcre3-dev libfftw3-dev libgdal-dev python-gdal
+    sudo apt-get install libgdal-dev python-gdal
+    # 可选的安装包
+    sudo apt-get install libpcre3-dev libfftw3-dev
     # 不推荐安装的包
     sudo apt-get install python-sphinx
 
@@ -83,65 +88,95 @@ GMT5的依赖包，相对来说要复杂很多：
     # 安装必须的包
     sudo yum install ghostscript netcdf-devel
     # 推荐安装的包
-    sudo yum install pcre-devel fftw-devel gdal-devel gdal-python
+    sudo yum install gdal-devel gdal-python
+    # 可选的安装包
+    sudo yum install pcre-devel fftw-devel
     # 不推荐安装的包
     sudo yum install python-sphinx
 
 一些需要注意的地方:
 
-#. 一定不要试图自己手动编译netCDF，因为手动编译很难解决依赖问题，网上的大多数手动编译netCDF的教程中都关闭了netCDF对HDF5的支持，因而导致GMT5无法使用。如果在阅读本文之前曾经手动编译过，一定要将原来手动编译生成的文件删除干净。通常可以使用\ ``locate netcdf``\ 找到\ ``/usr/local``\ 目录下的与netCDF相关的文件，直接删除即可。
-#. CentOS官方源中不带有netCDF，需要先安装EPEL源。需要安装的包包括\ ``netcdf``\ , \ ``netcdf-devel``\ ，其他包（尤其是hdf5包）会根据依赖关系自动安装。
+#. 一定不要试图自己手动编译netCDF，因为手动编译很难解决依赖问题，网上的大多数手动编译netCDF的教程中都关闭了netCDF对HDF5的支持，因而导致GMT5无法使用。如果在阅读本文之前曾经手动编译过，一定要将原来手动编译生成的文件删除干净。通常可以使用 ``locate netcdf`` 找到 ``/usr/local`` 目录下的与netCDF相关的文件，直接删除即可。
+#. CentOS官方源中不带有netCDF，需要先安装EPEL源
 #. pcre、fftw和gdal不是必须要安装的，但是推荐安装。其中gdal在做数据格式转换时非常有用；
 #. 其他发行版很久不用了，不清楚细节，读者可以在使用过程中补充。
 
 安装GMT
 =======
 
-解决了依赖关系之后，就可以安装了。这里假定刚才下载的三个压缩文件都位于目录\ ``/home/seisman/Desktop/gmt``\ 中：
-
+将刚才下载的三个压缩文件都放在同一个目录里，以下假定目录名为 ``/home/seisman/Desktop/GMT`` ：
 .. code-block:: bash
 
+   # 当前目录名为 /home/seisman/Desktop/GMT
    $ pwd
-   /home/seisman/Desktop/gmt
-   $ ls
-   dcw-gmt-1.1.1.tar.gz gmt-5.1.2-src.tar.gz gshhg-gmt-2.3.4.tar.gz
-   $ tar -zxvf gmt-5.1.2-src.tar.gz
-   $ tar -zxvf dcw-gmt-1.1.1.tar.gz
-   $ tar -zxvf gshhg-gmt-2.3.4.tar.gz
-   $ cd gmt-5.1.2
-   $ cp cmake/ConfigUserTemplate.cmake cmake/ConfigUser.cmake
-   $ gedit cmake/ConfigUser.cmake   # 修改ConfigUser.cmake
+   /home/seisman/Desktop/GMT
 
-对\ ``ConfigUser.cmake``\ 进行修改以自定义安装的细节。一个基本的示例如下，找到相关行，并去掉该行最前面的“#”，再根据自身情况修改::
+   # 当前目录下包含了三个压缩文件
+   $ ls
+   dcw-gmt-1.1.2.tar.gz  gmt-5.1.2-src.tar.gz  gshhg-gmt-2.3.4.tar.gz
+
+   # 解压三个压缩文件
+   $ tar -xvf gmt-5.1.2-src.tar.gz
+   $ tar -xvf gshhg-gmt-2.3.4.tar.gz
+   $ tar -xvf dcw-gmt-1.1.2.tar.gz
+
+   # 将gshhg和dcw数据复制到gmt的share目录下
+   $ mv gshhg-gmt-2.3.4 gmt-5.1.2/share/gshhg
+   $ mv dcw-gmt-1.1.2 gmt-5.1.2/share/dcw-gmt
+
+   # 切换到gmt源码目录下
+   $ cd gmt-5.1.2
+
+   # 新建用户配置文件
+   $ gedit cmake/ConfigUser.cmake
+
+向 ``cmake/ConfigUser.cmake`` 文件中加入如下语句::
 
     set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.1.2")
     set (GMT_INSTALL_MODULE_LINKS FALSE)
-    set (GSHHG_ROOT "/home/seisman/Desktop/gmt/gshhg-gmt-2.3.4")
     set (COPY_GSHHG TRUE)
-    set (DCW_ROOT "/home/seisman/Desktop/gmt/dcw-gmt-1.1.1")
     set (COPY_DCW TRUE)
 
-- ``CMAKE_INSTALL_PREFIX``\ 设置GMT的安装路径；
-- 设置\ ``GMT_INSTALL_MODULE_LINKS``\ 为FALSE，这样调用GMT模块时必须使用\ ``gmt modulename options``\ 的形式，也是GMT5推荐的使用方法；若该值为TRUE，则会在GMT的bin目录下建立多个指向\ ``gmt``\ 的形如\ ``pscoast``\ 的软链接；
-- ``GSHHG_ROOT``\ 为GSHHG数据所在文件夹的\ **绝对路径**\ ；\ ``COPY_GSHHG``\ 为TRUE会将GSHHG数据复制到\ ``GMT/share/coast``\ 下；
-- ``DCW_ROOT``\ 设置DCW数据据所在文件夹的\ **绝对路径**\ ，\ ``COPY_DCW``\ 将数据复制到\ ``GMT/share/dcw``\ 下；
-- cmake似乎不能识别\ ``~``\ ，因而上面提到的所有路径中都不能用\ ``~``\ 代替\ ``/home/seisman``\ ；
+- ``CMAKE_INSTALL_PREFIX`` 设置GMT的安装路径，可以修改为其他路径
+- ``GMT_INSTALL_MODULE_LINKS`` 为FALSE，表明不在GMT的bin目录下建立命令的软链接，也可设置为TRUE
+- ``COPY_GSHHG`` 为TRUE会将GSHHG数据复制到 ``GMT/share/coast`` 下
+- ``COPY_DCW`` 为TRUE会将DCW数据复制到 ``GMT/share/dcw`` 下
 
-PS: 若系统中存在多个GMT的版本，按照上面的做法会存在多个GSHHG和DCW数据的副本。可以将这些数据放置在系统中固定的位置（比如我把这些数据都放在\ ``/home/seisman/Datas``\ 目录下），然后有两种处理方式：其一，设置COPY_GSHHG为FALSE，则安装时不会将GSHHG数据复制到GMT目录下，而GMT命令运行时会到GSHHG_ROOT指定的目录中寻找数据；其二，使用默认的GSHHG_ROOT以及COPY_GSHHG，在安装完成之后，到GMT/share目录下设置一个target为\ ``/home/seisman/Datas/gshhg-gmt-2.3.4``\ ，link name为coast的软链接即可。对于DCW数据，同理。
+以下几点说明，仅供高阶用户阅读：
 
-PS2：上面的PS要是没看懂的话就直接忽略吧。
+#. GMT提供了用户配置的模板文件 ``cmake/ConfigUserTemplate.cmake`` ，其中包含了众多可配置的变量以及大量的注释说明。可以直接将该文件名复制为 ``cmake/ConfigUser.cmake`` ，然后在模板基础上做修改，以自定义GMT的安装。仅供高阶用户使用
+#. ``CMAKE_INSTALL_MODULE_LINKS`` 的作用是在GMT的bin目录下建立命令的软链接，以兼容GMT4语法，建议设置为FALSE
+#. 配置文件中 ``GSHHG_ROOT`` 和 ``DCW_ROOT`` 可以用于指定数据所在路径。此处已将数据放在GMT的share目录下，使得在配置过程中GMT可以自动找到，因而不需要设置这两个变量
+#. 若系统中存在多个GMT的版本，按照上面的做法会存在多个GSHHG和DCW数据的副本，造成数据冗余。此时，可以将gshhg和dcw数据放在专门的目录中，比如 ``/home/seisman/Datas/`` 目录下。然后有两种解决办法：
 
-修改并保存后，继续执行如下命令以检查GMT的依赖关系::
+   #. 完全按照上面的做法，在安装完成后，删除 ``/opt/GMT-5.1.2/share`` 目录下的 ``coast`` 和 ``dcw`` 两个目录，并建立两个指向数据的真实数据的软链接::
+
+          $ cd /opt/GMT-5.1.2/share
+          $ sudo rm -r coast/
+          $ sudo rm -r dcw/
+          $ sudo ln -s /home/seisman/Datas/gshhg-gmt-2.3.4 gshhg
+          $ sudo ln -s /home/seisman/Datas/dcw-gmt-1.1.2 dcw
+
+   #. 设置配置文件如下::
+
+          set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.1.2")
+          set (GMT_INSTALL_MODULE_LINKS FALSE)
+          set (GSHHG_ROOT "/home/seisman/Datas/gshhg-gmt-2.3.4")
+          set (COPY_GSHHG FALSE)
+          set (DCW_ROOT "/home/seisman/Datas/dcw-gmt-1.1.1")
+          set (COPY_DCW FALSE)
+
+继续执行如下命令以检查GMT的依赖关系::
 
     $ mkdir build
     $ cd build/
     $ cmake ..
 
-``cmake ..``\ 会检查GMT对软件的依赖关系，我的检查结果如下::
+``cmake ..`` 会检查GMT对软件的依赖关系，我的检查结果如下::
 
     *  Options:
-    *  Found GSHHG database       : /home/seisman/Desktop/gmt/gshhg-gmt-2.3.4 (2.3.4)
-    *  Found DCW-GMT database     : /home/seisman/Desktop/gmt/dcw-gmt-1.1.1
+    *  Found GSHHG database       : /home/seisman/Desktop/GMT/gmt-5.1.2/share/gshhg (2.3.4)
+    *  Found DCW-GMT database     : /home/seisman/Desktop/GMT/gmt-5.1.2/share/dcw-gmt
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
     *  GDAL library               : /usr/lib64/libgdal.so
@@ -168,20 +203,21 @@ PS2：上面的PS要是没看懂的话就直接忽略吧。
     -- Configuring done
     -- Generating done
 
-正常情况下的检查结果应该与上面给出的列出，若出现问题，则需要检查之前的步骤是否有误，检查完毕后重新执行\ ``cmake ..``\ ，直到出现类似的检查结果。检查完毕后，开始编译和安装::
+正常情况下的检查结果应该与上面给出的类似。若出现问题，则需要检查之前的步骤是否有误，检查完毕后重新执行 ``cmake ..`` ，直到出现类似的检查结果。检查完毕后，开始编译和安装::
 
-    $ make
-    $ sudo make install
+    $ make -j
+    $ sudo make -j install
 
 自行编译文档
 ============
 
 如果系统中安装了sphinx和LaTeX，则可以自行编译文档。一般情况下，不建议自行编译文档，官方提供的文档已经足够::
 
-    $ make docs_man
-    $ make docs_html
-    $ make docs_pdf
-    $ sudo make install
+    $ make -j docs_man          # 生成man文档
+    $ make -j docs_html         # 生成HTML文档
+    $ make -j docs_pdf          # 生成PDF文档
+    $ make -j docs_pdf_shrink   # 生成更小的PDF文档
+    $ sudo -j make install
 
 修改环境变量
 ============
@@ -197,15 +233,17 @@ PS2：上面的PS要是没看懂的话就直接忽略吧。
 
 说明
 
-- 第一个命令向\ ``~/.bashrc``\ 中添加环境变量\ ``GMT5HOME``\ ；
-- 第二个命令修改\ ``~/.bashrc``\ ，将GMT5的bin目录加入到\ ``PATH``\ 中；
-- 第三个命令将GMT5的lib目录加入到动态链接库路径中，若为32位系统，则为\ ``lib``\ ；64位系统则为\ ``lib64``\ ；
-- 第四个命令是重新载入bash，相当于\ ``source ~/.bashrc``\ 。
+- 第一个命令向 ``~/.bashrc`` 中添加环境变量 ``GMT5HOME``
+- 第二个命令修改 ``~/.bashrc`` ，将GMT5的bin目录加入到 ``PATH`` 中
+- 第三个命令将GMT5的lib目录加入到动态链接库路径中，若为32位系统，则为 ``lib`` ；64位系统则为 ``lib64`` ；
+- 第四个命令是重新载入bash，相当于 ``source ~/.bashrc``
+- 某些发行版下可能需要写入到 ``~/.bash_profile`` 而不是 ``~/.bashrc``
+- 某些发行版下可能需要退出再重新登陆，或关机重启
 
 测试是否安装成功
 ================
 
-在终端键入\ ``gmt``\ ，若出现如下输出，则安装成功::
+在终端键入 ``gmt`` ，若出现如下输出，则安装成功::
 
     $ gmt
 
@@ -218,13 +256,13 @@ Ubuntu 14.04/15.04以及部分Debian用户，可能会出现如下信息::
     install    install more modules
     ERROR: Please specify valid params for 'gmt'.
 
-出现该错误的原因是这几个发行版中的\ ``libgenome-perl``\ 包中提供了同名的命令\ ``/usr/bin/gmt``\ ，把该软件包卸载即可。
+出现该错误的原因是这几个发行版中的 ``libgenome-perl`` 包中提供了同名的命令 ``/usr/bin/gmt`` ，把该软件包卸载即可。
 
 参考来源
 ========
 
 #. http://gmtrac.soest.hawaii.edu/projects/gmt/wiki/BuildingGMT
-#. `GMT4.5.13在Linux下的安装 <{filename}/GMT/2013-11-07_install-gmt4-under-linux.rst>`_
+#. `GMT4.5.14在Linux下的安装 <{filename}/GMT/2013-11-07_install-gmt4-under-linux.rst>`_
 
 修订历史
 ========
@@ -233,8 +271,8 @@ Ubuntu 14.04/15.04以及部分Debian用户，可能会出现如下信息::
 - 2014-02-22：cmake版本需要2.8以上；
 - 2014-03-02：更新至GMT 5.1.1；
 - 2014-09-14：更新GSHHG至2.3.2；
-- 2014-09-26：Ubuntu下\ ``libxaw-dev``\ 应为\ ``libxaw7-dev``\ ；
-- 2014-11-04：修改环境变量\ ``LD_LIBRARY_PATH``\ ；
+- 2014-09-26：Ubuntu下 ``libxaw-dev`` 应为 ``libxaw7-dev`` ；
+- 2014-11-04：修改环境变量 ``LD_LIBRARY_PATH`` ；
 - 2014-11-29：CentOS 6.6中的cmake版本为2.8.12；
 - 2015-02-01：更新GSHHG至2.3.4；
 - 2015-03-14：路径中不能用波浪号代替家目录；
@@ -243,6 +281,7 @@ Ubuntu 14.04/15.04以及部分Debian用户，可能会出现如下信息::
 - 2015-09-06：推荐安装gdal的Python绑定；
 - 2015-09-18：下载完成后检测压缩文件的md5值；
 - 2015-10-11：GMT5不依赖于Xt等库文件；
+- 2015-11-07：简化安装细节，本文仅修改BUG，不再更新内容；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/
