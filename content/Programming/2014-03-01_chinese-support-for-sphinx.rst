@@ -1,71 +1,86 @@
-sphinx生成PDF的中文支持问题 
-###########################
+sphinx生成中文PDF
+#################
 
 :author: SeisMan
 :date: 2014-03-01 10:50
+:modified: 2015-11-07
 :category: 编程
-:tags: sphinx, 中文, Python
+:tags: sphinx, 中文, Python, PDF, LaTeX
 :slug: chinese-support-for-sphinx
 
 .. contents::
 
-sphinx可以利用LaTeX将rST源文件转换成PDF文件，官方的模板是无法支持中文的，因而必须要对其进行修改。
+`sphinx <http://sphinx-doc.org/>`_ 是Python提供的文档生成工具，其可以将rST源文件转换成网页、PDF等多种格式。目前，sphinx 1.3.1在生成中文PDF时有一堆问题，所以需要做一些额外的处理才能解决。
 
-修改Makefile
-============
-
-当执行\ ``make latexpdf``\ 时，会首先执行\ ``sphinx-build``\ 生成tex源文件，然后调用\ ``_build/latex``\ 目录下的makefile文件，利用pdflatex引擎将tex文件转换为PDF。
-
-``build/latex``\ 下的Makefile文件是\ ``sphinx/texinputs/Makefile``\ 的直接拷贝。因而需要修改\ ``sphinx/texinputs/Makefile``\ ，将其中的pdflatex修改成xelatex。
-
+`readthedocs <https://readthedocs.org>`_ 可以直接用于托管sphinx生成的网页文档，由于sphinx不支持中文PDF，所以readthedocs也不支持。readthedocs的服务器是Ubuntu，具体版本未知，TeXLive版本未知，但是肯定早于TeXLive 2014。所以readthedocs上中文支持就更是一个问题。因而在readthedocs网站上以及在本地，有两套不同的做法。
 
 修改conf.py
 ===========
 
-修改完Makefile之后，直接make latexpdf之后不会报错，但是中文部分完全没有显示，这是因为缺乏中文所需要的字体设置。
-
-修改conf.py中的latex_elements参数，如下:
+对 ``conf.py`` 修改如下：
 
 .. code-block:: python
 
-   latex_elements = { 
-   # The paper size ('letterpaper' or 'a4paper').
-   #'papersize': 'letterpaper',
-   
-   # The font size ('10pt', '11pt' or '12pt').
-   #'pointsize': '10pt',
-   # Additional stuff for the LaTeX preamble.
-   'preamble': r'''
-        \usepackage{xeCJK}
-        \setCJKmainfont{SimSun}
-        \XeTeXlinebreaklocale "zh"
-        \XeTeXlinebreakskip = 0pt plus 1pt
-   ''',
-   }
+    on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-修改latex.py
+    if on_rtd:
+        latex_elements = {
+        # The paper size ('letterpaper' or 'a4paper').
+        #'papersize': 'letterpaper',
+
+        # The font size ('10pt', '11pt' or '12pt').
+        #'pointsize': '10pt',
+
+        # Additional stuff for the LaTeX preamble.
+        'preamble': r'''
+        \hypersetup{unicode=true}
+        \usepackage{CJKutf8}
+        \DeclareUnicodeCharacter{00A0}{\nobreakspace}
+        \DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}
+        \DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}
+        \DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}
+        \DeclareUnicodeCharacter{2713}{x}
+        \DeclareUnicodeCharacter{27FA}{\ensuremath{\Longleftrightarrow}}
+        \DeclareUnicodeCharacter{221A}{\ensuremath{\sqrt{}}}
+        \DeclareUnicodeCharacter{221B}{\ensuremath{\sqrt[3]{}}}
+        \DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}
+        \DeclareUnicodeCharacter{2297}{\ensuremath{\otimes}}
+        \begin{CJK}{UTF8}{gbsn}
+        \AtEndDocument{\end{CJK}}
+        ''',
+        }
+    else:
+        latex_elements = {
+            'papersize' : 'a4paper',
+            'utf8extra' : '',
+            'inputenc'  : '',
+            'babel'     : r'''\usepackage[english]{babel}''',
+            'preamble' : r'''
+            \usepackage{ctex}
+            ''',
+        }
+
+其中， ``READTHEDOCS`` 是readthedocs定义的环境变量，通过检测该环境变量来判断是在readthedocs服务器上还是在本地。
+
+在readthedocs服务器上，只能使用 ``latexpdf`` 编译，且只能使用其自带的中文字体。在本地，如果安装了TeXLive 2015，则可以使用ctex宏包，并用 ``xelatex`` 编译。
+
+修改Makefile
 ============
 
-加入了xeCJK相关设置之后编译还是会出现问题::
+对Makefile修改如下，这一修改仅对本地生效，不影响readthedocs上的使用：
 
-    ! Undefined control sequence.
-    \GenericError  ...            
-                #4  \errhelp \@err@     ...
-    l.2856   }
+.. code-block:: makefile
 
-这是由于xeCJK包与inputenc包发生冲突导致的，因而也需要修改。
+    xelatexpdf:
+        $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+        @echo "Running LaTeX files through xelatex..."
+        sed -i s/pdflatex/xelatex/ $(BUILDDIR)/latex/Makefile
+        $(MAKE) -C $(BUILDDIR)/latex all-pdf
+        @echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
 
-首先在\ ``conf.py``\ 中设置\ ``language=zh_CN``\ ,然后修改\ ``sphinx/writers/latex.py``\ ，在231行左右加入语句对中文做特殊处理：
+参考
+====
 
-.. code-block:: python
-
-    if builder.config.language == 'zh_CN':
-        self.elements['babel'] = ''
-        self.elements['inputenc'] = ''
-        self.elements['utf8extra'] = ''
-
-第一个语句禁用了babel包，因而其尚不支持中文；第一个语句禁用了inputenc包，其与xeCJK冲突；第三个语句禁用了一个语句，该语句调用了inputenc包中的命令。
-
-理论上完全可以通过修改conf.py中的latex_elements来禁用各种宏包的。但是实际上sphinx并没有提供禁用utf8extra的参数，即便禁用了inputenc依然是有问题的。
-
-修改了这些之后，中文应该就没有问题了。在make latexpdf之前注意先make clean就好。
+#. https://github.com/rtfd/readthedocs.org/issues/621
+#. https://github.com/JuliaCN/julia_zh_cn/blob/master/conf.py
+#. https://github.com/sphinx-doc/sphinx/issues/894
