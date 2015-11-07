@@ -105,6 +105,7 @@ GMT5的依赖包，相对来说要复杂很多：
 =======
 
 将刚才下载的三个压缩文件都放在同一个目录里，以下假定目录名为 ``/home/seisman/Desktop/GMT`` ：
+
 .. code-block:: bash
 
    # 当前目录名为 /home/seisman/Desktop/GMT
