@@ -53,7 +53,7 @@ Wilber 3是IRIS提供的一个用于从IRIS申请地震数据的网页工具。�
 
 A区给出了事件的相关信息，其中“IRIS Event Page”可以点进去看看，有不少关于该事件的研究结果。
 
-B区可以选择所需要的台网、通道码、震中距范围以及方位角范围。具体的筛选标准由具体的需求决定，这里不再介绍。通道码通常选\ ``BH?``\ ，即全部宽频带波形数据。
+B区可以选择所需要的台网、通道码、震中距范围以及方位角范围。具体的筛选标准由具体的需求决定，这里不再介绍。通道码通常选 ``BH?`` ，即全部宽频带波形数据。
 
 C区是台站分布，D区列出了台站的信息，点击台站前的复选框可以选中或删除某些台站。
 
@@ -69,7 +69,7 @@ B区的“Show Record Section”可以预览地震波形。台站筛选完成后
    :align: center
    :alt: wilber find event
 
-Time Range用于指定要申请的数据范围，默认值表示申请P波到时前1分钟到P波到时后10分钟内的波形数据。根据具体的研究对象以及\ ``taup``\ 计算的震相理论走时，来决定要申请的数据范围。
+Time Range用于指定要申请的数据范围，默认值表示申请P波到时前1分钟到P波到时后10分钟内的波形数据。根据具体的研究对象以及 ``taup`` 计算的震相理论走时，来决定要申请的数据范围。
 
 Output Format选择波形数据的格式。通常建议选择SEED或miniSEED。miniSEED中只包含波形数据，SEED则既包含波形数据又包含仪器响应信息。
 
@@ -83,8 +83,8 @@ miniSEED
 如果选择的是miniSEED格式，需要注意：
 
 #. 可以到 ftp://ds.iris.edu/pub/userdata/wilber/ 目录下看看其他人已经用了哪些名字
-#. Name会被转换成全小写，空格会被\ ``-``\ 代替，比如Name ``Xiaoming Li``\ 在FTP里的目录名是\ ``xiaoming-li``
-#. 申请得到的文件的文件名为\ ``label.miniseed``
+#. Name会被转换成全小写，空格会被 ``-`` 代替，比如Name ``Xiaoming Li`` 在FTP里的目录名是 ``xiaoming-li``
+#. 申请得到的文件的文件名为 ``label.miniseed``
 
 SEED
 ----
@@ -93,5 +93,5 @@ SEED
 
 #. 还需要进一步填写自己所在的机构、地址、电话并选择数据质量
 #. 可以到 ftp://ds.iris.edu/pub/userdata/ 目录看看其他人已经用了哪些名字
-#. Name中空格会被\ ``_``\ 替换，比如Name \ ``Xiaoming Li``\ 在FTP里的目录是\ ``Xiaoming_Li``
-#. 申请得到的文件名是\ ``label.xxxxx.seed``\ ，其中\ ``xxxxx``\ 是随机生成的五位整数，以保证相同label的不同数据可以区分开
+#. Name中空格会被 ``_`` 替换，比如Name  ``Xiaoming Li`` 在FTP里的目录是 ``Xiaoming_Li``
+#. 申请得到的文件名是 ``label.xxxxx.seed`` ，其中 ``xxxxx`` 是随机生成的N位整数，以保证相同label的不同数据可以区分开
