@@ -40,6 +40,7 @@
 \lstloadlanguages{C, Perl, Python, bash}
 \lstset{
     basicstyle=\footnotesize\ttfamily,
+    columns=flexible,
     xleftmargin=2em,
     xrightmargin=2em,
     breakatwhitespace=false,
