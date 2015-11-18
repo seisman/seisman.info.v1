@@ -87,6 +87,7 @@ getCN1point
       .... reading all maps ...
      enter center lat, long of desired tile (q to quit)
     50 100
+    #注意纬度在前，经度在后；如果搞反了，第一个值超过了90，程序也不会报错而是“正常地”显示结果
     ilat,ilon,crustal type:   41 281
      topography:    1.6400000
       layers: vp,vs,rho,bottom
