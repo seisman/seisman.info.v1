@@ -149,20 +149,22 @@ GMT 5::
 
 对于(100.5E, 50.5N)来说::
 
-   enter center lat, long of desired tile (q to quit)
-  50.5 100.5
-  ilat,ilon,crustal type:   40 281
-   topography:    1.80999994
-    layers: vp,vs,rho,bottom
-     1.50   0.00   1.02   1.81
-     3.81   1.94   0.92   1.81
-     2.50   1.07   2.11   1.71
-     0.00   0.00   0.00   1.71
-     0.00   0.00   0.00   1.71
-     6.10   3.55   2.74 -18.93
-     6.30   3.65   2.78 -37.22
-     7.00   3.99   2.95 -45.19
-   pn,sn,rho-mantle:    7.96   4.43   3.28
+    $ ./getCN1point
+      .... reading all maps ...
+     enter center lat, long of desired tile (q to quit)
+    50.5 100.5
+    ilat,ilon,crustal type:   40 281
+     topography:    1.80999994
+      layers: vp,vs,rho,bottom
+       1.50   0.00   1.02   1.81
+       3.81   1.94   0.92   1.81
+       2.50   1.07   2.11   1.71
+       0.00   0.00   0.00   1.71
+       0.00   0.00   0.00   1.71
+       6.10   3.55   2.74 -18.93
+       6.30   3.65   2.78 -37.22
+       7.00   3.99   2.95 -45.19
+     pn,sn,rho-mantle:    7.96   4.43   3.28
 
 需要注意，第四列给出的是每一层的\ **下边界**\ 的海拔。记住这一点，就可以从输出中提取出很多信息：
 
