@@ -4,7 +4,7 @@
 :date: 2014-05-18 10:00
 :author: SeisMan
 :category: 地球物理相关资源
-:tags: 板块, 数据
+:tags: 数据
 :slug: plate-boundary-datasets
 
 .. contents::

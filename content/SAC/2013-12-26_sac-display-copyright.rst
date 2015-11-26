@@ -4,7 +4,7 @@
 :date: 2013-12-26 20:52
 :author: SeisMan
 :category: SAC
-:tags: SAC技巧, 版本           
+:tags: SAC技巧
 :slug: sac-display-copyright
 
 在终端使用SAC时默认会出现版本信息，如下::

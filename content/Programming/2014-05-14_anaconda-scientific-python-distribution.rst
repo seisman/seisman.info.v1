@@ -4,7 +4,7 @@ Python科学计算发行版--Anaconda
 :date: 2014-05-14 13:00
 :author: SeisMan
 :category: 编程
-:tags: 版本, Python
+:tags: Python
 :slug: anaconda-scientific-python-distribution
 
 Python是一种强大的编程语言，其提供了很多用于科学计算的模块，常见的包括numpy、scipy和matplotlib。要利用Python进行科学计算，就需要一一安装所需的模块，而这些模块可能又依赖于其它的软件包或库，因而安装和使用起来相对麻烦。幸好有人专门在做这一类事情，将科学计算所需要的模块都编译好，然后打包以发行版的形式供用户使用，Anaconda就是其中一个常用的科学计算发行版。

@@ -5,7 +5,7 @@ GMT4与GMT5双版本共存
 :modified: 2015-06-09
 :author: SeisMan
 :category: GMT
-:tags: GMT技巧, GMT4, GMT5, 版本
+:tags: GMT技巧, GMT4, GMT5
 :slug: multiple-versions-of-gmt
 
 .. contents::

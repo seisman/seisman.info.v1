@@ -5,7 +5,7 @@ SAC容易忽略的一个陷阱
 :modified: 2014-04-18
 :author: SeisMan
 :category: SAC
-:tags: Bug
+:tags: SAC技巧
 :slug: traps-of-sac
 
 事情大概是这样的：当前文件夹下有很多个SAC文件（约700个，没有超过SAC一次只能处理1000个数据的限制），需要对SAC文件进行简单的滤波处理，然后保存。

@@ -4,7 +4,7 @@
 :date: 2015-09-25
 :author: SeisMan
 :category: 胡言乱语
-:tags: Blog
+:tags: 博客
 :slug: wechat-subscription
 
 SeisMan博客刚刚开通了微信公众号，欢迎大家关注。

@@ -4,7 +4,7 @@ Python多版本共存之pyenv
 :date: 2013-10-04 00:27
 :author: SeisMan
 :category: 编程
-:tags: 安装, Python, 版本
+:tags: 安装, Python
 :slug: python-pyenv
 :summary: 使用pyenv管理多个Python版本。
 

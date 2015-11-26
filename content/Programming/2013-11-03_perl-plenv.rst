@@ -4,7 +4,7 @@ Perl多版本共存之plenv
 :date: 2013-11-03 01:24
 :author: SeisMan
 :category: 编程
-:tags: 安装, 版本, Perl
+:tags: 安装, Perl
 :slug: perl-plenv
 :summary: 使用plenv管理多个Perl版本。
 
