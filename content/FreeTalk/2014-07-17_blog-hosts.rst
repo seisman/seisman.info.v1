@@ -15,9 +15,9 @@
 
 目前博客的一些细节记录如下：
 
-#. 博客源码（Pelican配置以及rst源文件）托管在\ `GitHub <https://github.com/seisman/seisman.info>`_\ 上；
-#. 生成的HTML文件push到GitHub上项目seisman.github.io的master分支，并使用CNAME设置别名；
-#. 生成的HTML文件push到GitCafe上项目seisman的gitcafe-pages分支，并设置别名。
+#. 博客源码（Pelican配置以及rst源文件）托管在 `GitHub <https://github.com/seisman/seisman.info>`_ 上；
+#. 生成的HTML文件push到GitHub上项目 ``seisman.github.io`` 的 ``master`` 分支，并使用CNAME设置别名；
+#. 生成的HTML文件push到GitCafe上项目seisman的 ``gitcafe-pages`` 分支，并设置别名。
 
 因而，实际上本博客有多个访问地址：
 
@@ -31,7 +31,7 @@ DNSPod的具体设置如下图，这样的设置使得联通、电信、移动�
    :width: 600 px
    :alt: DNSPod settings
 
-用\ `17MON <http://tool.17mon.cn/>`_\ 测试了修改前后全球各地的ping值。
+用 `17MON <http://tool.17mon.cn/>`_ 测试了修改前后全球各地的ping值。
 
 修改前ping值汇总如下图。国内最快的仅需要1.4ms，国内平均需要50ms。国外的话亚洲其他地区ping值在150ms左右，其他洲基本都在300ms以上。
 
@@ -51,4 +51,4 @@ DNSPod的具体设置如下图，这样的设置使得联通、电信、移动�
 ========
 
 - 2014-07-17：初稿；
-- 2014-12-26：GitCafe的博客托管服务有所调整，gitcafe.com改成gitcafe.io，需要在DNS中设置CNAME；
+- 2014-12-26：GitCafe的博客托管服务有所调整， ``gitcafe.com`` 改成 ``gitcafe.io`` ，需要在DNS中设置CNAME；
