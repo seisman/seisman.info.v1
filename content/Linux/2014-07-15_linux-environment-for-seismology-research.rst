@@ -217,6 +217,7 @@ GCC系列
     sudo yum install gdb     # 代码调试器
     sudo yum install cmake   # Cmake
     sudo yum install git     # 版本控制
+    sudo yum install tig     # git的文本模式接口
     sudo yum install git-svn # git的svn插件
 
 驱动程序
