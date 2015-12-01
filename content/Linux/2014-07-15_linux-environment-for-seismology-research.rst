@@ -586,7 +586,7 @@ chsh命令修改的是login shell，因而需要退出当前用户并重新登�
 
 #. git
 
-   该插件为git的众多常用命令提供了更简单的别名，比如\ ``git status``\ 的别名是\ ``gst``\ ，大大简写了击键数。但该插件中\ ``git mergetool --no-prompt``\ 的别名是\ ``gmt``\ ，与GMT软件冲突，需要将该插件的目录git复制到custom/plugins下，然后删除其中的gmt别名；
+   该插件为git的众多常用命令提供了更简单的别名，比如\ ``git status``\ 的别名是\ ``gst``\ ，大大减少了击键数。但该插件中\ ``git mergetool --no-prompt``\ 的别名是\ ``gmt``\ ，与GMT软件冲突，需要将该插件的目录git复制到custom/plugins下，然后删除其中的gmt别名；
 
 #. 命令补全插件: pip, pyenv
 #. sudo：按两下\ ``ESC``\ 即可在当前命令前加上\ ``sudo``\
