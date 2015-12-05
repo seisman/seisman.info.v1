@@ -26,7 +26,7 @@ cpdf
 pdfunite
 ========
 
-``pdfunite``\ 是\ `Poppler <http://poppler.freedesktop.org>`_\ 提供的一个工具，一般系统都已经安装了Poppler，所以这个工具在Linux下是很常见的。
+``pdfunite`` 是\ `Poppler <http://poppler.freedesktop.org>`_\ 提供的一个工具，一般系统都已经安装了Poppler，所以这个工具在Linux下是很常见的。
 
 ::
 
@@ -37,15 +37,15 @@ pdfunite
 pdfjam
 ======
 
-如果你安装了TeXLive，并且安装了\ `pdfpage <http://www.ctan.org/tex-archive/macros/latex/contrib/pdfpages/>`_\ 包，则其中包含了\ ``pdfjam``\ 工具。
+如果你安装了TeXLive，并且安装了\ `pdfpage <http://www.ctan.org/tex-archive/macros/latex/contrib/pdfpages/>`_\ 包，则其中包含了 ``pdfjam`` 工具。
 
 ::
 
     pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 
-该命令的选项很多，可以通过\ ``pdfjam --help``\ 查看。
+该命令的选项很多，可以通过 ``pdfjam --help`` 查看。
 
-``pdfjoin``\ 是\ ``pdfjam``\ 的一个封装，也可以直接使用::
+``pdfjoin`` 是 ``pdfjam``\ 的一个封装，也可以直接使用::
 
     pdfjoin a.pdf b.pdf
 

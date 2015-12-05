@@ -10,7 +10,7 @@ Hi-net Channel Table文件
 
 .. contents::
 
-从Hi-net下载连续波形数据会得到ZIP压缩文件，其中包含了两个后缀为\ ``ch``\ 的文件，即Channel Table文件。两个文件内容是相同的，区别在于一个是\ ``euc``\ 编码，一个是\ ``sjis``\ 编码。只需要用其中一个即可，这里选择\ ``euc``\ 编码的文件。
+从Hi-net下载连续波形数据会得到ZIP压缩文件，其中包含了两个后缀为 ``ch`` 的文件，即Channel Table文件。两个文件内容是相同的，区别在于一个是\ ``euc``\ 编码，一个是\ ``sjis``\ 编码。只需要用其中一个即可，这里选择\ ``euc``\ 编码的文件。
 
 Channel Table文件描述了每个channel的仪器信息。
 
@@ -42,12 +42,12 @@ Channel Table文件描述了每个channel的仪器信息。
 #. Channle ID：16-bit，用四位的16进制数表示，用于唯一标识一个channel；
 #. Recording flag：若为1则表示该channel正常记录数据，值一般为1（？）
 #. Delay time on a circuit：电路中的时间延迟，值一般为0
-#. Station code：台站代码，Hi-net的台站代码格式为\ ``N.xxxH``\ ；
+#. Station code：台站代码，Hi-net的台站代码格式为 ``N.xxxH`` ；
 #. Motion component code：分量名，可以取值包括U、N、E、X、Y，除此之外，还有wU、wE、wN等奇怪的分量；
 #. Reduction ratio of monitor waveform amplitude：显示器上的显示振幅与实际振幅之间的比例，其值为2的指数（？）
 #. Quantization bit rate in A/D conversion：模数转换器的量化分辨率，一般值为27，个别值为20或24；
 #. Sensor sensitivity：每单位输入所产生的输出为多少V；
-#. Unit of input：输入的单位，一般为\ ``m/s``\ ，即输入为速度；
+#. Unit of input：输入的单位，一般为 ``m/s`` ，即输入为速度；
 #. Natural period of the seismometer：传感器的自然周期；
 #. Damping constant of the seismometer：传感器的衰减常数；
 #. Amplification factor applied to sensor output prior to A/D conversion：在对连续波形使用ADC之前，传感器的放大因子；单位dB
@@ -76,24 +76,24 @@ Channel Table中仅给出了分量代码，可以取值为U、N、E、X、Y以�
 
 在Channel Table中，只给出了分量代码而没有给出具体的方位信息。因而只能根据分量代码做一些可靠的假设。
 
-- U向分量：\ ``cmpaz=0``\ 、\ ``cmpinc=0``\ ；
-- N向分量：\ ``cmpaz=0``\ 、\ ``cmpinc=90``\ ；
-- E向分量：\ ``cmpaz=90``\ 、\ ``cmpinc=90``\ ；
+- U向分量： ``cmpaz=0`` 、\ ``cmpinc=0``\ ；
+- N向分量： ``cmpaz=0`` 、\ ``cmpinc=90``\ ；
+- E向分量： ``cmpaz=90`` 、\ ``cmpinc=90``\ ；
 - 其他分量：未知；
 
 Units of input
 --------------
 
-Hi-net使用的是短周期速度地震仪，输入为速度场，单位为\ ``m/s``\ ，而部分channel的输入单位为\ ``m/s/s``\ ，即输入为加速度场。
+Hi-net使用的是短周期速度地震仪，输入为速度场，单位为 ``m/s`` ，而部分channel的输入单位为\ ``m/s/s``\ ，即输入为加速度场。
 
-输入单位为\ ``m/s/s``\ 的channel，与输入单位为\ ``m/s``\ 的channel相比，在后期的数据处理上差别很多，因而不建议提取输入单位为\ ``m/s/s``\ 的通道数据。
+输入单位为 ``m/s/s`` 的channel，与输入单位为\ ``m/s``\ 的channel相比，在后期的数据处理上差别很多，因而不建议提取输入单位为\ ``m/s/s``\ 的通道数据。
 
 Natural period of the seismometer
 ---------------------------------
 
 截至2014年09月08日，对于这一列的含义有两种互相矛盾的说法：
 
-- ``readme.txt``\ 中对该列解释为\ **Eigen frequency of the sensor**
+- ``readme.txt`` 中对该列解释为\ **Eigen frequency of the sensor**
 - `Hi-net FAQ 08 <http://www.hinet.bosai.go.jp/faq/?LANG=en#Q08>`_\ 中该列解释为\ **Natural period of the seismometer**
 
 Hi-net官方回复指出，FAQ08中的解释是正确的，即第10列为“Natural period of the seismometer”。
@@ -113,7 +113,7 @@ Hi-net官方回复指出，FAQ08中的解释是正确的，即第10列为“Natu
 参考
 ====
 
-#. 从Hi-net下载连续波形数据得到的ZIP文件中的\ ``readme.txt``\ ；
+#. 从Hi-net下载连续波形数据得到的ZIP文件中的 ``readme.txt`` ；
 #. \ `Hi-net FAQ 08 <http://www.hinet.bosai.go.jp/faq/?LANG=en#Q08>`_\
 #. \ `Azimuth information of the Hi-net borehole sensors <http://www.hinet.bosai.go.jp/REGS/direc/?LANG=en>`_\
 

@@ -37,8 +37,8 @@ SAC参考手册中文版
 - 新增内容：
 
   - 在Mac OS X 10.10中安装SAC
-  - 在C程序中调用SAC提供的\ ``distaz``\ 函数
-  - 数据处理中使用\ ``decimate``\ 和\ ``interpolate``\ 进行数据重采样
+  - 在C程序中调用SAC提供的 ``distaz`` 函数
+  - 数据处理中使用 ``decimate`` 和\ ``interpolate``\ 进行数据重采样
   - Python中修改发震时刻
   - 在C程序中读写SAC文件
   - 在Fortran程序中读写SAC文件
@@ -47,7 +47,7 @@ SAC参考手册中文版
   - 修改SAC所能读取的文件数目的上限
   - 文档维护与更新并征集维护者
 
-- 命令整理：\ ``mtw``\ 、\ ``markptp``\ 、\ ``markvalue``\ 、\ ``readcss``
+- 命令整理： ``mtw`` 、\ ``markptp``\ 、\ ``markvalue``\ 、\ ``readcss``
 - 修正Bugs和Typos
 
 对于维护者：
@@ -72,7 +72,7 @@ SAC参考手册中文版
 - 命令整理
 
     - ``hilbert``
-    - ``transfer``\ 与仪器响应
+    - ``transfer`` 与仪器响应
 
 - 新增内容：
 
@@ -84,7 +84,7 @@ SAC参考手册中文版
     - 错误与警告消息
     - 未定义变量
     - SAC debug
-    - ``wh``\ 与\ ``w over``\ 的区别
+    - ``wh`` 与 ``w over``\ 的区别
 
 对于维护者：
 
@@ -125,7 +125,7 @@ SAC参考手册中文版
 - 更新README，可根据说明自行编译源码生成PDF；
 - 修改Makefile，对依赖的检测更加智能；
 - 英文使用TeX默认字体；中文使用开源中文字体Fandol；
-- 使用\ ``minted``\ 实现代码的语法高亮，替代\ ``listings``\ ；
+- 使用 ``minted`` 实现代码的语法高亮，替代\ ``listings``\ ；
 - datetime宏包升级至datetime2；
 - 简化了绘图脚本的Makefile；
 

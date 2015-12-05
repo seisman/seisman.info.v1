@@ -32,9 +32,9 @@ rvm以及ruby的安装参考了\ `RVM实用指南 <http://ruby-china.org/wiki/rv
 
     curl -L https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
 
-这里不采用原文的\ ``curl -L get.rvm.io | bash -s stable``\ ，是因为该网址一直无法连接。
+这里不采用原文的 ``curl -L get.rvm.io | bash -s stable`` ，是因为该网址一直无法连接。
 
-rvm安装后会自动在\ ``.bashrc``\ , \ ``.bash_profile``\ , \ ``.zshrc``\ , \ ``.zlogin``\ 等文件中加入环境变量信息，需要手动删除或修改以符合自己的需求。
+rvm安装后会自动在 ``.bashrc`` , \ ``.bash_profile``\ , \ ``.zshrc``\ , \ ``.zlogin``\ 等文件中加入环境变量信息，需要手动删除或修改以符合自己的需求。
 
 列出可安装的ruby版本::
 
@@ -44,7 +44,7 @@ rvm安装后会自动在\ ``.bashrc``\ , \ ``.bash_profile``\ , \ ``.zshrc``\ , 
 
     rvm install 2.1.0
 
-安装的时候下载速度比较慢，查看了一下，发现rvm首先检测出我的系统是CentOS6，然后从\ ``https://rvm.io/binaries/centos/6/x86_64/ruby-2.1.0.tar.bz2``\ 下载软件包到\ ``~/.rvm/archives/bin-ruby-2.1.0.tar.bz2``\ 。手动实现这一步骤，重新用rvm安装，rvm检测到安装包的完整性便直接使用，加速不少。
+安装的时候下载速度比较慢，查看了一下，发现rvm首先检测出我的系统是CentOS6，然后从 ``https://rvm.io/binaries/centos/6/x86_64/ruby-2.1.0.tar.bz2`` 下载软件包到\ ``~/.rvm/archives/bin-ruby-2.1.0.tar.bz2``\ 。手动实现这一步骤，重新用rvm安装，rvm检测到安装包的完整性便直接使用，加速不少。
 
 设置当前版本为默认版本::
 
@@ -70,7 +70,7 @@ gem是ruby的包管理器，类似于perl下的cpan和python下的pip。
 
     yum install ruby rubygems ruby-devel rubygem-ruby-debug rubygem-rdiscount
 
-通过rvm已经安装了\ ``ruby rubygems ruby-devel rubygem-ruby-debug``\ 这四个，\ ``rubygem-rdiscount``\ 需要通过gem来安装::
+通过rvm已经安装了 ``ruby rubygems ruby-devel rubygem-ruby-debug`` 这四个，\ ``rubygem-rdiscount``\ 需要通过gem来安装::
 
     gem install rdiscount
 
@@ -83,7 +83,7 @@ gem是ruby的包管理器，类似于perl下的cpan和python下的pip。
 
     sudo python -c "import sys; py3 = sys.version_info[0] > 2; u = __import__('urllib.request' if py3 else 'urllib', fromlist=1); exec(u.urlopen('http://status.calibre-ebook.com/linux_installer').read()); main()"
 
-下载相当慢，所以还是手动下载。从 http://download.calibre-ebook.com/ 下载合适的版本，然后将其保持到\ ``/tmp/calibre-installer-cache``\ ，再次执行上面的命令就安装完成啦。
+下载相当慢，所以还是手动下载。从 http://download.calibre-ebook.com/ 下载合适的版本，然后将其保持到 ``/tmp/calibre-installer-cache`` ，再次执行上面的命令就安装完成啦。
 
 calibre不仅是一个电子书管理器，也是一个电子书阅读器，更是一个电子书格式转换器。这里仅用到格式转换的功能，其他功能尚待挖掘。其支持的格式可以在\ `这里 <http://manual.calibre-ebook.com/faq.html#what-formats-does-app-support-conversion-to-from>`__\看到。
 
@@ -112,7 +112,7 @@ CentOS 6的官方源中貌似是没有Pandoc的，不过EPEL源中有Pandoc::
 制作电子书
 ==========
 
-Pro Git的源码中提供了脚本\ ``makeebooks``\ 以制作电子书，其首先将markdown格式做简单处理生成了html文件，然后利用calibre的ebook-convert命令实现html到指定格式的转换。
+Pro Git的源码中提供了脚本 ``makeebooks`` 以制作电子书，其首先将markdown格式做简单处理生成了html文件，然后利用calibre的ebook-convert命令实现html到指定格式的转换。
 
 制作mobi格式中文文档::
 
@@ -127,7 +127,7 @@ Pro Git的源码中提供了脚本\ ``makeebooks``\ 以制作电子书，其首�
 
 ebook-convert支持输出为PDF格式，但是其生成的PDF效果很差，完全不及mobi和epub格式。
 
-Pro Git 提供了脚本\ ``makepdfs``\ ，本质上是使用了pandoc的格式转换功能，pandoc提供LaTeX模板，并利用LaTeX来更好地实现markdown到PDF的转换。
+Pro Git 提供了脚本 ``makepdfs`` ，本质上是使用了pandoc的格式转换功能，pandoc提供LaTeX模板，并利用LaTeX来更好地实现markdown到PDF的转换。
 
 在latex目录下，template.tex提供了生成LaTeX所需要的模板，主要是LaTeX的导言区；config.yml为配置文件，需要修改中文字体。
 

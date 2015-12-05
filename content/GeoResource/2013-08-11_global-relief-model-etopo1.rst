@@ -23,7 +23,7 @@ ETOPO1是分辨率为1弧分的全球地形起伏模型，其包含了陆地地�
 下载
 ====
 
-本文使用的是\ **grid-registered版本**\ 的\ **binary格式**\ 的数据文件：\ `etopo1_ice_g_i2.zip <http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/ice_surface/grid_registered/binary/etopo1_ice_g_i2.zip>`_ 。
+本文使用的是\ **grid-registered版本**\ 的\ **binary格式**\ 的数据文件： `etopo1_ice_g_i2.zip <http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/ice_surface/grid_registered/binary/etopo1_ice_g_i2.zip>`_ 。
 
 下面的说明也只针对binary格式有效。
 
@@ -34,7 +34,7 @@ ETOPO1是分辨率为1弧分的全球地形起伏模型，其包含了陆地地�
 
     7za e etopo1_ice_g_i2.zip
 
-解压之后的\ ``.bin``\ 文件为二进制网格文件，\ ``.hdr``\ 文件为头段文件
+解压之后的 ``.bin`` 文件为二进制网格文件， ``.hdr`` 文件为头段文件
 
 拷贝
 ====
@@ -46,24 +46,20 @@ ETOPO1是分辨率为1弧分的全球地形起伏模型，其包含了陆地地�
 修改grdraster.info
 ==================
 
-直接将下面的语句复制到\ ``grdraster.info``\ 中即可。关于语句为什么要这么写，需要参考hdr文件的内容。
+直接将下面的语句复制到 ``grdraster.info`` 中即可。关于语句为什么要这么写，需要参考hdr文件的内容。
 
 ::
 
     9 "ETOPO1 Ice Surface"          "m"     -R-180/180/-90/90       -I1m            GG i 1          0       -32768  etopo1_ice_g_i2.bin     L
 
-同理，对于bedrock版本的网格数据，其\ ``grdraster.info``\ 为
-
-::
+同理，对于bedrock版本的网格数据，其 ``grdraster.info`` 为::
 
     10 "ETOPO1 Bedrock"             "m"     -R-180/180/-90/90       -I1m            GG i 1          0       -32768  etopo1_bed_g_i2.bin     L
 
 备注
 ====
 
-如果下载的是netCDF格式的网格文件，需要利用如下命令将数据转换为binary格式：
-
-::
+如果下载的是netCDF格式的网格文件，需要利用如下命令将数据转换为binary格式::
 
     grdreformat ETOPO1_Ice_g_gmt4.grd etopo1_ice_g_i2.bin=bs -N -V
 

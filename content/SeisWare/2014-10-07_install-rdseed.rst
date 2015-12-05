@@ -14,7 +14,7 @@ rdseed用于将SEED格式的数据转换为SAC格式。
 
 申请地址： http://www.iris.edu/forms/rdseed_request.htm
 
-简单填写申请信息后，无需等待即可直接下载，目前的最新版本为\ ``rdseedv5.3.1.tar.gz``\ 。
+简单填写申请信息后，无需等待即可直接下载，目前的最新版本为 ``rdseedv5.3.1.tar.gz`` 。
 
 解压
 ====
@@ -29,13 +29,13 @@ rdseed用于将SEED格式的数据转换为SAC格式。
 
 rdseed提供了源代码，也提供了在不同平台下编译好的二进制文件。
 
-- 如果是Linux 64位系统，则使用\ ``rdseed.rh6.linux_64``\ ；
-- 如果是Mac 64位系统，则使用\ ``rdseed.mac.x86_64``\ ；
-- 如果是运行在Sun/Sparc平台上的Solaris，则使用\ ``rdseed.solaris.sparc_64``\ ；
-- 如果是运行在Sun/Intel平台上的Solaris，则使用\ ``rdseed.solaris.x86_64``\ ；
-- 如果是在32位Windows 7下运行Cygwin，则使用\ ``rdseed.windows.cygwin_32.exe``\ ；
+- 如果是Linux 64位系统，则使用 ``rdseed.rh6.linux_64`` ；
+- 如果是Mac 64位系统，则使用 ``rdseed.mac.x86_64`` ；
+- 如果是运行在Sun/Sparc平台上的Solaris，则使用 ``rdseed.solaris.sparc_64`` ；
+- 如果是运行在Sun/Intel平台上的Solaris，则使用 ``rdseed.solaris.x86_64`` ；
+- 如果是在32位Windows 7下运行Cygwin，则使用 ``rdseed.windows.cygwin_32.exe`` ；
 
-以64位Linux为例，应选择二进制文件\ ``rdseed.rh6.linux_64``\ ，直接执行::
+以64位Linux为例，应选择二进制文件 ``rdseed.rh6.linux_64`` ，直接执行::
 
     $ ./rdseed.rh6.linux_64
 
@@ -58,10 +58,10 @@ rdseed提供了源代码，也提供了在不同平台下编译好的二进制�
 #. ``make clean``
 #. 修改Makefile
 
-   Makefile中默认的CFLAGS为\ ``-O -m64 -g``\ ，若为32位系统，则应设置CFLAGS的值\ ``-O -m32 -g``\ 。
+   Makefile中默认的CFLAGS为 ``-O -m64 -g`` ，若为32位系统，则应设置CFLAGS的值\ ``-O -m32 -g``\ 。
 
 #. ``make``
-#. 此时生成了可执行文件\ ``rdseed``\ ，将其复制到PATH中即可::
+#. 此时生成了可执行文件 ``rdseed`` ，将其复制到PATH中即可::
 
       mv rdseed ~/bin/
 

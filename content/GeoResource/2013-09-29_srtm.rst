@@ -47,12 +47,12 @@ SRTM地形数据主要包含两类数据：SRTM3和SRTM1。
     x = int((lon+180.0)/5.0)+1;
     y = int((60-lat)/5.0)+1;
 
-其中lon = [-180,180], lat= [-60,60], 文件名为\ ``srtm_x_y.zip``\ 。
+其中lon = [-180,180], lat= [-60,60], 文件名为 ``srtm_x_y.zip`` 。
 
 数据来源及格式转换（推荐）
 ==========================
 
-推荐两个数据源。其中CGIAR-CSI为主站，中科院提供数据镜像。中科院的国内镜像速度更快，但近期一直无法访问，原因未知。
+推荐两个数据源。其中CGIAR-CSI为主站，中科院提供数据镜像。
 
 CGIAR-CSI
 ---------
@@ -61,7 +61,7 @@ CGIAR-CSI
 
 **版本：**\ 4.1
 
-**格式：**\ \ ``GeoTiff``\ 、\ ``ArcInfo ASCII``
+**格式：** ``GeoTiff`` 、 ``ArcInfo ASCII``
 
 **备注：**
 
@@ -69,10 +69,10 @@ CGIAR-CSI
 - 数据选择界面友好，简单易用，支持鼠标点选、拖曳或者直接输入经纬度范围；
 - 鼠标点选的注意事项：鼠标的真实点击位置与地图感知到的点击位置大概相差半个网格间距！点选时需要单击每个单元的下半部分才能选中。不知Bug来源，系统问题？浏览器问题？
 - 下载数据的时候选择HTTP下载方式。若使用FTP下载方式需要首先申请用户名和密码。
-- 提供\ ``ArcInfo ASCII``\ 和\ ``GeoTiff``\ 两种数据格式，需要转换方可在GMT中使用。
-- ``ArcInfo ASCII``\ 格式的数据可以使用GMT自带的\ ``xyz2grd``\ 命令转换成netCDF格式；
-- ``Geotiff``\ 格式的数据需要使用GDAL提供的命令\ ``gdal_translate``\ 转换为netCDF格式；
-- 推荐使用\ ``GeoTiff``\ 格式，文件尺寸相对于\ ``ArcInfo ASCII``\ 文件要小很多；
+- 提供 ``ArcInfo ASCII`` 和 ``GeoTiff`` 两种数据格式，需要转换方可在GMT中使用。
+- ``ArcInfo ASCII`` 格式的数据可以使用GMT自带的 ``xyz2grd`` 命令转换成netCDF格式；
+- ``Geotiff`` 格式的数据需要使用GDAL提供的命令 ``gdal_translate`` 转换为netCDF格式；
+- 推荐使用 ``GeoTiff`` 格式，文件尺寸相对于 ``ArcInfo ASCII`` 文件要小很多；
 
 **数据转换：**
 
@@ -94,7 +94,7 @@ GeoTiff格式转netCDF格式（详情参考\ `本文 <{filename}/GMT/2014-01-11_
 
 推荐的做法是先将多个GeoTiff文件合并起来，然将合并后的GeoTiff文件转换成netCDF格式。
 
-合并GeoTiff文件可以用\ `gdal_merge.py <http://gdal.org/gdal_merge.html>`_\ ，CentOS下要安装\ ``gdal-python``\ ；Ubuntu下要安装\ ``python-gdal``\ 或\ ``python3-gdal``\ 。转换命令如下::
+合并GeoTiff文件可以用\ `gdal_merge.py <http://gdal.org/gdal_merge.html>`_\ ，CentOS下要安装 ``gdal-python`` ；Ubuntu下要安装 ``python-gdal`` 或 ``python3-gdal`` 。转换命令如下::
 
     gdal_merge.py -init 255 -o out.tif srtm_56_07.tif srtm_57_07.tif
 
@@ -112,7 +112,7 @@ CGIAR同时提供了Box网盘下载。Box网盘中包含了重采样之后的数
 
 网盘地址：https://hc.box.com/shared/1yidaheouv
 
-密码(注意感叹号)：\ ``ThanksCSI!``
+密码(注意感叹号)： ``ThanksCSI!``
 
 中国科学院计算机网络信息中心
 ----------------------------
@@ -177,7 +177,7 @@ Geotiff、DTED需要专门软件处理；BIL格式本质上就是一般的二进
 
 将BIL格式转换为GMT grid格式::
 
- xyz2grd n52_e130_3arc_v1.bil -GN52E130.grd -I6c/3c -R$R -N-32768 -ZTLh
+    xyz2grd n52_e130_3arc_v1.bil -GN52E130.grd -I6c/3c -R$R -N-32768 -ZTLh
 
 小结
 ====
@@ -204,4 +204,4 @@ Geotiff、DTED需要专门软件处理；BIL格式本质上就是一般的二进
 - 2014-01-19：将CGIAR的ftp和Box下载移至不推荐来源中。
 - 2014-01-19：重新编排整个文章的结构，将正确性证明部分去除。当初做正确性证明是因为在将USGS未名网站提供的数据转换为网格文件时，官方文档提供的信息不充分，所以需要测试验证。现在SRTM存在更好的数据源，不必再考虑这个问题。
 - 2014-05-22：调整文章结构。由于中科院的数据源一直没有修复，因而仅推荐使用CGIAR的数据；
-- 2015-01-15：新增gdal_merge.py，用于合并GeoTiff文件；
+- 2015-01-15：新增 ``gdal_merge.py`` ，用于合并GeoTiff文件；

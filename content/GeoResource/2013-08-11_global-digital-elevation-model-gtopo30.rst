@@ -15,7 +15,7 @@ GTOPO30是USGS公布的全球数字高程模型，其采样间隔为30弧秒。
 下载
 ====
 
-使用\ ``wget``\ 批量下载所有数据文件::
+批量下载所有数据文件::
 
     wget -r -c -np -nd ftp://edcftp.cr.usgs.gov/data/gtopo30/global/
 
@@ -54,7 +54,7 @@ GTOPO30是USGS公布的全球数字高程模型，其采样间隔为30弧秒。
 复制
 ====
 
-将所有DEM文件拷贝至\ ``$GMTHOME/share/dbase``\
+将所有DEM文件拷贝至 ``$GMTHOME/share/dbase``
 
 修改grdraster.info
 ==================

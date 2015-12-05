@@ -25,12 +25,12 @@
    :align: center
    :alt: figure 2
 
-想要实现上图所示的效果，很简单，只需要修改GMT的参数\ ``MAP_ANNOT_OBLIQUE``\ 即可，代码如下::
+想要实现上图所示的效果，很简单，只需要修改GMT的参数 ``MAP_ANNOT_OBLIQUE`` 即可，代码如下::
 
     gmt set MAP_ANNOT_OBLIQUE 32
     gmt psbasemap -R0/50/-30/30 -JM10c -Bx10 -By10 > test.ps
 
 几点说明：
 
-#. GMT4下需要修改\ ``OBLIQUE_ANNOTATION``\ 为32；
-#. 该参数对\ ``JX``\ 无效，可能只对地理投影有效；
+#. GMT4下需要修改 ``OBLIQUE_ANNOTATION`` 为32；
+#. 该参数对 ``JX`` 无效，可能只对地理投影有效；

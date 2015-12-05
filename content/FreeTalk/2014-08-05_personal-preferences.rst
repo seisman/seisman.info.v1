@@ -40,8 +40,8 @@
 
 #. 编程字体
 
-   - `Source Code Pro`_\ ：目前正在使用。
-   - `Droid Sans Mono`_\ ：已放弃。难以区分数字0和大写字母O，难以区分中文左右引号。
+   - `Source Code Pro`_ ：目前正在使用。
+   - `Droid Sans Mono`_ ：已放弃。难以区分数字0和大写字母O，难以区分中文左右引号。
 
 #. PDF阅读器： evince > `zathura`_
 #. PS阅读器： `zathura`_ > gs > gv > evince
@@ -59,7 +59,7 @@
 网盘
 ====
 
-#. 同步网盘： `坚果云`_\ 和\ `Dropbox`\
+#. 同步网盘： `坚果云`_ 和 `Dropbox`_
 #. 备份网盘：OneDrive
 #. 资源类网盘： 百度云、360云盘、115网盘
 

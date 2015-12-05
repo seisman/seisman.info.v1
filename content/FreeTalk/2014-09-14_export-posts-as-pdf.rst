@@ -13,10 +13,10 @@
 
 转换过程中的一些细节如下：
 
-- 利用\ `Pandoc`_\ 实现从rST源码到PDF的转换
+- 利用 `Pandoc`_ 实现从rST源码到PDF的转换
 - 之所以采用Pandoc而不是rst2pdf是因为rst2pdf的安装一直有问题
-- 转换脚本为\ `makepdf.py`_
-- 转换为PDF时使用了xelatex，其中LaTeX模板为\ `seisman.latex`_
+- 转换脚本为 `makepdf.py`_
+- 转换为PDF时使用了xelatex，其中LaTeX模板为 `seisman.latex`_
 - 只转换博文，不转换其他页面
 - 自动更新，保证PDF与博文内容的一致性
 

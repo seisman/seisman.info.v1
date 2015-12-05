@@ -25,7 +25,7 @@ Catalog在线查询
 
 http://www.globalcmt.org/CMTsearch.html
 
-可以指定时间段、震级范围、震中范围、深度范围，也可以对震源时间函数以及T轴和N轴进行限制。并支持多种输出格式，其中的\ ``GMT psmeca input``\ 格式可以直接用于GMT绘图。
+可以指定时间段、震级范围、震中范围、深度范围，也可以对震源时间函数以及T轴和N轴进行限制。并支持多种输出格式，其中的 ``GMT psmeca input`` 格式可以直接用于GMT绘图。
 
 Catalog直接下载
 ===============

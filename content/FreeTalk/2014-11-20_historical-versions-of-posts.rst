@@ -15,6 +15,6 @@
 
 在每篇博文的右侧，有\ **Features**\ 一项，其中第一个图标用于下载当前博文的PDF，第二个图标是指向GitHub的链接，包含了当前博文的修订历史。熟悉GitHub和diff工具的读者应该可以很容易从中看到博文每次的修订情况。
 
-实现这个功能时，修改了pelican的源码。在\ ``contents.py``\ 第103行，加入如下语句::
+实现这个功能时，修改了pelican的源码。在 ``contents.py`` 第103行，加入如下语句::
 
     self.relative_source_path = self.get_relative_source_path()

@@ -40,7 +40,7 @@ Hi-net连续数据申请的源码分析
 Select
 -------
 
-机构、台网、开始时间以及数据长度，本质上都是下拉列表，也就是\ ``select``\ 标签。脚本语言中可以很容易选取下拉列表中的某一项。
+机构、台网、开始时间以及数据长度，本质上都是下拉列表，也就是 ``select`` 标签。脚本语言中可以很容易选取下拉列表中的某一项。
 
 开始时间与数据长度这两个下拉列表很简单，不多说。机构和台网下拉列表中涉及到一些额外的细节，如下：
 
@@ -72,7 +72,7 @@ Select
    <select name="volc"></select>
    </td></tr>
 
-在Organization的select标签的onChange属性中调用了\ ``netInit()``\ 和\ ``volcInit``\ 函数。这两个函数的定义位于\ `cont.js <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?140825>`_\ 中，当选定org之后，该函数会根据org的值对net和volc进行初始化，具体代码不再列出。
+在Organization的select标签的onChange属性中调用了 ``netInit()`` 和\ ``volcInit``\ 函数。这两个函数的定义位于\ `cont.js <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?140825>`_\ 中，当选定org之后，该函数会根据org的值对net和volc进行初始化，具体代码不再列出。
 
 其中涉及到两个数组/词典：networks和volcanos。每一个台网均对应一个唯一的key：
 
@@ -88,7 +88,7 @@ Select
     volcanos['010509'] = '0105:Fujisan';
     ...
 
-比如\ ``0101``\ 对应Hi-net，\ ``010503``\ 对应Usuzan火山台网。
+比如 ``0101`` 对应Hi-net，\ ``010503``\ 对应Usuzan火山台网。
 
 Submit
 ------
@@ -119,7 +119,7 @@ openRequest
 
     <a href="#" onClick="javascript:openRequest('01','01','2014','08','30','00','00','5','93680','en');return false;" onmouseover="changeImg('1')" onmouseout="changeImg('0')"><img src="./image/fulldl1_e.png" name="fulldl" class="img_border0" alt="" title="" /></a>
 
-可以看到，两种下载方式本质上没有区别，都是调用了\ ``openRequest``\ 函数。该函数的定义位于\ `js/cont.js?141201 <https://hinetwww11.bosai.go.jp/auth/download/cont/js/cont.js?141201>`_\ 中，如下：
+可以看到，两种下载方式本质上没有区别，都是调用了 ``openRequest`` 函数。该函数的定义位于\ `js/cont.js?141201 <https://hinetwww11.bosai.go.jp/auth/download/cont/js/cont.js?141201>`_\ 中，如下：
 
 .. code-block:: javascript
 
@@ -145,20 +145,20 @@ openRequest
 
 该函数需要10个参数：
 
--  ``org1``\ 为机构代码（NIED取值为01）
--  ``org2``\ 为台网代码（Hi-net取值为01）
--  ``year``\ 、\ ``month``\ 、\ ``day``\ 、\ ``hour``\ 、\ ``min``\ 为数据开始时间
--  ``span``\ 为数据长度（取值为5）
--  ``size``\ 为文件大小，单位为KB（Hi-net所有台站5分钟数据的size大概为93680，该值为估计值不那么重要）
--  ``lang``\ 为语言（默认取为en）
--  ``volc``\ 为火山代码，比如Usuzan火山台网的代码为\ ``010503``\
+-  ``org1`` 为机构代码（NIED取值为01）
+-  ``org2`` 为台网代码（Hi-net取值为01）
+-  ``year`` 、 ``month``\ 、\ ``day``\ 、\ ``hour``\ 、\ ``min``\ 为数据开始时间
+-  ``span`` 为数据长度（取值为5）
+-  ``size`` 为文件大小，单位为KB（Hi-net所有台站5分钟数据的size大概为93680，该值为估计值不那么重要）
+-  ``lang`` 为语言（默认取为en）
+-  ``volc`` 为火山代码，比如Usuzan火山台网的代码为 ``010503``\
 
-除此之外，函数中还遍历了\ ``arc[]``\ 数组，找到了数据文件的压缩格式arc；根据当前时间生成“随机数”\ ``rand``\ 。最后将这些key/value对构成了\ ``cont_request.php``\ 的query string，然后打开了该url。
+除此之外，函数中还遍历了 ``arc[]`` 数组，找到了数据文件的压缩格式arc；根据当前时间生成“随机数”\ ``rand``\ 。最后将这些key/value对构成了\ ``cont_request.php``\ 的query string，然后打开了该url。
 
 结论
 ====
 
-源码看到这里，结果就已经很显然了，数据申请的关键是调用\ ``openRequest``\ 函数，而调用\ ``openRequest``\ 函数的本质是向\ ``cont_request.php``\ 添加一系列请求字串（query string）。
+源码看到这里，结果就已经很显然了，数据申请的关键是调用 ``openRequest`` 函数，而调用\ ``openRequest``\ 函数的本质是向\ ``cont_request.php``\ 添加一系列请求字串（query string）。
 
 比如，在已登录Hi-net的前提下，将如下url直接复制粘贴到浏览器中，即可完成数据的申请::
 
@@ -182,11 +182,11 @@ openRequest
 
 后来，终于受不了了，单单下数据就得1个月，这得无聊死啊。于是就想着先停下来，好好分析一下整个网页的结构，希望可以通过脚本来实现数据申请。
 
-那个时候，对web还没有太多的了解，只知道简单的HTML，从图书馆借了HTML、CSS、JavaScript方面的书，一边看书一边折腾。尝试了写JS脚本、写Chrome/Firefox扩展，以及直接在浏览器的控制台中操作。当时，只知道\ ``openRequest``\ 函数，没有进一步去研究函数的具体定义。最后还是实现了在控制台中申请数据以及通过JS脚本申请数据，当然这两者都需要一些人工操作，不够自动化。
+那个时候，对web还没有太多的了解，只知道简单的HTML，从图书馆借了HTML、CSS、JavaScript方面的书，一边看书一边折腾。尝试了写JS脚本、写Chrome/Firefox扩展，以及直接在浏览器的控制台中操作。当时，只知道 ``openRequest`` 函数，没有进一步去研究函数的具体定义。最后还是实现了在控制台中申请数据以及通过JS脚本申请数据，当然这两者都需要一些人工操作，不够自动化。
 
 当时只会Perl脚本，因而通过Perl以及Mechanize模块实现了“打开浏览器”、“选择下拉列表”、“点击search”、“点击Package Download”的功能。这个脚本算是相当成功且自动化的，因而剩下的400个地震事件在几天内就申请并下载完毕了。这个Perl脚本完全模拟了人工鼠标点击的操作，在速度上和人工点击差不多，不过明显解放了一个劳动力。脚本的一个缺点在于，Mecahnize模块的依赖太多，且要求Perl版本尽可能新，稍显繁琐。
 
-在写完Perl脚本的一年间，因为写博客的缘故，对于网页以及脚本都有了更多的了解。一次偶然的机会，再次看了Hi-net源代码，找到了\ ``openRequest``\ 的定义，了解了数据申请的本质，也就是这篇博文的全部。
+在写完Perl脚本的一年间，因为写博客的缘故，对于网页以及脚本都有了更多的了解。一次偶然的机会，再次看了Hi-net源代码，找到了 ``openRequest`` 的定义，了解了数据申请的本质，也就是这篇博文的全部。
 
 根据本文的分析结果，用Python重新实现了新的数据申请方法，更加简单、聪明、快速。Python脚本留在下文再说。
 

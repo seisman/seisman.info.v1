@@ -31,12 +31,12 @@ gs中文配置文件
 
     sudo yum install ghostscript-chinese-zh_CN
 
-安装完成后，中文配置文件的路径为\ ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN``\ ，以下称为ghostscript中文配置文件。
+安装完成后，中文配置文件的路径为 ``/usr/share/ghostscript/conf.d/cidfmap.zh_CN`` ，以下称为ghostscript中文配置文件。
 
 GMT字体配置文件
 ---------------
 
-假定GMT的安装路径为\ ``/opt/GMT-4.5.13``\ ，则字体配置文件的路径为\ ``/opt/GMT-4.5.13/share/pslib/PS_font_info.d``\ 。
+假定GMT的安装路径为 ``/opt/GMT-4.5.13`` ，则字体配置文件的路径为 ``/opt/GMT-4.5.13/share/pslib/PS_font_info.d`` 。
 
 使gs支持中文
 ============
@@ -53,22 +53,22 @@ CentOS 7中ghostscript中文配置文件的默认内容为::
 
 其中的细节可能看不懂，但是可以大概总（xia）结（cai）如下：
 
-- 第一行定义了字体名为\ ``/BousungEG-Light-GB``\ ，对应的字体文件为\ ``/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc``\ ，也就是文泉驿正黑；
-- 第二行定义了字体名为\ ``/GBZenKai-Medium``\ ，对应的字体文件也是文泉驿正黑；
-- 第三行和第四行分别定义了字体名\ ``/MSungGBK-Light``\ 和\ ``/Adobe-GB1``\ ，这两种都对应于\ ``/BousungEG-Light-GB``\ ，相当于给字体定义了别名。
+- 第一行定义了字体名为 ``/BousungEG-Light-GB`` ，对应的字体文件为 ``/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc`` ，也就是文泉驿正黑；
+- 第二行定义了字体名为 ``/GBZenKai-Medium`` ，对应的字体文件也是文泉驿正黑；
+- 第三行和第四行分别定义了字体名 ``/MSungGBK-Light`` 和 ``/Adobe-GB1`` ，这两种都对应于 ``/BousungEG-Light-GB`` ，相当于给字体定义了别名。
 
 关于配置文件的几点说明：
 
-- 字体名是任意的，比如字体名可以取为\ ``/ABC``\ ；
-- 字体文件似乎只能是\ ``ttc``\ 或\ ``ttf``\ 格式的，当然修改参数也有可能可以使用其他格式的字体；
-- 要注意确认字体文件是否存在，比如CentOS7下的wqy-zenhei.ttc字体实际上位于软件包\ ``wqy-zenhei-fonts``\ 中。若字体不存在，则需要安装相应软件包。
+- 字体名是任意的，比如字体名可以取为 ``/ABC`` ；
+- 字体文件似乎只能是 ``ttc`` 或 ``ttf`` 格式的，当然修改参数也有可能可以使用其他格式的字体；
+- 要注意确认字体文件是否存在，比如CentOS7下的wqy-zenhei.ttc字体实际上位于软件包 ``wqy-zenhei-fonts`` 中。若字体不存在，则需要安装相应软件包。
 
 测试gs对Linux默认字体的支持
 ---------------------------
 
 CentOS7的ghostscript中文配置文件中，默认有四行，分别定义了四个字体名，尽管本质上这四个字体名都指向同一个字体。下面先测试一下如何让gs显示Linux的默认字体。
 
-用\ **编辑器**\ 新建一个PS文件（是的，PS文件其中就是纯文本，可以直接用编辑器编辑!），名为\ ``linux_fonts.ps``\ ，其内容为::
+用\ **编辑器**\ 新建一个PS文件（是的，PS文件其中就是纯文本，可以直接用编辑器编辑!），名为 ``linux_fonts.ps`` ，其内容为::
 
     %! PS-Adobe-3. 0
     /BousungEG-Light-GB--UniGB-UTF8-H findfont 20 scalefont setfont
@@ -91,7 +91,7 @@ CentOS7的ghostscript中文配置文件中，默认有四行，分别定义了�
     %%Trailer
     %%EOF
 
-简单解释一下，PS文件中要使用某个中文字体，需要用\ ``FontName--CMap``\ 的格式来调用。其中\ ``FontName``\ 即gs中文配置文件中给定的字体名。CMap可以取\ ``UniGB-UTF8-H``\ 和\ ``GB-EUC-H``\ ，Linux下一般用前者，Windows下一般用后者，应该是用于指定汉字或中文字体的编码，具体原理不知。
+简单解释一下，PS文件中要使用某个中文字体，需要用 ``FontName--CMap`` 的格式来调用。其中 ``FontName`` 即gs中文配置文件中给定的字体名。CMap可以取 ``UniGB-UTF8-H`` 和 ``GB-EUC-H`` ，Linux下一般用前者，Windows下一般用后者，应该是用于指定汉字或中文字体的编码，具体原理不知。
 
 用gs查看该PS文件，正常情况下显示如下图，表明gs可以正常显示Linux下的默认中文字体。
 
@@ -102,7 +102,7 @@ CentOS7的ghostscript中文配置文件中，默认有四行，分别定义了�
 添加Windows中文字体
 -------------------
 
-Linux的中文字体较少，所以这里使用Windows下中的中文字体，这里只考虑Windows下的宋体、仿宋、黑体和楷体四个基本字体。将这四个字体文件复制到\ ``/usr/share/fonts/winfonts/``\ 目录下，然后对gs的中文配置文件做如下修改::
+Linux的中文字体较少，所以这里使用Windows下中的中文字体，这里只考虑Windows下的宋体、仿宋、黑体和楷体四个基本字体。将这四个字体文件复制到 ``/usr/share/fonts/winfonts/`` 目录下，然后对gs的中文配置文件做如下修改::
 
     % 原内容保持不变
     /BousungEG-Light-GB << /FileType /TrueType /Path (/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc) /SubfontId 0 /CSI [(GB1) 4] >> ;
@@ -121,7 +121,7 @@ Linux的中文字体较少，所以这里使用Windows下中的中文字体，�
 测试gs对Windows中文字体的支持
 -----------------------------
 
-用\ **编辑器**\ 新建一个PS文件，名为\ ``windows_fonts.ps``\ ，其内容为::
+用\ **编辑器**\ 新建一个PS文件，名为 ``windows_fonts.ps`` ，其内容为::
 
     %! PS-Adobe-3. 0
     /STSong-Light--UniGB-UTF8-H findfont 20 scalefont setfont
@@ -157,7 +157,7 @@ Linux的中文字体较少，所以这里使用Windows下中的中文字体，�
 修改GMT字体配置文件
 -------------------
 
-打开GMT字体配置文件\ ``/opt/GMT-4.5.13/share/pslib/PS_font_info.d``\ ，在文件最后加入如下语句（以Windows下的四大常用字体为例）::
+打开GMT字体配置文件 ``/opt/GMT-4.5.13/share/pslib/PS_font_info.d`` ，在文件最后加入如下语句（以Windows下的四大常用字体为例）::
 
     STSong-Light--UniGB-UTF8-H  0.700    1
     STFangsong-Light--UniGB-UTF8-H  0.700    1
@@ -169,7 +169,7 @@ Linux的中文字体较少，所以这里使用Windows下中的中文字体，�
 查看GMT当前支持的字体
 ---------------------
 
-用\ ``pstext -L``\ 命令查看GMT当前的字体配置：
+用 ``pstext -L`` 命令查看GMT当前的字体配置：
 
 .. code-block:: bash
 
@@ -250,7 +250,7 @@ CentOS 6
 
    在安装配置文件的同时会安装中文字体uming和ukai
 
-#. gs中文配置文件中给定的字体路径为\ ``/usr/share/fonts/cjkuni/uming.ttc``\ 是错误的，真实的字体路径是\ ``/usr/share/fonts/cjkui-uming/uming.ttc``\ ，要注意改正。
+#. gs中文配置文件中给定的字体路径为 ``/usr/share/fonts/cjkuni/uming.ttc`` 是错误的，真实的字体路径是 ``/usr/share/fonts/cjkui-uming/uming.ttc`` ，要注意改正。
 
 Ubuntu 14.04/15.04
 ------------------
@@ -296,7 +296,7 @@ Ubuntu 14.04/15.04
 
        $ sudo update-gsfontmap
 
-   该命令会将\ ``/etc/ghostscript/cidfmap.d/*.conf``\ 合并成单独的文件\ ``/var/lib/ghostscript/fonts/cidfmap``\ 。gs在需要中文字体时会读取\ ``/var/lib/ghostscript/fonts/cidfmap``\ 而不是\ ``/etc/ghostscript/cidfmap.d/*.conf``\ 。这是Ubuntu/Debian和CentOS的一个很大不同。
+   该命令会将 ``/etc/ghostscript/cidfmap.d/*.conf`` 合并成单独的文件 ``/var/lib/ghostscript/fonts/cidfmap`` 。gs在需要中文字体时会读取 ``/var/lib/ghostscript/fonts/cidfmap`` 而不是 ``/etc/ghostscript/cidfmap.d/*.conf`` 。这是Ubuntu/Debian和CentOS的一个很大不同。
 
 Ubuntu 12.04
 ------------

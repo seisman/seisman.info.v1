@@ -19,7 +19,7 @@ etopo5是全球高程及水深数据，其空间分辨率是5弧分，目前已�
 
 http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO5/TOPO/ETOPO5/
 
-其中，\ ``ETOPO5.DAT``\ 和\ ``ETOPO5.DOS``\ 包含了相同的高程数据，只是二者的字节序不同。\ ``ETOPO5.DOS``\ 为\ ``little-endian``\ ，\ ``ETOPO5.DAT``\ 为\ ``big-endian``\ 。
+其中， ``ETOPO5.DAT`` 和 ``ETOPO5.DOS`` 包含了相同的高程数据，只是二者的字节序不同。 ``ETOPO5.DOS`` 为 ``little-endian`` ， ``ETOPO5.DAT`` 为 ``big-endian`` 。
 
 网格数据的说明
 ==============
@@ -111,11 +111,11 @@ http://www.ngdc.noaa.gov/mgg/global/relief/ETOPO5/TOPO/ETOPO5/
 复制
 ====
 
-将修改后的\ ``etopo5.i2``\ 拷贝至\ ``${GMTHOME}/share/dbase``\ 下，并在\ ``grdraster.info``\ 中加入如下语句::
+将修改后的 ``etopo5.i2`` 拷贝至 ``${GMTHOME}/share/dbase`` 下，并在 ``grdraster.info`` 中加入如下语句::
 
  1 "ETOPO5 global topography" "m" -R0/359:55/-90/90 -I5m GG i 1 0 none etopo5.i2
 
-这其实也就是默认的\ ``grdraster.info``\ 中的内容，只是GMT没有自带etopo5的数据。
+这其实也就是默认的 ``grdraster.info`` 中的内容，只是GMT没有自带etopo5的数据。
 
 画图检查
 ========

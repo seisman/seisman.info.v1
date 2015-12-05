@@ -50,7 +50,7 @@ Anaconda的特点：
 
    申请地址： https://store.continuum.io/cshop/academicanaconda
 
-   申请后，会得到一个license文件，将其放在\ ``~/.continuum``\ 目录下即可。
+   申请后，会得到一个license文件，将其放在 ``~/.continuum`` 目录下即可。
 
 #. 安装额外的功能包
 

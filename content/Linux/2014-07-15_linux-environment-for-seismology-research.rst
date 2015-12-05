@@ -39,19 +39,19 @@ CentOS 7的安装与其他Linux发行版的安装差不多，个别地方稍有�
 #. 将U盘插入计算机，重启，进入BIOS选择从U盘启动，即可进入CentOS的LiveCD
 #. 进入LiveCD后，点击桌面的“Install to Hard Drive”即可安装
 
-注：Linux下可以通过\ ``dd``\ 命令制作启动盘，但由于对原理不够了解，偶尔会导致制作失败，或制作成功后U盘容量有问题，还是用Windows下的Universal USB installer比较靠谱。
+注：Linux下可以通过 ``dd`` 命令制作启动盘，但由于对原理不够了解，偶尔会导致制作失败，或制作成功后U盘容量有问题，还是用Windows下的Universal USB installer比较靠谱。
 
 安装过程
 --------
 
 #. 选择安装过程中使用的语言，这里应\ **使用英语，不要使用汉语**\ 。若安装界面使用汉语，最终安装的系统中会出现两个比较麻烦的问题：
 
-   #. 家目录下的系统文件夹，比如Downloads、Desktop等会以中文表示，这使得在命令行\ ``cd``\ 变得很麻烦；
+   #. 家目录下的系统文件夹，比如Downloads、Desktop等会以中文表示，这使得在命令行 ``cd`` 变得很麻烦；
    #. 终端中某些字符用英文字体，某些字符用中文字体，效果非常差，需要自己修改终端字体方可；
 
 #. 选择区域和城市：Asia和Shanghai
 #. 键盘使用English(US)而不是English(UK)
-#. Hostname可以改也可以不改，我用\ ``saturn.geolab``\
+#. Hostname可以改也可以不改，我用 ``saturn.geolab``\
 #. 安装的目的地，选择要使用的硬盘，在“Other Storage Options”处选择“I will configure partioning”，即手动分区
 
 分区
@@ -64,11 +64,11 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 - 默认的文件系统为XFS而不是以前常用的EXT4；
 - 自动分区完成后，再根据自己的需求，手动修改分区细节
 
-  - ``/boot``\ ：CentOS自动分配，一定不要乱改；
-  - ``/``\ ：根目录，合理使用并及时清理的话15G就够了，不过建议30G以上；
-  - ``swap``\ ：与物理内存大小一致即可
-  - ``/opt``\ ：个人习惯是将第三方软件都安装在\ ``/opt``\ 下，所以分了70G
-  - ``/home``\ ：余下的全部空间
+  - ``/boot`` ：CentOS自动分配，一定不要乱改；
+  - ``/`` ：根目录，合理使用并及时清理的话15G就够了，不过建议30G以上；
+  - ``swap`` ：与物理内存大小一致即可
+  - ``/opt`` ：个人习惯是将第三方软件都安装在 ``/opt``\ 下，所以分了70G
+  - ``/home`` ：余下的全部空间
 
 - 点击“Begin to Install”开始安装
 
@@ -95,9 +95,9 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 默认情况下，一般账号是没有root权限的。为什么不直接用root账号，而是要给一般账号root权限呢？
 
 - **日常工作中使用root账号，是非常糟糕且危险的习惯！无论是服务器还是个人电脑都是如此。**
-- 安装软件时需要root权限，只能\ ``su``\ 切换到root账户再安装。对于习惯使用\ ``sudo``\ 的人来说，还是有些麻烦。
+- 安装软件时需要root权限，只能 ``su`` 切换到root账户再安装。对于习惯使用\ ``sudo``\ 的人来说，还是有些麻烦。
 
-假设账户名为seisman，要授予他root权限，则要修改配置文件\ ``/etc/sudoers``\ ::
+假设账户名为seisman，要授予他root权限，则要修改配置文件 ``/etc/sudoers`` ::
 
     $ su
     # echo 'seisman ALL=(ALL) ALL' >> /etc/sudoers # 向配置文件中加入语句
@@ -120,7 +120,7 @@ EPEL
 
    sudo yum install epel-release
 
-执行完该命令后，在\ ``/etc/yum.repos.d``\ 目录下会多一个\ ``epel.repo``\ 文件。
+执行完该命令后，在 ``/etc/yum.repos.d`` 目录下会多一个\ ``epel.repo``\ 文件。
 
 Nux Dextop
 ~~~~~~~~~~
@@ -129,7 +129,7 @@ Nux Dextop
 
     sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
 
-完成该命令后，在\ ``/etc/yum/repos.d``\ 目录下会多一个\ ``nux-dextop.repo``\ 文件。
+完成该命令后，在 ``/etc/yum/repos.d`` 目录下会多一个\ ``nux-dextop.repo``\ 文件。
 
 ELRepo
 ~~~~~~
@@ -139,7 +139,7 @@ ELRepo
     sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 
-完成该命令后，在\ ``/etc/yum.repos.d``\ 目录下会多一个\ ``elrepo.repo``\ 文件。
+完成该命令后，在 ``/etc/yum.repos.d`` 目录下会多一个\ ``elrepo.repo``\ 文件。
 
 安装yum-axelget
 ---------------
@@ -167,7 +167,7 @@ ELRepo
 删除多余的kernel
 ----------------
 
-在前面的\ ``yum update``\ 执行之后，可能会将kernel也一起更新，则在启动CentOS时启动项中会有很多项。
+在前面的 ``yum update`` 执行之后，可能会将kernel也一起更新，则在启动CentOS时启动项中会有很多项。
 
 确认当前使用的kernel版本号::
 
@@ -280,12 +280,12 @@ openmpi
 
     sudo yum install openmpi openmpi-devel
 
-安装后，二进制文件位于\ ``/usr/lib64/openmpi/bin``\ 下，动态库文件位于\ ``/usr/lib64/openmpi/lib``\ 下，因而实际使用的话还需要额外的配置，在\ ``.bashrc``\ 中加入如下语句::
+安装后，二进制文件位于 ``/usr/lib64/openmpi/bin`` 下，动态库文件位于\ ``/usr/lib64/openmpi/lib``\ 下，因而实际使用的话还需要额外的配置，在\ ``.bashrc``\ 中加入如下语句::
 
     export PATH=/usr/lib64/openmpi/bin/:${PATH}
     module load mpi/openmpi-x86_64
 
-PS：要使用\ ``module``\ 命令需要先安装\ ``environment-modules``\ 包。
+PS：要使用 ``module`` 命令需要先安装\ ``environment-modules``\ 包。
 
 mpich
 ~~~~~
@@ -294,7 +294,7 @@ mpich
 
     sudo yum install mpich mpich-devel
 
-安装后，二进制文件位于\ ``/usr/lib64/mpich/bin``\ 下，动态库文件位于\ ``/usr/lib64/mpich/lib``\ 下，因而实际使用的话还需要额外的配置，在\ ``.bashrc``\ 中加入如下语句::
+安装后，二进制文件位于 ``/usr/lib64/mpich/bin`` 下，动态库文件位于\ ``/usr/lib64/mpich/lib``\ 下，因而实际使用的话还需要额外的配置，在\ ``.bashrc``\ 中加入如下语句::
 
     export PATH=/usr/lib64/mpich/bin/:${PATH}
     module load mpi/mpich-x86_64
@@ -457,16 +457,16 @@ Google官方源在国内可能无法正常访问，故而添加Fedora中文社�
 
     sudo yum install google-chrome-stable
 
-.. 在\ ``/etc/yum.repos.d/``\ 目录下新建文件\ ``google-chrome.repo``\ ，向其中添加如下内容::
+.. 在 ``/etc/yum.repos.d/`` 目录下新建文件\ ``google-chrome.repo``\ ，向其中添加如下内容::
 ..    name=google-chrome
 ..    baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
 ..    enabled=1
 ..    gpgcheck=1
 ..    gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
 
-.. 导致安装失败或安装后无法正常更新，可以尝试修改\ ``gpgcheck=0``\ 再安装。(Thanks to 徐弥坚)
+.. 导致安装失败或安装后无法正常更新，可以尝试修改 ``gpgcheck=0`` 再安装。(Thanks to 徐弥坚)
 .. 这个私人镜像似乎已经不再更新了，故而删除。
-.. 有人在国内服务器上做了Google官方源的镜像，若你相信该镜像是安全的，则可使用此国内镜像代替Google官方源，\ ``google-chrome.repo``\ 的内容改为::
+.. 有人在国内服务器上做了Google官方源的镜像，若你相信该镜像是安全的，则可使用此国内镜像代替Google官方源， ``google-chrome.repo`` 的内容改为::
 ..  name=google-chrome
 ..  #baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
 ..  #gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
@@ -534,7 +534,7 @@ Gnome自带的终端模拟器是gnome-terminal。经常会需要开十几个终�
 terminator
 ~~~~~~~~~~
 
-terminator有很多功能，我只用到了终端分割的功能。\ ``Ctrl+Shift+O``\ 对终端水平分隔，\ ``Ctrl+Shift+E``\ 对终端垂直分隔，\ ``Alt+上下左右``\ 可以在各子终端中切换。terminator由Nux Dextop提供::
+terminator有很多功能，我只用到了终端分割的功能。 ``Ctrl+Shift+O`` 对终端水平分隔，\ ``Ctrl+Shift+E``\ 对终端垂直分隔，\ ``Alt+上下左右``\ 可以在各子终端中切换。terminator由Nux Dextop提供::
 
     sudo yum install terminator
 
@@ -547,7 +547,7 @@ guake
 
     sudo yum install guake
 
-安装完成后，在Application->System Tools里找到guake Terminal即可启动。按下F12即可呼出guake，再次按下F12即可隐藏。也可在终端执行\ ``guake-prefs``\ 对gauke进行配置。
+安装完成后，在Application->System Tools里找到guake Terminal即可启动。按下F12即可呼出guake，再次按下F12即可隐藏。也可在终端执行 ``guake-prefs`` 对gauke进行配置。
 
 zsh与oh my zsh
 --------------
@@ -572,24 +572,24 @@ zsh的特点在于：
 
 上面的命令，做了如下几件事情：
 
-- 下载\ ``oh my zsh``\ 到\ ``~/.oh-my-zsh``\
-- 备份已有的zsh配置文件\ ``~/.zshrc``\ ，并复制新的\ ``.zshrc``\ 文件
+- 下载 ``oh my zsh`` 到\ ``~/.oh-my-zsh``\
+- 备份已有的zsh配置文件 ``~/.zshrc`` ，并复制新的\ ``.zshrc``\ 文件
 - 将当前用户的默认shell由bash改成zsh
 
-第三步中，会报错如下：\ ``chsh: "/usr/bin/zsh" is not listed in /etc/shells.``\ ，需要手动修改默认shell::
+第三步中，会报错如下： ``chsh: "/usr/bin/zsh" is not listed in /etc/shells.`` ，需要手动修改默认shell::
 
     chsh -s /bin/zsh
 
-chsh命令修改的是login shell，因而需要退出当前用户并重新登陆，以后用户的默认shell就从bash变成了zsh，所有的配置都不用写到\ ``.bashrc``\ 而要写到\ ``.zshrc``\ 中。
+chsh命令修改的是login shell，因而需要退出当前用户并重新登陆，以后用户的默认shell就从bash变成了zsh，所有的配置都不用写到 ``.bashrc`` 而要写到\ ``.zshrc``\ 中。
 
-在\ ``.zshrc``\ 中可以选择喜欢的主题，以及适当数量的插件。下面列出我在用的插件:
+在 ``.zshrc`` 中可以选择喜欢的主题，以及适当数量的插件。下面列出我在用的插件:
 
 #. git
 
-   该插件为git的众多常用命令提供了更简单的别名，比如\ ``git status``\ 的别名是\ ``gst``\ ，大大减少了击键数。但该插件中\ ``git mergetool --no-prompt``\ 的别名是\ ``gmt``\ ，与GMT软件冲突，需要将该插件的目录git复制到custom/plugins下，然后删除其中的gmt别名；
+   该插件为git的众多常用命令提供了更简单的别名，比如 ``git status`` 的别名是\ ``gst``\ ，大大减少了击键数。但该插件中\ ``git mergetool --no-prompt``\ 的别名是\ ``gmt``\ ，与GMT软件冲突，需要将该插件的目录git复制到custom/plugins下，然后删除其中的gmt别名；
 
 #. 命令补全插件: pip, pyenv
-#. sudo：按两下\ ``ESC``\ 即可在当前命令前加上\ ``sudo``\
+#. sudo：按两下 ``ESC`` 即可在当前命令前加上\ ``sudo``\
 #. yum：为常见的yum命令提供别名
 
 autojump
@@ -631,7 +631,7 @@ HostTool
 
 HostTool科学上网本质上就是用最新的host文件替代了系统自带的host文件。
 
-下载解压后，进入目录，直接\ ``sudo python2 hoststool.py``\ 即可运行，具体的用法自己研究一下。
+下载解压后，进入目录，直接 ``sudo python2 hoststool.py`` 即可运行，具体的用法自己研究一下。
 
 等宽字体
 --------
@@ -643,7 +643,7 @@ HostTool科学上网本质上就是用最新的host文件替代了系统自带�
 #. 易于区分中文下的左引号和右引号
 #. 美观
 
-目前选择的Source Code Pro。将解压后的字体文件放在\ ``~/.fonts``\ 目录下，并修改终端、gedit以及其他编辑器、IDE等的默认字体。
+目前选择的Source Code Pro。将解压后的字体文件放在 ``~/.fonts`` 目录下，并修改终端、gedit以及其他编辑器、IDE等的默认字体。
 
 虚拟机
 ======
@@ -662,7 +662,7 @@ VirtuabBox的安装::
 需要注意两点：
 
 - 若机器性能不够，虚拟机的使用体验会非常差，所以不建议在老机器上使用；
-- 更新kernel之后需要执行\ ``sudo /etc/init.d/vboxdrv setup``\ ；
+- 更新kernel之后需要执行 ``sudo /etc/init.d/vboxdrv setup`` ；
 - 在VirtualBox安装虚拟系统后，记得使用“设备”->“安装增强功能”，使用效果会更好；
 
 gnome-boxes
@@ -746,7 +746,7 @@ PDF处理工具
 
 `cpdf <http://community.coherentpdf.com/>`_\ 是一个跨平台的PDF处理工具，可以完成常见的PDF合并、切割、加密解密、书签、水印等功能。
 
-下载已编译好的\ `二进制包 <https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip>`_\ ，解压，并将与自己的平台对应的二进制文件复制到\ ``${HOME}/bin``\ 目录下即可使用。
+下载已编译好的\ `二进制包 <https://github.com/coherentgraphics/cpdf-binaries/archive/master.zip>`_\ ，解压，并将与自己的平台对应的二进制文件复制到 ``${HOME}/bin`` 目录下即可使用。
 
 BT软件
 ------
@@ -769,7 +769,7 @@ uGet是Linux下的一个下载工具，支持HTTP、HTTPS、FTP、Torrent等，�
 截图软件shutter
 ---------------
 
-GNOME自带了截图工具。\ ``PrtScn``\ 为截取整个屏幕；\ ``Alt+PrtScn``\ 为截取当前窗口；\ ``Shift+PrtScn``\ 为自定义截屏区域。
+GNOME自带了截图工具。 ``PrtScn`` 为截取整个屏幕；\ ``Alt+PrtScn``\ 为截取当前窗口；\ ``Shift+PrtScn``\ 为自定义截屏区域。
 
 `shutter`_\ 是一个功能更强大的截图工具，支持不同的截图方式、图片格式，还支持图片的简单编辑与注释::
 

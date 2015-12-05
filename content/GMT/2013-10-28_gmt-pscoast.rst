@@ -27,7 +27,7 @@ pscoast是GMT最常用也是最核心的命令。这篇博文将一步步地指�
 
 pscoast可以绘制海岸线、国界以及河流。既然要画，就一定需要数据。
 
-默认情况下，这些数据位于\ ``${GMTHOME}/share/coast``\ 下，包括：
+默认情况下，这些数据位于 ``${GMTHOME}/share/coast`` 下，包括：
 
 -  binned_border_x.nc：国界、省界数据；
 -  binned_GSHHS_x.nc：海岸线数据；
@@ -37,7 +37,7 @@ pscoast可以绘制海岸线、国界以及河流。既然要画，就一定需�
 
 resolution可以取为f、h、i、l、c。在不使用-D选项的情况下，GMT默认的数据精度为低精度（l）。在精度后加上一个“+”使得命令在找不到当前指定的精度数据时，自动寻找更低精度的数据。
 
-以当前计算机的性能来说，即便是全球区域使用full精度的数据画图也基本不会消耗几秒钟。因而推荐使用\ ``-Df``\ 。
+以当前计算机的性能来说，即便是全球区域使用full精度的数据画图也基本不会消耗几秒钟。因而推荐使用 ``-Df`` 。
 
 究竟要画什么？
 ==============
@@ -66,7 +66,7 @@ GMT将shoreline分成四个等级（level取1-4）：
 
 不使用-W选项，则不绘制任何shore。如果使用-W，给定画笔属性pen，但是不给出level，则绘制四个level的shore。可以用-Wlevel/pen的方式指定要绘制哪一类shore，并指定pen，且在同一个命令中可以多次使用-W，以指定不同level的shore的画笔属性。
 
-**注意：**-W选项中level是可选的，而pen是必须的！因而若使用``-W2``\ ，2将被解释为所有level的pen属性，而不是level 2。
+**注意：**-W选项中level是可选的，而pen是必须的！因而若使用``-W2`` ，2将被解释为所有level的pen属性，而不是level 2。
 
 lakeshore的一些细节 -A
 +++++++++++++++++++++++
@@ -166,7 +166,7 @@ river可以分为如下几类：
 -  lon0/lat0指定了比例尺中心的经纬度位置。如果使用-Lx，则lon0/lat0被解释为相对原点的x、y距离。
 -  不同的经纬度，其比例尺不同，因而需要指定是要哪个地方的比例尺，slat指定纬度，对于倾斜投影也可以指定slon。
 -  length为比例尺的长度，单位为km，也可以使用英里（m）或海里（n）。默认比例尺为plain样式，可以使用-Lf得到fancy样式的比例尺。
--  对于fancy样式的比例尺，加上“+l”将在比例尺上方加上当前比例尺的单位（km），也可以加上“+llabel”自定义label，该label的具体属性由\ ``LABEL_FONT``\ 、\ ``LABEL_FONT_SIZE``\ 和\ ``LABEL_OFFSET``\ 控制。label的位置可以使用“+jjust”进行调节，其中just可以取b（bottom）、t（top）、l（left）和r（right）。
+-  对于fancy样式的比例尺，加上“+l”将在比例尺上方加上当前比例尺的单位（km），也可以加上“+llabel”自定义label，该label的具体属性由 ``LABEL_FONT`` 、 ``LABEL_FONT_SIZE`` 和 ``LABEL_OFFSET`` 控制。label的位置可以使用“+jjust”进行调节，其中just可以取b（bottom）、t（top）、l（left）和r（right）。
 -  对于fancy样式的比例尺，加上“+u”可以在比例尺上所有注释处加上单位。
 -  +p和+f可以给比例尺的背景处加上边框并涂色。
 

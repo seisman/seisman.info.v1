@@ -117,8 +117,8 @@ PS：下载数据时似乎同时只能下载5个数据，再点击其他数据�
 
 - 下载得到的为压缩文件，默认压缩格式为ZIP格式（推荐使用ZIP格式）。文件名格式为：
 
-  - 一般台网： \ ``[OrgID]_[NetID]_[Start time yyyymmddHHMM (in JST)]_[Record length (min)].zip``\
-  - 火山台网： \ ``[OrgID]_[NetID]_[VolcID]_[Start time yyyymmddHHMM (in JST)]_[Record length (min)].zip``\
+  - 一般台网：  ``[OrgID]_[NetID]_[Start time yyyymmddHHMM (in JST)]_[Record length (min)].zip``\
+  - 火山台网：  ``[OrgID]_[NetID]_[VolcID]_[Start time yyyymmddHHMM (in JST)]_[Record length (min)].zip``\
 
 - 每个ZIP文件中包含了若干个cnt文件、两个ch文件以及一个readme文件；
 - cnt文件中包含了一分钟的地震波形数据，为win32格式。win32格式是日本某机构自定义的一种地震数据格式，可以通过Hi-net提供的win32tools转换成SAC格式；

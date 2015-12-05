@@ -7,7 +7,7 @@ USTC网络通登录脚本Python版
 :tag: web, Python, USTC
 :slug: python-ustc-wlt-login
 
-最近几日在学Python以及相关的网页请求模块，练习着重写了USTC网络通的登录脚本，比之前的Perl版要简短了很多，其中使用了\ ``Requests``\ 模块。
+最近几日在学Python以及相关的网页请求模块，练习着重写了USTC网络通的登录脚本，比之前的Perl版要简短了很多，其中使用了 ``Requests`` 模块。
 
 最新版本位于：https://gist.github.com/seisman/2d04d52c6415d283dac8
 

@@ -50,7 +50,7 @@ method可以取如下四种形式：
 -  decompose
 -  gmt
 
-四种method，各自有自己独立的options，options太多，主要是调节一些细节参数，不细说。可以使用\ ``mapad method --help``\ 查看每个method对应的选项。
+四种method，各自有自己独立的options，options太多，主要是调节一些细节参数，不细说。可以使用 ``mapad method --help`` 查看每个method对应的选项。
 
 Method
 ======
@@ -71,7 +71,7 @@ Plot
    :alt: f1
    :width: 400 px
 
-这是个更复杂的例子，体现了mopad强大的可控性，具体选项参考\ ``mopad plot -h``\ ：
+这是个更复杂的例子，体现了mopad强大的可控性，具体选项参考 ``mopad plot -h`` ：
 
 ::
 

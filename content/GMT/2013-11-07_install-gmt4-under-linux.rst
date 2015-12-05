@@ -135,7 +135,7 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 - 2014-03-08：``make install``->``make install-all``
 - 2014-07-10：更新gshhg为2.3.1版；GMT4不依赖 ``gdal``
 - 2014-09-14：更新gshhg为2.3.2版
-- 2014-09-26：Ubuntu下 ``libxaw-dev``\ 应为\ ``libxaw7-dev``
+- 2014-09-26：Ubuntu下 ``libxaw-dev`` 应为 ``libxaw7-dev``
 - 2014-10-14：修正了若干细节
 - 2014-11-04：修改环境变量 ``LD_LIBRARY_PATH``
 - 2015-01-01：更新至GMT 4.5.13

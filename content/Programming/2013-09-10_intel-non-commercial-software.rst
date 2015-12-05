@@ -55,7 +55,7 @@ Intel的软件开发工具包括：C/C++编译器、Fortran编译器、MKL数学
 #. License
 #. 激活
 
-   点击“Use serial number to active and install product”，并到邮箱中找到序列号。序列号的格式为\ ``XXXX-XXXXXXXX``\ 。
+   点击“Use serial number to active and install product”，并到邮箱中找到序列号。序列号的格式为 ``XXXX-XXXXXXXX`` 。
 
 #. 安装选项
 
@@ -64,7 +64,7 @@ Intel的软件开发工具包括：C/C++编译器、Fortran编译器、MKL数学
 修改环境变量
 ============
 
-对于bash用户，在\ ``~/.bashrc``\ 中加入如下语句
+对于bash用户，在 ``~/.bashrc`` 中加入如下语句
 
 .. code-block:: bash
 
@@ -74,13 +74,13 @@ Intel的软件开发工具包括：C/C++编译器、Fortran编译器、MKL数学
    source /opt/intel/advisor_xe_2015/advixe-vars.sh quiet
    source /opt/intel/bin/compilervars.sh intel64
 
-然后执行\ ``source .bashrc``\ 使环境变量生效。对于csh用户，类似。
+然后执行 ``source .bashrc`` 使环境变量生效。对于csh用户，类似。
 
-说明：2015_update3版本，直接\ ``source``\ 会报错::
+说明：2015_update3版本，直接 ``source`` 会报错::
 
     /opt/intel/composer_xe_2015/ipp/bin/ippvars.sh:19: = not found
 
-这似乎是一个bug，把\ ``/opt/intel/composer_xe_2015/ipp/bin/ippvars.sh``\ 第19行的\ ``==``\ 改成\ ``=``\ 即可。
+这似乎是一个bug，把 ``/opt/intel/composer_xe_2015/ipp/bin/ippvars.sh`` 第19行的\ ``==``\ 改成\ ``=``\ 即可。
 
 修订历史
 ========

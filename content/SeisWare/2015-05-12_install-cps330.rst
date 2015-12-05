@@ -20,7 +20,7 @@ CPS330全称Computer Programs in Seismology，是圣路易斯大学地震中心�
 
 #. 确认当前系统是32还是64位：
 
-   执行\ ``uname -a``\ ，若输出中包含\ ``x86_64``\ 则是64位，若输出包含类似\ ``i686``\ 则为32位。
+   执行 ``uname -a`` ，若输出中包含\ ``x86_64``\ 则是64位，若输出包含类似\ ``i686``\ 则为32位。
 
 #. 配置
 
@@ -41,7 +41,7 @@ CPS330全称Computer Programs in Seismology，是圣路易斯大学地震中心�
 
 #. 修改环境变量
 
-   向\ ``~/.bashrc``\ 文件中添加如下语句::
+   向 ``~/.bashrc`` 文件中添加如下语句::
 
       export PATH=/path/to/PROGRAMS.330/bin:${PATH}
 

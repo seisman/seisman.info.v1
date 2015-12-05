@@ -7,11 +7,11 @@ GMT修改默认参数
 :tags: GMT4, GMT技巧
 :slug: modify-default-parameters
 
-GMT的默认参数文件为\ ``.gmtdefaults4``\ ，其系统默认值位于文件\ ``$GMTHOME/share/conf/gmtdefaults_SI``\ 中。GMT查找参数文件的顺序是
+GMT的默认参数文件为 ``.gmtdefaults4`` ，其系统默认值位于文件 ``$GMTHOME/share/conf/gmtdefaults_SI`` 中。GMT查找参数文件的顺序是
 
 ::
 
-    ./gmtdefaults4 > ~/.gmt/.gmtdefaults4 > ~/.gmtdefaults4 
+    ./gmtdefaults4 > ~/.gmt/.gmtdefaults4 > ~/.gmtdefaults4
 
 GMT手册中给出了修改GMT参数的几种方法，具体总结起来如下：
 

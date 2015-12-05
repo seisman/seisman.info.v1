@@ -70,7 +70,7 @@ EPEL中的netcdf版本为4.1.1，其编译过程中依赖于hdf5，因而当通�
 
 如果确认无误，依然出现如上报错，一个可能的原因是自己曾经尝试编译过netcdf，并禁用了hdf5相关功能，而删除netcdf时没有删除干净，或者怎样。
 
-如果真的没招了，可以查看编译GMT时的\ ``build/CMakeFiles``\ 目录下的\ ``CMakeError.log``\ 和\ ``CMakeOutput.log``\ 这两个日志文件，寻找与netcdf相关的部分。
+如果真的没招了，可以查看编译GMT时的 ``build/CMakeFiles`` 目录下的\ ``CMakeError.log``\ 和\ ``CMakeOutput.log``\ 这两个日志文件，寻找与netcdf相关的部分。
 
 其实质是找到netcdf的动态链接库，并通过如下C代码
 
@@ -89,4 +89,4 @@ EPEL中的netcdf版本为4.1.1，其编译过程中依赖于hdf5，因而当通�
         #endif
     }
 
-检测动态链接库中是否定义了函数\ ``nc_def_var_deflate``\ 。
+检测动态链接库中是否定义了函数 ``nc_def_var_deflate`` 。

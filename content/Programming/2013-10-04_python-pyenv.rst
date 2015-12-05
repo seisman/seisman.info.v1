@@ -45,7 +45,7 @@ Python多版本共存之pyenv
     anaconda-2.0.1  # 支持Python 2.6和2.7
     anaconda3-2.0.1 # 支持Python 3.3和3.4
 
-其中形如\ ``x.x.x``\ 这样的只有版本号的为Python官方版本，其他的形如\ ``xxxxx-x.x.x``\ 这种既有名称又有版本后的属于“衍生版”或发行版。
+其中形如 ``x.x.x`` 这样的只有版本号的为Python官方版本，其他的形如\ ``xxxxx-x.x.x``\ 这种既有名称又有版本后的属于“衍生版”或发行版。
 
 安装Python的依赖包
 ------------------
@@ -70,9 +70,9 @@ Python多版本共存之pyenv
 
 该命令会从github上下载python的源代码，并解压到/tmp目录下，然后在/tmp中执行编译工作。若依赖包没有安装，则会出现编译错误，需要在安装依赖包后重新执行该命令。
 
-对于科研环境，更推荐安装专为科学计算准备的Anaconda发行版，\ ``pyenv install anaconda-2.1.0``\ 安装2.x版本，\ ``pyenv install anaconda3-2.1.0``\ 安装3.x版本；
+对于科研环境，更推荐安装专为科学计算准备的Anaconda发行版， ``pyenv install anaconda-2.1.0`` 安装2.x版本，\ ``pyenv install anaconda3-2.1.0``\ 安装3.x版本；
 
-Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站下载，并将下载得到的文件放在\ ``~/.pyenv/cache``\ 目录下，则pyenv不会重复下载。
+Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站下载，并将下载得到的文件放在 ``~/.pyenv/cache`` 目录下，则pyenv不会重复下载。
 
 更新数据库
 ----------
@@ -104,7 +104,7 @@ Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站
     system
     * 3.4.1 (set by /home/seisman/.pyenv/version)
 
-当前全局的python版本已经变成了3.4.1。也可以使用\ ``pyenv local``\ 或\ ``pyenv shell``\ 临时改变python版本。
+当前全局的python版本已经变成了3.4.1。也可以使用 ``pyenv local`` 或\ ``pyenv shell``\ 临时改变python版本。
 
 确认python版本
 --------------
@@ -120,10 +120,10 @@ Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站
 使用python
 ==========
 
--  输入\ ``python``\ 即可使用新版本的python；
--  系统自带的脚本会以\ ``/usr/bin/python``\ 的方式直接调用老版本的python，因而不会对系统脚本产生影响；
--  使用\ ``pip``\ 安装第三方模块时会安装到\ ``~/.pyenv/versions/3.4.1``\ 下，不会和系统模块发生冲突。
--  使用\ ``pip``\ 安装模块后，可能需要执行\ ``pyenv rehash``\ 更新数据库；
+-  输入 ``python`` 即可使用新版本的python；
+-  系统自带的脚本会以 ``/usr/bin/python`` 的方式直接调用老版本的python，因而不会对系统脚本产生影响；
+-  使用 ``pip`` 安装第三方模块时会安装到\ ``~/.pyenv/versions/3.4.1``\ 下，不会和系统模块发生冲突。
+-  使用 ``pip`` 安装模块后，可能需要执行\ ``pyenv rehash``\ 更新数据库；
 
 参考
 ====

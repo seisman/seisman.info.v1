@@ -21,7 +21,7 @@ GMT中使用-U选项可以给图加一个时间戳，如下图左图所示。
    :alt: gmt logo
    :width: 600 px
 
-当初想要自定义logo，是因为看到了\ `Hi-net <http://www.hinet.bosai.go.jp/>`_\ 首页的地图中有自定义logo为\ ``Hi-net NIED``\ 觉得挺有意思，对于某些机构来说，加上一个个性化的logo应该也算是一种需求。
+当初想要自定义logo，是因为看到了\ `Hi-net <http://www.hinet.bosai.go.jp/>`_\ 首页的地图中有自定义logo为 ``Hi-net NIED`` 觉得挺有意思，对于某些机构来说，加上一个个性化的logo应该也算是一种需求。
 
 理解原理
 ========
@@ -34,7 +34,7 @@ gmt_timestamp
 函数定义
 ++++++++
 
-以下代码来自于\ ``GMT-5.1.0/src/gmt_plot.c``\ ：
+以下代码来自于 ``GMT-5.1.0/src/gmt_plot.c`` ：
 
 .. code-block:: c
 
@@ -112,12 +112,12 @@ gmt_timestamp
 源码说明
 ++++++++
 
--  L16：定义数组dim，其中\ ``dim[0]``\ 代表时间戳黑色部分的宽度，\ ``dim[1]``\ 代表黑色部分的高度，\ ``dim[2]``\ 没有用；其单位为英寸；
+-  L16：定义数组dim，其中 ``dim[0]`` 代表时间戳黑色部分的宽度， ``dim[1]`` 代表黑色部分的高度， ``dim[2]`` 没有用；其单位为英寸；
 -  L25：开始向PS文件中写入代码；
 -  L26-L31：一些设置；
 -  L51：设置填充色为黑色；
 -  L52：绘制矩形；
--  L53：将\ ``GMT_glyph``\ 写入矩形中；这个是重点！
+-  L53：将 ``GMT_glyph`` 写入矩形中；这个是重点！
 -  L54-L56：写入时间；
 -  L60-L63：写入command或者label；
 -  L65：结束；
@@ -125,7 +125,7 @@ gmt_timestamp
 GMT_glyph
 ----------
 
-GMT_glyph的定义位于\ ``gmt_plot.c``\ 中：
+GMT_glyph的定义位于 ``gmt_plot.c`` 中：
 
 .. code-block:: c
 
@@ -146,7 +146,7 @@ GMT_glyph的定义位于\ ``gmt_plot.c``\ 中：
 PSL_plotcolorimage
 -------------------
 
-``PSL_plotcolorimage``\ 的函数声明如下，取自\ ``GMT5.1.0/src/pslib.c``\ ：
+``PSL_plotcolorimage`` 的函数声明如下，取自 ``GMT5.1.0/src/pslib.c`` ：
 
 .. code-block:: c
 
@@ -203,12 +203,12 @@ PSL_plotcolorimage
 将Sun Raster文件转换为xbm格式
 -----------------------------
 
-xbm格式类似于C语言的格式，也就是\ ``GMT_glyph``\ 数组所需要的。
+xbm格式类似于C语言的格式，也就是 ``GMT_glyph`` 数组所需要的。
 
-#. 执行\ ``raster2xbm``\ ，(代码在这里\ `下载 <http://seisman.qiniudn.com/downloads/raster2xbm.tar.gz>`_\ )，将输出保存到gmt\_plot.c中的char数组GMT_glyph中。
-#. 将\ ``unsigned char GMT_glyph[2520]``\ 改成\ ``unsigned char GMT_glyph[46800]``\ ，其中46800=520\*90；
-#. gmt_timestamp中\ ``double dim[3] = {0.365, 0.15, 0.032};``\ 改成\ ``double dim[3] = {0.867, 0.15, 0.032};``
-#. gmt_timestamp中\ ``PSL_plotcolorimage (PSL, 0.0, 0.0, dim[0], dim[1], PSL_BL, GMT_glyph, 220, 90, 1);``\ 改成\ ``PSL_plotcolorimage (PSL, 0.0, 0.0, dim[0], dim[1], PSL_BL, GMT_glyph, 520, 90, 8);``
+#. 执行 ``raster2xbm`` ，(代码在这里\ `下载 <http://seisman.qiniudn.com/downloads/raster2xbm.tar.gz>`_\ )，将输出保存到gmt\_plot.c中的char数组GMT_glyph中。
+#. 将 ``unsigned char GMT_glyph[2520]`` 改成 ``unsigned char GMT_glyph[46800]`` ，其中46800=520\*90；
+#. gmt_timestamp中 ``double dim[3] = {0.365, 0.15, 0.032};`` 改成 ``double dim[3] = {0.867, 0.15, 0.032};``
+#. gmt_timestamp中 ``PSL_plotcolorimage (PSL, 0.0, 0.0, dim[0], dim[1], PSL_BL, GMT_glyph, 220, 90, 1);`` 改成 ``PSL_plotcolorimage (PSL, 0.0, 0.0, dim[0], dim[1], PSL_BL, GMT_glyph, 520, 90, 8);``
 
 重新编译GMT
 -----------

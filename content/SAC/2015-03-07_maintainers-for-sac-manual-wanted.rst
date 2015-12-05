@@ -104,7 +104,7 @@ SAC（Seismic Analysis Code）是地震学专业常用的数据处理软件之�
 第一次使用
 ----------
 
-#. 进入该手册的\ `项目主页 <https://github.com/seisman/SAC_Docs_zh>`_\ ，点击右上角的fork；该操作会将\ ``seisman``\ 账户下的\ ``SAC_Docs_zh``\ 项目复制到你的账户下。下面均假定你的账户名叫\ ``USER``\ 。
+#. 进入该手册的\ `项目主页 <https://github.com/seisman/SAC_Docs_zh>`_\ ，点击右上角的fork；该操作会将 ``seisman`` 账户下的\ ``SAC_Docs_zh``\ 项目复制到你的账户下。下面均假定你的账户名叫\ ``USER``\ 。
 
 #. 在终端执行如下操作::
 
@@ -170,7 +170,7 @@ Push之后，进入GitHub网站，提交Pull Request即可。
 - Git协作的方式有很多种，可以参考\ `Git使用规范流程 <http://www.ruanyifeng.com/blog/2015/08/git-use-process.html>`_
 - `git简易指南 <http://www.bootcss.com/p/git-guide/>`_
 - `廖雪峰的Git教程 <http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000>`_
-- 可以多次\ ``add``\ 多次再\ ``commit``\ ，多次\ ``commit``\ 再\ ``push``\ ，多次\ ``push``\ 之后再pull request；
+- 可以多次 ``add`` 多次再\ ``commit``\ ，多次\ ``commit``\ 再\ ``push``\ ，多次\ ``push``\ 之后再pull request；
 
 总之，希望有人能够参与进来，哪怕只是改几个错别字也是极好的。
 

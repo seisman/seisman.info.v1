@@ -2,7 +2,7 @@ GMT之底图边框类型
 #################
 
 :date: 2013-08-25 01:00
-:modified: 2014-07-09       
+:modified: 2014-07-09
 :author: SeisMan
 :category: GMT
 :tags: GMT技巧, GMT4
@@ -59,4 +59,4 @@ BASEMAP_TYPE是GMT的默认参数中可以修改的一个，其可以取inside�
 -  2013-08-25：初稿；
 -  2013-10-05：gmtset无法设置BASEMAP_TYPE为inside和graph：已确定为Bug；
 -  2013-10-05：psxyz支持graph类型；
--  2014-07-09：\ ``psbasemap``\ 命令不需要输入文件，修正了脚本中的错误；
+-  2014-07-09： ``psbasemap`` 命令不需要输入文件，修正了脚本中的错误；

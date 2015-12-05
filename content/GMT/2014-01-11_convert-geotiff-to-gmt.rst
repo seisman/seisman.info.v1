@@ -7,13 +7,13 @@ GeoTiff格式转GMT netCDF格式
 :tags: 格式转换, GMT5
 :slug: convert-geotiff-to-gmt
 
-`GDAL`_\ 提供了不少小工具，其中，\ ``gdal_translate``\ 可用于网格数据的格式转换。
+`GDAL`_\ 提供了不少小工具，其中， ``gdal_translate`` 可用于网格数据的格式转换。
 
 下面的命令可以将GeoTiff格式的数据转换为GMT可识别的netCDF格式::
 
     gdal_translate -of GMT srtm_56_05.tif srtm_56_05.nc
 
-``gdal_translate``\ 的语法如下：
+``gdal_translate`` 的语法如下：
 
 ::
 
@@ -30,7 +30,7 @@ GeoTiff格式转GMT netCDF格式
            [-co "NAME=VALUE"]* [-stats] [-norat]
            src_dataset dst_dataset
 
-``-of``\ 后接要转换的数据格式，使用\ ``gdal_translate --long-usage``\ 可以看到，支持的格式如下：
+``-of`` 后接要转换的数据格式，使用 ``gdal_translate --long-usage``\ 可以看到，支持的格式如下：
 
 ::
 
