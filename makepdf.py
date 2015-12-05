@@ -19,53 +19,48 @@ article_dirs = ['FreeTalk', 'GeoResource', 'GMT', 'Linux', 'Programming',
 
 
 def read_rst(rst):
-    lines = []
+    content = []
+    toc = False
     with open(rst) as f:
         for line in f:
-            lines.append(line)
+            line = re.sub(
+                "<{filename}/\w*/(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*).rst>",
+                "<" + siteurl + "/" + r"\g<slug>.html>",
+                line)
+            line = re.sub(
+                r".. figure:: /images/(\S)",
+                r".. figure:: " + base + '/images/' + r"\1",
+                line)
+            content.append(line)
 
-    return lines
+            if (line.startswith(".. contents::")):  # has tableofcontents
+                toc = True
 
-
-def update_rst(lines):
-    content = []
-    for line in lines:
-        line = re.sub(
-            "<{filename}/\w*/(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*).rst>",
-            "<" + siteurl + "/" + r"\g<slug>.html>", line)
-        line = re.sub(
-            r".. figure:: /images/(\S)",
-            r".. figure:: " + base + '/images/' + r"\1",
-            line)
-        content.append(line)
-
-    return content
+    return toc, content
 
 
-def write_pdf(content, pdf):
-    p = subprocess.Popen(
-        ["pandoc",
-         "-f", "rst",
-         "-t", "latex",
-         "-o", pdf,
-         "-s",
-         "--template=seisman.latex",
-         "--toc",
-         "--listings",
-         "--number-sections",
-         "--latex-engine=xelatex",
-         "-V", "SITEURL=http://seisman.info",
-         ],
-        stdin=subprocess.PIPE)
-    out = ''.join(content)
-    p.communicate(input=out.encode())
+def write_pdf(toc, content, pdf):
+    cmd = ["pandoc",
+           "-f", "rst",
+           "-t", "latex",
+           "-o", pdf,
+           "-s",
+           "--template=seisman.latex",
+           "--listings",
+           "--number-sections",
+           "--latex-engine=xelatex",
+           "-V", "SITEURL=http://seisman.info",
+           ]
+    if (toc):
+        cmd.append("--toc")
+    p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+    p.communicate(input=''.join(content).encode())
 
 
 def rst2pdf(rst, pdf):
     print("%s => %s" % (os.path.split(rst)[1], os.path.split(pdf)[1]))
-    content = read_rst(rst)
-    updated_content = update_rst(content)
-    write_pdf(updated_content, pdf)
+    toc, content = read_rst(rst)
+    write_pdf(toc, content, pdf)
 
 
 if __name__ == '__main__':
@@ -74,7 +69,7 @@ if __name__ == '__main__':
 
     # create dir for PDF
     if not os.path.exists(pdfdir):
-            os.makedirs(pdfdir)
+        os.makedirs(pdfdir)
 
     for root, dirs, files in os.walk(base):
         head, tail = os.path.split(root)
