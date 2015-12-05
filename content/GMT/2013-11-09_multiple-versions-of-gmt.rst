@@ -27,7 +27,7 @@ GMT官方提供了两种方法，可以实现多版本GMT的切换。但这两�
 
 首先，当前系统需要安装GMT4和GMT5两个版本，然后，需要将两个版本的路径都添加到PATH中。
 
-Linux用户可以向\ ``~/.bashrc``\ 中加入如下语句：
+Linux用户可以向 ``~/.bashrc`` 中加入如下语句：
 
 .. code-block:: bash
 
@@ -44,24 +44,24 @@ Windows用户类似，也要把两个版本的bin目录的路径加到PATH中。
 GMT5的命令格式
 ==============
 
-严格的说，GMT5中只有一个可执行文件：\ ``gmt``\ ，所有的命令都应以\ ``gmt``\ 开头，命令格式如下::
+严格的说，GMT5中只有一个可执行文件： ``gmt`` ，所有的命令都应以 ``gmt`` 开头，命令格式如下::
 
     gmt module -Axxx -Bxxx
 
-GMT4中的所有命令在GMT5中都作为命令\ ``gmt``\ 的一个模块来调用。比如GMT4的\ ``pscoast``\ 命令在GMT5中应该使用\ ``gmt pscoast``\ 来调用。
+GMT4中的所有命令在GMT5中都作为命令 ``gmt`` 的一个模块来调用。比如GMT4的 ``pscoast`` 命令在GMT5中应该使用 ``gmt pscoast`` 来调用。
 
-在使用GMT5时，应严格按照\ ``gmt module``\ 这样的格式调用。这样，随便打开一个脚本，看到\ ``pscoast``\ 就知道是GMT4的语法，看到\ ``gmt pscoast``\ 就知道是GMT5语法。
+在使用GMT5时，应严格按照 ``gmt module`` 这样的格式调用。这样，随便打开一个脚本，看到 ``pscoast`` 就知道是GMT4的语法，看到 ``gmt pscoast`` 就知道是GMT5语法。
 
 删除软链接
 ==========
 
-GMT5为了兼容GMT4的语法，在bin目录下建立了一堆指向\ ``gmt``\ 的软链接。进入GMT5的bin目录，其中gmt为可执行文件，gmt-config、gmtlogo、gmt_shell_functions.sh、 gmtswitch、isogmt为Bash脚本，其余都是指向可执行文件gmt的符号链接，把这些直接删除。
+GMT5为了兼容GMT4的语法，在bin目录下建立了一堆指向 ``gmt`` 的软链接。进入GMT5的bin目录，其中 ``gmt`` 为可执行文件， ``gmt-config`` 、 ``gmt_shell_functions.sh`` 、  ``gmtswitch`` 、 ``isogmt`` 为Bash脚本，其余都是指向可执行文件 ``gmt`` 的符号链接，把这些直接删除。
 
-最简单的删除符号链接的办法是在安装GMT的时候就不生成这些符号链接。在编译GMT5之前，修改\ ``cmake/ConfigUser.cmake``\ 时，其中有一行::
+最简单的删除符号链接的办法是在安装GMT的时候就不生成这些符号链接。在编译GMT5之前，修改 ``cmake/ConfigUser.cmake`` 时，其中有一行::
 
     #set (GMT_INSTALL_MODULE_LINKS FALSE)
 
-将该行前的“#”去掉，即设置GMT_INSTALL_MODULE_LINKS=FALSE，则在安装过程中就不会创建符号链接了。
+将该行前的“#”去掉，即设置 ``GMT_INSTALL_MODULE_LINKS=FALSE`` ，则在安装过程中就不会创建符号链接了。
 
 如果安装的过程中创建了符号链接，可以使用如下命令将这些符号链接删除::
 
@@ -88,7 +88,7 @@ GMT5提供了兼容模式，可以部分兼容GMT4的语法，但推荐使用不
 #. 使用兼容模式，可能到导致一个命令中既有GMT4语法也有GMT5语法，调试变得困难；
 #. 使用不兼容模式，有助于用户熟悉GMT5语法；
 
-要让GMT5不再兼容GMT4，只需要将\ ``GMT5/share/conf/gmt.conf``\ 中的::
+要让GMT5不再兼容GMT4，只需要将 ``GMT5/share/conf/gmt.conf`` 中的::
 
     GMT_COMPATIBILITY = 4
 
@@ -99,9 +99,9 @@ GMT5提供了兼容模式，可以部分兼容GMT4的语法，但推荐使用不
 测试一下
 ========
 
-终端输入\ ``psxy -``\ 会看到命令的版本是GMT 4.5.xx。
+终端输入 ``psxy -`` 会看到命令的版本是GMT 4.5.xx。
 
-终端输入\ ``gmt psxy -``\ 会看到命令版本为GMT 5.1.xx。
+终端输入 ``gmt psxy -`` 会看到命令版本为GMT 5.1.xx。
 
 修订历史
 ========
