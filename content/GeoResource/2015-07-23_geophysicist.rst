@@ -7,8 +7,6 @@
 :tags:
 :slug: geophysicist
 
-.. contents::
-
 .. list-table::
    :widths: 10 10
 
@@ -35,7 +33,7 @@
    * - **D**
      -
    * - `Arwen Deuss <http://www.geo.uu.nl/~deuss/>`_
-     -
+     - Inner Core
 
    * - **G**
      -
@@ -56,12 +54,12 @@
    * - **I**
      -
    * - `Miaki Ishii <http://www.seismology.harvard.edu/ishii.html>`_
-     -
+     - Back Projection
 
    * - **J**
      -
    * - `Chen Ji <http://www.geol.ucsb.edu/faculty/ji/>`_
-     -
+     - Finite Fault Inversion
 
    * - **K**
      -
@@ -109,7 +107,7 @@
    * - `Roel Snieder <http://inside.mines.edu/~rsnieder/>`_
      -
    * - `Xiaodong Song <http://www.geology.illinois.edu/people/xsong/Sites/index.html>`_
-     -
+     - Inner Core
 
    * - **T**
      -
@@ -120,7 +118,7 @@
    * - `Michael Thorne <http://web.utah.edu/thorne/index.html>`_
      -
    * - `Jeroen Tromp <http://www.princeton.edu/geosciences/tromp/index.xml>`_
-     -
+     - SEM
    * - `Victor C. Tsai <http://web.gps.caltech.edu/~tsai/>`_
      -
 
@@ -144,8 +142,8 @@
    * - **Z**
      -
    * - `Haijiang Zhang <http://staff.ustc.edu.cn/~zhang11/>`_
-     -
+     - TomoDD
    * - `Shijie Zhong <http://anquetil.colorado.edu/szhong/>`_
      -
    * - `Lupei Zhu <http://www.eas.slu.edu/People/LZhu/home.html>`_
-     -
+     - CAP, Receiver Function

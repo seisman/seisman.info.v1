@@ -10,7 +10,7 @@
 
 .. contents::
 
-``pssac`` 是Prof. Lupei Zhu根据GMT的 ``psxy``\ 命令修改得到，用于绘制SAC格式的波形数据的一个小程序。
+``pssac`` 是Prof. Lupei Zhu根据GMT的 ``psxy`` 命令修改得到，用于绘制SAC格式的波形数据的一个小程序。
 
 该程序调用了GMT的绘图库，因而安装该程序之前需要首先安装GMT4。需要注意，该程序不支持GMT5。
 
@@ -55,11 +55,11 @@
 
 通常情况下，只需要根据自己的情况修改 ``GMTHOME`` 即可。
 
-如果出现 ``-lnetcdf`` 找不到的情况，可能的原因是netCDF不是通过系统自带的软件包管理器安装而是手动编译的，此时需要在\ ``GMT_LIBS``\ 中加上netCDF所对应的路径，比如::
+如果出现 ``-lnetcdf`` 找不到的情况，可能的原因是netCDF不是通过系统自带的软件包管理器安装而是手动编译的，此时需要在 ``GMT_LIBS`` 中加上netCDF所对应的路径，比如::
 
     GMT_LIBS=-L${GMTHOME}/lib -L/path/to/netcdf/lib -lgmt -lpsl -lgmtps -lnetcdf -lm
 
-当然也有可能某些发行版下不是 ``lib`` 目录，而是\ ``lib64``\ 目录。
+当然也有可能某些发行版下不是 ``lib`` 目录，而是 ``lib64`` 目录。
 
 编译
 ====
@@ -73,7 +73,7 @@
    cc -O -I/opt/GMT-4.5.13/include   -c -o sacio.o sacio.c
    cc -O -I/opt/GMT-4.5.13/include    -o pssac pssac.o sacio.o -L/opt/GMT-4.5.13/lib -lgmt -lpsl -lgmtps -lnetcdf -lm
 
-编译会生成可执行文件 ``pssac`` ，将该可执行文件复制到PATH中即可，比如\ ``/usr/local/bin```\ 、\ ``/opt/GMT-4.5.13/bin``\ 或\ ``${HOME}/bin``\ 。
+编译会生成可执行文件 ``pssac`` ，将该可执行文件复制到PATH中即可，比如 ``/usr/local/bin``` 、 ``/opt/GMT-4.5.13/bin`` 或 ``${HOME}/bin`` 。
 
 执行
 ====

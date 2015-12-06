@@ -28,7 +28,7 @@ CCP，即Common-Conversion-Point，用于共转换点地震数据的叠加，这
 修改Makefile
 ============
 
-在Makefile中加入如下两行，定义变量 ``GMT_INC`` 和\ ``GMT_LIB``\ ：
+在Makefile中加入如下两行，定义变量 ``GMT_INC`` 和 ``GMT_LIB`` ：
 
 .. code-block:: make
 

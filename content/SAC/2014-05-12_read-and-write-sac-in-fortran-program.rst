@@ -21,7 +21,7 @@ SAC自带了读写函数库，并且提供了相关的示例程序，这些可�
 
 SAC自带的读写子函数实际上并不好用，因而就有很多人自己重新实现了SAC读写函数库，其中之一就是Prof. Lupei Zhu所写的 ``sacio.c`` 。
 
-\ `Prof. Lupei Zhu <http://www.eas.slu.edu/People/LZhu/home.html>`_\ 的 ``fk`` 或者 \ ``gCAP``\ 中都包含了SAC读写函数库，\ ``sacio.c``\ 和\ ``sac.h``\ 。这是一个用C语言实现的SAC读写函数库，同时提供了一些Fortran接口，因而也可以直接在Fortran程序中使用。
+\ `Prof. Lupei Zhu <http://www.eas.slu.edu/People/LZhu/home.html>`_\ 的 ``fk`` 或者  ``gCAP`` 中都包含了SAC读写函数库， ``sacio.c`` 和 ``sac.h`` 。这是一个用C语言实现的SAC读写函数库，同时提供了一些Fortran接口，因而也可以直接在Fortran程序中使用。
 
 
 子函数

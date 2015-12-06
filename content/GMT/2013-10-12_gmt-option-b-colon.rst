@@ -45,9 +45,7 @@ Bash实现
    psbasemap -R0/5/0/5 -JX5i -B1/1:."Title : eltiT": > a.ps
 
 
-直接运行报错如下：
-
-::
+直接运行报错如下::
 
     psbasemap: ERROR: Missing terminating colon in -B string 1ltiT:\
 
@@ -63,7 +61,7 @@ Bash实现
    #!/bin/bash
    psbasemap -R0/5/0/5 -JX5i -B1/1:."Title \072 eltiT": > a.ps
 
-为什么用八进制表示冒号就可以呢？GMT对-B选项进行解释时，遇到了":."，代表着接下来的字符串是标题，然后往后寻找找到下一个冒号":"，并将":."和":"之间的字符串作为标题。那么对于这种情况来说这个字符串就是"Title \072 eltiT"（引号不是字符串的一部分）。由于GMT是用C语言写的，当把字符串"Title \072 eltiT"用类似printf("Title \072 eltiT")的语法写到PS文件中时，就变成了"Title : eltiT"。即字符串以"Title \072 eltiT"的形式被GMT解释，然后以"Title : eltiT"的形式被C打印出来。
+为什么用八进制表示冒号就可以呢？GMT对-B选项进行解释时，遇到了 ``:.`` ，代表着接下来的字符串是标题，然后往后寻找找到下一个冒号 ``:`` ，并将 ``:.`` 和 ``:`` 之间的字符串作为标题。那么对于这种情况来说这个字符串就是 ``Title \072 eltiT`` （引号不是字符串的一部分）。由于GMT是用C语言写的，当把字符串 ``Title \072 eltiT`` 用类似 ``printf("Title \072 eltiT")`` 的语法写到PS文件中时，就变成了 ``Title : eltiT`` 。即字符串以 ``Title \072 eltiT`` 的形式被GMT解释，然后以 ``Title : eltiT`` 的形式被C打印出来。
 
 Perl实现
 ========
@@ -81,39 +79,37 @@ Perl实现
 
 .. code-block:: perl
 
- #!/usr/bin/env perl
- system "psbasemap -R0/10/0/10 -JX6i -B1/1:.'Title eltiT': > a.ps";
+   #!/usr/bin/env perl
+   system "psbasemap -R0/10/0/10 -JX6i -B1/1:.'Title eltiT': > a.ps";
 
 .. code-block:: perl
 
- #!/usr/bin/env perl
- system 'psbasemap -R0/10/0/10 -JX6i -B1/1:."Title eltiT": > a.ps';
+   #!/usr/bin/env perl
+   system 'psbasemap -R0/10/0/10 -JX6i -B1/1:."Title eltiT": > a.ps';
 
 下面两种写法只用了一种引号，因而会出现无法正确分界的问题：
 
 .. code-block:: perl
 
- #!/usr/bin/env perl
- system "psbasemap -R0/10/0/10 -JX6i -B1/1:."Title eltiT": > a.ps";
+   #!/usr/bin/env perl
+   system "psbasemap -R0/10/0/10 -JX6i -B1/1:."Title eltiT": > a.ps";
 
 .. code-block:: perl
 
- #!/usr/bin/env perl
- system 'psbasemap -R0/10/0/10 -JX6i -B1/1:.'Title eltiT': > a.ps';
+   #!/usr/bin/env perl
+   system 'psbasemap -R0/10/0/10 -JX6i -B1/1:.'Title eltiT': > a.ps';
 
 经典错误写法
 ------------
 
-在吸取了bash的经验教训之后，知道可以用"\072"来表示冒号，脚本如下：
+在吸取了bash的经验教训之后，知道可以用 ``\072`` 来表示冒号，脚本如下：
 
 .. code-block:: perl
 
- #!/usr/bin/env perl
- system "psbasemap -R0/10/0/10 -JX6i -B1/1:.'Title \072 eltiT': > a.ps";
+   #!/usr/bin/env perl
+   system "psbasemap -R0/10/0/10 -JX6i -B1/1:.'Title \072 eltiT': > a.ps";
 
-这种写法为什么是错的？因为perl首先会对system的参数（即双引号内的值）进行解释，双引号内的单引号被当作普通字符来解释（而不是任何分界符），而在双引号内反斜杠是可以转义的，因而\072被转义为":"，然后再调用psbasemap命令，即真正传给psbasemap并运行的命令其实是
-
-::
+这种写法为什么是错的？因为perl首先会对system的参数（即双引号内的值）进行解释，双引号内的单引号被当作普通字符来解释（而不是任何分界符），而在双引号内反斜杠是可以转义的，因而\072被转义为 ``:`` ，然后再调用psbasemap命令，即真正传给psbasemap并运行的命令其实是::
 
     psbasemap -R0/10/0/10 -JX6i -B1/1:.'Title : eltiT': > a.ps
 
@@ -124,12 +120,10 @@ Perl实现
 
 .. code-block:: perl
 
- #!/usr/bin/env perl
- system 'psbasemap -R0/10/0/10 -JX6i -B1/1:."Title \072 eltiT": > a.ps';
+   #!/usr/bin/env perl
+   system 'psbasemap -R0/10/0/10 -JX6i -B1/1:."Title \072 eltiT": > a.ps';
 
-这种写法为什么是正确的呢？因为Perl首先要对参数进行内插，由于参数是由单引号括起来的，此时双引号被当作普通字符而不是分界符，而单引号内反斜杠可以转义的字符只有单引号以及反斜杠，因而在单引号内\072不会被解释。那么传送给psbasemap的命令实际上就是
-
-::
+这种写法为什么是正确的呢？因为Perl首先要对参数进行内插，由于参数是由单引号括起来的，此时双引号被当作普通字符而不是分界符，而单引号内反斜杠可以转义的字符只有单引号以及反斜杠，因而在单引号内 ``\072`` 不会被解释。那么传送给psbasemap的命令实际上就是::
 
     psbasemap -R0/10/0/10 -JX6i -B1/1:."Title \072 eltiT": > a.ps
 
@@ -142,13 +136,13 @@ Perl实现
 
 .. code-block:: perl
 
- #!/usr/bin/env perl
- $R = "0/10/0/10";
- $J = "X6i";
+   #!/usr/bin/env perl
+   $R = "0/10/0/10";
+   $J = "X6i";
 
- system 'psbasemap -R$R -J$J -B1/1:."Title \072 eltiT": > a.ps';
+   system 'psbasemap -R$R -J$J -B1/1:."Title \072 eltiT": > a.ps';
 
-这样写是错误的，因为单引号内变量$R和$J都不会被内插，所以传送给psbasemap的是无意义的参数。
+这样写是错误的，因为单引号内变量 ``$R`` 和 ``$J`` 都不会被内插，所以传送给psbasemap的是无意义的参数。
 
 错误写法修正版
 --------------
@@ -157,15 +151,13 @@ Perl实现
 
 .. code-block:: perl
 
- #!/usr/bin/env perl
- $R = "0/10/0/10";
- $J = "X6i";
+   #!/usr/bin/env perl
+   $R = "0/10/0/10";
+   $J = "X6i";
 
- system "psbasemap -R$R -J$J -B1/1:.'Title \\072 eltiT': > a.ps";
+   system "psbasemap -R$R -J$J -B1/1:.'Title \\072 eltiT': > a.ps";
 
-这里的修改在于将"\072"改成了"\\072"，这样perl会将"\\"解释为"\"，然后进行系统调用，因而此时传给psbasemap的参数实际上是
-
-::
+这里的修改在于将 ``\072`` 改成了 ``\\072`` ，这样perl会将 ``\\`` 解释为 ``\`` ，然后进行系统调用，因而此时传给psbasemap的参数实际上是::
 
     psbasemap -R0/10/0/10 -JX6i -B1/1:.'Title \072 eltiT': > a.ps
 
@@ -174,19 +166,15 @@ Perl实现
 
 一切罪恶的来源都来自于转义字符。由于需要使用一些特殊字符，就一定会需要转义字符，同时还需要方便的使用转义字符本身这个字符。因而什么时候会转义、什么时候不会转义，就显得额外重要了。对于多个不同语言或者不同命令相互调用的时候，转义就更加重要了。
 
-以Bash为例，bash本身是个空壳，基本不具有任何数据处理能力，因而常常需要借助于awk、grep、sed等命令。Bash中的变量以$作为标识符，awk的变量也以$作为标识符，当在bash中用awk时，就存在一个问题：眼前的$变量到底是bash去解释还是awk去解释。awk为了凑合bash，采用了如下的设计：
-
-::
+以Bash为例，bash本身是个空壳，基本不具有任何数据处理能力，因而常常需要借助于awk、grep、sed等命令。Bash中的变量以$作为标识符，awk的变量也以$作为标识符，当在bash中用awk时，就存在一个问题：眼前的$变量到底是bash去解释还是awk去解释。awk为了凑合bash，采用了如下的设计::
 
     awk '{print $1}' infile
 
-当在bash中调用awk时，由于单引号的存在，bash不会对$1进行解释，此时$1交给awk取解释，这也许是你想要的。但是有些时候，如果真的想要将bash的变量$par交给awk就会出现问题：
-
-::
+当在bash中调用awk时，由于单引号的存在，bash不会对 ``$1`` 进行解释，此时 ``$1`` 交给awk取解释，这也许是你想要的。但是有些时候，如果真的想要将bash的变量 ``$par`` 交给awk就会出现问题::
 
     awk '{print $par,$1}' infile
 
-由于单引号的存在，awk看到的是字符"$par"，而不是变量$par的值，所以$par交给了awk取解释，而awk又不认识变量$par，就会出现问题。为了解决bash向awk传递变量的问题，awk设计了-v选项，感觉问题一下子就被复杂化了。相反，perl是一个自给自足的体系，就不会存在类似的设计缺陷了。
+由于单引号的存在，awk看到的是字符 ``$par`` ，而不是变量 ``$par`` 的值，所以 ``$par`` 交给了awk取解释，而awk又不认识变量 ``$par`` ，就会出现问题。为了解决bash向awk传递变量的问题，awk设计了 ``-v`` 选项，感觉问题一下子就被复杂化了。相反，perl是一个自给自足的体系，就不会存在类似的设计缺陷了。
 
 参考来源
 ========

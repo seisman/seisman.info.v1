@@ -34,6 +34,6 @@ PDF合并::
 
     cpdf input.pdf 1-3,12-end -o output.pdf
 
-将PDF分割成单页PDF，编号为 ``page001.pdf`` 、\ ``page002.pdf``\ ::
+将PDF分割成单页PDF，编号为 ``page001.pdf`` 、 ``page002.pdf`` ::
 
     cpdf -split in.pdf -o page%%%.pdf

@@ -80,7 +80,7 @@ Intel的软件开发工具包括：C/C++编译器、Fortran编译器、MKL数学
 
     /opt/intel/composer_xe_2015/ipp/bin/ippvars.sh:19: = not found
 
-这似乎是一个bug，把 ``/opt/intel/composer_xe_2015/ipp/bin/ippvars.sh`` 第19行的\ ``==``\ 改成\ ``=``\ 即可。
+这似乎是一个bug，把 ``/opt/intel/composer_xe_2015/ipp/bin/ippvars.sh`` 第19行的 ``==`` 改成 ``=`` 即可。
 
 修订历史
 ========

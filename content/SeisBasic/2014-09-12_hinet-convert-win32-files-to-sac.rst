@@ -37,9 +37,9 @@ Hi-net WIN32转SAC脚本
 参数说明
 ========
 
-#. ``DIRNAME`` 为必须参数，即要处理的文件夹。该文件夹中包含了两个文件： ``CODE_YYYYMMDDHHMM_SPAN.cnt``\ 格式的cnt文件和\ ``CODE_YYYYMMDD.ch``\ 格式的channel table文件；
+#. ``DIRNAME`` 为必须参数，即要处理的文件夹。该文件夹中包含了两个文件： ``CODE_YYYYMMDDHHMM_SPAN.cnt`` 格式的cnt文件和 ``CODE_YYYYMMDD.ch`` 格式的channel table文件；
 #. ``-C <comps>`` 为可选参数，表示要提取哪些分量的波形，可选的值为U、E、N、X、Y等，各分量间用逗号分隔，默认值为空，即提取全部分量；
-#. ``-D <outdir>`` 为可选参数，表示SAC文件的输出目录。可以是绝对路径，也可以是相对于当前目录的相对路径，默认解压到文件夹 ``DIRNAME``\ 下；
+#. ``-D <outdir>`` 为可选参数，表示SAC文件的输出目录。可以是绝对路径，也可以是相对于当前目录的相对路径，默认解压到文件夹 ``DIRNAME`` 下；
 #. ``-S <suffix>`` 输出SAC文件的扩展名，默认无扩展名
 #. ``-P <procs>`` 为可选参数，表示用多个进程并行提取数据；默认值为0，即设置进程数与CPU数目相同；
 
@@ -71,7 +71,7 @@ Hi-net WIN32转SAC脚本
 
     python rdhinet.py 201201010101 -D RAW
 
-输出到 ``RAW`` 目录下，并指定文件扩展名为\ ``SAC``\ ::
+输出到 ``RAW`` 目录下，并指定文件扩展名为 ``SAC`` ::
 
     python rdhinet.py 201201010101 -D RAW -S SAC
 

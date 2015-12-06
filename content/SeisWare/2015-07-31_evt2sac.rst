@@ -19,9 +19,9 @@
 
 #. 修改并简化Makefile，使用gcc和gfortran编译器
 #. 删除了不需要的文件
-#. ``evt2sac.c`` 、 ``evt_subs.c``\ 、\ ``ndt_subs.c``\ 中include了\ ``stdlib.h``\ 、\ ``string.h``\ 等头文件
+#. ``evt2sac.c`` 、 ``evt_subs.c`` 、 ``ndt_subs.c`` 中include了 ``stdlib.h`` 、 ``string.h`` 等头文件
 #. ``fglue2.F`` 中，subroutine中的include语句需要放在变量定义之前
 #. 修复了 ``fprintf`` 的语法错误
-#. ``distaz_`` 改为 ``distaz``\ ，请删除了前两个参数中的\ ``&``\ 符号。主要是因为SAC的源码已经从Fortran变成了C。
+#. ``distaz_`` 改为 ``distaz`` ，请删除了前两个参数中的 ``&`` 符号。主要是因为SAC的源码已经从Fortran变成了C。
 
 修改后的版本可以直接编译（可能需要修改Makefile中的 ``SACLIB`` 变量）。但是否能够正常使用，尚不确定。

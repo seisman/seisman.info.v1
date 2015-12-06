@@ -30,7 +30,7 @@ GeoTiff格式转GMT netCDF格式
            [-co "NAME=VALUE"]* [-stats] [-norat]
            src_dataset dst_dataset
 
-``-of`` 后接要转换的数据格式，使用 ``gdal_translate --long-usage``\ 可以看到，支持的格式如下：
+``-of`` 后接要转换的数据格式，使用 ``gdal_translate --long-usage`` 可以看到，支持的格式如下：
 
 ::
 

@@ -39,7 +39,7 @@
 相关代码
 ========
 
-广为流传的一个程序是 ``distaz`` 。在GMT、SAC等的源码里都可以找到。\ ``distaz``\ 代码很短，简单易懂，其采用的地球模型为椭球模型，精度上可以满足需求。
+广为流传的一个程序是 ``distaz`` 。在GMT、SAC等的源码里都可以找到。 ``distaz`` 代码很短，简单易懂，其采用的地球模型为椭球模型，精度上可以满足需求。
 
 - C、Fortran、Java、Python以及CGI版本： `由The lithospheric seismology program at USC整理 <http://www.seis.sc.edu/software/distaz/>`_
 
@@ -53,7 +53,7 @@ Matlab版本： `由specfem3d_globe提供 <https://github.com/geodynamics/specfe
 
     cc distaz.c -o cdistaz -lm
 
-其输入为 ``sta_lat sta_lon evt_lat evt_lon`` ，输出为\ ``Delta Baz Az``\ 。
+其输入为 ``sta_lat sta_lon evt_lat evt_lon`` ，输出为 ``Delta Baz Az`` 。
 
 ::
 

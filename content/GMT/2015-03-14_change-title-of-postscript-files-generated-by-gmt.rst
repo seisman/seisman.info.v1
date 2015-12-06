@@ -23,6 +23,6 @@ GMT软件自身不能自定义PS文件的标题，只能通过外部程序实现
 
     sed -i 's/^%%Title:.*/%%Title: '"$NEW_TITLE/" $FILE
 
-其中变量 ``$FILE`` 是要修改标题的PS文件名，\ ``$NEW_TITLE``\ 是要修改的新标题。这条命令本质上就是一个简单的字符串替换而已，比如::
+其中变量 ``$FILE`` 是要修改标题的PS文件名， ``$NEW_TITLE`` 是要修改的新标题。这条命令本质上就是一个简单的字符串替换而已，比如::
 
     sed -i 's/^%%Title:.*/%%Title: '"This is new title/" test.ps

@@ -19,12 +19,12 @@ SAC的color命令可以修改绘图窗口的背景色。SAC目前只支持几种
 
 每次绘图之前都执行这个命令显然比较麻烦，可以设置让SAC在启动时自带执行该命令。
 
-在 ``~/.bashrc`` 中加入如下\ ``alias``\ 语句::
+在 ``~/.bashrc`` 中加入如下 ``alias`` 语句::
 
 
     alias sac="${SACHOME}/bin/sac ${SACAUX}/init.m"
 
-并在 ``${SACAUX}`` 目录下（一般是\ ``/usr/local/sac/aux``\ ）新建文件\ ``init.m``\ ，其内容为::
+并在 ``${SACAUX}`` 目录下（一般是 ``/usr/local/sac/aux`` ）新建文件 ``init.m`` ，其内容为::
 
    color black background cyan
    

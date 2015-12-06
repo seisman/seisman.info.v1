@@ -29,7 +29,7 @@ sphinx中文支持
 
 sphinx在利用LaTeX生成PDF时，对中文支持不够，因而修改sphinx如下:
 
-#. 将 ``sphinx/texinputs/Makefile`` 中的\ ``pdflatex``\ 替换成\ ``xelatex``;
+#. 将 ``sphinx/texinputs/Makefile`` 中的 ``pdflatex`` 替换成 ``xelatex``;
 #. 修改 ``sphinx/writers/latex.py`` ，在231行左右对中文做特殊处理；
 
    .. code-block:: python

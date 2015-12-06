@@ -26,14 +26,14 @@ GMT在Windows下如何支持中文的问题在这篇\ `博文`_\ 里已经说的
 ghostscript的中文支持
 =====================
 
-若ghostscript的安装没有问题，则在 ``C:\Program Files\gs\gs9.15\examples\cjk`` 目录下可以找到文件\ ``gscjk_ag.ps``\ 。
+若ghostscript的安装没有问题，则在 ``C:\Program Files\gs\gs9.15\examples\cjk`` 目录下可以找到文件 ``gscjk_ag.ps`` 。
 
 启动cmd，键入如下命令::
 
    cd "C:\Program Files\gs\gs9.16\bin"
    gswin64.exe ..\examples\cjk\gscjk_ag.ps
 
-该命令用命令行版本的 ``gswin64c`` 打开\ ``gscjk_ag.ps``\ ，若能看到中文，则说明ghostscript是可以正常支持中文的。
+该命令用命令行版本的 ``gswin64c`` 打开 ``gscjk_ag.ps`` ，若能看到中文，则说明ghostscript是可以正常支持中文的。
 
 gsview的中文支持
 ================
@@ -42,7 +42,7 @@ gsview的中文支持
 
 双击打开 ``gscjk_ag.ps`` ，一般情况下不会正确显示汉字。这是因为gsview在打开PS文件时没有找到汉字所对应的字体文件。
 
-在gsview的“选项”->“高级配置”中，将Ghostscript Options由 ``-dNOPLATFONTS -sFONTPATH="c:\psfonts"`` 改成\ ``-dNOPLATFONTS -sFONTPATH="C:\Windows\Fonts"``\ ，此时gsview在调用gswin64时会将选项传递给gswin64，gswin64则会在\ ``FONTPATH``\ 中搜索字体。
+在gsview的“选项”->“高级配置”中，将Ghostscript Options由 ``-dNOPLATFONTS -sFONTPATH="c:\psfonts"`` 改成 ``-dNOPLATFONTS -sFONTPATH="C:\Windows\Fonts"`` ，此时gsview在调用gswin64时会将选项传递给gswin64，gswin64则会在 ``FONTPATH`` 中搜索字体。
 
 配置完毕后，重新打开 ``gscjk_ag.ps`` ，若中文正常显示，则表示gsview已支持中文。
 
@@ -72,7 +72,7 @@ GMT的中文支持
     (In Simplified Chinese articles, customarily we use just "Ghostscript" \
     as it is.) show
 
-其中 ``STSong-Light--GB-EUC-H`` 即为宋体，\ ``GB-EUC``\ 是文字编码方式，\ ``H``\ 表示水平字体，\ ``V``\ 表示垂直向字体，这里给出了四种常见字体的名称
+其中 ``STSong-Light--GB-EUC-H`` 即为宋体， ``GB-EUC`` 是文字编码方式， ``H`` 表示水平字体， ``V`` 表示垂直向字体，这里给出了四种常见字体的名称
 
 #. ``STSong-Light--GB-EUC-H``
 #. ``STFangsong-Light--GB-EUC-H``

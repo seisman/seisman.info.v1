@@ -45,7 +45,7 @@ pdfjam
 
 该命令的选项很多，可以通过 ``pdfjam --help`` 查看。
 
-``pdfjoin`` 是 ``pdfjam``\ 的一个封装，也可以直接使用::
+``pdfjoin`` 是 ``pdfjam`` 的一个封装，也可以直接使用::
 
     pdfjoin a.pdf b.pdf
 

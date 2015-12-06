@@ -28,7 +28,7 @@ hk是Prof. Lupei Zhu写的一个程序包，利用接收函数方法计算Moho�
 
 hk依赖于GMT，但只支持GMT4，不支持GMT5。
 
-在Makefile的最前面新增如下两行定义环境变量 ``GMT_INC`` 和\ ``GMT_LIBS``\ 。
+在Makefile的最前面新增如下两行定义环境变量 ``GMT_INC`` 和 ``GMT_LIBS`` 。
 
 通常情况下，新增的两行如下::
 
@@ -51,7 +51,7 @@ hk依赖于GMT，但只支持GMT4，不支持GMT5。
        ^
     make: *** [k_stack.o] Error 1
 
-解决办法是将 ``k_stack.c`` 的29行和\ ``grdmin.c``\ 的18行中的\ ``BOOLEAN``\ 替换成\ ``GMT_LONG``\ 。
+解决办法是将 ``k_stack.c`` 的29行和 ``grdmin.c`` 的18行中的 ``BOOLEAN`` 替换成 ``GMT_LONG`` 。
 
 编译
 ====
@@ -63,7 +63,7 @@ hk依赖于GMT，但只支持GMT4，不支持GMT5。
 其他
 ====
 
-``README`` 中介绍了程序的具体用法，具体示例位于目录 ``examples``\ 。
+``README`` 中介绍了程序的具体用法，具体示例位于目录 ``examples`` 。
 
 直接执行 ``README`` 中的示例代码，可能会出现如下错误::
 
@@ -77,7 +77,7 @@ hk依赖于GMT，但只支持GMT4，不支持GMT5。
    SAC> r KUL.* pp.*
    SAC> w over
 
-``hk_plt.pl`` 脚本中第13行， ``-JX4/2``\ 应改成\ ``-JX4i/2i``\ ，这样画出来的图的尺寸才是对的。
+``hk_plt.pl`` 脚本中第13行， ``-JX4/2`` 应改成 ``-JX4i/2i`` ，这样画出来的图的尺寸才是对的。
 
 修订历史
 ========

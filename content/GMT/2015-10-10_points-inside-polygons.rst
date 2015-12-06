@@ -57,7 +57,7 @@
 
    gmt psxy -J$J -R$R -T -O >> $PS
 
-上面的命令中， ``gmtselect`` 筛选出了\ ``points.xy``\ 的所有数据点中位于多边形\ ``polygon.xy``\ 中的点，通过管道传递给\ ``psxy``\ 命令。
+上面的命令中， ``gmtselect`` 筛选出了 ``points.xy`` 的所有数据点中位于多边形 ``polygon.xy`` 中的点，通过管道传递给 ``psxy`` 命令。
 
 .. figure:: /images/2015101001.png
    :width: 500 px

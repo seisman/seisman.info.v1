@@ -12,7 +12,7 @@ LaTeX的中文支持一直是个问题，11年左右刚开始学习LaTeX的时�
 
 后来，CTEX学会将xeCJK的功能进行打包，发布了ctex宏包，进一步简化了用LaTeX写中文文档的问题。
 
-下面是利用 ``xeLaTeX`` 和 \ ``xeCJK``\ 实现中文支持的最小模板:
+下面是利用 ``xeLaTeX`` 和  ``xeCJK`` 实现中文支持的最小模板:
 
 .. code-block:: tex
 

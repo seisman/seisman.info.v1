@@ -8,14 +8,14 @@ pssac2的安装
 :tags: pssac2, 编译
 :slug: install-pssac2
 
-``pssac2`` 是由Brian Savage基于Lupei Zhu的 ``pssac``\ 修改得到的，其继承了\ ``pssac``\ 的优质特性，同时在很多方面又有了进一步的提高。
+``pssac2`` 是由Brian Savage基于Lupei Zhu的 ``pssac`` 修改得到的，其继承了 ``pssac`` 的优质特性，同时在很多方面又有了进一步的提高。
 
 ``pssac2`` 目前有两个版本，一个支持GMT4，一个支持GMT5。
 
 GMT4版
 ======
 
-GMT4版本的 ``pssac2`` 没有官方下载地址，目前只在\ `specfem3d <https://github.com/geodynamics/specfem3d/tree/master/utils/ADJOINT_TOMOGRAPHY_TOOLS/measure_adj/UTIL/pssac2>`_\ 程序包中找到有\ ``pssac2``\ 的源码。
+GMT4版本的 ``pssac2`` 没有官方下载地址，目前只在\ `specfem3d <https://github.com/geodynamics/specfem3d/tree/master/utils/ADJOINT_TOMOGRAPHY_TOOLS/measure_adj/UTIL/pssac2>`_\ 程序包中找到有 ``pssac2`` 的源码。
 
 由于specfem3d中的pssac2下载起来有些麻烦，这里我整理了一个版本供读者下载：
 
@@ -32,7 +32,7 @@ GMT4版本的 ``pssac2`` 没有官方下载地址，目前只在\ `specfem3d <ht
 
         LDFLAGS+=" -L${withval}/lib -L${withval}/lib64"
 
-   修改后的版本同时考虑了GMT库文件在 ``lib`` 和\ ``lib64``\ 的两种可能性。
+   修改后的版本同时考虑了GMT库文件在 ``lib`` 和 ``lib64`` 的两种可能性。
 
 安装方法如下：
 
@@ -50,7 +50,7 @@ GMT4版本的 ``pssac2`` 没有官方下载地址，目前只在\ `specfem3d <ht
     pssac2.c:27: error: conflicting types for 'BOOLEAN'
     /opt/GMT4/include/gmt.h:278: note: previous declaration of 'BOOLEAN' was here
 
-出错的原因是 ``BOOLEAN`` 类型在两个地方的定义有冲突，把\ ``pssac2.c``\ 中第27行的\ ``typedef GMT_LONG BOOLEAN``\ 删除即可。
+出错的原因是 ``BOOLEAN`` 类型在两个地方的定义有冲突，把 ``pssac2.c`` 中第27行的 ``typedef GMT_LONG BOOLEAN`` 删除即可。
 
 
 GMT5版

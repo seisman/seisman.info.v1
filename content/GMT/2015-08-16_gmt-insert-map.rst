@@ -68,7 +68,7 @@ GMT5 脚本
 GMT4脚本
 ========
 
-GMT4脚本相对于GMT5脚本的主要区别在于：GMT5中任意命令都可以通过 ``-B+gwhite`` 的语法指定边框内填充白色，而GMT4中只有psbasemap命令可以通过\ ``-Gwhite``\ 选项来实现填充白色。因而GMT4的脚本中，需要先使用psbasemap绘制一个白色填充的边框，再使用pscoast绘制海岸线。
+GMT4脚本相对于GMT5脚本的主要区别在于：GMT5中任意命令都可以通过 ``-B+gwhite`` 的语法指定边框内填充白色，而GMT4中只有psbasemap命令可以通过 ``-Gwhite`` 选项来实现填充白色。因而GMT4的脚本中，需要先使用psbasemap绘制一个白色填充的边框，再使用pscoast绘制海岸线。
 
 .. code-block:: bash
 

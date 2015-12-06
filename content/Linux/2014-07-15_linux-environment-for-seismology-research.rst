@@ -67,7 +67,7 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
   - ``/boot`` ：CentOS自动分配，一定不要乱改；
   - ``/`` ：根目录，合理使用并及时清理的话15G就够了，不过建议30G以上；
   - ``swap`` ：与物理内存大小一致即可
-  - ``/opt`` ：个人习惯是将第三方软件都安装在 ``/opt``\ 下，所以分了70G
+  - ``/opt`` ：个人习惯是将第三方软件都安装在 ``/opt`` 下，所以分了70G
   - ``/home`` ：余下的全部空间
 
 - 点击“Begin to Install”开始安装
@@ -95,7 +95,7 @@ CentOS 7的分区似乎比较特别，自认为经验很丰富的我在第一次
 默认情况下，一般账号是没有root权限的。为什么不直接用root账号，而是要给一般账号root权限呢？
 
 - **日常工作中使用root账号，是非常糟糕且危险的习惯！无论是服务器还是个人电脑都是如此。**
-- 安装软件时需要root权限，只能 ``su`` 切换到root账户再安装。对于习惯使用\ ``sudo``\ 的人来说，还是有些麻烦。
+- 安装软件时需要root权限，只能 ``su`` 切换到root账户再安装。对于习惯使用 ``sudo`` 的人来说，还是有些麻烦。
 
 假设账户名为seisman，要授予他root权限，则要修改配置文件 ``/etc/sudoers`` ::
 
@@ -120,7 +120,7 @@ EPEL
 
    sudo yum install epel-release
 
-执行完该命令后，在 ``/etc/yum.repos.d`` 目录下会多一个\ ``epel.repo``\ 文件。
+执行完该命令后，在 ``/etc/yum.repos.d`` 目录下会多一个 ``epel.repo`` 文件。
 
 Nux Dextop
 ~~~~~~~~~~
@@ -129,7 +129,7 @@ Nux Dextop
 
     sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
 
-完成该命令后，在 ``/etc/yum/repos.d`` 目录下会多一个\ ``nux-dextop.repo``\ 文件。
+完成该命令后，在 ``/etc/yum/repos.d`` 目录下会多一个 ``nux-dextop.repo`` 文件。
 
 ELRepo
 ~~~~~~
@@ -139,7 +139,7 @@ ELRepo
     sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 
-完成该命令后，在 ``/etc/yum.repos.d`` 目录下会多一个\ ``elrepo.repo``\ 文件。
+完成该命令后，在 ``/etc/yum.repos.d`` 目录下会多一个 ``elrepo.repo`` 文件。
 
 安装yum-axelget
 ---------------
@@ -280,12 +280,12 @@ openmpi
 
     sudo yum install openmpi openmpi-devel
 
-安装后，二进制文件位于 ``/usr/lib64/openmpi/bin`` 下，动态库文件位于\ ``/usr/lib64/openmpi/lib``\ 下，因而实际使用的话还需要额外的配置，在\ ``.bashrc``\ 中加入如下语句::
+安装后，二进制文件位于 ``/usr/lib64/openmpi/bin`` 下，动态库文件位于 ``/usr/lib64/openmpi/lib`` 下，因而实际使用的话还需要额外的配置，在 ``.bashrc`` 中加入如下语句::
 
     export PATH=/usr/lib64/openmpi/bin/:${PATH}
     module load mpi/openmpi-x86_64
 
-PS：要使用 ``module`` 命令需要先安装\ ``environment-modules``\ 包。
+PS：要使用 ``module`` 命令需要先安装 ``environment-modules`` 包。
 
 mpich
 ~~~~~
@@ -294,7 +294,7 @@ mpich
 
     sudo yum install mpich mpich-devel
 
-安装后，二进制文件位于 ``/usr/lib64/mpich/bin`` 下，动态库文件位于\ ``/usr/lib64/mpich/lib``\ 下，因而实际使用的话还需要额外的配置，在\ ``.bashrc``\ 中加入如下语句::
+安装后，二进制文件位于 ``/usr/lib64/mpich/bin`` 下，动态库文件位于 ``/usr/lib64/mpich/lib`` 下，因而实际使用的话还需要额外的配置，在 ``.bashrc`` 中加入如下语句::
 
     export PATH=/usr/lib64/mpich/bin/:${PATH}
     module load mpi/mpich-x86_64
@@ -457,7 +457,7 @@ Google官方源在国内可能无法正常访问，故而添加Fedora中文社�
 
     sudo yum install google-chrome-stable
 
-.. 在 ``/etc/yum.repos.d/`` 目录下新建文件\ ``google-chrome.repo``\ ，向其中添加如下内容::
+.. 在 ``/etc/yum.repos.d/`` 目录下新建文件 ``google-chrome.repo`` ，向其中添加如下内容::
 ..    name=google-chrome
 ..    baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
 ..    enabled=1
@@ -534,7 +534,7 @@ Gnome自带的终端模拟器是gnome-terminal。经常会需要开十几个终�
 terminator
 ~~~~~~~~~~
 
-terminator有很多功能，我只用到了终端分割的功能。 ``Ctrl+Shift+O`` 对终端水平分隔，\ ``Ctrl+Shift+E``\ 对终端垂直分隔，\ ``Alt+上下左右``\ 可以在各子终端中切换。terminator由Nux Dextop提供::
+terminator有很多功能，我只用到了终端分割的功能。 ``Ctrl+Shift+O`` 对终端水平分隔， ``Ctrl+Shift+E`` 对终端垂直分隔， ``Alt+上下左右`` 可以在各子终端中切换。terminator由Nux Dextop提供::
 
     sudo yum install terminator
 
@@ -572,24 +572,24 @@ zsh的特点在于：
 
 上面的命令，做了如下几件事情：
 
-- 下载 ``oh my zsh`` 到\ ``~/.oh-my-zsh``\
-- 备份已有的zsh配置文件 ``~/.zshrc`` ，并复制新的\ ``.zshrc``\ 文件
+- 下载 ``oh my zsh`` 到 ``~/.oh-my-zsh``\
+- 备份已有的zsh配置文件 ``~/.zshrc`` ，并复制新的 ``.zshrc`` 文件
 - 将当前用户的默认shell由bash改成zsh
 
 第三步中，会报错如下： ``chsh: "/usr/bin/zsh" is not listed in /etc/shells.`` ，需要手动修改默认shell::
 
     chsh -s /bin/zsh
 
-chsh命令修改的是login shell，因而需要退出当前用户并重新登陆，以后用户的默认shell就从bash变成了zsh，所有的配置都不用写到 ``.bashrc`` 而要写到\ ``.zshrc``\ 中。
+chsh命令修改的是login shell，因而需要退出当前用户并重新登陆，以后用户的默认shell就从bash变成了zsh，所有的配置都不用写到 ``.bashrc`` 而要写到 ``.zshrc`` 中。
 
 在 ``.zshrc`` 中可以选择喜欢的主题，以及适当数量的插件。下面列出我在用的插件:
 
 #. git
 
-   该插件为git的众多常用命令提供了更简单的别名，比如 ``git status`` 的别名是\ ``gst``\ ，大大减少了击键数。但该插件中\ ``git mergetool --no-prompt``\ 的别名是\ ``gmt``\ ，与GMT软件冲突，需要将该插件的目录git复制到custom/plugins下，然后删除其中的gmt别名；
+   该插件为git的众多常用命令提供了更简单的别名，比如 ``git status`` 的别名是 ``gst`` ，大大减少了击键数。但该插件中 ``git mergetool --no-prompt`` 的别名是 ``gmt`` ，与GMT软件冲突，需要将该插件的目录git复制到custom/plugins下，然后删除其中的gmt别名；
 
 #. 命令补全插件: pip, pyenv
-#. sudo：按两下 ``ESC`` 即可在当前命令前加上\ ``sudo``\
+#. sudo：按两下 ``ESC`` 即可在当前命令前加上 ``sudo``\
 #. yum：为常见的yum命令提供别名
 
 autojump
@@ -769,7 +769,7 @@ uGet是Linux下的一个下载工具，支持HTTP、HTTPS、FTP、Torrent等，�
 截图软件shutter
 ---------------
 
-GNOME自带了截图工具。 ``PrtScn`` 为截取整个屏幕；\ ``Alt+PrtScn``\ 为截取当前窗口；\ ``Shift+PrtScn``\ 为自定义截屏区域。
+GNOME自带了截图工具。 ``PrtScn`` 为截取整个屏幕； ``Alt+PrtScn`` 为截取当前窗口； ``Shift+PrtScn`` 为自定义截屏区域。
 
 `shutter`_\ 是一个功能更强大的截图工具，支持不同的截图方式、图片格式，还支持图片的简单编辑与注释::
 

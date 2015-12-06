@@ -72,7 +72,7 @@ Select
    <select name="volc"></select>
    </td></tr>
 
-在Organization的select标签的onChange属性中调用了 ``netInit()`` 和\ ``volcInit``\ 函数。这两个函数的定义位于\ `cont.js <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?140825>`_\ 中，当选定org之后，该函数会根据org的值对net和volc进行初始化，具体代码不再列出。
+在Organization的select标签的onChange属性中调用了 ``netInit()`` 和 ``volcInit`` 函数。这两个函数的定义位于\ `cont.js <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?140825>`_\ 中，当选定org之后，该函数会根据org的值对net和volc进行初始化，具体代码不再列出。
 
 其中涉及到两个数组/词典：networks和volcanos。每一个台网均对应一个唯一的key：
 
@@ -88,7 +88,7 @@ Select
     volcanos['010509'] = '0105:Fujisan';
     ...
 
-比如 ``0101`` 对应Hi-net，\ ``010503``\ 对应Usuzan火山台网。
+比如 ``0101`` 对应Hi-net， ``010503`` 对应Usuzan火山台网。
 
 Submit
 ------
@@ -147,18 +147,18 @@ openRequest
 
 -  ``org1`` 为机构代码（NIED取值为01）
 -  ``org2`` 为台网代码（Hi-net取值为01）
--  ``year`` 、 ``month``\ 、\ ``day``\ 、\ ``hour``\ 、\ ``min``\ 为数据开始时间
+-  ``year`` 、 ``month`` 、 ``day`` 、 ``hour`` 、 ``min`` 为数据开始时间
 -  ``span`` 为数据长度（取值为5）
 -  ``size`` 为文件大小，单位为KB（Hi-net所有台站5分钟数据的size大概为93680，该值为估计值不那么重要）
 -  ``lang`` 为语言（默认取为en）
 -  ``volc`` 为火山代码，比如Usuzan火山台网的代码为 ``010503``\
 
-除此之外，函数中还遍历了 ``arc[]`` 数组，找到了数据文件的压缩格式arc；根据当前时间生成“随机数”\ ``rand``\ 。最后将这些key/value对构成了\ ``cont_request.php``\ 的query string，然后打开了该url。
+除此之外，函数中还遍历了 ``arc[]`` 数组，找到了数据文件的压缩格式arc；根据当前时间生成“随机数” ``rand`` 。最后将这些key/value对构成了 ``cont_request.php`` 的query string，然后打开了该url。
 
 结论
 ====
 
-源码看到这里，结果就已经很显然了，数据申请的关键是调用 ``openRequest`` 函数，而调用\ ``openRequest``\ 函数的本质是向\ ``cont_request.php``\ 添加一系列请求字串（query string）。
+源码看到这里，结果就已经很显然了，数据申请的关键是调用 ``openRequest`` 函数，而调用 ``openRequest`` 函数的本质是向 ``cont_request.php`` 添加一系列请求字串（query string）。
 
 比如，在已登录Hi-net的前提下，将如下url直接复制粘贴到浏览器中，即可完成数据的申请::
 

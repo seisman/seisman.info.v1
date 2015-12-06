@@ -58,7 +58,7 @@ rdseed提供了源代码，也提供了在不同平台下编译好的二进制�
 #. ``make clean``
 #. 修改Makefile
 
-   Makefile中默认的CFLAGS为 ``-O -m64 -g`` ，若为32位系统，则应设置CFLAGS的值\ ``-O -m32 -g``\ 。
+   Makefile中默认的CFLAGS为 ``-O -m64 -g`` ，若为32位系统，则应设置CFLAGS的值 ``-O -m32 -g`` 。
 
 #. ``make``
 #. 此时生成了可执行文件 ``rdseed`` ，将其复制到PATH中即可::

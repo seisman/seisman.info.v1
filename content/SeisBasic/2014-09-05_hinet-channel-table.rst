@@ -10,7 +10,7 @@ Hi-net Channel Table文件
 
 .. contents::
 
-从Hi-net下载连续波形数据会得到ZIP压缩文件，其中包含了两个后缀为 ``ch`` 的文件，即Channel Table文件。两个文件内容是相同的，区别在于一个是\ ``euc``\ 编码，一个是\ ``sjis``\ 编码。只需要用其中一个即可，这里选择\ ``euc``\ 编码的文件。
+从Hi-net下载连续波形数据会得到ZIP压缩文件，其中包含了两个后缀为 ``ch`` 的文件，即Channel Table文件。两个文件内容是相同的，区别在于一个是 ``euc`` 编码，一个是 ``sjis`` 编码。只需要用其中一个即可，这里选择 ``euc`` 编码的文件。
 
 Channel Table文件描述了每个channel的仪器信息。
 
@@ -76,17 +76,17 @@ Channel Table中仅给出了分量代码，可以取值为U、N、E、X、Y以�
 
 在Channel Table中，只给出了分量代码而没有给出具体的方位信息。因而只能根据分量代码做一些可靠的假设。
 
-- U向分量： ``cmpaz=0`` 、\ ``cmpinc=0``\ ；
-- N向分量： ``cmpaz=0`` 、\ ``cmpinc=90``\ ；
-- E向分量： ``cmpaz=90`` 、\ ``cmpinc=90``\ ；
+- U向分量： ``cmpaz=0`` 、 ``cmpinc=0`` ；
+- N向分量： ``cmpaz=0`` 、 ``cmpinc=90`` ；
+- E向分量： ``cmpaz=90`` 、 ``cmpinc=90`` ；
 - 其他分量：未知；
 
 Units of input
 --------------
 
-Hi-net使用的是短周期速度地震仪，输入为速度场，单位为 ``m/s`` ，而部分channel的输入单位为\ ``m/s/s``\ ，即输入为加速度场。
+Hi-net使用的是短周期速度地震仪，输入为速度场，单位为 ``m/s`` ，而部分channel的输入单位为 ``m/s/s`` ，即输入为加速度场。
 
-输入单位为 ``m/s/s`` 的channel，与输入单位为\ ``m/s``\ 的channel相比，在后期的数据处理上差别很多，因而不建议提取输入单位为\ ``m/s/s``\ 的通道数据。
+输入单位为 ``m/s/s`` 的channel，与输入单位为 ``m/s`` 的channel相比，在后期的数据处理上差别很多，因而不建议提取输入单位为 ``m/s/s`` 的通道数据。
 
 Natural period of the seismometer
 ---------------------------------

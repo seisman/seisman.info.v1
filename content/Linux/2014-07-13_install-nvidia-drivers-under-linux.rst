@@ -35,7 +35,7 @@ ELRepo源中包含了一系列驱动程序。
     [10de:06dd] NVIDIA Corporation GF100GL [Quadro 4000]
     This device requires the current 346.47 NVIDIA driver kmod-nvidia
 
-   根据 ``nvidia-detect`` 的输出信息，可以知道显卡的型号，以及要使用的驱动版本\ ``346.47``\ 。
+   根据 ``nvidia-detect`` 的输出信息，可以知道显卡的型号，以及要使用的驱动版本 ``346.47`` 。
 
 #. 安装显卡驱动
 
@@ -86,7 +86,7 @@ ELRepo源中包含了一系列驱动程序。
 
       sudo yum install kernel-devel
 
-#. 将nouveau驱动加入黑名单，在 ``/etc/modprobe.d/blacklist.conf`` （CentOS 7下为\ ``/usr/lib/modprobe.d/dist-blacklist.conf``\ ）中加入\ ``blacklist nouveau``\
+#. 将nouveau驱动加入黑名单，在 ``/etc/modprobe.d/blacklist.conf`` （CentOS 7下为 ``/usr/lib/modprobe.d/dist-blacklist.conf`` ）中加入 ``blacklist nouveau``\
 
 #. 备份initramfs文件
 
@@ -116,7 +116,7 @@ ELRepo源中包含了一系列驱动程序。
 
       sh NVIDIAxxx --kernel-source-path=/usr/src/kernels/x.xx.x-xxxxx
 
-   其中 ``NVIDIAxxx`` 为nvidia驱动脚本文件，\ ``x.xx.x-xxxx``\ 为kernel版本号。
+   其中 ``NVIDIAxxx`` 为nvidia驱动脚本文件， ``x.xx.x-xxxx`` 为kernel版本号。
 
 更新kernel后重装驱动
 --------------------

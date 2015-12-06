@@ -34,7 +34,7 @@ rvm以及ruby的安装参考了\ `RVM实用指南 <http://ruby-china.org/wiki/rv
 
 这里不采用原文的 ``curl -L get.rvm.io | bash -s stable`` ，是因为该网址一直无法连接。
 
-rvm安装后会自动在 ``.bashrc`` , \ ``.bash_profile``\ , \ ``.zshrc``\ , \ ``.zlogin``\ 等文件中加入环境变量信息，需要手动删除或修改以符合自己的需求。
+rvm安装后会自动在 ``.bashrc`` ,  ``.bash_profile`` ,  ``.zshrc`` ,  ``.zlogin`` 等文件中加入环境变量信息，需要手动删除或修改以符合自己的需求。
 
 列出可安装的ruby版本::
 
@@ -44,7 +44,7 @@ rvm安装后会自动在 ``.bashrc`` , \ ``.bash_profile``\ , \ ``.zshrc``\ , \ 
 
     rvm install 2.1.0
 
-安装的时候下载速度比较慢，查看了一下，发现rvm首先检测出我的系统是CentOS6，然后从 ``https://rvm.io/binaries/centos/6/x86_64/ruby-2.1.0.tar.bz2`` 下载软件包到\ ``~/.rvm/archives/bin-ruby-2.1.0.tar.bz2``\ 。手动实现这一步骤，重新用rvm安装，rvm检测到安装包的完整性便直接使用，加速不少。
+安装的时候下载速度比较慢，查看了一下，发现rvm首先检测出我的系统是CentOS6，然后从 ``https://rvm.io/binaries/centos/6/x86_64/ruby-2.1.0.tar.bz2`` 下载软件包到 ``~/.rvm/archives/bin-ruby-2.1.0.tar.bz2`` 。手动实现这一步骤，重新用rvm安装，rvm检测到安装包的完整性便直接使用，加速不少。
 
 设置当前版本为默认版本::
 
@@ -70,7 +70,7 @@ gem是ruby的包管理器，类似于perl下的cpan和python下的pip。
 
     yum install ruby rubygems ruby-devel rubygem-ruby-debug rubygem-rdiscount
 
-通过rvm已经安装了 ``ruby rubygems ruby-devel rubygem-ruby-debug`` 这四个，\ ``rubygem-rdiscount``\ 需要通过gem来安装::
+通过rvm已经安装了 ``ruby rubygems ruby-devel rubygem-ruby-debug`` 这四个， ``rubygem-rdiscount`` 需要通过gem来安装::
 
     gem install rdiscount
 
