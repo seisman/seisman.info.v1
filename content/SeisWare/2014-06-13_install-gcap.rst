@@ -48,3 +48,9 @@ gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目�
 #. 其它
 
    #. ``cap.pl`` 中第15行与第19行包含了两个绝对路径，分别包含了绘图脚本 ``cap_plt.pl`` 和Green函数库 ``Glib`` 的路径，需要根据自身情况修改。
+   #. ``cap_plt.pl`` 中，在第6行之后加上如下语句::
+
+        system "gmtset MEASURE_UNIT inch";
+        system "gmtset PAGE_ORIENTATION portrait";
+
+      这两句的作用是设置默认单位为英寸，并设置纸张方向为portrait模式。
