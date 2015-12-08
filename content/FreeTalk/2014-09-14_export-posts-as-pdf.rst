@@ -38,6 +38,7 @@
 - 图片不能为GIF格式，否则无法生成PDF
 - 无法指定PDF中的图片尺寸
 - 无法处理 ``list-table``
+- 段首未缩进
 
 .. _Pandoc: http://johnmacfarlane.net/pandoc/
 .. _makepdf.py: https://github.com/seisman/seisman.info/blob/master/makepdf.py
