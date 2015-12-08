@@ -43,7 +43,7 @@ crust1.0提供了多个压缩包，分别包含了不同的内容：
 
 #. crust1.0.tar.gz：主压缩包，包含了全球地壳速度和密度模型；
 #. crust1.0-addon：附加包，包含了全球地壳类型模型；
-#. crsthk.xyz：地壳厚度的XYZ文件(不含水厚度)；
+#. crsthk.xyz：地壳厚度的XYZ文件（不含水厚度）；
 #. depthtomoho.xyz：Moho深度的XYZ文件（相对于海平面）；
 #. sedthk.xyz：沉积层厚度的XYZ文件（单位km）；
 #. sedthk-m.xyz：沉积层厚度XYZ文件（单位为m）；
