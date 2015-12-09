@@ -80,6 +80,6 @@ gitcafe:
 import:
 	ghp-import -b $(BRANCH) $(OUTPUTDIR) -m "`date +'%Y-%m-%d %H:%M:%S'`"
 
-all: publish pdf import gitcafe github
+all: publish import gitcafe github pdf
 
 .PHONY: html help clean regenerate serve devserver publish github gitcafe import all
