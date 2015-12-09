@@ -90,7 +90,7 @@ track.data内容如下，三列数据分别为经度、纬度以及离起点的�
        # 取某个深度的剖面
        gawk -v dep=$i '$3==dep {print $1,$2,$4}' data.xyzd > $i.xyd
        # 将数据转换为netCDF格式
-       xyz2grd $i.xyd -R0/10/10/20 -I1/1 -G$i.nc
+       xyz2grd $i.xyd -R0/9/10/19 -I1/1 -G$i.nc -V
        # 在该深度处做grdtrack，最终结果重定向到track.profile中
        grdtrack track.data -G$i.nc | gawk -v dep=$i '{print $3, dep, $4}' >> track.profile
 

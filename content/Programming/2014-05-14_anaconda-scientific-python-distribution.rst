@@ -28,7 +28,7 @@ Anaconda的特点：
 
    为了保证两个Python版本之间不相互干扰，需要使用专门的工具来管理多个Python版本。这里选择的工具是pyenv。
 
-   pyenv的安装可以参考《\ `Python多版本共存之pyenv </Python/2013-10-04_python-pyenv.rst>`_\ 》。
+   pyenv的安装可以参考《\ `Python多版本共存之pyenv <{filename}/Programming/2013-10-04_python-pyenv.rst>`_\ 》。
 
    当然，也可以不使用pyenv，而直接从其官方网站下载： http://continuum.io/downloads 。此时用户需自行承担可能的版本冲突。
 
