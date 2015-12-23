@@ -52,11 +52,11 @@ GMT的编译需要C和C++编译器、cmake等开发工具。
 对于Ubuntu/Debian::
 
     sudo apt-get update
-    sudo apt-get install gcc g++ cmake make
+    sudo apt-get install gcc g++ cmake make libc6
 
 对于CentOS/RHEL/Fedora::
 
-    sudo yum install gcc gcc-c++ cmake make
+    sudo yum install gcc gcc-c++ cmake make glibc
 
 GMT的编译过程要求cmake的版本 ``>=2.8.5`` ，需要注意：
 
@@ -74,6 +74,7 @@ GMT5的依赖包，相对来说要复杂很多：
 
 - 看PS文件以及将PS转换成其他格式需要 ``ghostscript``
 - 网格文件需要 ``netCDF`` （>=4.0，且需要支持netCDF-4/HDF5）
+- GLib库：提供了C语言下的树、hash、列表和字符串功能
 - Perl兼容正则表达式库 `PCRE`_
 - 地理空间数据抽象库 `GDAL`_
 - Fourier变换库 `FFTW`_
@@ -85,6 +86,7 @@ GMT5的依赖包，相对来说要复杂很多：
     sudo apt-get update
     # 必须安装的包
     sudo apt-get install ghostscript libnetcdf-dev
+    sudo apt-get install libglib2.0-dev
     # 推荐安装的包
     sudo apt-get install libgdal-dev python-gdal
     sudo apt-get install liblapack3
@@ -95,6 +97,7 @@ GMT5的依赖包，相对来说要复杂很多：
 
     # 安装必须的包
     sudo yum install ghostscript netcdf-devel
+    sudo yum install glib2-devel
     # 推荐安装的包
     sudo yum install gdal-devel gdal-python
     sudo yum install lapack64-devel lapack-devel
@@ -179,6 +182,7 @@ GMT5的依赖包，相对来说要复杂很多：
           set (COPY_GSHHG FALSE)
           set (DCW_ROOT "/home/seisman/Datas/dcw-gmt-1.1.1")
           set (COPY_DCW FALSE)
+          set (GMT_USE_THREADS TRUE)
 
 继续执行如下命令以检查GMT的依赖关系::
 
@@ -287,6 +291,7 @@ Ubuntu 14.04/15.04以及部分Debian用户，可能会出现如下信息::
 ========
 
 - 2015-11-13：根据5.1.2的安装步骤更新至5.2.1；
+- 2015-12-23： ``GMT_USE_THREADS`` 功能需要安装 glib2库文件；
 
 .. _PCRE: http://www.pcre.org/
 .. _GDAL: http://www.gdal.org/
