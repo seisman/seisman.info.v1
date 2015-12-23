@@ -98,6 +98,14 @@ def md2pdf(md, pdf):
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     p.communicate(input=''.join(content).encode())
 
+def post2pdf(srcfile, pdffile):
+    filename, ext = os.path.splitext(srcfile)
+
+    if ext == '.rst':
+        rst2pdf(srcfile, pdffile)
+    elif ext == '.md':
+        md2pdf(srcfile, pdffile)
+
 
 if __name__ == '__main__':
     # parser arguments
@@ -110,23 +118,23 @@ if __name__ == '__main__':
     for root, dirs, files in os.walk(base):
         head, tail = os.path.split(root)
         if tail in article_dirs:
-            for rst in files:
-                filename, ext = os.path.splitext(rst)
-                if ext != '.rst':
+            for post in files:
+                filename, ext = os.path.splitext(post)
+                if ext not in ['.rst', '.md']:
                     continue
 
                 pdf = filename.split('_')[1] + '.pdf'
-                rstfile = os.path.join(root, rst)
+                srcfile = os.path.join(root, post)
                 pdffile = os.path.join(pdfdir, pdf)
 
                 if arguments['--all']:
-                    rst2pdf(rstfile, pdffile)
+                    post2pdf(srcfile, pdffile)
 
                 if arguments['--update']:
                     if not os.path.exists(pdffile):
-                        rst2pdf(rstfile, pdffile)
+                        post2pdf(srcfile, pdffile)
                     else:
-                        rst_mtime = os.path.getmtime(rstfile)
+                        src_mtime = os.path.getmtime(srcfile)
                         pdf_mtime = os.path.getmtime(pdffile)
-                        if rst_mtime > pdf_mtime:
-                            rst2pdf(rstfile, pdffile)
+                        if src_mtime > pdf_mtime:
+                            post2pdf(srcfile, pdffile)
