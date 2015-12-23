@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Convert rST to PDF
+"""Convert rST and markdown to PDF
 
 Usage:
     makepdf.py (--all | --update)
@@ -19,8 +19,6 @@ article_dirs = ['FreeTalk', 'GeoResource', 'GMT', 'Linux', 'Programming',
 
 
 def rst2pdf(rst, pdf):
-    print("%s => %s" % (os.path.split(rst)[1], os.path.split(pdf)[1]))
-
     content = []
     toc = False
 
@@ -59,8 +57,6 @@ def rst2pdf(rst, pdf):
 
 
 def md2pdf(md, pdf):
-    print("%s => %s" % (os.path.split(md)[1], os.path.split(pdf)[1]))
-
     meta = {}
     content = []
     with open(md) as f:
@@ -98,13 +94,14 @@ def md2pdf(md, pdf):
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     p.communicate(input=''.join(content).encode())
 
-def post2pdf(srcfile, pdffile):
-    filename, ext = os.path.splitext(srcfile)
+def post2pdf(src, pdf):
+    filename, ext = os.path.splitext(src)
 
+    print("%s => %s" % (os.path.split(src)[1], os.path.split(pdf)[1]))
     if ext == '.rst':
-        rst2pdf(srcfile, pdffile)
+        rst2pdf(src, pdf)
     elif ext == '.md':
-        md2pdf(srcfile, pdffile)
+        md2pdf(src, pdf)
 
 
 if __name__ == '__main__':
@@ -138,3 +135,4 @@ if __name__ == '__main__':
                         pdf_mtime = os.path.getmtime(pdffile)
                         if src_mtime > pdf_mtime:
                             post2pdf(srcfile, pdffile)
+
