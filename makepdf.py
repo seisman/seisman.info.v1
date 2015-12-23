@@ -18,9 +18,13 @@ article_dirs = ['FreeTalk', 'GeoResource', 'GMT', 'Linux', 'Programming',
                 'SAC', 'SeisBasic', 'SeisWare', ]
 
 
-def read_rst(rst):
+def rst2pdf(rst, pdf):
+    print("%s => %s" % (os.path.split(rst)[1], os.path.split(pdf)[1]))
+
     content = []
     toc = False
+
+    # read rst file and do some replacement
     with open(rst) as f:
         for line in f:
             line = re.sub(
@@ -36,10 +40,7 @@ def read_rst(rst):
             if (line.startswith(".. contents::")):  # has tableofcontents
                 toc = True
 
-    return toc, content
-
-
-def write_pdf(toc, content, pdf):
+    # convert rst to PDF
     cmd = ["pandoc",
            "-f", "rst",
            "-t", "latex",
@@ -55,12 +56,6 @@ def write_pdf(toc, content, pdf):
         cmd.append("--toc")
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     p.communicate(input=''.join(content).encode())
-
-
-def rst2pdf(rst, pdf):
-    print("%s => %s" % (os.path.split(rst)[1], os.path.split(pdf)[1]))
-    toc, content = read_rst(rst)
-    write_pdf(toc, content, pdf)
 
 
 if __name__ == '__main__':
