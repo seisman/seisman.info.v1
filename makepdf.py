@@ -58,6 +58,47 @@ def rst2pdf(rst, pdf):
     p.communicate(input=''.join(content).encode())
 
 
+def md2pdf(md, pdf):
+    print("%s => %s" % (os.path.split(md)[1], os.path.split(pdf)[1]))
+
+    meta = {}
+    content = []
+    with open(md) as f:
+        for line in f:
+            entry = line.strip().split(': ', 2)
+            if len(entry) != 2:
+                break
+            meta[entry[0].lower()] = entry[1]
+
+        for line in f:
+            line = re.sub(
+                "({filename}/\w*/(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*).rst)",
+                siteurl + "/" + r"\g<slug>.html",
+                line)
+            line = re.sub(
+                "({filename}/images/(?P<filename>))",
+                base + "/images/" + r"\g<filename>",
+                line)
+            content.append(line)
+
+    cmd = ["pandoc",
+           "-f", "markdown",
+           "-t", "latex",
+           "-o", pdf,
+           "-s",
+           "--template=seisman.latex",
+           "--listings",
+           "--number-sections",
+           "--latex-engine=xelatex",
+           "-VSITEURL=http://seisman.info",
+           ]
+    for key, value in meta.items():
+        cmd.append("-V" + key + "=" + value)
+
+    p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+    p.communicate(input=''.join(content).encode())
+
+
 if __name__ == '__main__':
     # parser arguments
     arguments = docopt(__doc__)
