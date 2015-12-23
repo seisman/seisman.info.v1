@@ -2,14 +2,13 @@
 """Convert rST and markdown to PDF
 
 Usage:
-    makepdf.py (--all | --update)
+    python makepdf.py
 """
 
 import os
 import re
 import subprocess
 
-from docopt import docopt
 
 siteurl = "http://seisman.info"
 base = os.path.abspath("content")
@@ -105,9 +104,6 @@ def post2pdf(src, pdf):
 
 
 if __name__ == '__main__':
-    # parser arguments
-    arguments = docopt(__doc__)
-
     # create dir for PDF
     if not os.path.exists(pdfdir):
         os.makedirs(pdfdir)
@@ -124,15 +120,11 @@ if __name__ == '__main__':
                 srcfile = os.path.join(root, post)
                 pdffile = os.path.join(pdfdir, pdf)
 
-                if arguments['--all']:
+                # only when PDF not found or PDF older than source
+                if not os.path.exists(pdffile):
                     post2pdf(srcfile, pdffile)
-
-                if arguments['--update']:
-                    if not os.path.exists(pdffile):
+                else:
+                    src_mtime = os.path.getmtime(srcfile)
+                    pdf_mtime = os.path.getmtime(pdffile)
+                    if src_mtime > pdf_mtime:
                         post2pdf(srcfile, pdffile)
-                    else:
-                        src_mtime = os.path.getmtime(srcfile)
-                        pdf_mtime = os.path.getmtime(pdffile)
-                        if src_mtime > pdf_mtime:
-                            post2pdf(srcfile, pdffile)
-
