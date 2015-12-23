@@ -43,37 +43,58 @@ GMT 4.5.14在Linux下的安装
 基础依赖包
 ----------
 
-GMT编译过程需要开发相关工具。
+编译GMT时需要一些开发工具（ ``gcc`` 、 ``g++`` 和 ``make`` ）以及底层的库文件 ``libc.so`` 和 ``libm.so`` 。
 
 对于Ubuntu/Debian::
 
     sudo apt-get update
-    sudo apt-get install gcc g++ make
+    sudo apt-get install gcc g++ make libc6
 
 对于CentOS/RHEL/Fedora::
 
-    sudo yum install gcc gcc-c++ make
+    sudo yum install gcc gcc-c++ make glibc
 
-软件依赖包
-----------
+netCDF库
+--------
 
 GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供的netCDF包。除了netCDF之外，建议还安装gdal包。虽然GMT不依赖于gdal，但gdal可以轻松地将其他数据格式转换为GMT可识别的格式。
 
 对于Ubuntu/Debian::
 
     sudo apt-get update
-    sudo apt-get install libxt-dev libxaw7-dev libxmu-dev libSM-dev
-    sudo apt-get install libnetcdf-dev libgdal1-dev python-gdal
+    sudo apt-get install libnetcdf-dev libgdal-dev python-gdal
+
+备注： ``libgdal-dev`` 在某些版本的Ubuntu下叫 ``libgdal1-dev``
 
 对于RHEL/CentOS/Fedora::
 
-    sudo yum install libXt-devel libXaw-devel libXmu-devel libSM-devel
     sudo yum install netcdf netcdf-devel gdal gdal-devel gdal-python
 
 注意：
 
 #. 一定不要试图自己手动编译netCDF。如果在阅读本文之前曾经手动编译过，一定要将原来手动编译生成的文件删除干净。通常可以使用 ``locate netcdf`` 找到 ``/usr/local`` 目录下的与netCDF相关的文件，直接删除即可。
 #. CentOS和RHEL的官方源中没有netCDF，需要首先添加EPEL源再安装netCDF；Fedora官方源中自带netCDF；
+
+X相关库
+-------
+
+GMT4中的 ``xgridedit`` 命令是一个很简易的带GUI的网格文件编辑器，其依赖于一堆图形界面相关库文件::
+
+    libICE.so   libSM.so   libX11.so  libXaw.so
+    libXext.so  libXmu.so  libXt.so
+
+对于Ubuntu/Debian::
+
+    sudo apt-get update
+    sudo apt-get install libxaw7-dev
+    sudo apt-get install libice-dev libsm-dev libx11-dev
+    sudo apt-get install libxext-dev libxmu-dev libxt-dev
+
+对于CentOS/RHEL/Fedora::
+
+    sudo yum install libXaw-devel
+    sudo yum install libICE-devel libSM-devel libX11-devel
+    sudo yum install libXext-devel libXmu-devel libXt-devel
 
 安装GMT
 =======
@@ -126,6 +147,17 @@ GMT4主要依赖于netCDF4，可以直接使用Linux发行版官方源中提供�
 
     $ psxy -
     psxy 4.5.14 [64-bit] - Plot lines, polygons, and symbols on maps
+
+个人笔记
+========
+
+#. 查看GMT需要哪些动态链接库::
+
+       $ cd /opt/GMT-4.5.14/bin
+       $ readelf -d * | grep 'Shared library' | sort -u
+
+#. Ubuntu下查找哪个软件包提供某个特定库文件： http://packages.ubuntu.com/
+#. CentOS下查找哪个软件包提供某个特定库文件： ``yum provides libICE.so.6``
 
 修订历史
 ========
