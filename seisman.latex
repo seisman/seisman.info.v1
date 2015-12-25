@@ -89,6 +89,9 @@ $endif$
 $if(author)$
 \textbf{Author} & {$for(author)$$author$$sep$ \and $endfor$}    \\
 $endif$
+$if(authors)$
+\textbf{Authors} & {$for(authors)$$authors$$sep$ \and $endfor$}    \\
+$endif$
 $if(date)$
 \textbf{Publish} & $date$   \\
 $endif$

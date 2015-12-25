@@ -68,7 +68,7 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 pdf:
-	python makepdf.py --update
+	python makepdf.py
 	qrsync ~/.qiniu.conf
 
 github:
