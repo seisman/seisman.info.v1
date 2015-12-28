@@ -55,9 +55,10 @@
 - `AxiSEM`_: 球层介质中的3D弹性、非弹性、各向异性、声波理论地震图
 - `Instaseis`_: 用Python写的，基于AxiSEM的地震图合成工具
 - `GEMINI`_:
-- `DSM`_: Direct Solution Method
-- `SOFI2D`_: 二维有限差分
-- `SOFI3D`_: 三维有限差分
+- `DSM`_: Direct Solution Method ( `tish <http://www-solid.eps.s.u-tokyo.ac.jp/~dsm/software/software/tipsv-1.8.0.tar.gz>`_, `tipsv <http://www-solid.eps.s.u-tokyo.ac.jp/~dsm/software/software/tish-1.9.0.tar.gz>`_ , `spcsac <http://www-solid.eps.s.u-tokyo.ac.jp/~dsm/software/software/spcsac-v1.0.0.tar.gz>`_ )
+- `SOFI2D`_: 二维有限差分计算(粘)弹性介质下的PSV波场
+- `SOFI2D-sh`_: 二维有限差分计算(粘)弹性介质下的SH波场
+- `SOFI3D`_: 三维有限差分计算(粘)弹性介质下的波场
 - `SPECFEM2D`_: 谱元法2D
 - `SPECFEM3D`_: 谱元法3D(笛卡尔坐标系)
 - `SPECFEM3D Global`_: 谱元法3D(球坐标系)
@@ -117,8 +118,9 @@
 .. _pyTDMT: https://github.com/fabriziobernardi/pydmt
 .. _GEMINI: http://www.quest-itn.org/library/software/gemini-greens-function-of-the-earth-by-minor-integration
 .. _DSM: http://www-solid.eps.s.u-tokyo.ac.jp/~dsm/software/software.htm
-.. _SOFI2D: https://www.gpi.kit.edu/Software.php
-.. _SOFI3D: https://www.gpi.kit.edu/Software.php
+.. _SOFI2D: https://git.scc.kit.edu/GPIAG-Software/SOFI2D/
+.. _SOFI2D-sh: https://git.scc.kit.edu/GPIAG-Software/SOFI2D_sh
+.. _SOFI3D: https://git.scc.kit.edu/GPIAG-Software/SOFI3D
 .. _SPECFEM2D: https://geodynamics.org/cig/software/specfem2d/
 .. _SPECFEM3D: https://geodynamics.org/cig/software/specfem3d/
 .. _SPECFEM3D Global: https://geodynamics.org/cig/software/specfem3d_globe/
