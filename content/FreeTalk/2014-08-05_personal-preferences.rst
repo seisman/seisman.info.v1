@@ -2,6 +2,7 @@
 ############
 
 :date: 2014-08-05 20:00
+:modified: 2015-12-30
 :author: SeisMan
 :category: 胡言乱语
 :slug: personal-preferences
@@ -13,7 +14,7 @@
 日常工具
 ========
 
-#. 操作系统：CentOS 7.1 > iOS 9 > Windows 10 > Android 5.0
+#. 操作系统：CentOS 7 + iOS 9 + Windows 10
 #. 浏览器： Google Chrome
 #. 音乐： 网易云音乐
 #. RSS阅读器： `feedly`_
@@ -27,11 +28,10 @@
 
 #. 文本编辑器：Vim > Gedit > Sublime Text 3
 #. 高级编程语言： C > Fortran
-#. 脚本语言： Python3 > Perl > Bash
+#. 脚本语言： Perl > Python3 > Bash
 #. 其他语言：LaTeX, reStructureText, Markdown
 #. Shell：zsh + `oh-my-zsh`_
 #. Python IDE： `PyCharm Communitu Edition`_
-#. C IDE： `Visual Studio Community 2015`_ （Windows）
 #. Git服务：
 
    - `GitHub`_ ：博客源码以及可公开的代码
@@ -59,9 +59,10 @@
 网盘
 ====
 
-#. 同步网盘： `坚果云`_ 和 `Dropbox`_
-#. 备份网盘：OneDrive
-#. 资源类网盘： 百度云、360云盘、115网盘
+#. 文件同步： `坚果云`_ 和 `Dropbox`_
+#. 照片备份与管理：Google相册
+#. OneNote笔记备份：OneDrive
+#. 其他网盘： 百度云、360云盘、115网盘、Amazon Cloud Drive
 
 .. _Droid Sans Mono: https://www.google.com/fonts/specimen/Droid+Sans+Mono
 .. _Dropbox: https://www.dropbox.com
