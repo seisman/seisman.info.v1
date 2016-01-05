@@ -79,7 +79,12 @@ GMT的中文支持
 #. ``STHeiti-Regular--GB-EUC-H``
 #. ``STKaiti-Regular--GB-EUC-H``
 
-将这四种中文字体添加到GMT的字体配置文件中，即 ``C:\programs\gmt5\share\pslib\PS_font_info.d`` 。文件修改后，最后几行如下::
+将这四种中文字体添加到GMT的字体配置文件中，GMT版本不同，配置文件的位置也不同：
+
+- GMT 5.1.2及其之前版本： ``C:\programs\gmt5\share\pslib\PS_font_info.d``
+- GMT 5.2.1及其之后版本： ``C:\programs\gmt5\share\postscriptlight\PSL_standard_fonts.txt``
+
+字体配置文件修改后，最后几行如下::
 
     ZapfChancery-MediumItalic   0.610       0
     ZapfDingbats            0.700       1
@@ -125,5 +130,11 @@ GMT的中文支持
 
 #. GMT 5.1.1存在bug，上面的命令无法与-A选项一起使用；
 #. GMT 5.1.2在Windows下存在Bug，主要是由于引号的错误使用导致；
+
+修订历史
+========
+
+#. 2014-03-27：初稿；
+#. 2016-01-05：GMT 5.2.1中字体配置文件的位置发生变化；
 
 .. _博文: http://xxqhome.blog.163.com/blog/static/1967330202011112810120598/

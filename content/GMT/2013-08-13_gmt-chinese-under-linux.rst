@@ -38,6 +38,8 @@ GMT字体配置文件
 
 假定GMT的安装路径为 ``/opt/GMT-4.5.13`` ，则字体配置文件的路径为 ``/opt/GMT-4.5.13/share/pslib/PS_font_info.d`` 。
 
+PS：GMT 5.2.1之后，字体配置文件的路径变成 ``/opt/GMT-5.2.1/share/postscriptlight/PSL_standard_fonts.txt`` 。
+
 使gs支持中文
 ============
 

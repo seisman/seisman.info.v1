@@ -9,8 +9,6 @@ USTC网络通登录脚本Python版
 
 最近几日在学Python以及相关的网页请求模块，练习着重写了USTC网络通的登录脚本，比之前的Perl版要简短了很多，其中使用了 ``Requests`` 模块。
 
-最新版本位于：https://gist.github.com/seisman/2d04d52c6415d283dac8
-
 .. code-block:: python
 
     #!/usr/bin/env python
@@ -23,9 +21,9 @@ USTC网络通登录脚本Python版
     #
     import requests
 
-    name = 'xxxxxxx'
-    passwd = "xxxxxxxxx"
-    url = "http://wlt.ustc.edu.cn/cgi-bin/ip"
+    name = 'xxxxxx'
+    passwd = 'xxxxxxxx'
+    url = 'http://wlt.ustc.edu.cn/cgi-bin/ip'
 
     print("""\
     请选择出口：
@@ -53,11 +51,11 @@ USTC网络通登录脚本Python版
             4: 39600s, 11小时
             5: 50400s, 14小时""")
     expire = {
-        '1' :     0,
-        '2' :  3600,
-        '3' : 14400,
-        '4' : 39600,
-        '5' : 50400,
+        '1':     0,
+        '2':  3600,
+        '3': 14400,
+        '4': 39600,
+        '5': 50400,
     }
     while True:
         exp = int(input("[1-6] "))
@@ -66,11 +64,11 @@ USTC网络通登录脚本Python版
             break
 
     payload = {
-        'cmd'      : 'set'  ,
-        'name'     : name   ,
-        'password' : passwd ,
-        'type'     : port   ,
-        'exp'      : exp    ,
+        'cmd':      'set',
+        'exp':      exp,
+        'name':     name,
+        'password': passwd,
+        'type':     port,
     }
     r = requests.get(url, data=payload)
 

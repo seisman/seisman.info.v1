@@ -8,7 +8,7 @@
 :slug: geophysicist
 
 .. list-table::
-   :widths: 10 10
+   :widths: 10 40
 
    * - **Name**
      - **Research Keywords**
@@ -28,12 +28,12 @@
    * - `Robert W. Clayton <http://web.gps.caltech.edu/~clay/>`_
      -
    * - `Vernon F. Cormier <http://www.phys.uconn.edu/~cormier>`_
-     -
+     - Deep earth structure, seismic wave propagation, nuclear verification, strong ground motion.
 
    * - **D**
      -
    * - `Arwen Deuss <http://www.geo.uu.nl/~deuss/>`_
-     - Inner Core
+     - Inner Core, Normal Mode
 
    * - **G**
      -
