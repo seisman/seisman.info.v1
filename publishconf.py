@@ -23,11 +23,6 @@ BAIDU_ANALYTICS = '65542808c7a590c2137aef85e1116ace'
 DISQUS_SITENAME = 'seisman'
 COMMENTS_INTRO = 'So what do you think? Did I miss something? Is any part unclear? Leave your comments below.'
 
-EMAIL_SUBSCRIPTION_LABEL = 'Get Weekly Updates'
-EMAIL_FIELD_PLACEHOLDER = 'Enter your email...'
-SUBSCRIBE_BUTTON_TITLE = 'Subscribe'
-MAILCHIMP_FORM_ACTION = 'http://seisman.us3.list-manage1.com/subscribe/post?u=03bdd9e889c533d6db4dd0454&amp;id=dc5a50f619'
-
 SHARE_POST_INTRO = 'Share on:'
 
 GOOGLE_ANALYTICS = ''
