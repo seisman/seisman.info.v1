@@ -2,7 +2,7 @@ SAC参考手册中文版
 #################
 
 :date: 2013-07-06 18:21
-:modified: 2015-09-15
+:modified: 2016-01-09
 :author: SeisMan
 :category: SAC
 :tags: 书籍, PDF
