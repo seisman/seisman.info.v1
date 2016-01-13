@@ -44,12 +44,15 @@
 
 - `distaz`_: 给定震中和台站经纬度，计算震中距、方位角和反方位角的经典代码。
 - `TauP`_: 强大的走时计算器，不过其功能可不仅仅只是计算走时这么简单。射线参数、射线路径、反射点、投射点都可以计算，支持自定义速度模型、支持不常见的震相。
+- `Cake`_: 类似TauP的走时计算工具，某些方面比TauP功能更强大
 
 理论地震图
 ==========
 
 - `fk`_: 频率-波数法，计算水平分层各向同性介质下理论地震图位移静态解和动态解
+- `QSEIS`_: 层状粘弹介质下的理论地震图
 - `SHaxi`_: 有限差分方法计算全球尺度高精度SH波场。
+- `QSSP`_: Normal modes方法计算球形地球下的理论地震图
 - `Mineos`_: Normal modes方法计算球对称非旋转地球模型下的合成地震图
 - `yaseis`_: 频率-波数法，球状分层介质下的理论地震图
 - `AxiSEM`_: 球层介质中的3D弹性、非弹性、各向异性、声波理论地震图
@@ -92,6 +95,7 @@
 
 .. _astack: http://rses.anu.edu.au/seismology/soft/astack/index.html
 .. _SAC: http://www.iris.edu/ds/nodes/dmc/forms/sac/
+.. _Cake: http://emolch.github.io/pyrocko/current/cake_doc.html
 .. _CPS330: http://www.eas.slu.edu/eqc/eqccps.html
 .. _rdseed: http://www.iris.edu/ds/nodes/dmc/forms/rdseed/
 .. _win32tools: http://www.hinet.bosai.go.jp/REGS/manual/dlDialogue.php?r=win32tools
@@ -131,3 +135,5 @@
 .. _focmec: https://seiscode.iris.washington.edu/projects/focmec
 .. _SOD: http://www.seis.sc.edu/sod/
 .. _libmseed: https://seiscode.iris.washington.edu/projects/libmseed
+.. _QSEIS: http://www.gfz-potsdam.de/en/section/physics-of-earthquakes-and-volcanoes/data-products-services/downloads-software/
+.. _QSSP: http://www.gfz-potsdam.de/en/section/physics-of-earthquakes-and-volcanoes/data-products-services/downloads-software/
