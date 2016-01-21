@@ -9,13 +9,23 @@ GeoTiff格式转GMT netCDF格式
 
 `GDAL`_\ 提供了不少小工具，其中， ``gdal_translate`` 可用于网格数据的格式转换。
 
+GDAL的安装方法如下：
+
+#. Ubuntu/Debian下::
+
+       sudo apt-get install gdal-bin
+
+#. CentOS/Fedora下::
+
+       sudo yum install gdal
+
+#. Windows下，到 http://www.gisinternals.com/ 下载安装包，安装后命令位于 ``C:\Program Files (x86)\GDAL\gdal_translate.exe`` 。如果偶尔用一次，直接用命令的完整路径即可；如果经常使用，可以将 ``C:\Program Files (x86)\GDAL\`` 添加到环境变量PATH中
+
 下面的命令可以将GeoTiff格式的数据转换为GMT可识别的netCDF格式::
 
     gdal_translate -of GMT srtm_56_05.tif srtm_56_05.nc
 
-``gdal_translate`` 的语法如下：
-
-::
+``gdal_translate`` 的语法如下::
 
     Usage: gdal_translate [--help-general] [--long-usage]
            [-ot {Byte/Int16/UInt16/UInt32/Int32/Float32/Float64/
@@ -30,9 +40,7 @@ GeoTiff格式转GMT netCDF格式
            [-co "NAME=VALUE"]* [-stats] [-norat]
            src_dataset dst_dataset
 
-``-of`` 后接要转换的数据格式，使用 ``gdal_translate --long-usage`` 可以看到，支持的格式如下：
-
-::
+``-of`` 后接要转换的数据格式，使用 ``gdal_translate --long-usage`` 可以看到，支持的格式如下::
 
       VRT: Virtual Raster
       GTiff: GeoTIFF
