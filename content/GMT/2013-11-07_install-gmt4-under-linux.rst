@@ -33,7 +33,7 @@ GMT 4.5.14在Linux下的安装
 
 下载完成后，可以用 ``md5sum`` 检查压缩文件的md5值，以保证该文件是完整且未被篡改的::
 
-    $ md5sum gmt-4.5.14.src.tar.bz2 gshhg-gmt-2.3.4.tar.gz
+    $ md5sum gmt-4.5.14-src.tar.bz2 gshhg-gmt-2.3.4.tar.gz
     2d5bad3aaf593c46f0ff57264c2d3a47  gmt-4.5.14-src.tar.bz2
     80947a92cc88927aff070556ca5ab133  gshhg-gmt-2.3.4.tar.gz
 
@@ -117,6 +117,7 @@ GMT4中的 ``xgridedit`` 命令是一个很简易的带GUI的网格文件编辑�
 
 .. code-block:: bash
 
+   $ cd ../
    $ tar -xvf gshhg-gmt-2.3.4.tar.gz
    $ sudo mv gshhg-gmt-2.3.4 /opt/GMT-4.5.14/share/coast
 
