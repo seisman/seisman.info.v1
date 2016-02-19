@@ -99,6 +99,7 @@ Software and Tools
 - `The TauP Toolkit <http://www.seis.sc.edu/taup/index.html>`_
 - `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
 - `IRIS DMC Google Map Service <http://ds.iris.edu/gmap/>`_
+- `Google Maps API <https://developers.google.com/maps/get-started/>`_
 
 Others
 ======
