@@ -51,8 +51,8 @@
 科研相关
 ========
 
-#. 文献管理： `Mendeley`_
-#. 科学上网： `huhamhire-hosts`_ > `USTC LUG OpenVPN`_
+#. 文献管理： EndNote （ `Mendeley`_ 已不再使用）
+.. #. 科学上网： `huhamhire-hosts`_ > `USTC LUG OpenVPN`_
 #. SSH客户端： `Xshell Home/School`_ （Windows）
 #. scp客户端： `WinSCP`_
 
@@ -62,7 +62,8 @@
 #. 文件同步： `坚果云`_ 和 `Dropbox`_
 #. 照片备份与管理：Google相册
 #. OneNote笔记备份：OneDrive
-#. 其他网盘： 百度云、360云盘、115网盘、Amazon Cloud Drive
+#. Kindle书籍备份：Amazon Cloud Drive
+#. 其他网盘： 百度云、360云盘、115网盘、腾讯微云
 
 .. _Droid Sans Mono: https://www.google.com/fonts/specimen/Droid+Sans+Mono
 .. _Dropbox: https://www.dropbox.com
