@@ -3,6 +3,7 @@
 
 :author: SeisMan
 :date: 2014-03-29 15:42
+:modified: 2016-02-24
 :category: 地震学软件
 :tags: 走时, TauP
 :slug: travel-time-packages
@@ -15,7 +16,7 @@
 
    这个版本的源码比较古老，可能是用Fortran77甚至更老的版本写的。曾经试图编译，发现很多语法编译器已经不再支持，改起来应该不困难，但是有些繁琐，不建议使用。且该版本只支持ak135模型。
 
-#.iaspei-tau
+#. iaspei-tau
 
    网址：https://seiscode.iris.washington.edu/projects/iaspei-tau
 
@@ -39,6 +40,18 @@
 
    Matlab版，是seiszmo项目的一部分，底层貌似调用了Java版TauP的代码。
 
+#. Cake
+
+   网址： http://emolch.github.io/pyrocko/current/cake_doc.html
+
+   Python版，Pyrocko项目的一部分，支持自定义模型，且可以处理更复杂的震相名。
+
 这几个软件都是基于同一个原理，参考如下：
 
 Buland, R. and C. H. Chapman (1983). The Computation of Seismic Travel Times, Bull. Seism. Soc. Am. 73(5),1271–1302.
+
+修订历史
+========
+
+- 2014-03-29：初稿
+- 2016-02-24：新增cake
