@@ -27,10 +27,10 @@ help:
 	@echo '   make devserver [PORT=8000]  start/restart develop_server.sh	   '
 	@echo '   make stopserver             stop local server					   '
 	@echo '   make github                 upload the web site via gh-pages	   '
-	@echo '   make gitcafe                upload the web site via gitcafe-pages'
+	@echo '   make coding                 upload the web site via coding-pages '
 	@echo '   make import                 import output to blog branch		   '
 	@echo '   make pdf                    convert updated rST to PDF		   '
-	@echo '   make all                    upload web site to GitHub and Gitcafe'
+	@echo '   make all                    upload web site to GitHub and Coding '
 	@echo '																	   '
 
 html:
@@ -74,12 +74,12 @@ pdf:
 github:
 	git push github $(BRANCH):master
 
-gitcafe:
-	git push gitcafe $(BRANCH):gitcafe-pages
+coding:
+	git push coding $(BRANCH):coding-pages
 
 import:
 	ghp-import -b $(BRANCH) $(OUTPUTDIR) -m "`date +'%Y-%m-%d %H:%M:%S'`"
 
-all: publish import gitcafe github pdf
+all: publish import coding github pdf
 
-.PHONY: html help clean regenerate serve devserver publish github gitcafe import all
+.PHONY: html help clean regenerate serve devserver publish github coding import all

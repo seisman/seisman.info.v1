@@ -36,7 +36,7 @@
 
    - `GitHub`_ ：博客源码以及可公开的代码
    - `USTC GitLab`_ ：托管私有项目
-   - `GitCafe`_ ：仅用于托管博客，用于国内用户的访问
+   - `Coding`_ ：仅用于托管博客，用于国内用户的访问
 
 #. 编程字体
 
@@ -69,6 +69,7 @@
 .. _Dropbox: https://www.dropbox.com
 .. _feedly: http://feedly.com/
 .. _Git: http://git-scm.com/
+.. _Coding: https://coding.net
 .. _GitCafe: https://gitcafe.com
 .. _GitHub: https://github.com/
 .. _huhamhire-hosts: https://hosts.huhamhire.com

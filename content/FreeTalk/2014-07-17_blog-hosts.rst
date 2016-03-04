@@ -52,3 +52,4 @@ DNSPod的具体设置如下图，这样的设置使得联通、电信、移动�
 
 - 2014-07-17：初稿；
 - 2014-12-26：GitCafe的博客托管服务有所调整， ``gitcafe.com`` 改成 ``gitcafe.io`` ，需要在DNS中设置CNAME；
+- 2016-03-04：GitCafe与Coding合并，博客托管到Coding；

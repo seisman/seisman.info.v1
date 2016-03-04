@@ -22,6 +22,7 @@
 - 2015-12-27：近几日gitcafe无法push，目前将DNSPod中所有线路均指向github；
 - 2016-01-09：取消博客的邮件订阅功能；
 - 2016-01-12：gitcafe似乎又可以使用了，重新push到gitcafe；
+- 2016-03-04：gitcafe的个人业务已死，博客托管迁移到Coding；
 
 .. todo
 .. 寻找Disqus评论系统的替代品
