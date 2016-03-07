@@ -2,6 +2,7 @@ Perl发送邮件到BREQ_FAST
 #######################
 
 :date: 2013-07-26 21:15
+:modified: 2016-03-07
 :author: SeisMan
 :category: 编程
 :tags: breq_fast, 邮件, Perl
@@ -20,59 +21,59 @@ BREQ_FAST的优势在于可脚本化生成数据申请文件，要真正申请�
 
 .. code-block:: perl
 
- #!/usr/bin/perl -w
- #
- #  Perl Script to send emails to IRIS
- #
- #  Author:  SeisMan @ seisman.info
- #  Date:    2013/07/22
- #
+   #!/usr/bin/perl -w
+   #
+   #  Perl Script to send emails to IRIS
+   #
+   #  Author:  SeisMan @ seisman.info
+   #  Date:    2013/07/22
+   #
 
- use warnings;
- use strict;
+   use warnings;
+   use strict;
 
- use Net::SMTP;
- use MIME::Base64;
+   use Net::SMTP;
+   use MIME::Base64;
 
- @ARGV >= 1 or die "  Usage: perl $0 mailfiles \n";
+   @ARGV >= 1 or die "  Usage: perl $0 mailfiles \n";
 
- my $host = 'smtp.163.com';          # host domain
- my $sender = 'xxxxxx@163.com';                  # my email
- my $passwd = "xxxxxxxx";            # password
- my $recipient='breq_fast@iris.washington.edu';  # BREQ_FAST email
+   my $host = 'smtp.163.com';          # host domain
+   my $sender = 'xxxxxxx@163.com';                  # my email
+   my $passwd = "xxxxxxxxx";            # password
+   my $recipient='breq_fast@iris.washington.edu';  # BREQ_FAST email
 
- foreach (@ARGV) {
-     my $smtp = Net::SMTP->new(
-         Host    =>   $host,
-         Timeout =>   30,
-         Debug   =>   0,
-     );
+   foreach (@ARGV) {
+       my $smtp = Net::SMTP->new(
+           Host    =>   $host,
+           Timeout =>   30,
+           Debug   =>   0,
+       );
 
-     # Log in
-     $smtp->command('AUTH LOGIN')->response();
-     my $userpass = encode_base64($sender);  chomp($userpass);
-     $smtp->command($userpass)->response();
-     $userpass = encode_base64($passwd); chomp($userpass);
-     $smtp->command($userpass)->response();
+       # Log in
+       $smtp->command('AUTH LOGIN')->response();
+       my $userpass = encode_base64($sender);  chomp($userpass);
+       $smtp->command($userpass)->response();
+       $userpass = encode_base64($passwd); chomp($userpass);
+       $smtp->command($userpass)->response();
 
-     # send mail
-     print "Sending mailfile $_\n";
-     $smtp->mail($sender);
-     $smtp->to($recipient);
-     $smtp->data();
-     $smtp->datasend("To:$recipient \n");
-     $smtp->datasend("\n");
+       # send mail
+       print "Sending mailfile $_\n";
+       $smtp->mail($sender);
+       $smtp->to($recipient);
+       $smtp->data();
+       $smtp->datasend("From: $sender \n");
+       $smtp->datasend("To: $recipient \n");
+       $smtp->datasend("\n");
 
-     open(IN, "< $_") or die "Error in opening $_\n";
-         $smtp->datasend($_) foreach (<IN>);
-     close(IN);
-     $smtp->dataend();
-     $smtp->quit;
- #   unlink "$_";
+       open(IN, "< $_") or die "Error in opening $_\n";
+           $smtp->datasend($_) foreach (<IN>);
+       close(IN);
+       $smtp->dataend();
+       $smtp->quit;
+   #   unlink "$_";
 
-     sleep(5);
- }
-
+       sleep(5);
+   }
 
 其中MIME::Base64模块对邮件内容进行编码，\$host为邮件服务器的ip或者域名，\$sender为邮箱，\$passwd为明文密码。
 
@@ -95,7 +96,8 @@ BREQ_FAST的优势在于可脚本化生成数据申请文件，要真正申请�
 修订历史
 ========
 
--  2013-07-26：初稿；
--  2013-11-22：修正了脚本复制过程中的一个bug。Thanks to cxh757.
--  2014-01-13：注释 ``unlink "$\_";`` ，该句会在脚本执行完毕后删除邮件，由于脚本未做邮件发送是否成功的检测，贸然删除邮件对于用户不够友好。
--  2014-08-24：加入了Python版本的链接。
+- 2013-07-26：初稿；
+- 2013-11-22：修正了脚本复制过程中的一个bug。Thanks to cxh757.
+- 2014-01-13：注释 ``unlink "$\_";`` ，该句会在脚本执行完毕后删除邮件，由于脚本未做邮件发送是否成功的检测，贸然删除邮件对于用户不够友好
+- 2014-08-24：加入了Python版本的链接
+- 2016-03-07：邮件头中加入发件人信息，以避免被163当做spam
