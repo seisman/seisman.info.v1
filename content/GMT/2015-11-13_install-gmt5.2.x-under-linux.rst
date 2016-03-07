@@ -77,7 +77,7 @@ GMT5的依赖包，相对来说要复杂很多：
 - GLib库：提供了C语言下的树、hash、列表和字符串功能
 - Perl兼容正则表达式库 `PCRE`_
 - 地理空间数据抽象库 `GDAL`_
-- Fourier变换库 `FFTW`_
+- Fourier变换库 `FFTW`_ (>=3.3)
 - 线性代数库LAPACK和BLAS
 - 如果想要自行编译文档的话还需要 `Sphinx`_ 以及 TeXLive
 
