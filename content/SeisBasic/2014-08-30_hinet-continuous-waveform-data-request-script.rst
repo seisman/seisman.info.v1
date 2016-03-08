@@ -20,33 +20,73 @@ Hinet连续波形数据申请及下载的脚本实现
 HinetContRequest.py
 ===================
 
-`HinetContRequest.py <https://github.com/seisman/HinetScripts/blob/master/HinetContRequest.py>`_\ 是用Python实现的用于申请与下载Hi-net连续波形数据的脚本。
+``HinetContRequest.py`` 是 `HinetScripts <https://github.com/seisman/HinetScripts/>`_ 中的一个Python脚本，其可以用于申请与下载Hi-net连续波形数据。
+
+设计思路
+========
+
+整个脚本的设计思路如下：
+
+#. 从配置文件中读取配置信息，比如用户名和密码
+#. 从命令行参数中读入要申请的连续波形数据的起始时间和时间跨度等信息
+#. 确定要申请的台网的代码，并检测台网在该时间段内是否有可用数据
+#. 若要申请的数据的时间跨度超过了Hi-net网站单次申请的限制，则将整个时间跨度分成多个符合要求的子申请。比如要申请Hi-net全部台站的60分钟的数据，根据Hi-net网站对数据申请的限制可知，这种情况下单次申请的数据时间跨度不能超过5分钟，因而需要将60分钟的数据申请拆分成12个5分钟的子申请。
+#. 通过循环依次执行每一个子申请。每个子申请中的步骤如下：
+
+   #. 构建query string
+   #. 发送申请
+   #. 每隔一定时间检查此次申请的状态。
+
+      - 若还在准备数据，则等待然后再检查
+      - 若数据已准备好，则进行下一次申请
+      - 若出现错误，则退出
+      - 偶尔会出现很长时间都没有动静的情况，原因不明，怀疑是Hi-net服务器的问题。解决办法是重新提交一次相同的申请
+
+#. 待所有子申请完成后，并行下载全部数据
+#. 解压全部ZIP文件，并调用 ``catwin32`` 将一分钟一分钟的cnt文件合并成一个多分钟的cnt文件
+#. 对cnt和ch文件重命名
+#. 清理不必要的文件
 
 配置文件
---------
+========
 
-要执行HinetContRequest.py，需要先修改配置文件\ `Hinet.cfg <https://github.com/seisman/HinetScripts/blob/master/Hinet.cfg>`_\ ，其内容如下::
+要执行HinetContRequest.py，需要先修改配置文件 `Hinet.cfg <https://github.com/seisman/HinetScripts/blob/master/Hinet.cfg>`_ ，其内容如下::
+
+    [URL]
+    # DO NOT MODIFY URLs
+    AUTH = https://hinetwww11.bosai.go.jp/auth
+    CONT = %(AUTH)s/download/cont
+    STATUS = %(CONT)s/cont_status.php
+    SELECT = %(CONT)s/select_confirm.php
+    STATION = %(CONT)s/select_info.php
+    REQUEST = %(CONT)s/cont_request.php
+    DOWNLOAD = %(CONT)s/cont_download.php
 
     [Account]
-    User = xxxxxx
-    Password = xxxxxxxx
+    User = xxxxxxx
+    Password = xxxxxxxxxxx
 
     [Cont]
     Net = 0101
+    # Max time span for each sub-requests
+    # MaxSpan <= 12000 / Number_of_Channel
     MaxSpan = 5
 
-    [Tools]
-    catwin32 = catwin32
+    [Request]
+    # waiting time for data preparation <= MaxSleepCount*SleepTime seconds
+    MaxSleepCount = 100
+    SleepTime = 2.0
 
 其中：
 
-- ``User`` 和 ``Password`` 为Hi-net网站的用户名和密码；
-- 由于不同台网的数据不能一起申请，因而需要指定要申请的台网的台网代码； ``Net`` 为默认的台站代码；比如 ``0101`` 即代码Hi-net台网；
-- Hi-net对于数据申请存在诸多限制，比如若申请Hi-net所有台站的数据，则单次申请的数据最大长度不得超过5分钟；若仅申请50个台站的数据，则单次申请的数据最大长度可以取为60分钟；由于具体的台站数目是保存中Hi-net账户中的，难以获取，只能通过 ``MaxSpan`` 人为指定；
-- ``catwin32`` 是Hi-net提供的用于合并WIN32数据的工具，这里需要指定该二进制文件的文件名 ``catwin32`` 或是其绝对路径 ``/home/seisman/bin/catwin32`` ；
+- ``[URL]`` 中定义了一些网址，是脚本所需要使用的全局变量，不需要做任何修改
+- ``User`` 和 ``Password`` 为Hi-net网站的用户名和密码
+- 由于不同台网的数据不能一起申请，因而需要指定要申请的台网的台网代码； ``Net`` 为默认的台站代码；比如 ``0101`` 即代表Hi-net台网
+- 在将一个数据时间跨度很长的申请分割成多个子申请时，每个子申请的数据时间跨度由 ``MaxSpan`` 决定。可以通过运行 ``HinetDoctor.py`` 来检查该值是否满足要求。
+- 每次申请后，需要等待服务器准备数据，在这段时间内是无法再次申请数据的。因而脚本中通过不断查询数据状态来判断是否此次申请是否已完成。 ``SleepTime`` 控制了隔多长时间查询一次数据的状态， ``MaxSleepCount`` 控制了最多查询多少次。若超过最大查询次数后数据依然没有准备好，则认为此次申请无效，重新发起相同的申请
 
 用法
-----
+====
 
 ::
 
@@ -60,6 +100,7 @@ HinetContRequest.py
 	Options:
 	    -h, --help              Show this help.
 	    -c CODE --code=CODE     Select code for organization and network.
+        -m SPAN --maxspan=SPAN  Max time span for sub-requests
 	    -d DIR --directory=DIR  Output directory. Default: current directory.
 	    -o FILE --output=FILE   Output filename.
 	                            Default: CODE_YYYYMMDDHHMM_SPAN.cnt
@@ -69,22 +110,13 @@ HinetContRequest.py
 
 - year、month、day、hour、min为要申请的连续波形的起始时间；
 - span为要申请的连续波形的持续时间；
-- ``-c`` 用于指定台网代码；
-- ``-d`` 用于指定输出目录，默认为当前目录；
-- ``-o`` 用于指定输出文件名，默认文件名为 ``CODE_YYYYMMDDHHMM_SPAN.cnt`` ；
-- ``-t`` 用于指定channel table的文件名，默认文件名为 ``CODE_YYYYMMDD.ch`` ；
+- ``-c`` 用于指定台网代码，该值会覆盖配置文件中 ``Net`` 变量的值
+- ``-m`` 用于指定单次申请的最大时间跨度，该值会覆盖配置文件中的 ``MaxSpan`` 变量的值
+- ``-d`` 用于指定输出目录，默认为当前目录
+- ``-o`` 用于指定输出文件名，默认文件名为 ``CODE_YYYYMMDDHHMM_SPAN.cnt``
+- ``-t`` 用于指定channel table的文件名，默认文件名为 ``CODE_YYYYMMDD.ch``
 
-申请流程
---------
-
-#. 从配置文件中读取配置信息
-#. 从参数列表中读入要申请的连续波形数据的起始时间和持续时间
-#. 确定要申请的台网代码，并检测该时间段内是否有可用数据
-#. 若要申请的数据持续时间 ``span`` 大于 ``MaxSpan`` ，则将整个申请分为几次子申请；每次子申请会检测申请状态，待上次子申请完成后再进行下次子申请；
-#. 待所有子申请完成后，并行下载全部数据；
-#. 解压全部ZIP文件，并调用 ``catwin32`` 合并所有解压出的cnt文件；
-#. 对cnt和ch文件重命名；
-#. 清理不必要的文件；
+注意，不建议使用 ``-o`` 和 ``-t`` 选项，因为这两个文件名的格式是硬编码在其他脚本中的。使用这两个选项自定义格式会导致其他脚本无法使用。
 
 示例
 ----
@@ -115,3 +147,4 @@ HinetContRequest.py
 - 2014-11-04：将数据申请与数据下载合并在一起；
 - 2014-12-03：由于Hinet网址的更新，原Python脚本失效，现已修正；
 - 2015-01-17：Hinet网址改动比较大，脚本实现需要更多的技巧，因而把原来的示例脚本删除；
+- 2016-03-08：完善设计思路；

@@ -12,7 +12,9 @@ Hi-net Channel Table文件
 
 从Hi-net下载连续波形数据会得到ZIP压缩文件，其中包含了两个后缀为 ``ch`` 的文件，即Channel Table文件。两个文件内容是相同的，区别在于一个是 ``euc`` 编码，一个是 ``sjis`` 编码。只需要用其中一个即可，这里选择 ``euc`` 编码的文件。
 
-Channel Table文件描述了每个channel的仪器信息。
+Channel Table文件描述了每个channel的仪器信息，某种程度上等效于常见的RESP或SAC PZ仪器响应文件。但是实际上Channel Table有一定的局限性，无法理解Hi-net为什么会用这种格式来指定仪器响应信息。
+
+由于需要注意的是，对于Hinet而言，channel table可以完整的描述仪器响应，而对于Fnet而言，channel table给出的信息不足。因而关于channel table的内容，仅适用于Hinet，不适用于Fnet，不确定是否适用于其他台网。
 
 规律分析
 ========
@@ -74,12 +76,7 @@ Channel Table中仅给出了分量代码，可以取值为U、N、E、X、Y以�
 
 由于传感器安装在borehole的底部，所以很难精确知道传感器的真实方位。以分量代码为N的传感器为例，该传感器并不一定严格指向正北方向。一般而言，其与正北方向的夹角在5度以内，个别传感器的方向甚至与北向相差几十度。每个传感器的方位信息位于该\ `页面 <http://www.hinet.bosai.go.jp/REGS/direc/?subject=kekka>`_\ 。
 
-在Channel Table中，只给出了分量代码而没有给出具体的方位信息。因而只能根据分量代码做一些可靠的假设。
-
-- U向分量： ``cmpaz=0`` 、 ``cmpinc=0`` ；
-- N向分量： ``cmpaz=0`` 、 ``cmpinc=90`` ；
-- E向分量： ``cmpaz=90`` 、 ``cmpinc=90`` ；
-- 其他分量：未知；
+关于每个分量的实际方位信息，在另一篇博文中会专门讨论。
 
 Units of input
 --------------
@@ -114,8 +111,8 @@ Hi-net官方回复指出，FAQ08中的解释是正确的，即第10列为“Natu
 ====
 
 #. 从Hi-net下载连续波形数据得到的ZIP文件中的 ``readme.txt`` ；
-#. \ `Hi-net FAQ 08 <http://www.hinet.bosai.go.jp/faq/?LANG=en#Q08>`_\
-#. \ `Azimuth information of the Hi-net borehole sensors <http://www.hinet.bosai.go.jp/REGS/direc/?LANG=en>`_\
+#. `Hi-net FAQ 08 <http://www.hinet.bosai.go.jp/faq/?LANG=en#Q08>`_
+#. `Azimuth information of the Hi-net borehole sensors <http://www.hinet.bosai.go.jp/REGS/direc/?LANG=en>`_
 
 修订历史
 ========

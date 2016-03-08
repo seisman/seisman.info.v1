@@ -72,15 +72,15 @@ Select
    <select name="volc"></select>
    </td></tr>
 
-在Organization的select标签的onChange属性中调用了 ``netInit()`` 和 ``volcInit`` 函数。这两个函数的定义位于\ `cont.js <http://www.hinet.bosai.go.jp/REGS/download/cont/js/cont.js?140825>`_\ 中，当选定org之后，该函数会根据org的值对net和volc进行初始化，具体代码不再列出。
+在Organization的select标签的onChange属性中调用了 ``netInit()`` 和 ``volcInit`` 函数。这两个函数的定义位于 `cont.js`_ 中，当选定org之后，该函数会根据org的值对net和volc进行初始化，具体代码不再列出。
 
-其中涉及到两个数组/词典：networks和volcanos。每一个台网均对应一个唯一的key：
+其中两个词典（也称为hash）：networks和volcanos。每一个台网都对应一个唯一的key，这一点很重要：
 
 .. code-block:: javascript
 
-	networks['0101'] = 'NIED:NIED Hi-net';
-	networks['0103'] = 'NIED:NIED F-net (broadband)';
-	networks['0103A'] = 'NIED:NIED F-net (strong motion)';
+    networks['0101'] = 'NIED:NIED Hi-net';
+    networks['0103'] = 'NIED:NIED F-net (broadband)';
+    networks['0103A'] = 'NIED:NIED F-net (strong motion)';
     ...
     volcanos['010503'] = '0105:Usuzan';
     volcanos['010505'] = '0105:Iwatesan';
@@ -119,7 +119,7 @@ openRequest
 
     <a href="#" onClick="javascript:openRequest('01','01','2014','08','30','00','00','5','93680','en');return false;" onmouseover="changeImg('1')" onmouseout="changeImg('0')"><img src="./image/fulldl1_e.png" name="fulldl" class="img_border0" alt="" title="" /></a>
 
-可以看到，两种下载方式本质上没有区别，都是调用了 ``openRequest`` 函数。该函数的定义位于\ `js/cont.js?141201 <https://hinetwww11.bosai.go.jp/auth/download/cont/js/cont.js?141201>`_\ 中，如下：
+可以看到，两种下载方式本质上没有区别，都是调用了 ``openRequest`` 函数。该函数的定义位于 `cont.js`_ 中，如下：
 
 .. code-block:: javascript
 
@@ -143,7 +143,7 @@ openRequest
       contDLWin.window.focus();
    }
 
-该函数需要10个参数：
+该函数需要10个参数（某些参数的含义是通过分析与猜测得到的）：
 
 -  ``org1`` 为机构代码（NIED取值为01）
 -  ``org2`` 为台网代码（Hi-net取值为01）
@@ -151,7 +151,7 @@ openRequest
 -  ``span`` 为数据长度（取值为5）
 -  ``size`` 为文件大小，单位为KB（Hi-net所有台站5分钟数据的size大概为93680，该值为估计值不那么重要）
 -  ``lang`` 为语言（默认取为en）
--  ``volc`` 为火山代码，比如Usuzan火山台网的代码为 ``010503``\
+-  ``volc`` 为火山代码，比如Usuzan火山台网的代码为 ``010503``
 
 除此之外，函数中还遍历了 ``arc[]`` 数组，找到了数据文件的压缩格式arc；根据当前时间生成“随机数” ``rand`` 。最后将这些key/value对构成了 ``cont_request.php`` 的query string，然后打开了该url。
 
@@ -160,7 +160,7 @@ openRequest
 
 源码看到这里，结果就已经很显然了，数据申请的关键是调用 ``openRequest`` 函数，而调用 ``openRequest`` 函数的本质是向 ``cont_request.php`` 添加一系列请求字串（query string）。
 
-比如，在已登录Hi-net的前提下，将如下url直接复制粘贴到浏览器中，即可完成数据的申请::
+比如，在已登录Hi-net网站的前提下，将如下url直接复制粘贴到浏览器中，即可完成数据的申请::
 
     https://hinetwww11.bosai.go.jp/auth/download/cont/cont_request.php?org1=01&org2=01&year=2014&month=06&day=14&hour=00&min=00&span=5&arc=ZIP&size=93680&LANG=en&rn=1402728298194
 
@@ -196,3 +196,5 @@ openRequest
 - 2014-08-29：初稿；
 - 2014-11-03：更新了火山台网；
 - 2014-12-03：更新了连续数据申请链接；
+
+.. _cont.js: https://hinetwww11.bosai.go.jp/auth/download/cont/js/cont.js

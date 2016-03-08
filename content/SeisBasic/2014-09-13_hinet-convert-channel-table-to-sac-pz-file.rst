@@ -11,6 +11,8 @@ Hi-net生成仪器响应SAC PZ文件
 
 脚本位于：\ `ch2pz.py <https://github.com/seisman/HinetScripts/blob/master/ch2pz.py>`_\ 。
 
+需要特别说明的是：该脚本适用于Hinet，不适用于Fnet，不确定是否适用于其他台网。
+
 用法
 =====
 
