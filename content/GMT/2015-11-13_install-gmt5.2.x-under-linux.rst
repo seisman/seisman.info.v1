@@ -157,7 +157,7 @@ GMT5的依赖包，相对来说要复杂很多：
 - ``GMT_INSTALL_MODULE_LINKS`` 为FALSE，表明不在GMT的bin目录下建立命令的软链接，也可设置为TRUE
 - ``COPY_GSHHG`` 为TRUE会将GSHHG数据复制到 ``GMT/share/coast`` 下
 - ``COPY_DCW`` 为TRUE会将DCW数据复制到 ``GMT/share/dcw`` 下
-- ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能,在CentOS **6.***\ 下，设置为FALSE 
+- ``GMT_USE_THREADS`` 表示是否开启某些模块的并行功能（CentOS 6.x下，需设置为 ``FALSE``）
 
 以下几点说明，仅供高阶用户阅读：
 
