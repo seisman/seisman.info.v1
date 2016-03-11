@@ -252,7 +252,7 @@ CentOS 6
 
    在安装配置文件的同时会安装中文字体uming和ukai
 
-#. gs中文配置文件中给定的字体路径为 ``/usr/share/fonts/cjkuni/uming.ttc`` 是错误的，真实的字体路径是 ``/usr/share/fonts/cjkui-uming/uming.ttc`` ，要注意改正。
+#. gs中文配置文件中给定的字体路径： ``/usr/share/fonts/cjkuni/uming.ttc`` 和 ``/usr/share/fonts/cjkuni/ukai.ttc`` 是错误的。正确的字体路径是 ``/usr/share/fonts/cjkui-uming/uming.ttc``` 和 ``/usr/share/fonts/cjkuni-ukai/ukai.ttc``  ，要注意改正。
 
 Ubuntu 14.04/15.04
 ------------------
