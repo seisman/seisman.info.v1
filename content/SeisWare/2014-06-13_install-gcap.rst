@@ -1,13 +1,18 @@
-gCAP的安装
-##########
+gCAP和gCAP3D的安装
+##################
 
 :author: SeisMan
 :date: 2014-06-13
+:modified: 2016-03-12
 :category: 地震学软件
 :tags: 震源机制解
 :slug: install-gcap
 
 gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目前该代码已经开源。
+
+gCAP3D是在gCAP的基础上修改得到的，其特性在于可以使用三维格林函数。该代码也已经开源。
+
+gCAP和gCAP3D之间没有本质区别，本文的介绍以gCAP为准，在最后会介绍安装方法上gCAP3D与gCAP的不同。
 
 #. 下载gCAP源码
 
@@ -54,3 +59,14 @@ gCAP是Prof. Lupei Zhu发展的一种反演震源机制解的一种方法。目�
         system "gmtset PAGE_ORIENTATION portrait";
 
       这两句的作用是设置默认单位为英寸，并设置纸张方向为portrait模式。
+
+#. gCAP3D的安装与gCAP的步骤几乎完全相同（部分文件名以及行号可能不一致，读者自行判断），区别列出如下：
+
+   - 下载地址： http://www.eas.slu.edu/People/LZhu/downloads/gCAP3D1.0.tar
+   - Makefile下载地址： http://seisman.qiniudn.com/downloads/Makefile.gCAP3D
+
+修订历史
+========
+
+- 2014-06-13：初稿；
+- 2016-03-12：加入了对gCAP3D的说明；
