@@ -91,16 +91,6 @@ Software Library
 - `S&MG Research Group Software <http://rses.anu.edu.au/seismology/index.php?p=software>`_
 - `CIG Software <https://geodynamics.org/cig/software/>`_
 
-Software and Tools
-==================
-
-- `Generic Mapping Tools <http://gmt.soest.hawaii.edu/>`_
-- `Seismic Analysis Code <http://www.iris.edu/ds/nodes/dmc/software/downloads/sac/>`_
-- `The TauP Toolkit <http://www.seis.sc.edu/taup/index.html>`_
-- `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
-- `IRIS DMC Google Map Service <http://ds.iris.edu/gmap/>`_
-- `Google Maps API <https://developers.google.com/maps/get-started/>`_
-
 Others
 ======
 
@@ -112,3 +102,7 @@ Others
 - `Slab Model for Subduction Zones <http://earthquake.usgs.gov/data/slab/>`_
 - `FDSN Network Codes <http://www.fdsn.org/networks/>`_
 - `Virtual Network Codes <http://ds.iris.edu/mda/#vnetlist>`_
+- `IRIS Wilber 3 <http://www.iris.edu/wilber3/find_event>`_
+- `IRIS DMC Google Map Service <http://ds.iris.edu/gmap/>`_
+- `Google Maps API <https://developers.google.com/maps/get-started/>`_
+- `IRIS Synthetics Engine <http://service.iris.edu/irisws/syngine/1/>`_

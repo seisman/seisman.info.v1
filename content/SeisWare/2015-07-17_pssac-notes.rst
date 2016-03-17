@@ -333,9 +333,9 @@ pssac支持的剖面类型包括：
 - k：Y轴为震中距（单位为千米）
 - n：Y轴为波形的序号（从1到N）
 
-不同的剖面类型，对应的Y轴的范围就不同。下面的例子展示了不同的剖面类型所使用的命令，注意其中-R和-B选项的差异::
+不同的剖面类型，对应的Y轴的范围就不同。下面的例子展示了不同的剖面类型所使用的命令，注意其中 ``-R`` 和 ``-B`` 选项的差异::
 
-    pssac -JX20c/10c -R10/50/0/0.25 -B10:"T(s)":/0.05:"Dist(km)":WSen -Edt -M0.5 *.z > test.ps
+    pssac -JX20c/10c -R10/50/3/28 -B10:"T(s)":/5:"Dist(km)":WSen -Ekt -M0.5 *.z > test.ps
     pssac -JX20c/10c -R10/50/-50/380 -B10:"T(s)":/60:"Azimuth":WSen -Eat -M0.5 *.z > test.ps
     pssac -JX20c/10c -R10/50/-50/380 -B10:"T(s)":/60:"Back Azimuth":WSen -Ebt -M0.5 *.z > test.ps
     pssac -JX20c/10c -R10/50/0/0.25 -B10:"T(s)":/0.05:"Dist(degree)":WSen -Edt -M0.5 *.z > test.ps
@@ -356,20 +356,21 @@ pssac支持的剖面类型包括：
 
 说明：
 
-#. n可以取值为-5，-3，-2，以及0到9
+#. n可以取值为-5，-3，-2以及0到9
 
    - -5表示按照文件开始时间（b）对齐
    - -3表示按发震时刻（o）对齐
    - -2表示按初至到时对齐（a）对齐
    - 0到9表示按照t0-t9对齐
+   - 若n取数字，则等效于不指定n，即 ``-Ekt-8`` 等效于 ``-Ekt``
 
 #. 按照视速度对齐的代码是 ``t -= fabs(h.dist)/reduce_vel``
 
 下面的例子中展示了按照b值对齐，按照a值对齐，以及按照视速度7 km/s对齐的结果，注意其中-R选项的区别::
 
-    pssac -JX20c/10c -R0/40/0/0.25 -B10:"T(s)":/0.05:"Dist(km)":WSen -Edt-5 -M0.5 *.z > test.ps
-    pssac -JX20c/10c -R-15/35/0/0.25 -B10:"T(s)":/0.05:"Dist(km)":WSen -Edt-2 -M0.5 *.z > test.ps
-    pssac -JX20c/10c -R10/50/0/0.25 -B10:"T(s)":/0.05:"Dist(km)":WSen -Ed7 -M0.5 *.z > test.ps
+    pssac -JX20c/10c -R0/40/0/0.25 -B10:"T(s)":/0.05:"Dist(degree)":WSen -Edt-5 -M0.5 *.z > test.ps
+    pssac -JX20c/10c -R-15/35/0/0.25 -B10:"T(s)":/0.05:"Dist(degree)":WSen -Edt-2 -M0.5 *.z > test.ps
+    pssac -JX20c/10c -R10/50/0/0.25 -B10:"T(s)":/0.05:"Dist(degree)":WSen -Ed7 -M0.5 *.z > test.ps
 
 这里只给出 ``-Edt-2`` 的绘图结果：
 
@@ -462,3 +463,5 @@ pssac只支持5种剖面类型，有时候可能想要绘制其他量的剖面�
 
 - 2013-08-08：初稿；
 - 2015-07-17：将原稿的几篇合并并整理成一篇；
+- 2016-03-16：解释了 ``-E`` 选项中n取其他值的含义；
+- 2016-03-16：修复了图片Y轴标签的bug；Thanks to gwx2013@USTC；

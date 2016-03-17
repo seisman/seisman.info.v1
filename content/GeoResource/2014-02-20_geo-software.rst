@@ -45,6 +45,7 @@
 - `distaz`_: 给定震中和台站经纬度，计算震中距、方位角和反方位角的经典代码。
 - `TauP`_: 强大的走时计算器，不过其功能可不仅仅只是计算走时这么简单。射线参数、射线路径、反射点、投射点都可以计算，支持自定义速度模型、支持不常见的震相。
 - `Cake`_: Python写的走时计算工具，支持自定义速度模型，支持更复杂的震相路径。
+- `ANISOtime`_: 横向各向同性球状对称模型下的射线走时工具。
 
 理论地震图
 ==========
@@ -93,6 +94,7 @@
 
 - `libmseed`_: 用于读写miniSEED格式的C函数库
 
+.. _ANISOtime: http://www-solid.eps.s.u-tokyo.ac.jp/~dsm/anisotime.html
 .. _astack: http://rses.anu.edu.au/seismology/soft/astack/index.html
 .. _SAC: http://www.iris.edu/ds/nodes/dmc/forms/sac/
 .. _Cake: http://emolch.github.io/pyrocko/current/cake_doc.html

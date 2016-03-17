@@ -30,12 +30,12 @@ IRIS利用Google Map服务，提供了直观查看台站分布的方法。
         http://www.iris.edu/gmap/II
 
 #.  列出IU台网的COLA台站::
-    
+
         http://www.iris.edu/gmap/IU/COLA
 
 #.  列出虚拟台网_GSN::
 
-         http://www.iris.edu/gmap/\_GSN
+         http://www.iris.edu/gmap/_GSN
 
 #.  列出TA台网2004下半年的所有台站::
 
@@ -43,7 +43,7 @@ IRIS利用Google Map服务，提供了直观查看台站分布的方法。
 
 #.  列出_GSN台网1988年工作的所有台站::
 
-        http://www.iris.edu/gmap/\_GSN?timewindow=1988-1988
+        http://www.iris.edu/gmap/_GSN?timewindow=1988-1988
 
 #.  列出一定范围内的所有台站::
 
