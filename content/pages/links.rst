@@ -106,3 +106,4 @@ Others
 - `IRIS DMC Google Map Service <http://ds.iris.edu/gmap/>`_
 - `Google Maps API <https://developers.google.com/maps/get-started/>`_
 - `IRIS Synthetics Engine <http://service.iris.edu/irisws/syngine/1/>`_
+- `Volcanos <https://www.ngdc.noaa.gov/hazard/volcano.shtml>`_
