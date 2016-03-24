@@ -46,6 +46,7 @@
 - `TauP`_: 强大的走时计算器，不过其功能可不仅仅只是计算走时这么简单。射线参数、射线路径、反射点、投射点都可以计算，支持自定义速度模型、支持不常见的震相。
 - `Cake`_: Python写的走时计算工具，支持自定义速度模型，支持更复杂的震相路径。
 - `ANISOtime`_: 横向各向同性球状对称模型下的射线走时工具。
+- `DigitSeis`_: 利用图像处理技术将模拟地震仪记录到的波形图片转换成数字信号（Matlab）
 
 理论地震图
 ==========
@@ -139,3 +140,4 @@
 .. _libmseed: https://seiscode.iris.washington.edu/projects/libmseed
 .. _QSEIS: http://www.gfz-potsdam.de/en/section/physics-of-earthquakes-and-volcanoes/data-products-services/downloads-software/
 .. _QSSP: http://www.gfz-potsdam.de/en/section/physics-of-earthquakes-and-volcanoes/data-products-services/downloads-software/
+.. _DigitSeis: http://www.seismology.harvard.edu/research/DigitSeis.html
