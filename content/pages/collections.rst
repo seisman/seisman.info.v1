@@ -16,4 +16,8 @@ Collections
 #. `Hi-net系列博文 <{filename}/SeisBasic/2014-08-25_hinet-things.rst>`_
 #. `用CentOS 7打造合适的科研环境 <{filename}/Linux/2014-07-15_linux-environment-for-seismology-research.rst>`_
 #. `GMT4脚本风格指南 <{filename}/GMT/2014-05-13_gmt4-style-guide.rst>`_
-#. `GMT5参考手册 <http://docs.gmt-china.org>`_
+#. `GMT中文社区 <http://gmt-china.org>`_
+#. `GMT参考手册 <http://docs.gmt-china.org>`_
+#. `GMT模块手册 <http://modules.gmt-china.org>`_
+#. `GMT示例集 <http://examples.gmt-china.org>`_
+#. `GMT问答社区 <http://forum.gmt-china.org>`_

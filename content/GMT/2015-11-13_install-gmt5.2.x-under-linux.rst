@@ -9,6 +9,8 @@ GMT 5.2.1 在Linux下的安装
 
 .. contents::
 
+**注意：** 为Ubuntu和CentOS用户写了一个快速安装脚本，见 https://github.com/gmt-china/gmt-easy-installer 。有兴趣的可以试着安装，也欢迎测试各种不同的平台。
+
 本文介绍如何在Linux下安装GMT 5.2.x。
 
 GMT 5.2.x系列的安装与GMT 5.1.x系列的安装稍有不同，故而在前文基础上单独写一篇。
