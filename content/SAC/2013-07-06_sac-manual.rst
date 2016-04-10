@@ -19,7 +19,7 @@ SAC参考手册中文版
 
 注意：由于LaTeX本身的一些限制，3.6-dev版在新增内容的情况下，部分含图/表的页面在排版的时候可能会留出一些空白。我一般只会在某个正式版本发布之前整体检查一下排版情况，所以dev版的排版无法保证。
 
-下载地址：\ `3.6-dev版 <http://home.ustc.edu.cn/~dongzhi/SAC_Docs.pdf>`_
+下载地址：\ `3.6-dev版 <https://github.com/seisman/SAC_Docs_zh/raw/pdf/SAC_Docs.pdf>`_
 
 2016-01-09 3.5版
 ================
