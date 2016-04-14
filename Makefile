@@ -9,7 +9,6 @@ CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 BRANCH = blog
-
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
@@ -71,14 +70,10 @@ pdf:
 	python makepdf.py
 	qrsync ~/.qiniu.conf
 
-github:
-	git push github $(BRANCH):master
-
-coding:
-	git push coding $(BRANCH):coding-pages
-
 import:
 	ghp-import -b $(BRANCH) $(OUTPUTDIR) -m "`date +'%Y-%m-%d %H:%M:%S'`"
+	git push origin $(BRANCH):gh-pages
+	git push coding $(BRANCH):coding-pages
 
 all: publish import coding github pdf
 
