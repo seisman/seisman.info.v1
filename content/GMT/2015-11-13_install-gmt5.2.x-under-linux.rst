@@ -26,7 +26,7 @@ GMT 5.2.x系列的安装与GMT 5.1.x系列的安装稍有不同，故而在前�
 GMT 5.2.1 需要下载三个文件：
 
 #. GMT源码： ftp://ftp.soest.hawaii.edu/gmt/gmt-5.2.1-src.tar.gz
-#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.4.tar.gz
+#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.5.tar.gz
 #. 全球数字图表DCW： ftp://ftp.soest.hawaii.edu/gmt/dcw-gmt-1.1.2.tar.gz
 
 GMT 5.2.1的源码包中，没有自带官方的PDF文档，需要额外下载：
@@ -38,9 +38,9 @@ GMT 5.2.1的源码包中，没有自带官方的PDF文档，需要额外下载�
 
 下载完成后，可以用 ``md5sum`` 检查压缩文件的md5值，以保证该文件是完整且未被篡改的::
 
-    $ md5sum gmt-5.2.1-src.tar.gz gshhg-gmt-2.3.4.tar.gz dcw-gmt-1.1.2.tar.gz
+    $ md5sum gmt-5.2.1-src.tar.gz gshhg-gmt-2.3.5.tar.gz dcw-gmt-1.1.2.tar.gz
     df96d3cc9a93bc3c049f1523ada57117  gmt-5.2.1-src.tar.gz
-    80947a92cc88927aff070556ca5ab133  gshhg-gmt-2.3.4.tar.gz
+    12c6604d779ddd1727e96433da20e147  gshhg-gmt-2.3.5.tar.gz
     45c99d30026742dbc0b1644ea64f496d  dcw-gmt-1.1.2.tar.gz
 
 解决依赖关系
@@ -126,16 +126,16 @@ GMT5的依赖包，相对来说要复杂很多：
 
    # 当前目录下包含了三个压缩文件和四个PDF文档
    $ ls
-   dcw-gmt-1.1.2.tar.gz  gmt-5.2.1-src.tar.gz  gshhg-gmt-2.3.4.tar.gz
+   dcw-gmt-1.1.2.tar.gz  gmt-5.2.1-src.tar.gz  gshhg-gmt-2.3.5.tar.gz
    GMT_API.pdf  GMT_Docs.pdf  GMT_Manpages.pdf  GMT_Tutorial.pdf
 
    # 解压三个压缩文件
    $ tar -xvf gmt-5.2.1-src.tar.gz
-   $ tar -xvf gshhg-gmt-2.3.4.tar.gz
+   $ tar -xvf gshhg-gmt-2.3.5.tar.gz
    $ tar -xvf dcw-gmt-1.1.2.tar.gz
 
    # 将gshhg和dcw数据复制到gmt的share目录下
-   $ mv gshhg-gmt-2.3.4 gmt-5.2.1/share/gshhg
+   $ mv gshhg-gmt-2.3.5 gmt-5.2.1/share/gshhg
    $ mv dcw-gmt-1.1.2 gmt-5.2.1/share/dcw-gmt
 
    # 将PDF复制到doc_release目录下
@@ -173,14 +173,14 @@ GMT5的依赖包，相对来说要复杂很多：
           $ cd /opt/GMT-5.2.1/share
           $ sudo rm -r coast/
           $ sudo rm -r dcw/
-          $ sudo ln -s /home/seisman/Datas/gshhg-gmt-2.3.4 gshhg
+          $ sudo ln -s /home/seisman/Datas/gshhg-gmt-2.3.5 gshhg
           $ sudo ln -s /home/seisman/Datas/dcw-gmt-1.1.2 dcw
 
    #. 设置配置文件如下::
 
           set (CMAKE_INSTALL_PREFIX "/opt/GMT-5.2.1")
           set (GMT_INSTALL_MODULE_LINKS FALSE)
-          set (GSHHG_ROOT "/home/seisman/Datas/gshhg-gmt-2.3.4")
+          set (GSHHG_ROOT "/home/seisman/Datas/gshhg-gmt-2.3.5")
           set (COPY_GSHHG FALSE)
           set (DCW_ROOT "/home/seisman/Datas/dcw-gmt-1.1.1")
           set (COPY_DCW FALSE)
@@ -195,7 +195,7 @@ GMT5的依赖包，相对来说要复杂很多：
 ``cmake ..`` 会检查GMT对软件的依赖关系，我的检查结果如下::
 
     *  Options:
-    *  Found GSHHG database       : /home/seisman/Desktop/GMT/gmt-5.2.1/share/gshhg (2.3.4)
+    *  Found GSHHG database       : /home/seisman/Desktop/GMT/gmt-5.2.1/share/gshhg (2.3.5)
     *  Found DCW-GMT database     : /home/seisman/Desktop/GMT/gmt-5.2.1/share/dcw-gmt
     *  NetCDF library             : /usr/lib64/libnetcdf.so
     *  NetCDF include dir         : /usr/include
