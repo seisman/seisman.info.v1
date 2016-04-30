@@ -26,7 +26,7 @@ GMT 5.2.x系列的安装与GMT 5.1.x系列的安装稍有不同，故而在前�
 GMT 5.2.1 需要下载三个文件：
 
 #. GMT源码： ftp://ftp.soest.hawaii.edu/gmt/gmt-5.2.1-src.tar.gz
-#. 全球海岸线数据GSHHG： ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.5.tar.gz
+#. 全球海岸线数据GSHHG： http://gmt.soest.hawaii.edu/files/download?name=gshhg-gmt-2.3.5.tar.gz
 #. 全球数字图表DCW： ftp://ftp.soest.hawaii.edu/gmt/dcw-gmt-1.1.2.tar.gz
 
 GMT 5.2.1的源码包中，没有自带官方的PDF文档，需要额外下载：

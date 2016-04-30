@@ -42,8 +42,8 @@ Python多版本共存之pyenv
 
     2.7.8   # Python 2最新版本
     3.4.1   # Python 3最新版本
-    anaconda-2.0.1  # 支持Python 2.6和2.7
-    anaconda3-2.0.1 # 支持Python 3.3和3.4
+    anaconda-4.0.0  # 支持Python 2.6和2.7
+    anaconda3-4.0.0 # 支持Python 3.3和3.4
 
 其中形如 ``x.x.x`` 这样的只有版本号的为Python官方版本，其他的形如 ``xxxxx-x.x.x`` 这种既有名称又有版本后的属于“衍生版”或发行版。
 
@@ -70,9 +70,9 @@ Python多版本共存之pyenv
 
 该命令会从github上下载python的源代码，并解压到/tmp目录下，然后在/tmp中执行编译工作。若依赖包没有安装，则会出现编译错误，需要在安装依赖包后重新执行该命令。
 
-对于科研环境，更推荐安装专为科学计算准备的Anaconda发行版， ``pyenv install anaconda-2.1.0`` 安装2.x版本， ``pyenv install anaconda3-2.1.0`` 安装3.x版本；
+如果网络不太好，用pyenv下载会比较慢，可以先执行该命令，然后到 ``~/.pyenv/cache`` 目录下查看要下载的文件的文件名，然后自己到官方网站下载，并将文件放在 ``~/.pyenv/cache`` 目录下。pyenv会检查文件的完整性，若确认无误，则不会再重新下载。
 
-Anacoda很大，用pyenv下载会比较慢，可以自己到Anaconda官方网站下载，并将下载得到的文件放在 ``~/.pyenv/cache`` 目录下，则pyenv不会重复下载。
+对于科研环境，更推荐安装专为科学计算准备的Anaconda发行版， ``pyenv install anaconda-4.0.0`` 安装Python 2.x版本， ``pyenv install anaconda3-4.0.0`` 安装Python 3.x版本；
 
 更新数据库
 ----------

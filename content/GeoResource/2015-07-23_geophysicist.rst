@@ -37,6 +37,8 @@
 
    * - **G**
      -
+   * - `Stephen Shangxing Gao <http://web.mst.edu/~sgao/>`_
+     - SKS splitting
    * - `Peter Gerstoft <http://www.mpl.ucsd.edu/people/pgerstoft/>`_
      -
    * - `Yu Jeffrey Gu <http://www.ualberta.ca/~ygu/>`_
