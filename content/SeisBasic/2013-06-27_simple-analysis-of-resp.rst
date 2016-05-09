@@ -81,5 +81,5 @@ Stage 0
 备注
 ====
 
-- 图1由\ `JPlotResp <http://www.isti2.com/JPlotResp/>`_\c绘制得到。
+- 图1由\ `JPlotResp <http://www.isti2.com/JPlotResp/>`_\ 绘制得到。
 - 使用JPlotResp绘制响应函数的时候，将光标放在相应点上，可以看到每个点的横纵轴坐标，在最大振幅以及敏感频率方面与想象的有一点偏差。
